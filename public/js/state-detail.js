@@ -1,12 +1,5 @@
 // State detail page script
 
-function getUrlParameter(name) {
-    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-    const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-    const results = regex.exec(location.search);
-    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-}
-
 function loadStateDetails() {
     const stateKey = getUrlParameter('state');
     const stateContent = document.getElementById('state-content');

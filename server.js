@@ -7,11 +7,6 @@ const PORT = process.env.PORT || 3000;
 // Serve static files
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Serve index.html for root path
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
 app.listen(PORT, () => {
   console.log(`Quick Pass Traffic School server running on port ${PORT}`);
   console.log(`Visit http://localhost:${PORT} to access the application`);
