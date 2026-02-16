@@ -5,10 +5,6 @@ import { v4 as uuidv4 } from 'uuid';
 import { authenticate, jsonResponse, handleCors } from '../../lib/auth.js';
 import { validate, quizSubmissionSchema } from '../../lib/validation.js';
 
-export const config = {
-  runtime: 'edge',
-};
-
 export default async function handler(req) {
   if (req.method === 'OPTIONS') {
     return handleCors();

@@ -6,8 +6,6 @@ import { authenticate, isAdmin, jsonResponse, handleCors } from '../../lib/auth.
 import { encrypt, decrypt } from '../../lib/encryption.js';
 
 export const config = {
-  runtime: 'edge',
-  // Allow larger body for file uploads
   api: {
     bodyParser: false,
   },

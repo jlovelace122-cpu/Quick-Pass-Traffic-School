@@ -5,10 +5,6 @@ import { v4 as uuidv4 } from 'uuid';
 import { hashPassword, verifyPassword, generateToken, jsonResponse, handleCors } from '../lib/auth.js';
 import { validate, registerSchema, loginSchema } from '../lib/validation.js';
 
-export const config = {
-  runtime: 'edge',
-};
-
 export default async function handler(req) {
   // Handle CORS preflight
   if (req.method === 'OPTIONS') {

@@ -10,10 +10,6 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-export const config = {
-  runtime: 'edge',
-};
-
 // System prompt for the AI chatbot
 const SYSTEM_PROMPT = `You are a helpful customer service assistant for Quick Pass Traffic School, an online Florida-approved traffic school. 
 

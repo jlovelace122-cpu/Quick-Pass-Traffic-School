@@ -3,10 +3,6 @@ import { courses, courseModules, states, enrollments, moduleProgress, quizQuesti
 import { eq, and, asc } from 'drizzle-orm';
 import { authenticate, jsonResponse, handleCors } from '../../lib/auth.js';
 
-export const config = {
-  runtime: 'edge',
-};
-
 export default async function handler(req) {
   if (req.method === 'OPTIONS') {
     return handleCors();

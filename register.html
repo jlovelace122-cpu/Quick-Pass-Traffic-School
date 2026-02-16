@@ -210,28 +210,99 @@
                             <svg class="section-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                             </svg>
-                            Ticket / Citation Information
+                            Course Selection
                         </h2>
 
                         <div class="form-row">
                             <div class="form-group form-group-full">
-                                <label>Select 4-Hour Course Type <span class="required">*</span></label>
-                                <div class="radio-group">
-                                    <label class="radio-label">
-                                        <input type="radio" name="FL_CourseType" value="B1" required>
-                                        <span>4-Hour BDI – To Reduce Fines or Points</span>
-                                    </label>
-                                    <label class="radio-label">
-                                        <input type="radio" name="FL_CourseType" value="B3">
-                                        <span>4-Hour BDI – Court Mandated</span>
-                                    </label>
-                                    <label class="radio-label">
-                                        <input type="radio" name="FL_CourseType" value="B2">
-                                        <span>4-Hour TCAC – DHSMV Mandated</span>
-                                    </label>
+                                <label for="courseSelect">Select Your Course <span class="required">*</span></label>
+                                <select id="courseSelect" name="CourseSelection" required>
+                                    <option value="">-- Select a Course --</option>
+                                    <option value="4-hour">4-Hour Basic Driver Improvement (BDI) - $18.50</option>
+                                    <option value="8-hour">8-Hour Intermediate Driver Improvement (IDI) - $55.00</option>
+                                    <option value="12-hour">12-Hour Advanced Driver Improvement (ADI) - $60.00</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- 4-Hour Course Options -->
+                        <div id="courseOptions4Hour" class="course-options" style="display: none;">
+                            <div class="form-row">
+                                <div class="form-group form-group-full">
+                                    <label>Select 4-Hour Course Type <span class="required">*</span></label>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="FL_CourseType" value="B1">
+                                            <span>4-Hour BDI – To Reduce Fines or Points</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="FL_CourseType" value="B3">
+                                            <span>4-Hour BDI – Court Mandated</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="FL_CourseType" value="B2">
+                                            <span>4-Hour TCAC – DHSMV Mandated</span>
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
+                        <!-- 8-Hour Course Options -->
+                        <div id="courseOptions8Hour" class="course-options" style="display: none;">
+                            <div class="form-row">
+                                <div class="form-group form-group-full">
+                                    <label>Select 8-Hour Course Type <span class="required">*</span></label>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="FL_CourseType" value="I1">
+                                            <span>8-Hour IDI – Court Ordered</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="FL_CourseType" value="I2">
+                                            <span>8-Hour IDI – Point Reduction</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="FL_CourseType" value="I3">
+                                            <span>8-Hour IDI – Insurance Discount</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 12-Hour Course Options -->
+                        <div id="courseOptions12Hour" class="course-options" style="display: none;">
+                            <div class="form-row">
+                                <div class="form-group form-group-full">
+                                    <label>Select 12-Hour Course Type <span class="required">*</span></label>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="FL_CourseType" value="A1">
+                                            <span>12-Hour ADI – Court Ordered</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="FL_CourseType" value="A2">
+                                            <span>12-Hour ADI – Habitual Traffic Offender</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="FL_CourseType" value="A3">
+                                            <span>12-Hour ADI – License Suspension</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ticket/Citation Information -->
+                    <div class="form-section">
+                        <h2 class="section-title">
+                            <svg class="section-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                            Ticket / Citation Information
+                        </h2>
 
                         <div class="form-row">
                             <div class="form-group form-group-large">
@@ -772,6 +843,58 @@
             const form = document.querySelector('form[name="registrationForm"]');
             const submitBtn = form.querySelector('button[type="submit"]');
             
+            // Course selection handling
+            const courseSelect = document.getElementById('courseSelect');
+            const courseOptions4Hour = document.getElementById('courseOptions4Hour');
+            const courseOptions8Hour = document.getElementById('courseOptions8Hour');
+            const courseOptions12Hour = document.getElementById('courseOptions12Hour');
+            
+            function showCourseOptions(courseType) {
+                // Hide all course options
+                courseOptions4Hour.style.display = 'none';
+                courseOptions8Hour.style.display = 'none';
+                courseOptions12Hour.style.display = 'none';
+                
+                // Clear all radio selections
+                document.querySelectorAll('input[name="FL_CourseType"]').forEach(radio => {
+                    radio.checked = false;
+                    radio.required = false;
+                });
+                
+                // Show appropriate options and make required
+                if (courseType === '4-hour') {
+                    courseOptions4Hour.style.display = 'block';
+                    courseOptions4Hour.querySelectorAll('input[name="FL_CourseType"]')[0].required = true;
+                } else if (courseType === '8-hour') {
+                    courseOptions8Hour.style.display = 'block';
+                    courseOptions8Hour.querySelectorAll('input[name="FL_CourseType"]')[0].required = true;
+                } else if (courseType === '12-hour') {
+                    courseOptions12Hour.style.display = 'block';
+                    courseOptions12Hour.querySelectorAll('input[name="FL_CourseType"]')[0].required = true;
+                }
+            }
+            
+            courseSelect.addEventListener('change', function() {
+                showCourseOptions(this.value);
+            });
+            
+            // Pre-select course from URL parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const courseParam = urlParams.get('course');
+            
+            if (courseParam) {
+                if (courseParam.includes('4-hour')) {
+                    courseSelect.value = '4-hour';
+                    showCourseOptions('4-hour');
+                } else if (courseParam.includes('8-hour')) {
+                    courseSelect.value = '8-hour';
+                    showCourseOptions('8-hour');
+                } else if (courseParam.includes('12-hour')) {
+                    courseSelect.value = '12-hour';
+                    showCourseOptions('12-hour');
+                }
+            }
+            
             // Add password fields after email section
             const emailConfirmGroup = document.querySelector('#confirmEmail').closest('.form-row');
             const passwordHtml = `
@@ -791,6 +914,14 @@
             
             form.addEventListener('submit', async function(e) {
                 e.preventDefault();
+                
+                // Check course selection first
+                const courseSelection = document.getElementById('courseSelect').value;
+                if (!courseSelection) {
+                    alert('Please select a course before continuing.');
+                    document.getElementById('courseSelect').focus();
+                    return false;
+                }
                 
                 // Basic validation
                 const requiredFields = form.querySelectorAll('[required]');
@@ -878,6 +1009,7 @@
                     
                     // Florida-specific info
                     florida: {
+                        courseSelection: document.getElementById('courseSelect').value,
                         courseType: courseTypeSelected.value,
                         citationNumber: document.getElementById('citationNumber').value,
                         county: document.getElementById('county').value,
@@ -909,16 +1041,20 @@
                     localStorage.setItem('auth_token', data.token);
                     localStorage.setItem('user', JSON.stringify(data.user));
                     
-                    // Get course slug from URL or default
-                    const urlParams = new URLSearchParams(window.location.search);
-                    const courseSlug = urlParams.get('course') || 'florida-4-hour-bdi';
+                    // Get course slug based on selected course
+                    const selectedCourse = document.getElementById('courseSelect').value;
+                    let courseSlug = 'florida-4-hour-bdi'; // default
                     
-                    // Redirect to checkout or dashboard
-                    if (courseSlug) {
-                        window.location.href = `checkout.html?course=${courseSlug}`;
-                    } else {
-                        window.location.href = 'dashboard/index.html';
+                    if (selectedCourse === '4-hour') {
+                        courseSlug = 'florida-4-hour-bdi';
+                    } else if (selectedCourse === '8-hour') {
+                        courseSlug = 'florida-8-hour-idi';
+                    } else if (selectedCourse === '12-hour') {
+                        courseSlug = 'florida-12-hour-adi';
                     }
+                    
+                    // Redirect to checkout
+                    window.location.href = `checkout.html?course=${courseSlug}`;
                     
                 } catch (error) {
                     alert(error.message || 'Registration failed. Please try again.');

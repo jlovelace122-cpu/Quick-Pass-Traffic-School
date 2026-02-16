@@ -7,10 +7,6 @@ import { v4 as uuidv4 } from 'uuid';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
-export const config = {
-  runtime: 'edge',
-};
-
 export default async function handler(req) {
   if (req.method === 'OPTIONS') {
     return handleCors();

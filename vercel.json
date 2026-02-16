@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "buildCommand": "npm run build",
-  "devCommand": "npm run dev",
+  "buildCommand": null,
+  "outputDirectory": ".",
   "installCommand": "npm install",
   "framework": null,
   "functions": {
@@ -16,15 +16,5 @@
     { "src": "/admin/(.*)", "dest": "/admin/$1" },
     { "handle": "filesystem" },
     { "src": "/(.*)", "dest": "/$1" }
-  ],
-  "env": {
-    "TURSO_DATABASE_URL": "@turso_database_url",
-    "TURSO_AUTH_TOKEN": "@turso_auth_token",
-    "STRIPE_SECRET_KEY": "@stripe_secret_key",
-    "STRIPE_PUBLISHABLE_KEY": "@stripe_publishable_key",
-    "STRIPE_WEBHOOK_SECRET": "@stripe_webhook_secret",
-    "JWT_SECRET": "@jwt_secret",
-    "OPENAI_API_KEY": "@openai_api_key",
-    "ENCRYPTION_KEY": "@encryption_key"
-  }
+  ]
 }

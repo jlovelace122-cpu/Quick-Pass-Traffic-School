@@ -8,10 +8,6 @@ import { validate, paymentIntentSchema } from '../../lib/validation.js';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
-export const config = {
-  runtime: 'edge',
-};
-
 export default async function handler(req) {
   if (req.method === 'OPTIONS') {
     return handleCors();
