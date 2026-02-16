@@ -1,11 +1,9 @@
 // Utility functions shared across the application
 
-// Get URL parameters
+// Get URL parameters using URLSearchParams (more secure and standard)
 function getUrlParameter(name) {
-    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-    const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-    const results = regex.exec(location.search);
-    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name) || '';
 }
 
 // Export for use in other files
