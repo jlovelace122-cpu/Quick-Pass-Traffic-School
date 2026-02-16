@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Quick Pass Traffic School</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://js.stripe.com/v3/"></script>
+    <style>
+        .checkout-page {
+            min-height: 100vh;
+            background: var(--gray-50);
+        }
+        .checkout-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .checkout-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        @media (min-width: 768px) {
+            .checkout-grid {
+                grid-template-columns: 1fr 400px;
+            }
+        }
+        .checkout-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            padding: 1.5rem;
+        }
+        .checkout-header {
+            margin-bottom: 2rem;
+        }
+        .checkout-header h1 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+        .course-summary {
+            border-bottom: 1px solid var(--gray-200);
+            padding-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .course-summary h2 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        .course-details {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .course-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .course-info h3 {
+            margin: 0 0 0.25rem 0;
+            font-size: 1rem;
+        }
+        .course-info p {
+            margin: 0;
+            color: var(--gray-500);
+            font-size: 0.875rem;
+        }
+        .price-breakdown {
+            margin-top: 1.5rem;
+        }
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        .price-row.total {
+            font-weight: 700;
+            font-size: 1.25rem;
+            border-top: 2px solid var(--gray-200);
+            padding-top: 1rem;
+            margin-top: 1rem;
+        }
+        .secure-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem;
+            background: var(--gray-50);
+            border-radius: var(--radius);
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            margin-top: 1.5rem;
+        }
+        .secure-badge svg {
+            color: var(--success);
+        }
+        #payment-form {
+            margin-top: 1rem;
+        }
+        #payment-element {
+            margin-bottom: 1.5rem;
+        }
+        .payment-error {
+            color: var(--error);
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+            display: none;
+        }
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255,255,255,0.9);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            flex-direction: column;
+        }
+        .loading-overlay.active {
+            display: flex;
+        }
+        .spinner-large {
+            width: 50px;
+            height: 50px;
+            border: 4px solid var(--gray-200);
+            border-top-color: var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        .benefits-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0;
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+        .benefits-list svg {
+            color: var(--success);
+            flex-shrink: 0;
+        }
+        .money-back {
+            background: #dcfce7;
+            color: #166534;
+            padding: 1rem;
+            border-radius: var(--radius);
+            text-align: center;
+            font-size: 0.875rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body class="checkout-page">
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="Assets/quick pass traffic school logo.png" alt="Quick Pass Traffic School Logo">
+                        </a>
+                    </div>
+                    <ul class="nav-menu">
+                        <li><a href="index.html#course-overview" class="nav-link">Courses</a></li>
+                        <li><a href="index.html#contact-us" class="nav-link">Help</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="spinner-large"></div>
+        <p style="margin-top: 1rem; color: var(--gray-600);">Processing your payment...</p>
+    </div>
+
+    <div class="checkout-container">
+        <div class="checkout-header">
+            <h1>Complete Your Enrollment</h1>
+            <p>You're just one step away from starting your course</p>
+        </div>
+
+        <div class="checkout-grid">
+            <!-- Payment Form -->
+            <div class="checkout-card">
+                <h2 style="margin-bottom: 1rem;">Payment Details</h2>
+                
+                <div id="payment-error" class="payment-error"></div>
+                
+                <form id="payment-form">
+                    <div id="payment-element"></div>
+                    <button type="submit" class="btn btn-primary btn-block" id="submit-button">
+                        <span id="button-text">Pay Now</span>
+                    </button>
+                </form>
+
+                <div class="secure-badge">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                    </svg>
+                    <span>Your payment information is encrypted and secure</span>
+                </div>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="checkout-card">
+                <div class="course-summary">
+                    <h2>Order Summary</h2>
+                    <div class="course-details">
+                        <div class="course-icon" id="courseHours">4</div>
+                        <div class="course-info">
+                            <h3 id="courseName">Loading...</h3>
+                            <p id="courseDescription">Florida Driver Improvement Course</p>
+                        </div>
+                    </div>
+                    
+                    <ul class="benefits-list">
+                        <li>
+                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            100% Online - Study anywhere
+                        </li>
+                        <li>
+                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Instant access after payment
+                        </li>
+                        <li>
+                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Same-day certificate delivery
+                        </li>
+                        <li>
+                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Unlimited exam retakes
+                        </li>
+                        <li>
+                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            6 months to complete
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="price-breakdown">
+                    <div class="price-row">
+                        <span>Course Price</span>
+                        <span id="priceSubtotal">$0.00</span>
+                    </div>
+                    <div class="price-row">
+                        <span>Processing Fee</span>
+                        <span>$0.00</span>
+                    </div>
+                    <div class="price-row total">
+                        <span>Total</span>
+                        <span id="priceTotal">$0.00</span>
+                    </div>
+                </div>
+
+                <div class="money-back">
+                    💰 30-Day Money-Back Guarantee
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get course from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const courseSlug = urlParams.get('course');
+
+        if (!courseSlug) {
+            window.location.href = 'index.html#course-overview';
+        }
+
+        // Check authentication
+        const token = localStorage.getItem('auth_token');
+        if (!token) {
+            window.location.href = `login.html?redirect=${encodeURIComponent(window.location.href)}`;
+        }
+
+        let stripe;
+        let elements;
+        let courseId;
+
+        // Initialize
+        async function initialize() {
+            try {
+                // Get Stripe config
+                const configResponse = await fetch('/api/payments/config');
+                const { publishableKey } = await configResponse.json();
+                stripe = Stripe(publishableKey);
+
+                // Get course details
+                const courseResponse = await fetch(`/api/courses/${courseSlug}`);
+                if (!courseResponse.ok) {
+                    throw new Error('Course not found');
+                }
+                const course = await courseResponse.json();
+                courseId = course.id;
+
+                // Update UI
+                document.getElementById('courseName').textContent = course.name;
+                document.getElementById('courseHours').textContent = course.durationHours;
+                document.getElementById('priceSubtotal').textContent = `$${course.price.toFixed(2)}`;
+                document.getElementById('priceTotal').textContent = `$${course.price.toFixed(2)}`;
+
+                // Create payment intent
+                const paymentResponse = await fetch('/api/payments/create-intent', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`,
+                    },
+                    body: JSON.stringify({ courseId: course.id }),
+                });
+
+                if (!paymentResponse.ok) {
+                    const error = await paymentResponse.json();
+                    throw new Error(error.error || 'Failed to initialize payment');
+                }
+
+                const { clientSecret } = await paymentResponse.json();
+
+                // Create payment element
+                elements = stripe.elements({ clientSecret });
+                const paymentElement = elements.create('payment');
+                paymentElement.mount('#payment-element');
+
+            } catch (error) {
+                console.error('Initialization error:', error);
+                document.getElementById('payment-error').textContent = error.message;
+                document.getElementById('payment-error').style.display = 'block';
+            }
+        }
+
+        // Handle form submission
+        document.getElementById('payment-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const submitButton = document.getElementById('submit-button');
+            const buttonText = document.getElementById('button-text');
+            const loadingOverlay = document.getElementById('loadingOverlay');
+            const errorDiv = document.getElementById('payment-error');
+
+            submitButton.disabled = true;
+            buttonText.textContent = 'Processing...';
+            loadingOverlay.classList.add('active');
+            errorDiv.style.display = 'none';
+
+            const { error } = await stripe.confirmPayment({
+                elements,
+                confirmParams: {
+                    return_url: `${window.location.origin}/checkout-success.html?course=${courseSlug}`,
+                },
+            });
+
+            if (error) {
+                errorDiv.textContent = error.message;
+                errorDiv.style.display = 'block';
+                submitButton.disabled = false;
+                buttonText.textContent = 'Pay Now';
+                loadingOverlay.classList.remove('active');
+            }
+        });
+
+        // Initialize on load
+        initialize();
+    </script>
+</body>
+</html>

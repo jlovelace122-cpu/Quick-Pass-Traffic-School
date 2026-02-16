@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Manager - Quick Pass Traffic School</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .admin-layout {
+            display: flex;
+            min-height: 100vh;
+        }
+        .admin-sidebar {
+            width: 250px;
+            background: #1e293b;
+            color: white;
+            padding: 1.5rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            overflow-y: auto;
+        }
+        .admin-main {
+            flex: 1;
+            margin-left: 250px;
+            background: var(--gray-50);
+            min-height: 100vh;
+        }
+        .admin-header {
+            background: white;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid var(--gray-200);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .admin-content {
+            padding: 2rem;
+        }
+        .sidebar-logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .sidebar-menu {
+            list-style: none;
+        }
+        .sidebar-menu li {
+            margin-bottom: 0.5rem;
+        }
+        .sidebar-menu a {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius);
+            color: #94a3b8;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .sidebar-menu a:hover, .sidebar-menu a.active {
+            background: rgba(255,255,255,0.1);
+            color: white;
+        }
+        
+        /* Curriculum Specific Styles */
+        .course-selector {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        .course-tab {
+            padding: 1rem 1.5rem;
+            background: white;
+            border: 2px solid var(--gray-200);
+            border-radius: var(--radius-lg);
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+            min-width: 200px;
+        }
+        .course-tab:hover {
+            border-color: var(--primary-color);
+        }
+        .course-tab.active {
+            border-color: var(--primary-color);
+            background: var(--primary-color);
+            color: white;
+        }
+        .course-tab h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        .course-tab .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        .course-tab.active h3,
+        .course-tab.active .price {
+            color: white;
+        }
+        
+        .curriculum-container {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+        }
+        
+        .modules-list {
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+        }
+        .modules-header {
+            padding: 1rem 1.5rem;
+            background: var(--gray-100);
+            font-weight: 600;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        .module-item {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--gray-100);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .module-item:hover {
+            background: var(--gray-50);
+        }
+        .module-item.active {
+            background: var(--primary-color);
+            color: white;
+        }
+        .module-item .module-number {
+            font-size: 0.75rem;
+            color: var(--gray-400);
+            margin-bottom: 0.25rem;
+        }
+        .module-item.active .module-number {
+            color: rgba(255,255,255,0.7);
+        }
+        .module-item .module-title {
+            font-weight: 500;
+        }
+        .module-item .module-duration {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+            margin-top: 0.25rem;
+        }
+        .module-item.active .module-duration {
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .content-preview {
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+        }
+        .content-header {
+            padding: 1.5rem;
+            background: var(--gray-100);
+            border-bottom: 1px solid var(--gray-200);
+        }
+        .content-header h2 {
+            margin-bottom: 0.5rem;
+        }
+        .content-header .meta {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.875rem;
+            color: var(--gray-500);
+        }
+        .content-body {
+            padding: 2rem;
+            max-height: 600px;
+            overflow-y: auto;
+        }
+        .content-body h2, .content-body h3, .content-body h4 {
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .content-body h2:first-child {
+            margin-top: 0;
+        }
+        .content-body p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        .content-body ul, .content-body ol {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+        .content-body li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        .quiz-section {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--gray-200);
+        }
+        .quiz-section h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        .quiz-question {
+            background: var(--gray-50);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            margin-bottom: 1rem;
+        }
+        .quiz-question .question-text {
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .quiz-option {
+            padding: 0.75rem 1rem;
+            background: white;
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius);
+        }
+        .quiz-option.correct {
+            background: #d1fae5;
+            border-color: #10b981;
+        }
+        .quiz-explanation {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #fef3c7;
+            border-radius: var(--radius);
+            font-size: 0.875rem;
+        }
+        
+        .final-exam-preview {
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .demo-banner {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 1024px) {
+            .curriculum-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 768px) {
+            .admin-sidebar {
+                display: none;
+            }
+            .admin-main {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-banner">
+        📚 CURRICULUM PREVIEW MODE - View course content and structure
+    </div>
+    
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-logo">Quick Pass Admin</div>
+            <ul class="sidebar-menu">
+                <li><a href="index.html" data-tab="dashboard">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6z"></path>
+                    </svg>
+                    Dashboard
+                </a></li>
+                <li><a href="curriculum.html" class="active">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                    </svg>
+                    Curriculum
+                </a></li>
+            </ul>
+            <div style="margin-top: auto; padding-top: 2rem;">
+                <a href="../index.html" style="color: #94a3b8; text-decoration: none;">
+                    ← Back to Site
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <header class="admin-header">
+                <h1>Florida Curriculum Manager</h1>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <span>Preview Mode</span>
+                </div>
+            </header>
+
+            <div class="admin-content">
+                <!-- Course Selector -->
+                <div class="course-selector">
+                    <div class="course-tab active" data-course="4hour">
+                        <h3>4-Hour BDI</h3>
+                        <div class="price">$18.50</div>
+                        <div style="font-size: 0.875rem; margin-top: 0.5rem;">8 Modules</div>
+                    </div>
+                    <div class="course-tab" data-course="8hour">
+                        <h3>8-Hour IDI</h3>
+                        <div class="price">$55.00</div>
+                        <div style="font-size: 0.875rem; margin-top: 0.5rem;">6 Modules</div>
+                    </div>
+                    <div class="course-tab" data-course="12hour">
+                        <h3>12-Hour ADI</h3>
+                        <div class="price">$60.00</div>
+                        <div style="font-size: 0.875rem; margin-top: 0.5rem;">8 Modules</div>
+                    </div>
+                </div>
+
+                <!-- Curriculum Container -->
+                <div class="curriculum-container">
+                    <!-- Modules List -->
+                    <div class="modules-list">
+                        <div class="modules-header">Course Modules</div>
+                        <div id="modulesList">
+                            <!-- Filled by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Content Preview -->
+                    <div class="content-preview">
+                        <div class="content-header">
+                            <h2 id="moduleTitle">Select a module</h2>
+                            <div class="meta">
+                                <span id="moduleDuration">-</span>
+                                <span id="moduleQuizCount">-</span>
+                            </div>
+                        </div>
+                        <div class="content-body" id="moduleContent">
+                            <p style="color: var(--gray-400); text-align: center; padding: 2rem;">
+                                Select a module from the list to preview its content.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Final Exam Preview -->
+                <div class="final-exam-preview">
+                    <h2>📝 Final Exam Overview</h2>
+                    <p id="examInfo">Select a course to see final exam details.</p>
+                    <div id="examQuestions" style="margin-top: 1.5rem;">
+                        <!-- Sample questions shown here -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module">
+        // Import EXPANDED curriculum data with comprehensive content
+        import { floridaCourseDataExpanded as floridaCourseData } from '../db/curriculum-expanded.js';
+        
+        // Course data mapping
+        const courseMap = {
+            '4hour': floridaCourseData.course4Hour,
+            '8hour': floridaCourseData.course8Hour,
+            '12hour': floridaCourseData.course12Hour
+        };
+
+        let currentCourse = '4hour';
+        let currentModuleIndex = 0;
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            loadCourse('4hour');
+
+            // Course tab click handlers
+            document.querySelectorAll('.course-tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    document.querySelectorAll('.course-tab').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    loadCourse(this.dataset.course);
+                });
+            });
+        });
+
+        function loadCourse(courseId) {
+            currentCourse = courseId;
+            const course = courseMap[courseId];
+            
+            // Load modules list
+            const modulesList = document.getElementById('modulesList');
+            modulesList.innerHTML = course.modules.map((module, index) => `
+                <div class="module-item ${index === 0 ? 'active' : ''}" data-index="${index}">
+                    <div class="module-number">Module ${index + 1}</div>
+                    <div class="module-title">${module.title}</div>
+                    <div class="module-duration">⏱ ${module.estimatedMinutes} minutes</div>
+                </div>
+            `).join('');
+
+            // Add click handlers
+            document.querySelectorAll('.module-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    document.querySelectorAll('.module-item').forEach(i => i.classList.remove('active'));
+                    this.classList.add('active');
+                    loadModule(parseInt(this.dataset.index));
+                });
+            });
+
+            // Load first module
+            loadModule(0);
+
+            // Update final exam info
+            const examInfo = document.getElementById('examInfo');
+            examInfo.innerHTML = `
+                <strong>${course.name}</strong><br>
+                • <strong>${course.finalExamQuestions.length}</strong> Questions<br>
+                • <strong>80%</strong> Passing Score Required (${Math.ceil(course.finalExamQuestions.length * 0.8)} correct answers)<br>
+                • Multiple Choice Format<br>
+                • Unlimited Retakes
+            `;
+
+            // Show sample exam questions
+            const examQuestions = document.getElementById('examQuestions');
+            const sampleQuestions = course.finalExamQuestions.slice(0, 3);
+            examQuestions.innerHTML = `
+                <h3>Sample Final Exam Questions:</h3>
+                ${sampleQuestions.map((q, i) => `
+                    <div class="quiz-question">
+                        <div class="question-text">${i + 1}. ${q.questionText}</div>
+                        <div class="quiz-options">
+                            ${q.options.map((opt, oi) => `
+                                <div class="quiz-option ${opt === q.correctAnswer ? 'correct' : ''}">
+                                    ${String.fromCharCode(65 + oi)}. ${opt}
+                                    ${opt === q.correctAnswer ? ' ✓' : ''}
+                                </div>
+                            `).join('')}
+                        </div>
+                        <div class="quiz-explanation">
+                            <strong>Explanation:</strong> ${q.explanation}
+                        </div>
+                    </div>
+                `).join('')}
+                <p style="margin-top: 1rem; color: var(--gray-500);">
+                    ... and ${course.finalExamQuestions.length - 3} more questions
+                </p>
+            `;
+        }
+
+        function loadModule(index) {
+            currentModuleIndex = index;
+            const course = courseMap[currentCourse];
+            const module = course.modules[index];
+
+            document.getElementById('moduleTitle').textContent = module.title;
+            document.getElementById('moduleDuration').textContent = `⏱ ${module.estimatedMinutes} minutes`;
+            document.getElementById('moduleQuizCount').textContent = module.quizQuestions ? 
+                `📝 ${module.quizQuestions.length} Quiz Questions` : 'No Quiz';
+
+            // Build content HTML
+            let contentHtml = module.content;
+
+            // Add quiz questions if available
+            if (module.quizQuestions && module.quizQuestions.length > 0) {
+                contentHtml += `
+                    <div class="quiz-section">
+                        <h3>📝 Module Quiz Questions</h3>
+                        ${module.quizQuestions.map((q, i) => `
+                            <div class="quiz-question">
+                                <div class="question-text">${i + 1}. ${q.questionText}</div>
+                                <div class="quiz-options">
+                                    ${q.options.map((opt, oi) => `
+                                        <div class="quiz-option ${opt === q.correctAnswer ? 'correct' : ''}">
+                                            ${String.fromCharCode(65 + oi)}. ${opt}
+                                            ${opt === q.correctAnswer ? ' ✓' : ''}
+                                        </div>
+                                    `).join('')}
+                                </div>
+                                <div class="quiz-explanation">
+                                    <strong>Explanation:</strong> ${q.explanation}
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+            }
+
+            document.getElementById('moduleContent').innerHTML = contentHtml;
+        }
+    </script>
+</body>
+</html>

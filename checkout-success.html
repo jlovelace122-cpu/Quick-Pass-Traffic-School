@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful - Quick Pass Traffic School</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .success-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .success-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #dcfce7 0%, #f0fdf4 100%);
+        }
+        .success-card {
+            background: white;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
+            max-width: 500px;
+            width: 100%;
+            padding: 3rem;
+            text-align: center;
+        }
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: #dcfce7;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+        .success-icon svg {
+            width: 40px;
+            height: 40px;
+            color: #16a34a;
+        }
+        .success-card h1 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            color: #166534;
+        }
+        .success-card p {
+            color: var(--gray-600);
+            margin-bottom: 1.5rem;
+        }
+        .order-details {
+            background: var(--gray-50);
+            border-radius: var(--radius);
+            padding: 1.25rem;
+            margin: 1.5rem 0;
+            text-align: left;
+        }
+        .order-details h3 {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+        }
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        .order-item:last-child {
+            margin-bottom: 0;
+        }
+        .next-steps {
+            text-align: left;
+            margin: 1.5rem 0;
+        }
+        .next-steps h3 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        .next-steps ol {
+            padding-left: 1.25rem;
+        }
+        .next-steps li {
+            margin-bottom: 0.75rem;
+            color: var(--gray-600);
+        }
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        .confetti {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body class="success-page">
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="Assets/quick pass traffic school logo.png" alt="Quick Pass Traffic School Logo">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="success-container">
+        <div class="success-card">
+            <div class="success-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+            </div>
+            
+            <h1>Payment Successful!</h1>
+            <p>Thank you for enrolling. You now have instant access to your course.</p>
+
+            <div class="order-details">
+                <h3>Order Details</h3>
+                <div class="order-item">
+                    <span>Course</span>
+                    <span id="courseName">Loading...</span>
+                </div>
+                <div class="order-item">
+                    <span>Order Date</span>
+                    <span id="orderDate">-</span>
+                </div>
+                <div class="order-item">
+                    <span>Access Period</span>
+                    <span>6 Months</span>
+                </div>
+            </div>
+
+            <div class="next-steps">
+                <h3>What's Next?</h3>
+                <ol>
+                    <li><strong>Upload your ID</strong> - Required before starting the course</li>
+                    <li><strong>Start learning</strong> - Complete all modules at your own pace</li>
+                    <li><strong>Pass the quizzes</strong> - Score 70% on each module quiz</li>
+                    <li><strong>Take the final exam</strong> - Score 80% to pass</li>
+                    <li><strong>Get your certificate</strong> - Download immediately after passing</li>
+                </ol>
+            </div>
+
+            <div class="action-buttons">
+                <a href="dashboard/index.html" class="btn btn-primary btn-large">Go to My Dashboard</a>
+                <a href="index.html" class="btn btn-secondary">Return to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get course info from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const courseSlug = urlParams.get('course');
+
+        // Set order date
+        document.getElementById('orderDate').textContent = new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+
+        // Fetch course name
+        if (courseSlug) {
+            fetch(`/api/courses/${courseSlug}`)
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById('courseName').textContent = data.name || 'Florida Traffic School';
+                })
+                .catch(() => {
+                    document.getElementById('courseName').textContent = 'Florida Traffic School';
+                });
+        }
+
+        // Simple confetti effect
+        function createConfetti() {
+            const colors = ['#155dfc', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6'];
+            const confettiCount = 100;
+            
+            for (let i = 0; i < confettiCount; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.style.cssText = `
+                        position: fixed;
+                        width: 10px;
+                        height: 10px;
+                        background: ${colors[Math.floor(Math.random() * colors.length)]};
+                        left: ${Math.random() * 100}vw;
+                        top: -10px;
+                        border-radius: ${Math.random() > 0.5 ? '50%' : '0'};
+                        pointer-events: none;
+                        z-index: 1000;
+                        animation: fall ${2 + Math.random() * 3}s linear forwards;
+                    `;
+                    document.body.appendChild(confetti);
+                    
+                    setTimeout(() => confetti.remove(), 5000);
+                }, i * 20);
+            }
+        }
+
+        // Add animation keyframes
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fall {
+                to {
+                    transform: translateY(100vh) rotate(720deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Trigger confetti on load
+        createConfetti();
+    </script>
+</body>
+</html>

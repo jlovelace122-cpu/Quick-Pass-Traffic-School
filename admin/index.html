@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Quick Pass Traffic School</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .admin-layout {
+            display: flex;
+            min-height: 100vh;
+        }
+        .admin-sidebar {
+            width: 250px;
+            background: #1e293b;
+            color: white;
+            padding: 1.5rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            overflow-y: auto;
+        }
+        .admin-main {
+            flex: 1;
+            margin-left: 250px;
+            background: var(--gray-50);
+            min-height: 100vh;
+        }
+        .admin-header {
+            background: white;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid var(--gray-200);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .admin-content {
+            padding: 2rem;
+        }
+        .sidebar-logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .sidebar-menu {
+            list-style: none;
+        }
+        .sidebar-menu li {
+            margin-bottom: 0.5rem;
+        }
+        .sidebar-menu a {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius);
+            color: #94a3b8;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .sidebar-menu a:hover, .sidebar-menu a.active {
+            background: rgba(255,255,255,0.1);
+            color: white;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+        .stat-card h3 {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+            margin-bottom: 0.5rem;
+        }
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        .stat-change {
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+        .stat-change.positive { color: var(--success); }
+        .stat-change.negative { color: var(--error); }
+        .data-table-container {
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+        }
+        .table-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        .table-header h2 {
+            font-size: 1.125rem;
+        }
+        .table-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .data-table th, .data-table td {
+            padding: 1rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        .data-table th {
+            background: var(--gray-50);
+            font-weight: 600;
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+        .data-table tr:hover {
+            background: var(--gray-50);
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-full);
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        .status-badge.completed { background: #dcfce7; color: #166534; }
+        .status-badge.active { background: #dbeafe; color: #1e40af; }
+        .status-badge.pending { background: #fef3c7; color: #92400e; }
+        .status-badge.refunded { background: #fee2e2; color: #991b1b; }
+        .tab-nav {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .tab-btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            background: white;
+            border-radius: var(--radius);
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--gray-600);
+            transition: all 0.2s;
+        }
+        .tab-btn:hover {
+            background: var(--gray-100);
+        }
+        .tab-btn.active {
+            background: var(--primary-color);
+            color: white;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .search-filter {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .search-filter input, .search-filter select {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--gray-300);
+            border-radius: var(--radius);
+        }
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .modal-overlay.active {
+            display: flex;
+        }
+        .modal-content {
+            background: white;
+            border-radius: var(--radius-lg);
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        .modal-body {
+            padding: 1.5rem;
+        }
+        .modal-footer {
+            padding: 1rem 1.5rem;
+            border-top: 1px solid var(--gray-200);
+            display: flex;
+            justify-content: flex-end;
+            gap: 0.5rem;
+        }
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--gray-100);
+        }
+        .detail-label { color: var(--gray-500); }
+        .id-preview { max-width: 300px; border-radius: var(--radius); }
+        @media (max-width: 768px) {
+            .admin-sidebar {
+                display: none;
+            }
+            .admin-main {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-logo">Quick Pass Admin</div>
+            <ul class="sidebar-menu">
+                <li><a href="#" class="active" data-tab="dashboard">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path>
+                    </svg>
+                    Dashboard
+                </a></li>
+                <li><a href="#" data-tab="students">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                    </svg>
+                    Students
+                </a></li>
+                <li><a href="#" data-tab="enrollments">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                    </svg>
+                    Enrollments
+                </a></li>
+                <li><a href="#" data-tab="payments">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
+                    </svg>
+                    Payments
+                </a></li>
+                <li><a href="#" data-tab="id-verification">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"></path>
+                    </svg>
+                    ID Verification
+                </a></li>
+                <li><a href="#" data-tab="certificates">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                    </svg>
+                    Certificates
+                </a></li>
+                <li><a href="#" data-tab="reports">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                    </svg>
+                    Reports
+                </a></li>
+            </ul>
+            <div style="margin-top: auto; padding-top: 2rem;">
+                <a href="../index.html" style="color: #94a3b8; text-decoration: none;">
+                    ← Back to Site
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <header class="admin-header">
+                <h1 id="pageTitle">Dashboard</h1>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <span id="adminName">Admin</span>
+                    <button onclick="logout()" class="btn btn-secondary">Logout</button>
+                </div>
+            </header>
+
+            <div class="admin-content">
+                <!-- Dashboard Tab -->
+                <div class="tab-content active" id="dashboard">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h3>Total Students</h3>
+                            <div class="stat-value" id="statStudents">-</div>
+                            <div class="stat-change positive" id="statStudentsChange"></div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Active Enrollments</h3>
+                            <div class="stat-value" id="statEnrollments">-</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Revenue (30 days)</h3>
+                            <div class="stat-value" id="statRevenue">-</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Pending ID Verifications</h3>
+                            <div class="stat-value" id="statPendingIds">-</div>
+                        </div>
+                    </div>
+
+                    <div class="data-table-container">
+                        <div class="table-header">
+                            <h2>Recent Enrollments</h2>
+                        </div>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Student</th>
+                                    <th>Course</th>
+                                    <th>Progress</th>
+                                    <th>Enrolled</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recentEnrollmentsTable">
+                                <tr><td colspan="5" style="text-align: center;">Loading...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Students Tab -->
+                <div class="tab-content" id="students">
+                    <div class="search-filter">
+                        <input type="text" placeholder="Search students..." id="studentSearch" onkeyup="searchStudents()">
+                        <select id="studentFilter" onchange="filterStudents()">
+                            <option value="">All Status</option>
+                            <option value="verified">ID Verified</option>
+                            <option value="pending">Pending Verification</option>
+                        </select>
+                    </div>
+                    <div class="data-table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>ID Status</th>
+                                    <th>Registered</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="studentsTable">
+                                <tr><td colspan="6" style="text-align: center;">Loading...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Enrollments Tab -->
+                <div class="tab-content" id="enrollments">
+                    <div class="search-filter">
+                        <input type="text" placeholder="Search by student or course..." id="enrollmentSearch">
+                        <select id="enrollmentStatus" onchange="filterEnrollments()">
+                            <option value="">All Status</option>
+                            <option value="active">Active</option>
+                            <option value="completed">Completed</option>
+                            <option value="expired">Expired</option>
+                        </select>
+                    </div>
+                    <div class="data-table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Student</th>
+                                    <th>Course</th>
+                                    <th>Progress</th>
+                                    <th>Started</th>
+                                    <th>Expires</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="enrollmentsTable">
+                                <tr><td colspan="6" style="text-align: center;">Loading...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Payments Tab -->
+                <div class="tab-content" id="payments">
+                    <div class="search-filter">
+                        <input type="text" placeholder="Search payments..." id="paymentSearch">
+                        <select id="paymentStatus" onchange="filterPayments()">
+                            <option value="">All Status</option>
+                            <option value="succeeded">Succeeded</option>
+                            <option value="refunded">Refunded</option>
+                            <option value="pending">Pending</option>
+                        </select>
+                    </div>
+                    <div class="data-table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Student</th>
+                                    <th>Course</th>
+                                    <th>Amount</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="paymentsTable">
+                                <tr><td colspan="6" style="text-align: center;">Loading...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- ID Verification Tab -->
+                <div class="tab-content" id="id-verification">
+                    <div class="data-table-container">
+                        <div class="table-header">
+                            <h2>Pending ID Verifications</h2>
+                        </div>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Student</th>
+                                    <th>Email</th>
+                                    <th>Uploaded</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="idVerificationTable">
+                                <tr><td colspan="4" style="text-align: center;">Loading...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Certificates Tab -->
+                <div class="tab-content" id="certificates">
+                    <div class="search-filter">
+                        <input type="text" placeholder="Search certificates..." id="certificateSearch">
+                    </div>
+                    <div class="data-table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Certificate #</th>
+                                    <th>Student</th>
+                                    <th>Course</th>
+                                    <th>Issue Date</th>
+                                    <th>Score</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="certificatesTable">
+                                <tr><td colspan="6" style="text-align: center;">Loading...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Reports Tab -->
+                <div class="tab-content" id="reports">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h3>Report Type</h3>
+                            <select id="reportType" style="width: 100%; padding: 0.5rem; margin-top: 0.5rem;">
+                                <option value="enrollments">Enrollments Report</option>
+                                <option value="completions">Completions Report</option>
+                                <option value="revenue">Revenue Report</option>
+                            </select>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Date Range</h3>
+                            <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
+                                <input type="date" id="reportStartDate" style="flex: 1; padding: 0.5rem;">
+                                <input type="date" id="reportEndDate" style="flex: 1; padding: 0.5rem;">
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Generate</h3>
+                            <button onclick="generateReport()" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
+                                Download Report
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Student Detail Modal -->
+    <div class="modal-overlay" id="studentModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Student Details</h2>
+                <button onclick="closeModal('studentModal')" style="background: none; border: none; font-size: 1.5rem; cursor: pointer;">×</button>
+            </div>
+            <div class="modal-body" id="studentModalBody">
+                <!-- Filled by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ID Verification Modal -->
+    <div class="modal-overlay" id="idModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Verify ID Document</h2>
+                <button onclick="closeModal('idModal')" style="background: none; border: none; font-size: 1.5rem; cursor: pointer;">×</button>
+            </div>
+            <div class="modal-body" id="idModalBody">
+                <!-- Filled by JS -->
+            </div>
+            <div class="modal-footer">
+                <button onclick="rejectId()" class="btn btn-secondary">Reject</button>
+                <button onclick="approveId()" class="btn btn-primary">Approve</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Refund Modal -->
+    <div class="modal-overlay" id="refundModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Process Refund</h2>
+                <button onclick="closeModal('refundModal')" style="background: none; border: none; font-size: 1.5rem; cursor: pointer;">×</button>
+            </div>
+            <div class="modal-body" id="refundModalBody">
+                <!-- Filled by JS -->
+            </div>
+            <div class="modal-footer">
+                <button onclick="closeModal('refundModal')" class="btn btn-secondary">Cancel</button>
+                <button onclick="confirmRefund()" class="btn btn-primary" style="background: var(--error);">Process Refund</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const token = localStorage.getItem('auth_token');
+        const user = JSON.parse(localStorage.getItem('user') || '{}');
+
+        // Check if admin
+        if (!token || user.role !== 'admin') {
+            window.location.href = '../login.html';
+        }
+
+        document.getElementById('adminName').textContent = `${user.firstName} ${user.lastName}`;
+
+        // Tab navigation
+        document.querySelectorAll('.sidebar-menu a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const tab = link.dataset.tab;
+                
+                // Update active state
+                document.querySelectorAll('.sidebar-menu a').forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                
+                // Show tab content
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                document.getElementById(tab).classList.add('active');
+                
+                // Update title
+                document.getElementById('pageTitle').textContent = link.textContent.trim();
+                
+                // Load data for tab
+                loadTabData(tab);
+            });
+        });
+
+        // Load tab data
+        function loadTabData(tab) {
+            switch(tab) {
+                case 'dashboard': loadDashboard(); break;
+                case 'students': loadStudents(); break;
+                case 'enrollments': loadEnrollments(); break;
+                case 'payments': loadPayments(); break;
+                case 'id-verification': loadIdVerifications(); break;
+                case 'certificates': loadCertificates(); break;
+            }
+        }
+
+        // Load dashboard
+        async function loadDashboard() {
+            try {
+                const response = await fetch('/api/admin/dashboard', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                const data = await response.json();
+
+                document.getElementById('statStudents').textContent = data.totalStudents || 0;
+                document.getElementById('statEnrollments').textContent = data.activeEnrollments || 0;
+                document.getElementById('statRevenue').textContent = `$${((data.revenueThisMonth || 0) / 100).toFixed(2)}`;
+                document.getElementById('statPendingIds').textContent = data.pendingIdVerifications || 0;
+
+                // Recent enrollments
+                if (data.recentEnrollments) {
+                    document.getElementById('recentEnrollmentsTable').innerHTML = data.recentEnrollments.map(e => `
+                        <tr>
+                            <td>${e.studentName}</td>
+                            <td>${e.courseName}</td>
+                            <td>${e.progress}%</td>
+                            <td>${new Date(e.enrolledAt).toLocaleDateString()}</td>
+                            <td><span class="status-badge ${e.status}">${e.status}</span></td>
+                        </tr>
+                    `).join('') || '<tr><td colspan="5">No recent enrollments</td></tr>';
+                }
+            } catch (error) {
+                console.error('Error loading dashboard:', error);
+            }
+        }
+
+        // Load students
+        async function loadStudents() {
+            try {
+                const response = await fetch('/api/admin/students', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                const data = await response.json();
+
+                document.getElementById('studentsTable').innerHTML = data.students?.map(s => `
+                    <tr>
+                        <td>${s.firstName} ${s.lastName}</td>
+                        <td>${s.email}</td>
+                        <td>${s.phone || '-'}</td>
+                        <td><span class="status-badge ${s.idVerified ? 'completed' : 'pending'}">${s.idVerified ? 'Verified' : 'Pending'}</span></td>
+                        <td>${new Date(s.createdAt).toLocaleDateString()}</td>
+                        <td>
+                            <button onclick="viewStudent('${s.id}')" class="btn btn-secondary btn-small">View</button>
+                        </td>
+                    </tr>
+                `).join('') || '<tr><td colspan="6">No students found</td></tr>';
+            } catch (error) {
+                console.error('Error loading students:', error);
+            }
+        }
+
+        // Load enrollments
+        async function loadEnrollments() {
+            try {
+                const response = await fetch('/api/admin/enrollments', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                const data = await response.json();
+
+                document.getElementById('enrollmentsTable').innerHTML = data.enrollments?.map(e => `
+                    <tr>
+                        <td>${e.studentName}</td>
+                        <td>${e.courseName}</td>
+                        <td>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <div style="flex: 1; height: 6px; background: var(--gray-200); border-radius: 3px; overflow: hidden;">
+                                    <div style="width: ${e.progress}%; height: 100%; background: var(--primary-color);"></div>
+                                </div>
+                                <span>${e.progress}%</span>
+                            </div>
+                        </td>
+                        <td>${new Date(e.enrolledAt).toLocaleDateString()}</td>
+                        <td>${new Date(e.expiresAt).toLocaleDateString()}</td>
+                        <td><span class="status-badge ${e.status}">${e.status}</span></td>
+                    </tr>
+                `).join('') || '<tr><td colspan="6">No enrollments found</td></tr>';
+            } catch (error) {
+                console.error('Error loading enrollments:', error);
+            }
+        }
+
+        // Load payments
+        async function loadPayments() {
+            try {
+                const response = await fetch('/api/admin/payments', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                const data = await response.json();
+
+                document.getElementById('paymentsTable').innerHTML = data.payments?.map(p => `
+                    <tr>
+                        <td>${p.studentName}</td>
+                        <td>${p.courseName}</td>
+                        <td>$${(p.amount / 100).toFixed(2)}</td>
+                        <td>${new Date(p.createdAt).toLocaleDateString()}</td>
+                        <td><span class="status-badge ${p.status}">${p.status}</span></td>
+                        <td>
+                            ${p.status === 'succeeded' ? `
+                                <button onclick="showRefundModal('${p.id}', '${p.studentName}', ${p.amount})" class="btn btn-secondary btn-small">Refund</button>
+                            ` : '-'}
+                        </td>
+                    </tr>
+                `).join('') || '<tr><td colspan="6">No payments found</td></tr>';
+            } catch (error) {
+                console.error('Error loading payments:', error);
+            }
+        }
+
+        // Load ID verifications
+        async function loadIdVerifications() {
+            try {
+                const response = await fetch('/api/admin/id-documents?status=pending', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                const data = await response.json();
+
+                document.getElementById('idVerificationTable').innerHTML = data.documents?.map(d => `
+                    <tr>
+                        <td>${d.studentName}</td>
+                        <td>${d.email}</td>
+                        <td>${new Date(d.uploadedAt).toLocaleDateString()}</td>
+                        <td>
+                            <button onclick="viewIdDocument('${d.id}')" class="btn btn-primary btn-small">Review</button>
+                        </td>
+                    </tr>
+                `).join('') || '<tr><td colspan="4">No pending verifications</td></tr>';
+            } catch (error) {
+                console.error('Error loading ID verifications:', error);
+            }
+        }
+
+        // Load certificates
+        async function loadCertificates() {
+            try {
+                const response = await fetch('/api/admin/certificates', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                const data = await response.json();
+
+                document.getElementById('certificatesTable').innerHTML = data.certificates?.map(c => `
+                    <tr>
+                        <td>${c.certificateNumber}</td>
+                        <td>${c.studentName}</td>
+                        <td>${c.courseName}</td>
+                        <td>${new Date(c.issuedAt).toLocaleDateString()}</td>
+                        <td>${c.score}%</td>
+                        <td>
+                            <a href="/api/certificate/generate?id=${c.id}" target="_blank" class="btn btn-secondary btn-small">View</a>
+                        </td>
+                    </tr>
+                `).join('') || '<tr><td colspan="6">No certificates found</td></tr>';
+            } catch (error) {
+                console.error('Error loading certificates:', error);
+            }
+        }
+
+        // View student details
+        async function viewStudent(studentId) {
+            try {
+                const response = await fetch(`/api/admin/students/${studentId}`, {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                const student = await response.json();
+
+                document.getElementById('studentModalBody').innerHTML = `
+                    <div class="detail-row">
+                        <span class="detail-label">Name</span>
+                        <span>${student.firstName} ${student.lastName}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Email</span>
+                        <span>${student.email}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Phone</span>
+                        <span>${student.phone || '-'}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">ID Status</span>
+                        <span class="status-badge ${student.idVerified ? 'completed' : 'pending'}">${student.idVerified ? 'Verified' : 'Not Verified'}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Registered</span>
+                        <span>${new Date(student.createdAt).toLocaleString()}</span>
+                    </div>
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem;">Enrollments</h3>
+                    ${student.enrollments?.map(e => `
+                        <div style="background: var(--gray-50); padding: 1rem; border-radius: var(--radius); margin-bottom: 0.5rem;">
+                            <strong>${e.courseName}</strong><br>
+                            <small>Progress: ${e.progress}% | Status: ${e.status}</small>
+                        </div>
+                    `).join('') || '<p>No enrollments</p>'}
+                `;
+                document.getElementById('studentModal').classList.add('active');
+            } catch (error) {
+                console.error('Error loading student:', error);
+            }
+        }
+
+        let currentIdDocId = null;
+
+        // View ID document
+        async function viewIdDocument(docId) {
+            currentIdDocId = docId;
+            try {
+                const response = await fetch(`/api/admin/id-documents/${docId}`, {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                const doc = await response.json();
+
+                document.getElementById('idModalBody').innerHTML = `
+                    <div class="detail-row">
+                        <span class="detail-label">Student</span>
+                        <span>${doc.studentName}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Email</span>
+                        <span>${doc.email}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Uploaded</span>
+                        <span>${new Date(doc.uploadedAt).toLocaleString()}</span>
+                    </div>
+                    <div style="margin-top: 1rem; text-align: center;">
+                        <img src="${doc.imageUrl}" alt="ID Document" class="id-preview">
+                    </div>
+                `;
+                document.getElementById('idModal').classList.add('active');
+            } catch (error) {
+                console.error('Error loading ID document:', error);
+            }
+        }
+
+        // Approve ID
+        async function approveId() {
+            if (!currentIdDocId) return;
+            try {
+                await fetch(`/api/admin/id-documents/${currentIdDocId}/verify`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({ status: 'approved' })
+                });
+                closeModal('idModal');
+                loadIdVerifications();
+                loadDashboard();
+            } catch (error) {
+                console.error('Error approving ID:', error);
+            }
+        }
+
+        // Reject ID
+        async function rejectId() {
+            if (!currentIdDocId) return;
+            const reason = prompt('Enter rejection reason:');
+            if (!reason) return;
+            
+            try {
+                await fetch(`/api/admin/id-documents/${currentIdDocId}/verify`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({ status: 'rejected', rejectionReason: reason })
+                });
+                closeModal('idModal');
+                loadIdVerifications();
+            } catch (error) {
+                console.error('Error rejecting ID:', error);
+            }
+        }
+
+        let currentRefundPaymentId = null;
+
+        // Show refund modal
+        function showRefundModal(paymentId, studentName, amount) {
+            currentRefundPaymentId = paymentId;
+            document.getElementById('refundModalBody').innerHTML = `
+                <p>Are you sure you want to refund this payment?</p>
+                <div class="detail-row">
+                    <span class="detail-label">Student</span>
+                    <span>${studentName}</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Amount</span>
+                    <span>$${(amount / 100).toFixed(2)}</span>
+                </div>
+                <div style="margin-top: 1rem;">
+                    <label>Refund Reason:</label>
+                    <textarea id="refundReason" style="width: 100%; padding: 0.5rem; margin-top: 0.5rem;" rows="3"></textarea>
+                </div>
+            `;
+            document.getElementById('refundModal').classList.add('active');
+        }
+
+        // Confirm refund
+        async function confirmRefund() {
+            if (!currentRefundPaymentId) return;
+            const reason = document.getElementById('refundReason').value;
+            
+            try {
+                const response = await fetch(`/api/admin/payments/${currentRefundPaymentId}/refund`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({ reason })
+                });
+
+                if (!response.ok) throw new Error('Refund failed');
+                
+                closeModal('refundModal');
+                loadPayments();
+                alert('Refund processed successfully');
+            } catch (error) {
+                console.error('Error processing refund:', error);
+                alert('Failed to process refund');
+            }
+        }
+
+        // Generate report
+        async function generateReport() {
+            const type = document.getElementById('reportType').value;
+            const startDate = document.getElementById('reportStartDate').value;
+            const endDate = document.getElementById('reportEndDate').value;
+
+            if (!startDate || !endDate) {
+                alert('Please select date range');
+                return;
+            }
+
+            window.open(`/api/admin/reports/${type}?startDate=${startDate}&endDate=${endDate}&format=csv`, '_blank');
+        }
+
+        // Close modal
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+        }
+
+        // Close modal on overlay click
+        document.querySelectorAll('.modal-overlay').forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                }
+            });
+        });
+
+        // Logout
+        function logout() {
+            localStorage.removeItem('auth_token');
+            localStorage.removeItem('user');
+            window.location.href = '../login.html';
+        }
+
+        // Initialize
+        loadDashboard();
+
+        // Set default report dates
+        const today = new Date();
+        const thirtyDaysAgo = new Date(today.getTime() - 30 * 24 * 60 * 60 * 1000);
+        document.getElementById('reportEndDate').value = today.toISOString().split('T')[0];
+        document.getElementById('reportStartDate').value = thirtyDaysAgo.toISOString().split('T')[0];
+    </script>
+</body>
+</html>

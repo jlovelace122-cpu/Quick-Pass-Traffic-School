@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard - Quick Pass Traffic School</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .dashboard-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        .welcome-text h1 {
+            font-size: 1.75rem;
+            margin-bottom: 0.25rem;
+        }
+        .welcome-text p {
+            color: var(--gray-500);
+            margin: 0;
+        }
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        @media (min-width: 768px) {
+            .dashboard-grid {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+        .card {
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            padding: 1.5rem;
+        }
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .card-header h2 {
+            font-size: 1.25rem;
+            margin: 0;
+        }
+        .enrollment-card {
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius);
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        .enrollment-card:last-child {
+            margin-bottom: 0;
+        }
+        .enrollment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+        }
+        .enrollment-title {
+            font-weight: 600;
+            color: var(--gray-900);
+        }
+        .enrollment-status {
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-full);
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .status-active {
+            background: #dcfce7;
+            color: #166534;
+        }
+        .status-completed {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+        .status-expired {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+        .progress-bar {
+            height: 8px;
+            background: var(--gray-200);
+            border-radius: var(--radius-full);
+            overflow: hidden;
+            margin: 0.75rem 0;
+        }
+        .progress-fill {
+            height: 100%;
+            background: var(--primary-color);
+            border-radius: var(--radius-full);
+            transition: width 0.3s ease;
+        }
+        .progress-text {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+        }
+        .enrollment-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        .sidebar-card {
+            margin-bottom: 1.5rem;
+        }
+        .profile-summary {
+            text-align: center;
+            padding: 1rem;
+        }
+        .profile-avatar {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+        .profile-name {
+            font-weight: 600;
+            font-size: 1.125rem;
+            margin-bottom: 0.25rem;
+        }
+        .profile-email {
+            color: var(--gray-500);
+            font-size: 0.875rem;
+        }
+        .quick-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .quick-links li {
+            margin-bottom: 0.5rem;
+        }
+        .quick-links a {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem;
+            border-radius: var(--radius);
+            color: var(--gray-700);
+            transition: all 0.2s;
+        }
+        .quick-links a:hover {
+            background: var(--gray-100);
+            color: var(--primary-color);
+        }
+        .certificate-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem;
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius);
+            margin-bottom: 0.5rem;
+        }
+        .certificate-info h4 {
+            margin: 0 0 0.25rem 0;
+            font-size: 0.875rem;
+        }
+        .certificate-info p {
+            margin: 0;
+            font-size: 0.75rem;
+            color: var(--gray-500);
+        }
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: var(--gray-500);
+        }
+        .empty-state svg {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 1rem;
+            stroke: var(--gray-400);
+        }
+        .id-verification-status {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem;
+            border-radius: var(--radius);
+            margin-bottom: 1rem;
+        }
+        .id-verified {
+            background: #dcfce7;
+            color: #166534;
+        }
+        .id-pending {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        .id-required {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem;
+        }
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--gray-200);
+            border-top-color: var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="logo">
+                        <a href="../index.html">
+                            <img src="../Assets/quick pass traffic school logo.png" alt="Quick Pass Traffic School Logo">
+                        </a>
+                    </div>
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="nav-link active">Dashboard</a></li>
+                        <li><a href="../index.html#course-overview" class="nav-link">Courses</a></li>
+                        <li><a href="#" class="nav-link" id="logoutBtn">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="dashboard-container">
+        <div class="dashboard-header">
+            <div class="welcome-text">
+                <h1>Welcome back, <span id="userName">Student</span>!</h1>
+                <p>Track your progress and continue learning</p>
+            </div>
+            <a href="../index.html#course-overview" class="btn btn-primary">Browse Courses</a>
+        </div>
+
+        <div class="dashboard-grid">
+            <!-- Main Content -->
+            <div class="main-content">
+                <!-- ID Verification Status -->
+                <div id="idVerificationBanner" class="id-verification-status id-required" style="display: none;">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                    </svg>
+                    <span id="idVerificationText">Please upload your ID to start courses</span>
+                    <a href="#" class="btn btn-primary" style="margin-left: auto; padding: 0.5rem 1rem; font-size: 0.875rem;">Upload ID</a>
+                </div>
+
+                <!-- Active Enrollments -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2>My Courses</h2>
+                    </div>
+                    <div id="enrollmentsList">
+                        <div class="loading">
+                            <div class="spinner"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificates -->
+                <div class="card" style="margin-top: 1.5rem;">
+                    <div class="card-header">
+                        <h2>My Certificates</h2>
+                    </div>
+                    <div id="certificatesList">
+                        <div class="loading">
+                            <div class="spinner"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Profile Card -->
+                <div class="card sidebar-card">
+                    <div class="profile-summary">
+                        <div class="profile-avatar" id="profileInitials">S</div>
+                        <div class="profile-name" id="profileName">Student Name</div>
+                        <div class="profile-email" id="profileEmail">student@email.com</div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="card sidebar-card">
+                    <div class="card-header">
+                        <h2>Quick Links</h2>
+                    </div>
+                    <ul class="quick-links">
+                        <li>
+                            <a href="#" id="uploadIdLink">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
+                                </svg>
+                                Upload ID Document
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#contact-us">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536"></path>
+                                </svg>
+                                Contact Support
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#faq">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                FAQ
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Need Help Card -->
+                <div class="card sidebar-card" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%); color: white;">
+                    <h3 style="margin-bottom: 0.5rem;">Need Help?</h3>
+                    <p style="font-size: 0.875rem; opacity: 0.9; margin-bottom: 1rem;">Our support team is available 24/7 to assist you.</p>
+                    <button class="btn" style="background: white; color: var(--primary-color); width: 100%;" onclick="openChatbot()">
+                        Chat with Support
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Chat Widget (placeholder) -->
+    <div id="chatWidget" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+        <button onclick="openChatbot()" style="width: 60px; height: 60px; border-radius: 50%; background: var(--primary-color); color: white; border: none; cursor: pointer; box-shadow: var(--shadow-lg); display: flex; align-items: center; justify-content: center;">
+            <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+            </svg>
+        </button>
+    </div>
+
+    <script>
+        // Check authentication
+        const token = localStorage.getItem('auth_token');
+        const user = JSON.parse(localStorage.getItem('user') || '{}');
+
+        if (!token) {
+            window.location.href = '../login.html';
+        }
+
+        // Update UI with user info
+        document.getElementById('userName').textContent = user.firstName || 'Student';
+        document.getElementById('profileName').textContent = `${user.firstName || ''} ${user.lastName || ''}`;
+        document.getElementById('profileEmail').textContent = user.email || '';
+        document.getElementById('profileInitials').textContent = (user.firstName?.[0] || 'S').toUpperCase();
+
+        // Fetch enrollments
+        async function loadEnrollments() {
+            try {
+                const response = await fetch('/api/courses/?state=FL', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+
+                if (!response.ok) throw new Error('Failed to load');
+
+                // For now, show empty state - in production, fetch user's actual enrollments
+                document.getElementById('enrollmentsList').innerHTML = `
+                    <div class="empty-state">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                        <h3>No Active Courses</h3>
+                        <p>You haven't enrolled in any courses yet.</p>
+                        <a href="../index.html#course-overview" class="btn btn-primary" style="margin-top: 1rem;">Browse Courses</a>
+                    </div>
+                `;
+            } catch (error) {
+                console.error('Error loading enrollments:', error);
+            }
+        }
+
+        // Fetch certificates
+        async function loadCertificates() {
+            try {
+                const response = await fetch('/api/certificate/list', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.certificates && data.certificates.length > 0) {
+                        document.getElementById('certificatesList').innerHTML = data.certificates.map(cert => `
+                            <div class="certificate-item">
+                                <div class="certificate-info">
+                                    <h4>${cert.courseName}</h4>
+                                    <p>Issued: ${new Date(cert.issuedAt).toLocaleDateString()}</p>
+                                </div>
+                                <a href="/api/certificate/generate?id=${cert.id}" target="_blank" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Download</a>
+                            </div>
+                        `).join('');
+                    } else {
+                        document.getElementById('certificatesList').innerHTML = `
+                            <p style="color: var(--gray-500); text-align: center; padding: 1rem;">No certificates yet. Complete a course to earn your certificate!</p>
+                        `;
+                    }
+                }
+            } catch (error) {
+                console.error('Error loading certificates:', error);
+            }
+        }
+
+        // Check ID verification status
+        async function checkIdStatus() {
+            try {
+                const response = await fetch('/api/id-upload/status', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    const banner = document.getElementById('idVerificationBanner');
+                    const text = document.getElementById('idVerificationText');
+
+                    if (data.isVerified) {
+                        banner.className = 'id-verification-status id-verified';
+                        text.textContent = 'Your ID has been verified';
+                        banner.querySelector('a').style.display = 'none';
+                    } else if (data.documents && data.documents.some(d => d.status === 'pending')) {
+                        banner.className = 'id-verification-status id-pending';
+                        text.textContent = 'Your ID is pending verification';
+                        banner.querySelector('a').textContent = 'View Status';
+                    } else {
+                        banner.className = 'id-verification-status id-required';
+                        text.textContent = 'Please upload your ID to start courses';
+                    }
+                    banner.style.display = 'flex';
+                }
+            } catch (error) {
+                console.error('Error checking ID status:', error);
+            }
+        }
+
+        // Logout
+        document.getElementById('logoutBtn').addEventListener('click', (e) => {
+            e.preventDefault();
+            localStorage.removeItem('auth_token');
+            localStorage.removeItem('user');
+            window.location.href = '../index.html';
+        });
+
+        // Open chatbot
+        function openChatbot() {
+            alert('Use the chat icon in the bottom right corner, or email support@quickpasstrafficschool.com');
+        }
+
+        // Load data
+        loadEnrollments();
+        loadCertificates();
+        checkIdStatus();
+    </script>
+</body>
+</html>

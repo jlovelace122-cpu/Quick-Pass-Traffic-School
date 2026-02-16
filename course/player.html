@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Player - Quick Pass Traffic School</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .course-layout {
+            display: flex;
+            min-height: calc(100vh - 70px);
+        }
+        .course-sidebar {
+            width: 320px;
+            background: white;
+            border-right: 1px solid var(--gray-200);
+            overflow-y: auto;
+            flex-shrink: 0;
+        }
+        .course-main {
+            flex: 1;
+            overflow-y: auto;
+            background: var(--gray-50);
+        }
+        .sidebar-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--gray-200);
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 10;
+        }
+        .sidebar-header h2 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.875rem;
+            color: var(--gray-500);
+            margin-bottom: 0.5rem;
+        }
+        .progress-bar-sidebar {
+            height: 6px;
+            background: var(--gray-200);
+            border-radius: var(--radius-full);
+            overflow: hidden;
+        }
+        .progress-fill-sidebar {
+            height: 100%;
+            background: var(--primary-color);
+            transition: width 0.3s;
+        }
+        .module-list {
+            padding: 1rem;
+        }
+        .module-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-bottom: 0.25rem;
+        }
+        .module-item:hover {
+            background: var(--gray-100);
+        }
+        .module-item.active {
+            background: #dbeafe;
+        }
+        .module-item.completed {
+            opacity: 0.7;
+        }
+        .module-status {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .module-status.not-started {
+            border: 2px solid var(--gray-300);
+            color: var(--gray-500);
+        }
+        .module-status.in-progress {
+            background: var(--primary-color);
+            color: white;
+        }
+        .module-status.completed {
+            background: var(--success);
+            color: white;
+        }
+        .module-info {
+            flex: 1;
+        }
+        .module-title {
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+        .module-meta {
+            font-size: 0.75rem;
+            color: var(--gray-500);
+        }
+        .content-area {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .content-header {
+            margin-bottom: 2rem;
+        }
+        .content-header h1 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+        .content-meta {
+            display: flex;
+            gap: 1rem;
+            color: var(--gray-500);
+            font-size: 0.875rem;
+        }
+        .content-body {
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            padding: 2rem;
+        }
+        .content-body h2 {
+            font-size: 1.5rem;
+            margin: 1.5rem 0 1rem;
+        }
+        .content-body h3 {
+            font-size: 1.25rem;
+            margin: 1.25rem 0 0.75rem;
+        }
+        .content-body p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        .content-body ul, .content-body ol {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+        .content-body li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        .content-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-200);
+        }
+        .quiz-section {
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        .quiz-section h2 {
+            margin-bottom: 1.5rem;
+        }
+        .quiz-question {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        .quiz-question:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        .question-text {
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        .question-number {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        .options-list {
+            list-style: none;
+            padding: 0;
+        }
+        .option-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius);
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .option-item:hover {
+            border-color: var(--primary-color);
+            background: #eff6ff;
+        }
+        .option-item.selected {
+            border-color: var(--primary-color);
+            background: #dbeafe;
+        }
+        .option-item.correct {
+            border-color: var(--success);
+            background: #dcfce7;
+        }
+        .option-item.incorrect {
+            border-color: var(--error);
+            background: #fee2e2;
+        }
+        .option-radio {
+            width: 18px;
+            height: 18px;
+            border: 2px solid var(--gray-300);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .option-item.selected .option-radio {
+            border-color: var(--primary-color);
+            background: var(--primary-color);
+        }
+        .quiz-result {
+            text-align: center;
+            padding: 2rem;
+            background: var(--gray-50);
+            border-radius: var(--radius-lg);
+            margin-top: 1rem;
+        }
+        .quiz-result.passed {
+            background: #dcfce7;
+        }
+        .quiz-result.failed {
+            background: #fee2e2;
+        }
+        .final-exam-banner {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .mobile-sidebar-toggle {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 100;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+        }
+        @media (max-width: 768px) {
+            .course-sidebar {
+                position: fixed;
+                left: -320px;
+                top: 70px;
+                bottom: 0;
+                z-index: 100;
+                transition: left 0.3s;
+            }
+            .course-sidebar.open {
+                left: 0;
+            }
+            .mobile-sidebar-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .content-area {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="logo">
+                        <a href="../index.html">
+                            <img src="../Assets/quick pass traffic school logo.png" alt="Quick Pass Traffic School Logo">
+                        </a>
+                    </div>
+                    <ul class="nav-menu">
+                        <li><a href="../dashboard/index.html" class="nav-link">Dashboard</a></li>
+                        <li><a href="#" class="nav-link" id="logoutBtn">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="course-layout">
+        <!-- Sidebar -->
+        <aside class="course-sidebar" id="courseSidebar">
+            <div class="sidebar-header">
+                <h2 id="courseTitle">Loading Course...</h2>
+                <div class="progress-info">
+                    <span id="progressText">0% Complete</span>
+                    <span id="moduleCount">0/0 Modules</span>
+                </div>
+                <div class="progress-bar-sidebar">
+                    <div class="progress-fill-sidebar" id="progressBar" style="width: 0%"></div>
+                </div>
+            </div>
+            <div class="module-list" id="moduleList">
+                <!-- Modules loaded dynamically -->
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="course-main">
+            <div class="content-area" id="contentArea">
+                <div style="text-align: center; padding: 3rem;">
+                    <div class="spinner-large" style="margin: 0 auto;"></div>
+                    <p style="margin-top: 1rem; color: var(--gray-500);">Loading course content...</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Mobile Sidebar Toggle -->
+    <button class="mobile-sidebar-toggle" onclick="toggleSidebar()">
+        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+    </button>
+
+    <script>
+        // Check authentication
+        const token = localStorage.getItem('auth_token');
+        if (!token) {
+            window.location.href = '../login.html';
+        }
+
+        // Get course and enrollment from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const courseSlug = urlParams.get('course');
+        const enrollmentId = urlParams.get('enrollment');
+
+        if (!courseSlug) {
+            window.location.href = '../dashboard/index.html';
+        }
+
+        let currentModule = null;
+        let modules = [];
+        let courseData = null;
+
+        // Load course data
+        async function loadCourse() {
+            try {
+                // Get course details
+                const courseResponse = await fetch(`/api/courses/${courseSlug}`, {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+
+                if (!courseResponse.ok) throw new Error('Failed to load course');
+                courseData = await courseResponse.json();
+
+                // Get modules with progress
+                const modulesResponse = await fetch(`/api/courses/${courseSlug}/modules`, {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+
+                if (!modulesResponse.ok) throw new Error('Not enrolled in course');
+                const modulesData = await modulesResponse.json();
+                modules = modulesData.modules;
+
+                // Update UI
+                document.getElementById('courseTitle').textContent = courseData.name;
+                renderModuleList();
+                updateProgress();
+
+                // Load first incomplete module or first module
+                const firstIncomplete = modules.find(m => m.status !== 'completed');
+                loadModule(firstIncomplete?.id || modules[0]?.id);
+
+            } catch (error) {
+                console.error('Error loading course:', error);
+                document.getElementById('contentArea').innerHTML = `
+                    <div style="text-align: center; padding: 3rem;">
+                        <h2>Error Loading Course</h2>
+                        <p>${error.message}</p>
+                        <a href="../dashboard/index.html" class="btn btn-primary" style="margin-top: 1rem;">Back to Dashboard</a>
+                    </div>
+                `;
+            }
+        }
+
+        // Render module list in sidebar
+        function renderModuleList() {
+            const listHtml = modules.map((module, index) => {
+                const statusClass = module.status === 'completed' ? 'completed' : 
+                                   module.status === 'in_progress' ? 'in-progress' : 'not-started';
+                const statusIcon = module.status === 'completed' ? '✓' : index + 1;
+                const isActive = currentModule?.id === module.id;
+
+                return `
+                    <div class="module-item ${statusClass} ${isActive ? 'active' : ''}" onclick="loadModule('${module.id}')">
+                        <div class="module-status ${statusClass}">${statusIcon}</div>
+                        <div class="module-info">
+                            <div class="module-title">${module.title}</div>
+                            <div class="module-meta">${module.estimatedMinutes || 30} min</div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            // Add Final Exam link if all modules completed
+            const allCompleted = modules.every(m => m.status === 'completed');
+            const finalExamHtml = allCompleted ? `
+                <div class="module-item" onclick="loadFinalExam()" style="background: #fef3c7; margin-top: 1rem;">
+                    <div class="module-status" style="background: #f59e0b; color: white;">★</div>
+                    <div class="module-info">
+                        <div class="module-title">Final Exam</div>
+                        <div class="module-meta">Complete to get certificate</div>
+                    </div>
+                </div>
+            ` : '';
+
+            document.getElementById('moduleList').innerHTML = listHtml + finalExamHtml;
+        }
+
+        // Update progress display
+        function updateProgress() {
+            const completed = modules.filter(m => m.status === 'completed').length;
+            const total = modules.length;
+            const percentage = Math.round((completed / total) * 100);
+
+            document.getElementById('progressText').textContent = `${percentage}% Complete`;
+            document.getElementById('moduleCount').textContent = `${completed}/${total} Modules`;
+            document.getElementById('progressBar').style.width = `${percentage}%`;
+        }
+
+        // Load module content
+        async function loadModule(moduleId) {
+            if (!moduleId) return;
+
+            try {
+                const response = await fetch(`/api/courses/${courseSlug}/modules/${moduleId}`, {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+
+                if (!response.ok) throw new Error('Failed to load module');
+                const data = await response.json();
+
+                currentModule = data.module;
+                renderModuleContent(data);
+                renderModuleList(); // Update active state
+
+            } catch (error) {
+                console.error('Error loading module:', error);
+            }
+        }
+
+        // Render module content
+        function renderModuleContent(data) {
+            const { module, quiz, progress } = data;
+            const moduleIndex = modules.findIndex(m => m.id === module.id);
+            const prevModule = modules[moduleIndex - 1];
+            const nextModule = modules[moduleIndex + 1];
+
+            const contentHtml = `
+                <div class="content-header">
+                    <h1>${module.title}</h1>
+                    <div class="content-meta">
+                        <span>Module ${moduleIndex + 1} of ${modules.length}</span>
+                        <span>~${module.estimatedMinutes || 30} minutes</span>
+                    </div>
+                </div>
+
+                <div class="content-body">
+                    ${module.content}
+                </div>
+
+                <div class="quiz-section">
+                    <h2>Module Quiz</h2>
+                    <p>Complete this quiz with a score of ${courseData.passingScoreQuiz}% or higher to proceed.</p>
+                    
+                    <div id="quizContainer">
+                        ${quiz.questions.map((q, i) => `
+                            <div class="quiz-question" data-question-id="${q.id}">
+                                <div class="question-text">
+                                    <span class="question-number">Question ${i + 1}:</span> ${q.questionText}
+                                </div>
+                                <ul class="options-list">
+                                    ${q.options.map((opt, j) => `
+                                        <li class="option-item" data-option="${opt}" onclick="selectOption(this, '${q.id}')">
+                                            <span class="option-radio"></span>
+                                            ${opt}
+                                        </li>
+                                    `).join('')}
+                                </ul>
+                            </div>
+                        `).join('')}
+                    </div>
+
+                    <button class="btn btn-primary btn-large" onclick="submitQuiz()" style="width: 100%; margin-top: 1rem;">
+                        Submit Quiz
+                    </button>
+
+                    <div id="quizResult" style="display: none;"></div>
+                </div>
+
+                <div class="content-navigation">
+                    ${prevModule ? `
+                        <button class="btn btn-secondary" onclick="loadModule('${prevModule.id}')">
+                            ← Previous Module
+                        </button>
+                    ` : '<div></div>'}
+                    ${nextModule ? `
+                        <button class="btn btn-primary" onclick="loadModule('${nextModule.id}')" id="nextModuleBtn" ${progress.status !== 'completed' ? 'disabled' : ''}>
+                            Next Module →
+                        </button>
+                    ` : modules.every(m => m.status === 'completed' || m.id === module.id) ? `
+                        <button class="btn btn-primary" onclick="loadFinalExam()">
+                            Take Final Exam →
+                        </button>
+                    ` : ''}
+                </div>
+            `;
+
+            document.getElementById('contentArea').innerHTML = contentHtml;
+        }
+
+        // Quiz answer storage
+        const quizAnswers = {};
+
+        // Select quiz option
+        function selectOption(element, questionId) {
+            // Remove selected from siblings
+            element.parentElement.querySelectorAll('.option-item').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            element.classList.add('selected');
+            quizAnswers[questionId] = element.dataset.option;
+        }
+
+        // Submit quiz
+        async function submitQuiz() {
+            const answers = Object.entries(quizAnswers).map(([questionId, answer]) => ({
+                questionId,
+                answer
+            }));
+
+            if (answers.length === 0) {
+                alert('Please answer at least one question');
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/quiz/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({
+                        enrollmentId: enrollmentId,
+                        moduleId: currentModule.id,
+                        answers
+                    })
+                });
+
+                const result = await response.json();
+                showQuizResult(result);
+
+                // If passed, enable next button and update progress
+                if (result.passed) {
+                    const moduleIndex = modules.findIndex(m => m.id === currentModule.id);
+                    modules[moduleIndex].status = 'completed';
+                    updateProgress();
+                    renderModuleList();
+
+                    const nextBtn = document.getElementById('nextModuleBtn');
+                    if (nextBtn) nextBtn.disabled = false;
+                }
+
+            } catch (error) {
+                console.error('Error submitting quiz:', error);
+                alert('Failed to submit quiz. Please try again.');
+            }
+        }
+
+        // Show quiz result
+        function showQuizResult(result) {
+            const resultDiv = document.getElementById('quizResult');
+            resultDiv.innerHTML = `
+                <div class="quiz-result ${result.passed ? 'passed' : 'failed'}">
+                    <h3>${result.passed ? '🎉 Congratulations!' : '😕 Not Quite'}</h3>
+                    <p>You scored <strong>${Math.round(result.score)}%</strong> (${result.correctAnswers}/${result.totalQuestions} correct)</p>
+                    <p>${result.message}</p>
+                    ${!result.passed ? `
+                        <button class="btn btn-primary" onclick="location.reload()" style="margin-top: 1rem;">
+                            Try Again
+                        </button>
+                    ` : ''}
+                </div>
+            `;
+            resultDiv.style.display = 'block';
+
+            // Show correct/incorrect on options
+            result.results.forEach(r => {
+                const question = document.querySelector(`[data-question-id="${r.questionId}"]`);
+                if (question) {
+                    question.querySelectorAll('.option-item').forEach(opt => {
+                        if (opt.dataset.option === r.correctAnswer) {
+                            opt.classList.add('correct');
+                        } else if (opt.dataset.option === r.userAnswer && !r.isCorrect) {
+                            opt.classList.add('incorrect');
+                        }
+                    });
+                }
+            });
+        }
+
+        // Load final exam
+        async function loadFinalExam() {
+            document.getElementById('contentArea').innerHTML = `
+                <div class="final-exam-banner">
+                    <h2>🎓 Final Exam</h2>
+                    <p>You've completed all modules! Take the final exam to earn your certificate.</p>
+                    <p>You need <strong>80%</strong> to pass (at least ${courseData.finalExamQuestions} questions)</p>
+                    <button class="btn btn-large" style="background: white; color: var(--primary-color); margin-top: 1rem;" onclick="startFinalExam()">
+                        Start Final Exam
+                    </button>
+                </div>
+            `;
+        }
+
+        // Start final exam
+        async function startFinalExam() {
+            try {
+                const response = await fetch(`/api/quiz/final-exam?enrollmentId=${enrollmentId}`, {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(error.error || 'Cannot start final exam');
+                }
+
+                const data = await response.json();
+                renderFinalExam(data);
+
+            } catch (error) {
+                alert(error.message);
+            }
+        }
+
+        // Render final exam
+        function renderFinalExam(data) {
+            const contentHtml = `
+                <div class="content-header">
+                    <h1>Final Exam</h1>
+                    <div class="content-meta">
+                        <span>${data.totalQuestions} Questions</span>
+                        <span>Passing Score: ${data.passingScore}%</span>
+                    </div>
+                </div>
+
+                <div class="quiz-section">
+                    <div id="finalExamContainer">
+                        ${data.questions.map((q, i) => `
+                            <div class="quiz-question" data-question-id="${q.id}">
+                                <div class="question-text">
+                                    <span class="question-number">Question ${i + 1}:</span> ${q.questionText}
+                                </div>
+                                <ul class="options-list">
+                                    ${q.options.map(opt => `
+                                        <li class="option-item" data-option="${opt}" onclick="selectFinalOption(this, '${q.id}')">
+                                            <span class="option-radio"></span>
+                                            ${opt}
+                                        </li>
+                                    `).join('')}
+                                </ul>
+                            </div>
+                        `).join('')}
+                    </div>
+
+                    <button class="btn btn-primary btn-large" onclick="submitFinalExam()" style="width: 100%; margin-top: 1rem;">
+                        Submit Final Exam
+                    </button>
+
+                    <div id="finalExamResult" style="display: none;"></div>
+                </div>
+            `;
+
+            document.getElementById('contentArea').innerHTML = contentHtml;
+        }
+
+        const finalAnswers = {};
+
+        function selectFinalOption(element, questionId) {
+            element.parentElement.querySelectorAll('.option-item').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            element.classList.add('selected');
+            finalAnswers[questionId] = element.dataset.option;
+        }
+
+        async function submitFinalExam() {
+            const answers = Object.entries(finalAnswers).map(([questionId, answer]) => ({
+                questionId,
+                answer
+            }));
+
+            try {
+                const response = await fetch('/api/quiz/submit-final', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({
+                        enrollmentId: enrollmentId,
+                        answers
+                    })
+                });
+
+                const result = await response.json();
+
+                const resultDiv = document.getElementById('finalExamResult');
+                resultDiv.innerHTML = `
+                    <div class="quiz-result ${result.passed ? 'passed' : 'failed'}">
+                        <h3>${result.passed ? '🎓 Congratulations!' : '😕 Not Quite'}</h3>
+                        <p>You scored <strong>${Math.round(result.score)}%</strong></p>
+                        <p>${result.message}</p>
+                        ${result.passed && result.certificate ? `
+                            <a href="/api/certificate/generate?id=${result.certificate.id}" target="_blank" class="btn btn-primary" style="margin-top: 1rem;">
+                                Download Certificate
+                            </a>
+                        ` : !result.passed ? `
+                            <button class="btn btn-primary" onclick="startFinalExam()" style="margin-top: 1rem;">
+                                Try Again
+                            </button>
+                        ` : ''}
+                    </div>
+                `;
+                resultDiv.style.display = 'block';
+
+            } catch (error) {
+                console.error('Error submitting final exam:', error);
+                alert('Failed to submit exam. Please try again.');
+            }
+        }
+
+        // Toggle sidebar on mobile
+        function toggleSidebar() {
+            document.getElementById('courseSidebar').classList.toggle('open');
+        }
+
+        // Logout
+        document.getElementById('logoutBtn').addEventListener('click', (e) => {
+            e.preventDefault();
+            localStorage.removeItem('auth_token');
+            localStorage.removeItem('user');
+            window.location.href = '../index.html';
+        });
+
+        // Initialize
+        loadCourse();
+    </script>
+</body>
+</html>

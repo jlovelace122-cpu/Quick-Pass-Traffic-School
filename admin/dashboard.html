@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Quick Pass Traffic School</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f1f5f9;
+            min-height: 100vh;
+        }
+
+        .admin-layout {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 260px;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            overflow-y: auto;
+            z-index: 100;
+        }
+
+        .sidebar-header {
+            padding: 25px 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .sidebar-header img {
+            height: 50px;
+            width: auto;
+        }
+
+        .sidebar-header p {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.7);
+            margin-top: 5px;
+        }
+
+        .sidebar-menu {
+            padding: 20px 15px;
+        }
+
+        .menu-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 10px;
+            padding-left: 10px;
+            letter-spacing: 1px;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 15px;
+            border-radius: 10px;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            margin-bottom: 5px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            background: rgba(255,255,255,0.1);
+            color: white;
+        }
+
+        .menu-item.active {
+            background: rgba(255,255,255,0.2);
+            color: white;
+        }
+
+        .menu-item i {
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            margin-left: 260px;
+        }
+
+        .top-bar {
+            background: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .top-bar h1 {
+            font-size: 1.5rem;
+            color: #1e3c72;
+        }
+
+        .user-menu {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .user-info {
+            text-align: right;
+        }
+
+        .user-info .name {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .user-info .role {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .user-avatar {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+
+        .logout-btn {
+            background: #fee2e2;
+            color: #dc2626;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            background: #dc2626;
+            color: white;
+        }
+
+        /* Content Area */
+        .content-area {
+            padding: 30px;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .stat-icon.blue { background: #dbeafe; color: #2563eb; }
+        .stat-icon.green { background: #dcfce7; color: #16a34a; }
+        .stat-icon.purple { background: #f3e8ff; color: #9333ea; }
+        .stat-icon.orange { background: #ffedd5; color: #ea580c; }
+
+        .stat-details h3 {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .stat-value {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1e3c72;
+        }
+
+        /* Section */
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f1f5f9;
+        }
+
+        .section-header h2 {
+            font-size: 1.25rem;
+            color: #1e3c72;
+        }
+
+        .view-all-btn {
+            background: none;
+            border: none;
+            color: #2563eb;
+            font-family: 'Poppins', sans-serif;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        /* Course Cards */
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .course-card {
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .course-card:hover {
+            border-color: #2563eb;
+            box-shadow: 0 5px 20px rgba(37, 99, 235, 0.1);
+        }
+
+        .course-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .course-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .course-badge.active {
+            background: #dcfce7;
+            color: #16a34a;
+        }
+
+        .course-badge.draft {
+            background: #fef3c7;
+            color: #d97706;
+        }
+
+        .course-title {
+            font-size: 1.1rem;
+            color: #1e3c72;
+            margin-bottom: 10px;
+        }
+
+        .course-meta {
+            display: flex;
+            gap: 15px;
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .course-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .course-price {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #16a34a;
+            margin-bottom: 15px;
+        }
+
+        .course-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.85rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 5px 15px rgba(30, 60, 114, 0.3);
+        }
+
+        .btn-outline {
+            background: white;
+            border: 2px solid #e2e8f0;
+            color: #333;
+        }
+
+        .btn-outline:hover {
+            border-color: #2563eb;
+            color: #2563eb;
+        }
+
+        /* Loading State */
+        .loading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px;
+            color: #666;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid #e2e8f0;
+            border-top-color: #2563eb;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 15px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Module View Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 200;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-overlay.show {
+            display: flex;
+        }
+
+        .modal {
+            background: white;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 900px;
+            max-height: 90vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-header {
+            padding: 20px 25px;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h2 {
+            font-size: 1.25rem;
+            color: #1e3c72;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #666;
+            cursor: pointer;
+        }
+
+        .modal-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 25px;
+        }
+
+        .module-list {
+            list-style: none;
+        }
+
+        .module-item {
+            padding: 15px 20px;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .module-item:hover {
+            background: #f8fafc;
+            border-color: #2563eb;
+        }
+
+        .module-item.expanded {
+            background: #f8fafc;
+            border-color: #2563eb;
+        }
+
+        .module-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .module-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            background: #dbeafe;
+            color: #2563eb;
+            border-radius: 50%;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-right: 12px;
+        }
+
+        .module-title {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .module-duration {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .module-content {
+            display: none;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .module-item.expanded .module-content {
+            display: block;
+        }
+
+        .module-description {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .quiz-section h4 {
+            font-size: 0.9rem;
+            color: #1e3c72;
+            margin-bottom: 10px;
+        }
+
+        .quiz-question {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+        }
+
+        .quiz-question p {
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .quiz-options {
+            list-style: none;
+            font-size: 0.85rem;
+        }
+
+        .quiz-options li {
+            padding: 5px 0;
+            color: #666;
+        }
+
+        .quiz-options li.correct {
+            color: #16a34a;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="../Assets/quick pass traffic school logo.png" alt="Quick Pass Traffic School">
+                <p>Admin Dashboard</p>
+            </div>
+            <nav class="sidebar-menu">
+                <p class="menu-label">Main</p>
+                <a href="#" class="menu-item active" data-section="dashboard">
+                    <i class="fas fa-home"></i>
+                    Dashboard
+                </a>
+                <a href="#" class="menu-item" data-section="courses">
+                    <i class="fas fa-book"></i>
+                    Courses
+                </a>
+                <a href="#" class="menu-item" data-section="curriculum">
+                    <i class="fas fa-list-alt"></i>
+                    Curriculum
+                </a>
+                
+                <p class="menu-label" style="margin-top: 20px;">Management</p>
+                <a href="#" class="menu-item" data-section="students">
+                    <i class="fas fa-users"></i>
+                    Students
+                </a>
+                <a href="#" class="menu-item" data-section="certificates">
+                    <i class="fas fa-certificate"></i>
+                    Certificates
+                </a>
+                <a href="#" class="menu-item" data-section="enrollments">
+                    <i class="fas fa-clipboard-list"></i>
+                    Enrollments
+                </a>
+                
+                <p class="menu-label" style="margin-top: 20px;">Settings</p>
+                <a href="#" class="menu-item" data-section="settings">
+                    <i class="fas fa-cog"></i>
+                    Settings
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-bar">
+                <h1 id="pageTitle">Dashboard</h1>
+                <div class="user-menu">
+                    <div class="user-info">
+                        <div class="name" id="adminName">Admin</div>
+                        <div class="role">Administrator</div>
+                    </div>
+                    <div class="user-avatar" id="adminInitials">A</div>
+                    <button class="logout-btn" onclick="logout()">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
+                </div>
+            </header>
+
+            <div class="content-area" id="contentArea">
+                <!-- Content loaded dynamically -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Module View Modal -->
+    <div class="modal-overlay" id="moduleModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="modalTitle">Course Modules</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Module content loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Check authentication
+        const token = localStorage.getItem('authToken');
+        const adminUser = JSON.parse(localStorage.getItem('adminUser') || '{}');
+        
+        if (!token) {
+            window.location.href = '/admin/login.html';
+        }
+
+        // Set admin name
+        if (adminUser.firstName) {
+            document.getElementById('adminName').textContent = `${adminUser.firstName} ${adminUser.lastName || ''}`;
+            document.getElementById('adminInitials').textContent = adminUser.firstName.charAt(0).toUpperCase();
+        }
+
+        // Logout function
+        function logout() {
+            localStorage.removeItem('authToken');
+            localStorage.removeItem('adminUser');
+            window.location.href = '/admin/login.html';
+        }
+
+        // API helper
+        async function apiRequest(endpoint, options = {}) {
+            const response = await fetch(endpoint, {
+                ...options,
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json',
+                    ...options.headers
+                }
+            });
+            
+            if (response.status === 401 || response.status === 403) {
+                logout();
+                return null;
+            }
+            
+            return response.json();
+        }
+
+        // Dashboard stats
+        async function loadDashboard() {
+            document.getElementById('pageTitle').textContent = 'Dashboard';
+            document.getElementById('contentArea').innerHTML = `
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    <p>Loading dashboard...</p>
+                </div>
+            `;
+
+            try {
+                const data = await apiRequest('/api/admin/dashboard');
+                
+                document.getElementById('contentArea').innerHTML = `
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon blue">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>Total Students</h3>
+                                <div class="stat-value">${data?.totalStudents || 0}</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon green">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>Active Enrollments</h3>
+                                <div class="stat-value">${data?.activeEnrollments || 0}</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon purple">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>Certificates Issued</h3>
+                                <div class="stat-value">${data?.certificatesIssued || 0}</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon orange">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>Revenue This Month</h3>
+                                <div class="stat-value">$${data?.revenueThisMonth?.toFixed(2) || '0.00'}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-header">
+                            <h2>Quick Actions</h2>
+                        </div>
+                        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                            <button class="btn btn-primary" onclick="loadCourses()">
+                                <i class="fas fa-book"></i> View Courses
+                            </button>
+                            <button class="btn btn-outline" onclick="loadStudents()">
+                                <i class="fas fa-users"></i> View Students
+                            </button>
+                            <button class="btn btn-outline" onclick="loadCertificates()">
+                                <i class="fas fa-certificate"></i> View Certificates
+                            </button>
+                        </div>
+                    </div>
+                `;
+            } catch (error) {
+                console.error('Dashboard error:', error);
+                document.getElementById('contentArea').innerHTML = `
+                    <div class="section">
+                        <p style="color: #dc2626;">Error loading dashboard. Please try again.</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Load courses
+        async function loadCourses() {
+            document.getElementById('pageTitle').textContent = 'Courses';
+            setActiveMenu('courses');
+            document.getElementById('contentArea').innerHTML = `
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    <p>Loading courses...</p>
+                </div>
+            `;
+
+            try {
+                const data = await apiRequest('/api/admin/courses');
+                const courses = data?.courses || [];
+
+                let html = `
+                    <div class="section">
+                        <div class="section-header">
+                            <h2>All Courses (${courses.length})</h2>
+                        </div>
+                        <div class="course-grid">
+                `;
+
+                courses.forEach(course => {
+                    html += `
+                        <div class="course-card">
+                            <div class="course-header">
+                                <span class="course-badge ${course.isActive ? 'active' : 'draft'}">
+                                    ${course.isActive ? 'Active' : 'Draft'}
+                                </span>
+                                <span style="color: #666; font-size: 0.85rem;">
+                                    ${course.state?.name || 'Unknown State'}
+                                </span>
+                            </div>
+                            <h3 class="course-title">${course.name}</h3>
+                            <div class="course-meta">
+                                <span><i class="fas fa-clock"></i> ${course.totalHours} hours</span>
+                                <span><i class="fas fa-list"></i> ${course.modules?.length || 0} modules</span>
+                                <span><i class="fas fa-question-circle"></i> ${course.finalExamQuestions} exam questions</span>
+                            </div>
+                            <div class="course-price">$${parseFloat(course.price).toFixed(2)}</div>
+                            <div class="course-actions">
+                                <button class="btn btn-primary" onclick="viewModules('${course.id}', '${course.name.replace(/'/g, "\\'")}')">
+                                    <i class="fas fa-eye"></i> View Modules
+                                </button>
+                                <button class="btn btn-outline" onclick="viewFinalExam('${course.id}', '${course.name.replace(/'/g, "\\'")}')">
+                                    <i class="fas fa-clipboard-check"></i> Final Exam
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                html += `
+                        </div>
+                    </div>
+                `;
+
+                document.getElementById('contentArea').innerHTML = html;
+            } catch (error) {
+                console.error('Courses error:', error);
+                document.getElementById('contentArea').innerHTML = `
+                    <div class="section">
+                        <p style="color: #dc2626;">Error loading courses. Please try again.</p>
+                    </div>
+                `;
+            }
+        }
+
+        // View course modules
+        async function viewModules(courseId, courseName) {
+            document.getElementById('modalTitle').textContent = courseName + ' - Modules';
+            document.getElementById('modalBody').innerHTML = `
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    <p>Loading modules...</p>
+                </div>
+            `;
+            document.getElementById('moduleModal').classList.add('show');
+
+            try {
+                const data = await apiRequest(`/api/admin/courses/${courseId}/modules`);
+                const modules = data?.modules || [];
+
+                let html = '<ul class="module-list">';
+                
+                modules.forEach((module, index) => {
+                    html += `
+                        <li class="module-item" onclick="toggleModule(this)">
+                            <div class="module-header">
+                                <div>
+                                    <span class="module-number">${index + 1}</span>
+                                    <span class="module-title">${module.title}</span>
+                                </div>
+                                <span class="module-duration">
+                                    <i class="fas fa-clock"></i> ${module.estimatedMinutes} min
+                                </span>
+                            </div>
+                            <div class="module-content">
+                                <div class="module-description">
+                                    ${module.content ? module.content.substring(0, 500) + '...' : 'No content available.'}
+                                </div>
+                                ${module.quizQuestions?.length > 0 ? `
+                                    <div class="quiz-section">
+                                        <h4><i class="fas fa-question-circle"></i> Quiz Questions (${module.quizQuestions.length})</h4>
+                                        ${module.quizQuestions.slice(0, 3).map(q => `
+                                            <div class="quiz-question">
+                                                <p>${q.questionText}</p>
+                                                <ul class="quiz-options">
+                                                    ${JSON.parse(q.options).map((opt, i) => `
+                                                        <li class="${i === q.correctAnswer ? 'correct' : ''}">
+                                                            ${String.fromCharCode(65 + i)}. ${opt}
+                                                            ${i === q.correctAnswer ? ' ✓' : ''}
+                                                        </li>
+                                                    `).join('')}
+                                                </ul>
+                                            </div>
+                                        `).join('')}
+                                        ${module.quizQuestions.length > 3 ? `<p style="color: #666; font-size: 0.85rem;">+ ${module.quizQuestions.length - 3} more questions...</p>` : ''}
+                                    </div>
+                                ` : '<p style="color: #666; font-size: 0.85rem;">No quiz questions for this module.</p>'}
+                            </div>
+                        </li>
+                    `;
+                });
+
+                html += '</ul>';
+                document.getElementById('modalBody').innerHTML = html;
+            } catch (error) {
+                console.error('Modules error:', error);
+                document.getElementById('modalBody').innerHTML = '<p style="color: #dc2626;">Error loading modules.</p>';
+            }
+        }
+
+        // View final exam
+        async function viewFinalExam(courseId, courseName) {
+            document.getElementById('modalTitle').textContent = courseName + ' - Final Exam';
+            document.getElementById('modalBody').innerHTML = `
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    <p>Loading final exam...</p>
+                </div>
+            `;
+            document.getElementById('moduleModal').classList.add('show');
+
+            try {
+                const data = await apiRequest(`/api/admin/courses/${courseId}/final-exam`);
+                const questions = data?.questions || [];
+                const course = data?.course || {};
+
+                let html = `
+                    <div style="background: #f8fafc; padding: 15px 20px; border-radius: 10px; margin-bottom: 20px;">
+                        <p><strong>Passing Score:</strong> ${course.passingScore || 80}%</p>
+                        <p><strong>Total Questions:</strong> ${course.totalQuestions || questions.length}</p>
+                    </div>
+                    <h3 style="margin-bottom: 15px; color: #1e3c72;">Exam Questions</h3>
+                `;
+
+                questions.forEach((q, index) => {
+                    html += `
+                        <div class="quiz-question">
+                            <p><strong>${index + 1}.</strong> ${q.questionText}</p>
+                            <ul class="quiz-options">
+                                ${JSON.parse(q.options).map((opt, i) => `
+                                    <li class="${i === q.correctAnswer ? 'correct' : ''}">
+                                        ${String.fromCharCode(65 + i)}. ${opt}
+                                        ${i === q.correctAnswer ? ' ✓' : ''}
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                    `;
+                });
+
+                if (questions.length === 0) {
+                    html += '<p style="color: #666;">No final exam questions found.</p>';
+                }
+
+                document.getElementById('modalBody').innerHTML = html;
+            } catch (error) {
+                console.error('Final exam error:', error);
+                document.getElementById('modalBody').innerHTML = '<p style="color: #dc2626;">Error loading final exam.</p>';
+            }
+        }
+
+        // Toggle module expansion
+        function toggleModule(element) {
+            element.classList.toggle('expanded');
+        }
+
+        // Close modal
+        function closeModal() {
+            document.getElementById('moduleModal').classList.remove('show');
+        }
+
+        // Load students
+        async function loadStudents() {
+            document.getElementById('pageTitle').textContent = 'Students';
+            setActiveMenu('students');
+            document.getElementById('contentArea').innerHTML = `
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    <p>Loading students...</p>
+                </div>
+            `;
+
+            try {
+                const data = await apiRequest('/api/admin/students');
+                const students = data?.students || [];
+
+                let html = `
+                    <div class="section">
+                        <div class="section-header">
+                            <h2>All Students (${students.length})</h2>
+                        </div>
+                `;
+
+                if (students.length === 0) {
+                    html += '<p style="color: #666;">No students registered yet.</p>';
+                } else {
+                    html += `
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr style="border-bottom: 2px solid #e2e8f0;">
+                                    <th style="text-align: left; padding: 12px;">Name</th>
+                                    <th style="text-align: left; padding: 12px;">Email</th>
+                                    <th style="text-align: left; padding: 12px;">Phone</th>
+                                    <th style="text-align: left; padding: 12px;">Status</th>
+                                    <th style="text-align: left; padding: 12px;">Registered</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                    `;
+
+                    students.forEach(student => {
+                        html += `
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 12px;">${student.firstName || ''} ${student.lastName || ''}</td>
+                                <td style="padding: 12px;">${student.email}</td>
+                                <td style="padding: 12px;">${student.phone || '-'}</td>
+                                <td style="padding: 12px;">
+                                    <span class="course-badge ${student.isVerified ? 'active' : 'draft'}">
+                                        ${student.isVerified ? 'Verified' : 'Pending'}
+                                    </span>
+                                </td>
+                                <td style="padding: 12px; color: #666;">${new Date(student.createdAt).toLocaleDateString()}</td>
+                            </tr>
+                        `;
+                    });
+
+                    html += '</tbody></table>';
+                }
+
+                html += '</div>';
+                document.getElementById('contentArea').innerHTML = html;
+            } catch (error) {
+                console.error('Students error:', error);
+                document.getElementById('contentArea').innerHTML = `
+                    <div class="section">
+                        <p style="color: #dc2626;">Error loading students. Please try again.</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Load certificates
+        async function loadCertificates() {
+            document.getElementById('pageTitle').textContent = 'Certificates';
+            setActiveMenu('certificates');
+            document.getElementById('contentArea').innerHTML = `
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    <p>Loading certificates...</p>
+                </div>
+            `;
+
+            try {
+                const data = await apiRequest('/api/admin/certificates');
+                const certs = data?.certificates || [];
+
+                let html = `
+                    <div class="section">
+                        <div class="section-header">
+                            <h2>Issued Certificates (${certs.length})</h2>
+                        </div>
+                `;
+
+                if (certs.length === 0) {
+                    html += '<p style="color: #666;">No certificates issued yet.</p>';
+                } else {
+                    html += `
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr style="border-bottom: 2px solid #e2e8f0;">
+                                    <th style="text-align: left; padding: 12px;">Certificate #</th>
+                                    <th style="text-align: left; padding: 12px;">Student</th>
+                                    <th style="text-align: left; padding: 12px;">Course</th>
+                                    <th style="text-align: left; padding: 12px;">Issued Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                    `;
+
+                    certs.forEach(cert => {
+                        html += `
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 12px; font-family: monospace;">${cert.certificate?.certificateNumber || '-'}</td>
+                                <td style="padding: 12px;">${cert.user?.firstName || ''} ${cert.user?.lastName || ''}</td>
+                                <td style="padding: 12px;">${cert.course?.name || '-'}</td>
+                                <td style="padding: 12px; color: #666;">${cert.certificate?.issuedAt ? new Date(cert.certificate.issuedAt).toLocaleDateString() : '-'}</td>
+                            </tr>
+                        `;
+                    });
+
+                    html += '</tbody></table>';
+                }
+
+                html += '</div>';
+                document.getElementById('contentArea').innerHTML = html;
+            } catch (error) {
+                console.error('Certificates error:', error);
+                document.getElementById('contentArea').innerHTML = `
+                    <div class="section">
+                        <p style="color: #dc2626;">Error loading certificates. Please try again.</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Set active menu item
+        function setActiveMenu(section) {
+            document.querySelectorAll('.menu-item').forEach(item => {
+                item.classList.remove('active');
+                if (item.dataset.section === section) {
+                    item.classList.add('active');
+                }
+            });
+        }
+
+        // Menu navigation
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                const section = item.dataset.section;
+                
+                switch(section) {
+                    case 'dashboard':
+                        loadDashboard();
+                        break;
+                    case 'courses':
+                    case 'curriculum':
+                        loadCourses();
+                        break;
+                    case 'students':
+                        loadStudents();
+                        break;
+                    case 'certificates':
+                        loadCertificates();
+                        break;
+                    default:
+                        document.getElementById('pageTitle').textContent = section.charAt(0).toUpperCase() + section.slice(1);
+                        document.getElementById('contentArea').innerHTML = `
+                            <div class="section">
+                                <p style="color: #666;">This section is under development.</p>
+                            </div>
+                        `;
+                }
+                
+                setActiveMenu(section);
+            });
+        });
+
+        // Close modal on outside click
+        document.getElementById('moduleModal').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('moduleModal')) {
+                closeModal();
+            }
+        });
+
+        // Load dashboard on page load
+        loadDashboard();
+    </script>
+</body>
+</html>

@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Quick Pass Traffic School - America's Premier Online Defensive Driving & Traffic School. State-Approved Courses in All 50 States. Dismiss Tickets, Reduce Points, Lower Insurance.">
+    <meta name="keywords" content="online traffic school, defensive driving course, driver improvement, state approved, ticket dismissal, point reduction, insurance discount, DMV approved">
+    <title>Quick Pass Traffic School | State-Approved Defensive Driving Courses Nationwide</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="Assets/quick pass traffic school logo.png" alt="Quick Pass Traffic School Logo">
+                        </a>
+                    </div>
+                    <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul class="nav-menu">
+                        <li><a href="#why-choose-us" class="nav-link">Why Choose Us</a></li>
+                        <li><a href="#course-overview" class="nav-link">Course Overview</a></li>
+                        <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                        <li><a href="#contact-us" class="nav-link">Contact Us</a></li>
+                        <li id="navLoginItem"><a href="login.html" class="nav-link">Login</a></li>
+                        <li id="navDashboardItem" style="display: none;"><a href="dashboard/index.html" class="btn btn-primary">My Dashboard</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Quick Pass Traffic School</h1>
+                <p class="hero-subtitle">America's #1 Online Defensive Driving & Traffic School</p>
+                <div class="hero-features">
+                    <div class="feature-badge">
+                        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span>State Approved</span>
+                    </div>
+                    <div class="feature-badge">
+                        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span>Fast & Easy</span>
+                    </div>
+                    <div class="feature-badge">
+                        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
+                        </svg>
+                        <span>Lowest Price Guarantee</span>
+                    </div>
+                </div>
+                
+                <!-- State Selector -->
+                <div class="state-selector-hero">
+                    <label for="heroStateSelect">Select Your State to Get Started:</label>
+                    <div class="state-select-wrapper">
+                        <select id="heroStateSelect" class="state-select">
+                            <option value="">-- Choose Your State --</option>
+                            <option value="FL">Florida</option>
+                            <option value="AL" disabled>Alabama (Coming Soon)</option>
+                            <option value="AZ" disabled>Arizona (Coming Soon)</option>
+                            <option value="CA" disabled>California (Coming Soon)</option>
+                            <option value="CO" disabled>Colorado (Coming Soon)</option>
+                            <option value="GA" disabled>Georgia (Coming Soon)</option>
+                            <option value="IL" disabled>Illinois (Coming Soon)</option>
+                            <option value="IN" disabled>Indiana (Coming Soon)</option>
+                            <option value="MI" disabled>Michigan (Coming Soon)</option>
+                            <option value="NJ" disabled>New Jersey (Coming Soon)</option>
+                            <option value="NY" disabled>New York (Coming Soon)</option>
+                            <option value="OH" disabled>Ohio (Coming Soon)</option>
+                            <option value="PA" disabled>Pennsylvania (Coming Soon)</option>
+                            <option value="TX" disabled>Texas (Coming Soon)</option>
+                            <option value="VA" disabled>Virginia (Coming Soon)</option>
+                        </select>
+                        <button id="heroStateBtn" class="btn btn-primary">View Courses</button>
+                    </div>
+                </div>
+                
+                <p class="hero-note">✓ Court & DMV Approved ✓ Same Day Certificate ✓ 100% Online ✓ 24/7 Support</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges Section -->
+    <section class="trust-badges">
+        <div class="container">
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <div class="trust-number">500K+</div>
+                    <div class="trust-label">Students Nationwide</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-number">50</div>
+                    <div class="trust-label">States Covered</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-number">4.9★</div>
+                    <div class="trust-label">Average Rating</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-number">100%</div>
+                    <div class="trust-label">Money Back Guarantee</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose-us" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Quick Pass Traffic School?</h2>
+                <p>Trusted by over 500,000 drivers across America</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3>State & Court Approved</h3>
+                    <p>Fully licensed and approved by state DMVs and accepted by courts nationwide</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3>Study at Your Pace</h3>
+                    <p>Complete the course on your schedule. Log in and out as many times as you need</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3>Mobile Friendly</h3>
+                    <p>Access the course from any device - computer, tablet, or smartphone</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3>Easy Final Exam</h3>
+                    <p>Simple multiple-choice format. Unlimited retakes at no extra cost</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3>Same Day Certificate</h3>
+                    <p>Completion certificate delivered electronically the same day you finish</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Our customer service team is available around the clock to help you</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Overview Section -->
+    <section id="course-overview" class="courses">
+        <div class="container">
+            <div class="section-header">
+                <h2>State-Approved Traffic School Courses</h2>
+                <p>Select your state to view available courses and pricing</p>
+                
+                <!-- State Filter -->
+                <div class="course-state-filter">
+                    <select id="courseStateSelect" class="state-select-inline">
+                        <option value="FL" selected>Florida</option>
+                        <option value="AL" disabled>Alabama (Coming Soon)</option>
+                        <option value="AZ" disabled>Arizona (Coming Soon)</option>
+                        <option value="CA" disabled>California (Coming Soon)</option>
+                        <option value="CO" disabled>Colorado (Coming Soon)</option>
+                        <option value="GA" disabled>Georgia (Coming Soon)</option>
+                        <option value="IL" disabled>Illinois (Coming Soon)</option>
+                        <option value="IN" disabled>Indiana (Coming Soon)</option>
+                        <option value="MI" disabled>Michigan (Coming Soon)</option>
+                        <option value="NJ" disabled>New Jersey (Coming Soon)</option>
+                        <option value="NY" disabled>New York (Coming Soon)</option>
+                        <option value="OH" disabled>Ohio (Coming Soon)</option>
+                        <option value="PA" disabled>Pennsylvania (Coming Soon)</option>
+                        <option value="TX" disabled>Texas (Coming Soon)</option>
+                        <option value="VA" disabled>Virginia (Coming Soon)</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Florida Courses (default visible) -->
+            <div id="florida-courses" class="state-courses active">
+            <h3 class="state-courses-title">🌴 Florida Driver Improvement Courses</h3>
+            <p class="state-courses-subtitle">DMV Licensed • Court Accepted • Point Reduction Eligible</p>
+            <div class="courses-grid">
+                <div class="course-card">
+                    <h3>4-Hour Basic Driver Improvement (BDI)</h3>
+                    <div class="course-price">
+                        <span class="price">$18.50</span>
+                        <span class="price-note">No hidden fees</span>
+                    </div>
+                    <p class="course-reason"><strong>Perfect for:</strong> First-time offenders looking to dismiss a minor traffic violation.</p>
+                    <h4>What You'll Learn:</h4>
+                    <ul class="course-features">
+                        <li>✓ Florida traffic laws and regulations</li>
+                        <li>✓ Defensive driving techniques</li>
+                        <li>✓ Road sign recognition and meanings</li>
+                        <li>✓ Safe driving practices</li>
+                        <li>✓ Consequences of traffic violations</li>
+                        <li>✓ Insurance and point system basics</li>
+                    </ul>
+                    <a href="checkout.html?course=florida-4-hour-bdi" class="btn btn-primary btn-block course-enroll-btn" data-course="florida-4-hour-bdi">Enroll Now - $18.50</a>
+                </div>
+                <div class="course-card featured">
+                    <div class="course-badge">Most Popular</div>
+                    <h3>8-Hour Intermediate Course (IDI)</h3>
+                    <div class="course-price">
+                        <span class="price">$55.00</span>
+                        <span class="price-note">No hidden fees</span>
+                    </div>
+                    <p class="course-reason"><strong>Perfect for:</strong> Court-ordered for multiple traffic violations or to reduce points.</p>
+                    <h4>What You'll Learn:</h4>
+                    <ul class="course-features">
+                        <li>✓ Advanced defensive driving strategies</li>
+                        <li>✓ Florida traffic law in-depth review</li>
+                        <li>✓ Hazard perception and avoidance</li>
+                        <li>✓ Impaired and distracted driving risks</li>
+                        <li>✓ Crash prevention techniques</li>
+                        <li>✓ Weather and road condition safety</li>
+                        <li>✓ Vehicle maintenance essentials</li>
+                        <li>✓ Legal responsibilities of drivers</li>
+                    </ul>
+                    <a href="checkout.html?course=florida-8-hour-idi" class="btn btn-primary btn-block course-enroll-btn" data-course="florida-8-hour-idi">Enroll Now - $55.00</a>
+                </div>
+                <div class="course-card">
+                    <h3>12-Hour Advanced Course (ADI)</h3>
+                    <div class="course-price">
+                        <span class="price">$60.00</span>
+                        <span class="price-note">No hidden fees</span>
+                    </div>
+                    <p class="course-reason"><strong>Perfect for:</strong> License reinstatement after suspension or habitual traffic offenders.</p>
+                    <h4>What You'll Learn:</h4>
+                    <ul class="course-features">
+                        <li>✓ Comprehensive Florida traffic law mastery</li>
+                        <li>✓ Advanced collision avoidance tactics</li>
+                        <li>✓ Psychology of safe driving behavior</li>
+                        <li>✓ DUI/substance abuse awareness</li>
+                        <li>✓ Aggressive driving prevention</li>
+                        <li>✓ Emergency response procedures</li>
+                        <li>✓ Night and adverse weather driving</li>
+                        <li>✓ Sharing the road safely</li>
+                        <li>✓ Long-term safe driving habits</li>
+                        <li>✓ Insurance and legal implications</li>
+                    </ul>
+                    <a href="checkout.html?course=florida-12-hour-adi" class="btn btn-primary btn-block course-enroll-btn" data-course="florida-12-hour-adi">Enroll Now - $60.00</a>
+                </div>
+            </div>
+            </div>
+            
+            <!-- Coming Soon States Placeholder -->
+            <div id="coming-soon-courses" class="state-courses" style="display: none;">
+                <div class="coming-soon-box">
+                    <div class="coming-soon-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="64" height="64">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3>Coming Soon!</h3>
+                    <p>We're working hard to bring state-approved courses to your state.</p>
+                    <p>Enter your email to be notified when courses become available:</p>
+                    <form class="notify-form">
+                        <input type="email" placeholder="Enter your email" class="notify-input" required>
+                        <button type="submit" class="btn btn-primary">Notify Me</button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Use Cases Section -->
+            <div class="course-use-cases">
+                <h3>Our Courses Help You:</h3>
+                <div class="use-cases-grid">
+                    <div class="use-case">
+                        <span class="use-case-icon">🎫</span>
+                        <strong>Dismiss Traffic Tickets</strong>
+                        <p>Keep violations off your record</p>
+                    </div>
+                    <div class="use-case">
+                        <span class="use-case-icon">📉</span>
+                        <strong>Reduce Points</strong>
+                        <p>Remove points from your license</p>
+                    </div>
+                    <div class="use-case">
+                        <span class="use-case-icon">💰</span>
+                        <strong>Lower Insurance</strong>
+                        <p>Get insurance premium discounts</p>
+                    </div>
+                    <div class="use-case">
+                        <span class="use-case-icon">⚖️</span>
+                        <strong>Court Requirements</strong>
+                        <p>Satisfy court-ordered education</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>Complete your traffic school in 3 easy steps</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Register Online</h3>
+                        <p>Sign up in minutes with your citation information. Pay securely online and get instant access to the course.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Complete the Course</h3>
+                        <p>Study at your own pace from any device. Take breaks whenever you need. The course saves your progress automatically.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Get Your Certificate</h3>
+                        <p>Pass the simple final exam and receive your completion certificate the same day. We'll notify the court for you.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Students Say</h2>
+                <p>Join thousands of satisfied customers who chose Quick Pass</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Super easy course! Completed it in one sitting and got my certificate the same day. The customer service was excellent too. Highly recommend!"</p>
+                    <div class="testimonial-author">
+                        <strong>Sarah M.</strong>
+                        <span>Miami, FL</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Best price I found anywhere for the 8-hour course. The material was easy to understand and the exam was straightforward. Will use again if needed."</p>
+                    <div class="testimonial-author">
+                        <strong>James R.</strong>
+                        <span>Tampa, FL</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"I was able to do the course on my phone during my lunch breaks. The mobile interface worked perfectly. Got my ticket dismissed - thank you Quick Pass!"</p>
+                    <div class="testimonial-author">
+                        <strong>Maria G.</strong>
+                        <span>Orlando, FL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about our traffic school</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Are your courses state-approved?</span>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! Quick Pass Traffic School is fully licensed and approved by each state's DMV and accepted by courts nationwide. Our courses meet all state-specific requirements for driver improvement, traffic violator school, and defensive driving education. Select your state to see the specific courses available in your area.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Which course should I take?</span>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>The course you need depends on your citation or court order. The 4-hour course is perfect for minor violations, the 8-hour course is our most popular for standard requirements, and the 12-hour course is for serious violations or maximum point reduction. Check your court documents or contact us if you're unsure.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can I take the course on my phone?</span>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely! Our course is fully mobile-responsive and works perfectly on smartphones, tablets, laptops, and desktop computers. Study from any device, anywhere.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What if I fail the final exam?</span>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Don't worry! You can retake the final exam as many times as needed at no extra cost. The exam is straightforward, and most students pass on their first attempt.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How quickly will I get my certificate?</span>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Your completion certificate is available for download immediately upon passing the final exam. We also electronically notify the court and DMV the same day. Physical copies are mailed within 1-2 business days if requested.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What is your refund policy?</span>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We offer a 100% money-back guarantee if you're not satisfied with our course. Simply contact us within 30 days of enrollment, and we'll process a full refund - no questions asked.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact-us" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <p>Have questions? We're here to help!</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>support@quickpasstrafficschool.com</p>
+                            <p class="text-small">Response within 1 hour</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Business Hours</h4>
+                            <p>24/7 Online Support</p>
+                            <p class="text-small">We're always here for you</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Quick Pass Traffic School</h3>
+                    <p>Licensed & Approved Nationwide</p>
+                    <p>America's trusted traffic school since 2010. Serving drivers in all 50 states with state-approved defensive driving and driver improvement courses.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#why-choose-us">Why Choose Us</a></li>
+                        <li><a href="#course-overview">Course Overview</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>Email: support@quickpasstrafficschool.com</li>
+                        <li>Live Chat: Available 24/7</li>
+                        <li>We respond within 24 hours</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Quick Pass Traffic School. All rights reserved. Licensed and approved in multiple states.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script>
+        // State data configuration
+        const stateData = {
+            FL: {
+                name: 'Florida',
+                available: true,
+                containerId: 'florida-courses'
+            }
+            // More states will be added here as curriculum is developed
+        };
+        
+        // Check login status and update nav
+        document.addEventListener('DOMContentLoaded', function() {
+            const token = localStorage.getItem('auth_token');
+            const user = JSON.parse(localStorage.getItem('user') || '{}');
+            
+            if (token && user.id) {
+                // User is logged in
+                document.getElementById('navLoginItem').style.display = 'none';
+                document.getElementById('navDashboardItem').style.display = 'block';
+            }
+            
+            // Handle course enroll buttons - redirect to register if not logged in
+            document.querySelectorAll('.course-enroll-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    const courseSlug = this.dataset.course;
+                    if (!token) {
+                        e.preventDefault();
+                        window.location.href = `register.html?course=${courseSlug}`;
+                    }
+                    // If logged in, the href will work as normal
+                });
+            });
+            
+            // Hero state selector
+            const heroStateSelect = document.getElementById('heroStateSelect');
+            const heroStateBtn = document.getElementById('heroStateBtn');
+            
+            if (heroStateBtn) {
+                heroStateBtn.addEventListener('click', function() {
+                    const selectedState = heroStateSelect.value;
+                    if (selectedState) {
+                        // Scroll to courses section and update display
+                        document.getElementById('course-overview').scrollIntoView({ behavior: 'smooth' });
+                        
+                        // Update course section dropdown to match
+                        const courseSelect = document.getElementById('courseStateSelect');
+                        if (courseSelect) {
+                            courseSelect.value = selectedState;
+                            updateCoursesDisplay(selectedState);
+                        }
+                    } else {
+                        alert('Please select your state to view available courses.');
+                    }
+                });
+            }
+            
+            // Course section state selector
+            const courseStateSelect = document.getElementById('courseStateSelect');
+            if (courseStateSelect) {
+                courseStateSelect.addEventListener('change', function() {
+                    updateCoursesDisplay(this.value);
+                });
+            }
+            
+            // Function to update courses display based on selected state
+            function updateCoursesDisplay(stateCode) {
+                const floridaCourses = document.getElementById('florida-courses');
+                const comingSoon = document.getElementById('coming-soon-courses');
+                
+                if (stateCode === 'FL') {
+                    floridaCourses.style.display = 'block';
+                    floridaCourses.classList.add('active');
+                    comingSoon.style.display = 'none';
+                } else {
+                    floridaCourses.style.display = 'none';
+                    floridaCourses.classList.remove('active');
+                    comingSoon.style.display = 'block';
+                }
+                
+                // Save selected state to localStorage
+                localStorage.setItem('selectedState', stateCode);
+            }
+            
+            // Check for saved state preference
+            const savedState = localStorage.getItem('selectedState');
+            if (savedState && heroStateSelect) {
+                heroStateSelect.value = savedState;
+                if (courseStateSelect) {
+                    courseStateSelect.value = savedState;
+                }
+            }
+            
+            // Notify form submission
+            const notifyForms = document.querySelectorAll('.notify-form');
+            notifyForms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = this.querySelector('.notify-input').value;
+                    const state = courseStateSelect ? courseStateSelect.value : 'Unknown';
+                    
+                    // In production, this would send to your API
+                    alert(`Thanks! We'll notify ${email} when courses are available in ${state}.`);
+                    this.reset();
+                });
+            });
+        });
+    </script>
+</body>
+</html>
