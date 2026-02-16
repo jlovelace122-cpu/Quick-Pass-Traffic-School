@@ -27,7 +27,7 @@ class ChatbotWidget {
         setTimeout(() => {
             if (this.messages.length === 0) {
                 this.addBotMessage(
-                    "Hi there! 👋 I'm your Quick Pass assistant. I can help you with course content questions, technical support, and registration assistance. How can I help you today?"
+                    "Hello! I'm your Quick Pass Assistant. I can help you with:\n\n• **Course selection** - Find the right course for your situation\n• **Registration** - Get started with your course\n• **Technical support** - Troubleshoot any issues\n• **Certificates & DMV** - Completion and reporting info\n• **State requirements** - Florida and upcoming states\n\nWhat can I help you with today?"
                 );
                 this.showQuickReplies();
             }
@@ -236,10 +236,11 @@ class ChatbotWidget {
     
     showQuickReplies() {
         const replies = [
-            'Course information',
+            'Which course do I need?',
+            'How do I register?',
             'Technical help',
-            'How to register',
-            'Payment questions'
+            'Certificate & DMV',
+            'State requirements'
         ];
         
         this.quickRepliesContainer.innerHTML = replies.map(text => 
@@ -275,6 +276,15 @@ class ChatbotWidget {
         
         try {
             const token = localStorage.getItem('auth_token');
+            
+            // Build conversation history for context (convert to OpenAI format)
+            const conversationHistory = this.messages
+                .slice(-10)  // Last 10 messages for context
+                .map(msg => ({
+                    role: msg.role === 'bot' ? 'assistant' : 'user',
+                    content: msg.content
+                }));
+            
             const response = await fetch('/api/chat/message', {
                 method: 'POST',
                 headers: {
@@ -283,7 +293,8 @@ class ChatbotWidget {
                 },
                 body: JSON.stringify({
                     message,
-                    sessionId: this.sessionId
+                    sessionId: this.sessionId,
+                    conversationHistory
                 })
             });
             
