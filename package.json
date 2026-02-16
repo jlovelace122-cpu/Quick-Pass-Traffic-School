@@ -1,0 +1,20 @@
+{
+  "name": "quick-pass-traffic-school",
+  "version": "1.0.0",
+  "description": "Online Traffic School supporting multiple states",
+  "main": "index.html",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "traffic-school",
+    "online-course",
+    "defensive-driving"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

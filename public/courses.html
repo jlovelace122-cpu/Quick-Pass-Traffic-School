@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - Quick Pass Traffic School</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <h1>Quick Pass Traffic School</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Available Courses by State</h1>
+                <p>Select your state to view detailed course information</p>
+            </div>
+        </section>
+
+        <section class="courses-list">
+            <div class="container">
+                <div id="courses-grid" class="courses-grid">
+                    <!-- Courses will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Quick Pass Traffic School. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/states.js"></script>
+    <script src="js/courses.js"></script>
+</body>
+</html>
