@@ -12,2432 +12,866 @@ const floridaCourseDataExpanded = {
   course4Hour: {
     name: '4-Hour Basic Driver Improvement (BDI)',
     slug: 'florida-4-hour-bdi',
-    description: 'Perfect for first-time offenders looking to dismiss a minor traffic violation. This Florida state-approved course covers distracted driving, emergency situations, defensive driving techniques, and road safety fundamentals.',
+    description: 'Florida state-approved 4-hour Basic Driver Improvement course covering the traffic crash problem, crash dynamics, crash prevention, vulnerable road users, DUI prevention, safety equipment, psychological factors, and Florida traffic laws.',
     durationHours: 4,
     price: 18.50,
     modules: [
       // =========================================
-      // MODULE 1: Introduction & Course Overview
-      // Estimated Reading Time: 25-30 minutes
+      // MODULE 1: Traffic Crash Problem — Magnitude and Factors
+      // Estimated Time: 40 minutes
       // =========================================
       {
-        title: 'Module 1: Introduction & Course Overview',
-        description: 'Welcome to Quick Pass Traffic School - Course objectives, Florida driving statistics, and the importance of safe driving',
-        estimatedMinutes: 30,
+        title: 'Module 1: Traffic Crash Problem \u2014 Magnitude and Factors',
+        description: 'Understanding the scope of the Florida traffic crash problem, personal and societal losses, and the contribution of DUI and other hazardous acts',
+        estimatedMinutes: 40,
         content: `
-          <h2>Welcome to Quick Pass Traffic School</h2>
-          
-          <p>Welcome to Quick Pass Traffic School's 4-Hour Basic Driver Improvement Course. This Florida Department of Highway Safety and Motor Vehicles (FLHSMV) approved program is designed to provide you with the critical knowledge and skills needed to operate vehicles safely and responsibly on Florida's diverse and busy roadways.</p>
-          
-          <p>Whether you're here as part of a court requirement, to dismiss a traffic ticket, to prevent points from being added to your driving record, or simply because you want to become a safer driver, this course represents an important investment in your safety and the safety of everyone who shares the road with you.</p>
-
-          <div class="highlight-box">
-            <h4>🎯 Course Objectives</h4>
-            <p>By the end of this course, you will be able to:</p>
-            <ul>
-              <li>Identify and eliminate common driving distractions</li>
-              <li>Respond safely and effectively to emergency situations</li>
-              <li>Apply defensive driving techniques to anticipate and avoid hazards</li>
-              <li>Understand and comply with Florida traffic laws and regulations</li>
-              <li>Recognize road signs, signals, and pavement markings</li>
-              <li>Share the road safely with pedestrians, cyclists, and other vehicles</li>
-            </ul>
-          </div>
-
-          <h3>Why Driver Improvement Matters</h3>
-          
-          <p>Every year, thousands of preventable accidents occur on Florida's roads. According to the Florida Department of Highway Safety and Motor Vehicles, in 2024 alone, Florida recorded:</p>
-          
+          <h2>Module 1: Traffic Crash Problem</h2>
+          <h3>Section 1.1 \u2014 Introduction and Florida Crash Statistics</h3>
+          <p>Florida is one of the most heavily trafficked states in the nation. With more than 23 million registered drivers and over 110 million annual visitors, Florida's roadways see an enormous volume of traffic every day.</p>
+          <p>According to the Florida Department of Highway Safety and Motor Vehicles 2023 Annual Report:</p>
+          <ul>
+            <li><strong>401,561</strong> total traffic crashes</li>
+            <li><strong>3,543</strong> traffic fatalities (approximately one death every 2.5 hours)</li>
+            <li><strong>252,153</strong> crashes involving injuries</li>
+            <li>Estimated economic cost: over <strong>$40 billion</strong> annually</li>
+          </ul>
           <div class="statistics-box">
-            <h4>📊 Florida Driving Statistics</h4>
+            <h4>Nationwide Context (NHTSA 2023)</h4>
             <ul>
-              <li><strong>401,867</strong> total traffic crashes</li>
-              <li><strong>3,443</strong> fatalities from traffic crashes</li>
-              <li><strong>252,481</strong> injuries from traffic crashes</li>
-              <li><strong>Distracted driving</strong> was a contributing factor in over 50,000 crashes</li>
-              <li><strong>Speeding</strong> contributed to approximately 35% of fatal crashes</li>
-              <li><strong>Impaired driving</strong> caused over 5,000 serious injury crashes</li>
+              <li><strong>40,990</strong> people died in motor vehicle crashes in the United States</li>
+              <li>Florida ranked <strong>3rd</strong> nationally in total traffic fatalities</li>
+              <li>Traffic crashes are the <strong>leading cause of death</strong> for Americans ages 1\u201354</li>
             </ul>
           </div>
-
-          <p>Behind each of these statistics is a real person—a parent, child, friend, or neighbor whose life was forever changed. The purpose of this course is to help ensure that you don't become one of these statistics and that you don't contribute to someone else becoming one.</p>
-
-          <h3>The True Cost of Unsafe Driving</h3>
-          
-          <p>Unsafe driving doesn't just risk lives—it carries significant financial and personal consequences:</p>
-          
-          <h4>Financial Costs</h4>
+          <h3>Section 1.2 \u2014 Societal and Personal Losses</h3>
+          <h4>Personal Losses</h4>
           <ul>
-            <li><strong>Traffic tickets:</strong> Fines range from $100 to $500+ depending on the violation</li>
-            <li><strong>Points on your license:</strong> Can lead to license suspension after accumulating 12 points in 12 months</li>
-            <li><strong>Insurance increases:</strong> A single ticket can raise your premium by 20-40% for 3-5 years</li>
-            <li><strong>Court costs:</strong> Additional fees of $50-$200 per violation</li>
-            <li><strong>Traffic school fees:</strong> $25-$100 to take a course</li>
-            <li><strong>Lost wages:</strong> From court appearances, license suspension, or injury</li>
+            <li><strong>Physical injury or death:</strong> Injuries range from minor wounds to catastrophic spinal cord damage, traumatic brain injury, and loss of limb.</li>
+            <li><strong>Emotional trauma:</strong> Survivors frequently experience PTSD, depression, and anxiety. Family members suffer grief and long-term psychological harm.</li>
+            <li><strong>Financial hardship:</strong> The average economic cost of a non-fatal disabling injury crash is approximately $155,000; a fatal crash averages $1.75 million in economic losses (NHTSA).</li>
+            <li><strong>Loss of mobility and independence:</strong> Many crash survivors cannot return to work or drive again.</li>
           </ul>
-
-          <h4>Personal Costs</h4>
+          <h4>Societal Losses</h4>
           <ul>
-            <li>Physical injury or permanent disability</li>
-            <li>Emotional trauma and psychological impact</li>
-            <li>Loss of driving privileges affecting employment</li>
-            <li>Criminal record for serious violations</li>
-            <li>Strained relationships with family and friends</li>
-            <li>The immeasurable cost of taking or losing a life</li>
+            <li><strong>Healthcare burden:</strong> Emergency services, trauma centers, hospitals, and rehabilitation facilities absorb enormous costs.</li>
+            <li><strong>Productivity losses:</strong> NHTSA estimates lost productivity from traffic fatalities at over $41,000 per victim on average.</li>
+            <li><strong>First responder resources:</strong> Florida's 67 counties collectively respond to over 1,000 crashes per day on average.</li>
+            <li><strong>Insurance costs:</strong> Florida consistently ranks among the most expensive states for auto insurance partly because of its high crash rate.</li>
           </ul>
-
-          <div class="case-study">
-            <h4>📋 Real-World Case Study: The Cost of One Bad Decision</h4>
-            <p><strong>Maria's Story (Tampa, FL):</strong></p>
-            <p>Maria was running late for work and decided to check a text message while driving on I-275. In the three seconds her eyes were off the road, traffic ahead came to a sudden stop. Maria rear-ended another vehicle at 45 mph.</p>
-            <p><strong>The consequences:</strong></p>
-            <ul>
-              <li>The other driver suffered a neck injury requiring months of physical therapy</li>
-              <li>Maria received a $250 ticket for careless driving (4 points on her license)</li>
-              <li>Her insurance premium increased by $1,200 per year</li>
-              <li>She faced a civil lawsuit for medical expenses totaling $45,000</li>
-              <li>Her employer terminated her due to company policy on at-fault accidents</li>
-              <li>Total cost to Maria over 5 years: approximately $65,000</li>
-            </ul>
-            <p><em>All because of a 3-second glance at a phone.</em></p>
-          </div>
-
-          <h3>Florida's Driving Environment: Unique Challenges</h3>
-          
-          <p>Florida presents driving challenges unlike any other state. Understanding these unique factors is essential for staying safe on our roads:</p>
-
-          <h4>Weather Conditions</h4>
-          <p>Florida's subtropical climate creates hazardous driving conditions throughout the year:</p>
+          <h3>Section 1.3 \u2014 Contribution of DUI and Other Hazardous Acts</h3>
+          <p>The vast majority of crashes are caused by specific, identifiable, and preventable human behaviors.</p>
+          <h4>1. Distracted Driving</h4>
+          <p>In 2023, distracted driving was a contributing factor in an estimated 50,000+ Florida crashes. Florida Statute 316.305 prohibits texting while operating a motor vehicle. Distraction reduces reaction time by as much as 40%. At 55 mph, reading a text for 5 seconds equals driving the length of a football field with eyes closed.</p>
           <ul>
-            <li><strong>Afternoon thunderstorms:</strong> From May through October, sudden heavy rain reduces visibility to near-zero and creates hydroplaning conditions</li>
-            <li><strong>Hurricanes:</strong> Evacuation traffic, debris, and flooded roads during storm season</li>
-            <li><strong>Fog:</strong> Dense morning fog, especially in Central Florida and near water bodies</li>
-            <li><strong>Sun glare:</strong> Intense sunlight causes severe glare during sunrise and sunset</li>
+            <li><strong>Visual:</strong> Eyes off the road</li>
+            <li><strong>Manual:</strong> Hands off the wheel</li>
+            <li><strong>Cognitive:</strong> Mind off driving</li>
           </ul>
-
-          <h4>Traffic Volume and Diversity</h4>
-          <ul>
-            <li><strong>Tourism:</strong> Over 140 million visitors annually unfamiliar with local roads</li>
-            <li><strong>Seasonal residents:</strong> "Snowbirds" from northern states with different driving habits</li>
-            <li><strong>High population growth:</strong> Rapid development creates changing road conditions</li>
-            <li><strong>Diverse driver ages:</strong> Large populations of both young and elderly drivers</li>
-            <li><strong>International drivers:</strong> Visitors from countries with different traffic laws</li>
-          </ul>
-
-          <h4>Road Characteristics</h4>
-          <ul>
-            <li><strong>High-speed highways:</strong> I-95, I-75, I-4, Florida's Turnpike with speeds up to 70 mph</li>
-            <li><strong>Busy intersections:</strong> Complex multi-lane intersections in urban areas</li>
-            <li><strong>Rural roads:</strong> Two-lane highways with limited lighting and wildlife</li>
-            <li><strong>Bridge crossings:</strong> Long bridges subject to high winds and emergency closures</li>
-            <li><strong>School zones:</strong> Heavily enforced reduced speed areas</li>
-          </ul>
-
-          <div class="reflection-question">
-            <h4>🤔 Reflection Question</h4>
-            <p>Think about your typical daily drive. What are the three biggest hazards you regularly encounter? How might you adjust your driving to better handle these challenges?</p>
-          </div>
-
-          <h3>Florida Highway Safety and Motor Vehicles (FLHSMV) Regulations</h3>
-          
-          <p>The FLHSMV is responsible for establishing and enforcing rules to keep Florida's roads safe. Key aspects of their regulatory framework include:</p>
-
-          <h4>The Points System</h4>
-          <p>Florida uses a point system to track traffic violations. Points remain on your record for at least three years:</p>
-          <table class="info-table">
-            <tr><th>Violation</th><th>Points</th></tr>
-            <tr><td>Speeding (1-15 mph over limit)</td><td>3 points</td></tr>
-            <tr><td>Speeding (16+ mph over limit)</td><td>4 points</td></tr>
-            <tr><td>Running a stop sign or red light</td><td>4 points</td></tr>
-            <tr><td>Improper passing</td><td>4 points</td></tr>
-            <tr><td>Following too closely</td><td>3 points</td></tr>
-            <tr><td>Failure to yield right-of-way</td><td>3 points</td></tr>
-            <tr><td>Reckless driving</td><td>4 points</td></tr>
-            <tr><td>Leaving the scene of a crash</td><td>6 points</td></tr>
-            <tr><td>Passing a stopped school bus</td><td>4 points</td></tr>
-          </table>
-
-          <h4>Suspension Thresholds</h4>
-          <ul>
-            <li><strong>12 points within 12 months:</strong> 30-day suspension</li>
-            <li><strong>18 points within 18 months:</strong> 3-month suspension</li>
-            <li><strong>24 points within 36 months:</strong> 1-year suspension</li>
-          </ul>
-
-          <div class="alert alert-info">
-            <h4>💡 Good News About This Course</h4>
-            <p>By completing this Basic Driver Improvement course, you may be eligible to:</p>
-            <ul>
-              <li>Have a traffic ticket dismissed (court approval required)</li>
-              <li>Prevent points from being added to your driving record</li>
-              <li>Receive a discount on your auto insurance (check with your provider)</li>
-            </ul>
-            <p>You can elect to take this course up to 5 times in your lifetime for point prevention purposes, but no more than once per 12-month period.</p>
-          </div>
-
-          <h3>Your Commitment to Safety</h3>
-          
-          <p>As you progress through this course, we ask you to make a personal commitment to safe driving. This isn't just about passing a test or checking a box—it's about developing habits and attitudes that will protect you and others for the rest of your driving life.</p>
-
-          <p>Consider signing this personal pledge:</p>
-          
-          <div class="pledge-box">
-            <h4>🤝 My Safe Driving Pledge</h4>
-            <p><em>I commit to:</em></p>
-            <ul>
-              <li>Keeping my full attention on the road while driving</li>
-              <li>Never texting or using my phone while behind the wheel</li>
-              <li>Always wearing my seatbelt and ensuring my passengers do the same</li>
-              <li>Never driving under the influence of alcohol or drugs</li>
-              <li>Obeying all traffic laws and posted speed limits</li>
-              <li>Being patient and courteous to other road users</li>
-              <li>Adjusting my driving for weather and road conditions</li>
-              <li>Being an example of safe driving for others</li>
-            </ul>
-          </div>
-
-          <h3>Course Structure and Navigation</h3>
-          
-          <p>This 4-hour course is divided into eight modules, each focusing on a critical aspect of safe driving:</p>
-          
-          <ol>
-            <li><strong>Introduction & Course Overview</strong> (This Module) - Understanding the importance of driver improvement</li>
-            <li><strong>Distracted Driving</strong> - The dangers of divided attention and Florida law</li>
-            <li><strong>Emergency Situations</strong> - How to handle vehicle breakdowns and road emergencies</li>
-            <li><strong>Emergency Vehicles & Move Over Law</strong> - Responding to emergency responders</li>
-            <li><strong>Defensive Driving Techniques</strong> - Proactive strategies for hazard avoidance</li>
-            <li><strong>Road Signs and Signals</strong> - Understanding traffic control devices</li>
-            <li><strong>Sharing the Road</strong> - Safely interacting with all road users</li>
-            <li><strong>Certification & Final Assessment</strong> - Course completion and testing</li>
-          </ol>
-
-          <p>Each module contains:</p>
-          <ul>
-            <li>Comprehensive educational content</li>
-            <li>Real-world examples and case studies</li>
-            <li>Florida-specific information and statistics</li>
-            <li>Reflection questions to reinforce learning</li>
-            <li>Knowledge check quizzes</li>
-          </ul>
-
-          <div class="alert alert-success">
-            <h4>✅ Module 1 Complete</h4>
-            <p>You've completed the Introduction module. In the next module, we'll explore one of the most dangerous behaviors on the road today: Distracted Driving. You'll learn about the three types of distractions, Florida's laws regarding phone use, and strategies to stay focused behind the wheel.</p>
-          </div>
+          <h4>2. Speeding</h4>
+          <p>Speed was a contributing factor in 26% of all U.S. traffic fatalities in 2023. In Florida, speeding-related crashes claimed over 900 lives in 2023.</p>
+          <h4>3. Impaired Driving (DUI)</h4>
+          <p>37% of all U.S. traffic fatalities in 2023 involved alcohol-impaired drivers (BAC \u2265 0.08). In Florida, 798 people died in alcohol-related crashes in 2023. A driver at BAC 0.08 is 4 times more likely to crash; at BAC 0.15, risk increases 12-fold.</p>
+          <h4>4. Aggressive Driving / Road Rage</h4>
+          <p>Florida Statute 316.1923 defines aggressive careless driving as a moving violation. Road rage incidents, where drivers use their vehicle or exit to confront another driver, result in crashes and fatalities every year in Florida.</p>
+          <h4>5. Drowsy Driving</h4>
+          <p>NHTSA estimates drowsy driving causes over 100,000 police-reported crashes annually nationwide. Driving after 18 hours awake = BAC 0.05 impairment; after 24 hours awake = BAC 0.10 impairment.</p>
+          <h4>6. Failure to Use Seat Belts</h4>
+          <p>In Florida, 51% of all traffic fatalities in 2022 involved unrestrained occupants. A seat belt reduces the risk of death by 45% for front-seat passengers and 60% for light-truck occupants.</p>
         `,
         quizQuestions: [
           {
-            questionText: 'According to Florida law, how many points within 12 months will result in a 30-day license suspension?',
-            options: ['6 points', '12 points', '18 points', '24 points'],
-            correctAnswer: '12 points',
-            explanation: 'Accumulating 12 points within 12 months results in a 30-day suspension of your Florida driver\'s license.'
+            questionText: 'According to the 2023 FLHSMV Annual Report, approximately how many traffic fatalities occurred in Florida in 2023?',
+            options: ['1,200', '3,543', '7,800', '400'],
+            correctAnswer: '3,543',
+            explanation: 'Florida recorded 3,543 traffic fatalities in 2023 \u2014 approximately one death every 2.5 hours.'
           },
           {
-            questionText: 'Which of the following is NOT a unique driving challenge in Florida?',
-            options: ['Afternoon thunderstorms', 'Tourist traffic', 'Snow and ice', 'Sun glare'],
-            correctAnswer: 'Snow and ice',
-            explanation: 'Florida rarely experiences snow and ice. The state\'s unique challenges include thunderstorms, tourist traffic, fog, and intense sun glare.'
+            questionText: 'What was the nationwide total of traffic fatalities in 2023 according to NHTSA?',
+            options: ['40,990', '22,000', '55,000', '18,500'],
+            correctAnswer: '40,990',
+            explanation: 'NHTSA reported 40,990 people died in motor vehicle crashes in the United States in 2023.'
           },
           {
-            questionText: 'How many times in your lifetime can you elect to take a Basic Driver Improvement course for point prevention?',
-            options: ['Unlimited times', '3 times', '5 times', '1 time only'],
-            correctAnswer: '5 times',
-            explanation: 'Florida law allows you to take the BDI course for point prevention up to 5 times in your lifetime, but no more than once per 12-month period.'
+            questionText: 'What percentage of U.S. traffic fatalities in 2023 involved alcohol-impaired drivers?',
+            options: ['12%', '25%', '37%', '50%'],
+            correctAnswer: '37%',
+            explanation: 'NHTSA data shows 37% of all U.S. traffic fatalities in 2023 involved alcohol-impaired drivers (BAC \u2265 0.08).'
           },
           {
-            questionText: 'True or False: Completing this course can help you receive a discount on your auto insurance.',
-            questionType: 'true_false',
-            options: ['True', 'False'],
-            correctAnswer: 'True',
-            explanation: 'Many insurance companies offer discounts to drivers who complete approved driver improvement courses. Check with your provider for specific discounts.'
+            questionText: 'Reading a text while driving at 55 mph for 5 seconds is equivalent to driving approximately how far with your eyes closed?',
+            options: ['Half a city block', 'One football field', 'A mile', '50 feet'],
+            correctAnswer: 'One football field',
+            explanation: 'At 55 mph, a 5-second distraction equals approximately 400 feet \u2014 the length of a football field \u2014 traveled with eyes off the road.'
+          },
+          {
+            questionText: 'Which of the following is a type of cognitive distraction while driving?',
+            options: ['Adjusting the radio', 'Eating a sandwich', 'Daydreaming', 'Looking at a map'],
+            correctAnswer: 'Daydreaming',
+            explanation: 'Cognitive distraction means your mind is off driving. Daydreaming is cognitive; adjusting the radio and eating are manual; looking at a map is visual.'
           }
         ]
       },
 
       // =========================================
-      // MODULE 2: Distracted Driving
-      // Estimated Reading Time: 35-40 minutes
+      // MODULE 2: Crash Dynamics
+      // Estimated Time: 20 minutes
       // =========================================
       {
-        title: 'Module 2: Distracted Driving',
-        description: 'Understanding the dangers of distracted driving, Florida law, and prevention strategies',
-        estimatedMinutes: 40,
+        title: 'Module 2: Crash Dynamics',
+        description: 'The effect of speed on force of impact, the three-collision concept, and vehicle safety design',
+        estimatedMinutes: 20,
         content: `
-          <h2>Distracted Driving: The Silent Killer on Our Roads</h2>
-          
-          <p>Distracted driving has become one of the most dangerous epidemics on American roads. According to the National Highway Traffic Safety Administration (NHTSA), distracted driving claimed 3,522 lives in a single recent year—that's nearly 10 people killed every single day because someone wasn't paying attention to the road.</p>
-
-          <p>In Florida specifically, distracted driving contributes to over 50,000 crashes annually, causing thousands of injuries and hundreds of deaths. Yet despite these staggering numbers, many drivers continue to engage in distracting behaviors, often believing "it won't happen to me."</p>
-
-          <div class="statistics-box">
-            <h4>📊 Distracted Driving by the Numbers</h4>
-            <ul>
-              <li><strong>9%</strong> of all fatal crashes involve distracted driving</li>
-              <li><strong>5 seconds</strong> is the average time eyes are off the road while texting—at 55 mph, that's the length of a football field</li>
-              <li><strong>1 in 4</strong> car accidents in the United States are caused by texting and driving</li>
-              <li><strong>21-24 year olds</strong> have the highest rates of distracted driving</li>
-              <li>Texting while driving makes you <strong>23 times more likely</strong> to crash</li>
-              <li>Using a cell phone while driving reduces brain activity associated with driving by <strong>37%</strong></li>
-            </ul>
-          </div>
-
-          <h3>Understanding the Three Types of Distractions</h3>
-          
-          <p>To effectively combat distracted driving, we need to understand that distractions fall into three distinct categories. Many activities, particularly cell phone use, involve all three types simultaneously, making them exceptionally dangerous.</p>
-
-          <h4>1. Visual Distractions</h4>
-          <p><strong>Definition:</strong> Anything that takes your eyes off the road.</p>
-          
-          <p>Your eyes are your primary tool for safe driving. They allow you to see hazards, read signs, monitor traffic, and navigate safely. When you look away from the road, you are essentially driving blind.</p>
-          
-          <p><strong>Common visual distractions include:</strong></p>
+          <h2>Module 2: Crash Dynamics</h2>
+          <p>Every traffic crash involves three separate collisions. Understanding what happens physically during a crash helps you appreciate why speed, restraints, and vehicle design matter so much.</p>
+          <h3>Section 2.1 \u2014 Effect of Speed on Force of Impact</h3>
+          <p>Force is proportional to the <strong>square</strong> of speed (F&nbsp;=&nbsp;mv\xb2). Doubling your speed <strong>quadruples</strong> the force of impact:</p>
           <ul>
-            <li>Looking at a cell phone screen</li>
-            <li>Reading text messages, emails, or social media</li>
-            <li>Looking at a GPS navigation system</li>
-            <li>Checking on children or passengers in the back seat</li>
-            <li>Looking at an accident or activity on the side of the road ("rubbernecking")</li>
-            <li>Searching for items in the vehicle (sunglasses, wallet, etc.)</li>
-            <li>Looking at billboards or scenery</li>
-            <li>Adjusting mirrors, climate controls, or entertainment systems</li>
+            <li>At 20 mph, a crash equals falling from a <strong>2-story building</strong></li>
+            <li>At 30 mph, a crash equals falling from a <strong>3.5-story building</strong></li>
+            <li>At 60 mph, a crash equals falling from a <strong>14-story building</strong></li>
           </ul>
-
-          <div class="alert alert-danger">
-            <h4>⚠️ Critical Fact</h4>
-            <p>At 55 mph, looking at your phone for just 5 seconds means you travel the length of a football field (100 yards) completely blind to the road ahead. In that distance, traffic can stop, pedestrians can step into the road, or road conditions can change dramatically.</p>
-          </div>
-
-          <h4>2. Manual Distractions</h4>
-          <p><strong>Definition:</strong> Anything that takes your hands off the steering wheel.</p>
-          
-          <p>Proper vehicle control requires at least one hand on the steering wheel at all times, and ideally both hands. When your hands leave the wheel, your ability to steer around hazards, maintain lane position, or react to emergencies is severely compromised.</p>
-          
-          <p><strong>Common manual distractions include:</strong></p>
-          <ul>
-            <li>Holding or manipulating a cell phone</li>
-            <li>Eating or drinking</li>
-            <li>Smoking or vaping</li>
-            <li>Personal grooming (applying makeup, shaving, fixing hair)</li>
-            <li>Reaching for objects in the vehicle</li>
-            <li>Adjusting controls on the dashboard</li>
-            <li>Handling pets</li>
-            <li>Changing radio stations or adjusting music</li>
-          </ul>
-
-          <h4>3. Cognitive Distractions</h4>
-          <p><strong>Definition:</strong> Anything that takes your mind off the task of driving.</p>
-          
-          <p>This is perhaps the most insidious type of distraction because it's invisible. You can have both hands on the wheel and your eyes on the road, yet still be dangerously distracted if your mind is elsewhere. Studies show that cognitive distraction significantly increases reaction time and reduces awareness of surroundings.</p>
-          
-          <p><strong>Common cognitive distractions include:</strong></p>
-          <ul>
-            <li>Having an emotional or stressful conversation (phone or in-person)</li>
-            <li>Thinking about work problems or personal issues</li>
-            <li>Daydreaming or "zoning out"</li>
-            <li>Being upset, angry, or emotionally distressed</li>
-            <li>Planning activities or mentally organizing your day</li>
-            <li>Listening to engaging audiobooks or podcasts</li>
-            <li>Complex conversations with passengers</li>
-            <li>Being under stress or time pressure</li>
-          </ul>
-
-          <div class="case-study">
-            <h4>📋 Real-World Case Study: Cognitive Distraction</h4>
-            <p><strong>The "Invisible" Crash (Orlando, FL):</strong></p>
-            <p>David was driving home after receiving difficult news about a family member's health. His hands were on the wheel, his eyes were on the road, but his mind was a thousand miles away, thinking about his mother's diagnosis.</p>
-            <p>A motorcyclist entered his lane from the right. Under normal circumstances, David would have seen the motorcycle easily and slowed down. But with his mind preoccupied, he never registered the motorcyclist's presence until the collision occurred.</p>
-            <p><strong>The result:</strong> The motorcyclist suffered a broken leg and arm. David faced careless driving charges, a lawsuit, and overwhelming guilt—all because his mind wasn't on driving.</p>
-            <p><em>This case illustrates that you don't need to be holding a phone to be dangerously distracted.</em></p>
-          </div>
-
-          <h3>The Triple Threat: Why Texting is Especially Dangerous</h3>
-          
-          <p>Cell phone use while driving, particularly texting, is considered the most dangerous distraction because it combines all three types of distraction simultaneously:</p>
-          
-          <ul>
-            <li><strong>Visual:</strong> You must look at the phone screen to read or type messages</li>
-            <li><strong>Manual:</strong> You must hold the phone and use your fingers to type</li>
-            <li><strong>Cognitive:</strong> You must think about the content of the message and how to respond</li>
-          </ul>
-
-          <p>Research from the Virginia Tech Transportation Institute found that texting while driving increases the risk of a crash by up to 23 times compared to non-distracted driving. No other common activity behind the wheel carries such extreme risk.</p>
-
-          <h3>Florida Law on Distracted Driving</h3>
-          
-          <p>Florida has enacted strict laws to combat distracted driving, and enforcement has increased significantly in recent years.</p>
-
-          <h4>Florida Statutes Section 316.305: Wireless Communications While Driving Law</h4>
-          
-          <p>This law, commonly known as the "Texting While Driving" law, makes it illegal to operate a motor vehicle while manually typing or entering multiple letters, numbers, symbols, or other characters into a wireless communications device.</p>
-
-          <div class="law-box">
-            <h4>📜 What the Law Prohibits</h4>
-            <ul>
-              <li>Texting while driving (even at red lights or stop signs while in traffic)</li>
-              <li>Emailing while driving</li>
-              <li>Typing on social media while driving</li>
-              <li>Manually entering data into any wireless device</li>
-            </ul>
-            
-            <h4>📜 School Zone and Work Zone Requirements</h4>
-            <p>In designated school zones and active work zones, Florida law goes further:</p>
-            <ul>
-              <li>Drivers must use <strong>hands-free mode only</strong> for any cell phone use</li>
-              <li>This means you cannot hold the phone at all—even for calls</li>
-              <li>This is a <strong>primary offense</strong>—police can pull you over solely for this violation</li>
-            </ul>
-          </div>
-
-          <h4>Penalties for Violations</h4>
-          <table class="info-table">
-            <tr><th>Violation</th><th>Penalty</th><th>Points</th></tr>
-            <tr><td>First offense (texting)</td><td>$30 fine + court costs (total ~$100-$130)</td><td>0 points</td></tr>
-            <tr><td>Second offense within 5 years</td><td>$60 fine + court costs (total ~$150-$180)</td><td>3 points</td></tr>
-            <tr><td>School zone violation</td><td>$60 fine + court costs</td><td>3 points</td></tr>
-            <tr><td>Work zone violation</td><td>$60 fine + court costs</td><td>3 points</td></tr>
-            <tr><td>Causing a crash while distracted</td><td>6 points + potential additional charges</td><td>6 points</td></tr>
-          </table>
-
-          <div class="alert alert-warning">
-            <h4>⚠️ Important Note About Red Lights</h4>
-            <p>Many drivers believe it's legal to text at red lights since the vehicle is stopped. <strong>This is incorrect.</strong> Under Florida law, if your vehicle is in the roadway—including stopped at a traffic signal—you are considered to be "operating" the vehicle. Texting at a red light is still illegal and can result in a citation.</p>
-          </div>
-
-          <h3>Beyond Cell Phones: Other Common Distractions</h3>
-          
-          <p>While cell phones receive the most attention, many other activities distract drivers daily:</p>
-
-          <h4>Eating and Drinking</h4>
-          <p>It seems harmless—grabbing a quick bite during your commute. But eating while driving:</p>
-          <ul>
-            <li>Requires at least one hand off the wheel</li>
-            <li>Diverts visual attention to unwrap food or hold containers</li>
-            <li>Creates sudden emergencies if you spill hot coffee or drop food</li>
-            <li>Increases crash risk by 80% according to a study by Lytx (a fleet management company)</li>
-          </ul>
-
-          <h4>Passengers</h4>
-          <p>Interacting with passengers is a leading cause of distracted driving crashes:</p>
-          <ul>
-            <li><strong>Teen drivers:</strong> Having one peer passenger doubles crash risk; two or more passengers increases risk fivefold</li>
-            <li><strong>Parents:</strong> Children in the car are 12 times more distracting than talking on a cell phone</li>
-            <li><strong>All drivers:</strong> Intense conversations with passengers reduce attention to the road</li>
-          </ul>
-
-          <h4>Infotainment Systems</h4>
-          <p>Modern vehicles come equipped with large touchscreens and complex entertainment systems:</p>
-          <ul>
-            <li>Programming navigation takes an average of 40 seconds—far longer than safe to look away</li>
-            <li>Changing music or radio stations diverts attention</li>
-            <li>Voice commands, while safer, still cause cognitive distraction</li>
-          </ul>
-
-          <h4>Personal Grooming</h4>
-          <p>Shaving, applying makeup, or fixing hair while driving is surprisingly common:</p>
-          <ul>
-            <li>Requires looking in mirrors rather than at the road</li>
-            <li>Takes hands off the wheel</li>
-            <li>Creates an unrealistic sense of multitasking ability</li>
-          </ul>
-
-          <div class="reflection-question">
-            <h4>🤔 Reflection Question</h4>
-            <p>Be honest with yourself: What distracting behaviors have you engaged in while driving? Think about the last week. Did you look at your phone? Eat a meal? Have an intense conversation? What could you do differently to reduce these behaviors?</p>
-          </div>
-
-          <h3>Prevention Strategies: How to Stay Focused</h3>
-          
-          <p>Understanding the dangers of distracted driving is important, but taking action to prevent it is essential. Here are proven strategies to keep your focus on the road:</p>
-
-          <h4>Before You Drive</h4>
-          <ul>
-            <li><strong>Silence your phone</strong> or activate "Do Not Disturb While Driving" mode</li>
-            <li><strong>Put your phone out of reach</strong>—in the glove box, back seat, or trunk</li>
-            <li><strong>Program your GPS</strong> before starting your journey</li>
-            <li><strong>Adjust mirrors, seats, and climate controls</strong> before pulling away</li>
-            <li><strong>Select your music or podcast</strong> before you begin driving</li>
-            <li><strong>Eat before leaving</strong> rather than eating while driving</li>
-            <li><strong>Address emotional issues</strong>—if you're upset, take time to calm down before driving</li>
-          </ul>
-
-          <h4>While Driving</h4>
-          <ul>
-            <li><strong>Use hands-free technology</strong> if you must take calls (but limit conversations)</li>
-            <li><strong>Let voicemail handle calls</strong>—you can always call back when parked</li>
-            <li><strong>Pull over safely</strong> if you need to make a call, text, or address something urgent</li>
-            <li><strong>Ask passengers to help</strong> with navigation or phone calls</li>
-            <li><strong>Take breaks on long trips</strong> to prevent fatigue and maintain focus</li>
-            <li><strong>Keep eyes moving</strong>—continuously scan mirrors and the road ahead</li>
-          </ul>
-
-          <h4>Technology Solutions</h4>
-          <ul>
-            <li><strong>Do Not Disturb While Driving:</strong> Both iPhone and Android have features that silence notifications and can auto-reply to messages while you're driving</li>
-            <li><strong>Apps that block texting:</strong> DriveMode, LifeSaver, and other apps can disable texting while the vehicle is moving</li>
-            <li><strong>Built-in vehicle systems:</strong> Use Apple CarPlay or Android Auto for safer interaction with your phone</li>
-            <li><strong>Bluetooth:</strong> Pair your phone to your car's audio system for hands-free calls</li>
-          </ul>
-
-          <div class="alert alert-success">
-            <h4>✅ The Simple Solution</h4>
-            <p>The single most effective way to prevent distracted driving is simple: <strong>Put your phone away before you start driving and don't touch it until you've reached your destination and parked safely.</strong></p>
-            <p>No text, call, email, or notification is worth your life or the life of another person.</p>
-          </div>
-
-          <h3>What If You're Tempted?</h3>
-          
-          <p>If you find yourself reaching for your phone while driving, try these mental strategies:</p>
-          
-          <ul>
-            <li><strong>Ask yourself:</strong> "Is this worth dying for? Is this worth killing someone for?"</li>
-            <li><strong>Remember:</strong> Whatever it is can wait. You'll be at your destination in minutes.</li>
-            <li><strong>Think about your loved ones:</strong> What would happen to them if you were killed or seriously injured?</li>
-            <li><strong>Consider the other people on the road:</strong> They have families too.</li>
-            <li><strong>Calculate the risk:</strong> A 5-second glance at 55 mph = 100 yards of blind driving.</li>
-          </ul>
-
-          <div class="case-study">
-            <h4>📋 A Final Thought: AT&T's "It Can Wait" Stories</h4>
-            <p>AT&T's campaign collected thousands of real stories from people affected by distracted driving. Here's one that stayed with many people:</p>
-            <p><em>"I was texting while driving and ran a stop sign. I T-boned another car. Inside was a mother and her two children. The 6-year-old didn't survive. I took a child's life because I couldn't wait to respond to a text message. I have to live with that for the rest of my life. Please, just put the phone down."</em></p>
-            <p>Every time you're tempted to look at your phone while driving, remember: the consequences can be permanent, devastating, and life-changing.</p>
-          </div>
-
-          <h3>Module Summary</h3>
-          
-          <ul>
-            <li>Distracted driving causes thousands of deaths and injuries in Florida every year</li>
-            <li>There are three types of distractions: visual, manual, and cognitive</li>
-            <li>Texting while driving is especially dangerous because it involves all three types</li>
-            <li>Florida law prohibits texting while driving and requires hands-free phone use in school and work zones</li>
-            <li>Prevention strategies include putting your phone away, using technology solutions, and pulling over for urgent matters</li>
-            <li>No message, call, or notification is worth risking lives</li>
-          </ul>
-
-          <div class="alert alert-success">
-            <h4>✅ Module 2 Complete</h4>
-            <p>You've completed the Distracted Driving module. In the next module, we'll cover Emergency Situations—how to handle vehicle breakdowns, tire blowouts, brake failures, and other unexpected events on the road.</p>
-          </div>
-        `,
-        quizQuestions: [
-          {
-            questionText: 'What are the three types of distractions that affect drivers?',
-            options: ['Physical, emotional, mental', 'Visual, manual, cognitive', 'Internal, external, environmental', 'Primary, secondary, tertiary'],
-            correctAnswer: 'Visual, manual, cognitive',
-            explanation: 'The three types of driving distractions are visual (eyes off road), manual (hands off wheel), and cognitive (mind off driving).'
-          },
-          {
-            questionText: 'In Florida, it is legal to text while stopped at a red light.',
-            questionType: 'true_false',
-            options: ['True', 'False'],
-            correctAnswer: 'False',
-            explanation: 'Under Florida law, texting while your vehicle is in the roadway—including at red lights—is still illegal because you are considered to be "operating" the vehicle.'
-          },
-          {
-            questionText: 'At 55 mph, how far does your car travel during a 5-second glance at your phone?',
-            options: ['50 feet', '100 feet', '100 yards (length of football field)', '200 yards'],
-            correctAnswer: '100 yards (length of football field)',
-            explanation: 'At 55 mph, your vehicle travels approximately 100 yards (the length of a football field) in just 5 seconds—completely blind to the road ahead.'
-          },
-          {
-            questionText: 'What is required when using a cell phone in school zones and work zones in Florida?',
-            options: ['Cell phones are completely prohibited', 'Hands-free mode only', 'Texting is allowed but calls are not', 'Normal use is permitted'],
-            correctAnswer: 'Hands-free mode only',
-            explanation: 'Florida law requires hands-free phone use in school zones and active work zones. You cannot hold the phone at all in these areas.'
-          },
-          {
-            questionText: 'Which of the following is an example of cognitive distraction?',
-            options: ['Looking at a text message', 'Eating a sandwich', 'Thinking about a stressful work situation', 'Adjusting the radio'],
-            correctAnswer: 'Thinking about a stressful work situation',
-            explanation: 'Cognitive distraction occurs when your mind is not focused on driving. Being mentally preoccupied with stress, emotions, or other thoughts is cognitive distraction.'
-          },
-          {
-            questionText: 'According to research, texting while driving increases your crash risk by how many times?',
-            options: ['5 times', '10 times', '23 times', '50 times'],
-            correctAnswer: '23 times',
-            explanation: 'Research from the Virginia Tech Transportation Institute found that texting while driving increases crash risk by 23 times compared to non-distracted driving.'
-          }
-        ]
-      },
-
-      // =========================================
-      // MODULE 3: Emergency Situations
-      // Estimated Reading Time: 35-40 minutes
-      // =========================================
-      {
-        title: 'Module 3: Emergency Situations',
-        description: 'How to handle vehicle breakdowns, tire blowouts, brake failure, and road emergencies',
-        estimatedMinutes: 40,
-        content: `
-          <h2>Emergency Situations: Being Prepared for the Unexpected</h2>
-          
-          <p>No matter how carefully you drive, emergencies can happen. A tire can blow out without warning. Your brakes might fail. Another driver might swerve into your lane. Weather conditions can change in an instant. The key to surviving these emergencies is preparation—knowing what to do before it happens so you can react quickly and correctly when it does.</p>
-
-          <p>This module will teach you how to handle common driving emergencies safely and effectively. By the end, you'll have the knowledge to respond to situations that could otherwise result in serious injury or death.</p>
-
-          <div class="statistics-box">
-            <h4>📊 Emergency Situation Statistics</h4>
-            <ul>
-              <li><strong>220 million</strong> flat tires occur in the U.S. each year</li>
-              <li><strong>33,000</strong> accidents annually are caused by tire blowouts</li>
-              <li><strong>Brake failure</strong> accounts for approximately 5% of all crashes</li>
-              <li><strong>300,000</strong> drivers run out of fuel on U.S. highways yearly</li>
-              <li>The average driver will experience <strong>5 flat tires</strong> in their lifetime</li>
-              <li><strong>Florida:</strong> Over 25,000 crashes annually involve hitting animals</li>
-            </ul>
-          </div>
-
-          <h3>Vehicle Breakdown Procedures</h3>
-          
-          <p>Vehicles can break down for many reasons: overheating, flat tires, dead batteries, running out of fuel, or mechanical failures. Here's what to do:</p>
-
-          <h4>Step 1: Get Off the Road Safely</h4>
-          <ul>
-            <li><strong>Signal your intentions</strong> by turning on your right turn signal or hazard lights immediately</li>
-            <li><strong>Gradually slow down</strong>—avoid sudden braking that could surprise drivers behind you</li>
-            <li><strong>Pull completely off the roadway</strong> to the right shoulder if possible</li>
-            <li><strong>Move as far from traffic as possible</strong>—the further, the safer</li>
-            <li><strong>Choose a flat, stable surface</strong> if possible, away from curves or hills</li>
-            <li><strong>Avoid stopping on bridges, in tunnels, or in areas with no shoulder</strong></li>
-          </ul>
-
-          <h4>Step 2: Make Your Vehicle Visible</h4>
-          <ul>
-            <li><strong>Turn on your hazard lights (emergency flashers)</strong> immediately</li>
-            <li><strong>Turn on interior dome lights at night</strong> so others can see the vehicle is occupied</li>
-            <li><strong>Set up reflective triangles or flares</strong> if you have them:
-              <ul>
-                <li>Place one about 10 feet directly behind your vehicle</li>
-                <li>Place another about 100 feet back</li>
-                <li>Place a third about 200-300 feet back (visible to approaching traffic)</li>
-              </ul>
-            </li>
-            <li><strong>Raise your hood</strong> to signal distress (but do so safely)</li>
-            <li><strong>Tie a white cloth or bright fabric to your antenna or door handle</strong></li>
-          </ul>
-
-          <h4>Step 3: Stay Safe</h4>
-          <ul>
-            <li><strong>Stay inside your vehicle</strong> if you're on a highway or busy road—it's safer than standing outside</li>
-            <li><strong>Keep your seatbelt on</strong> in case another vehicle strikes your car</li>
-            <li><strong>Lock your doors</strong> for personal security</li>
-            <li><strong>If you must exit</strong>, do so from the side away from traffic</li>
-            <li><strong>Stand well away from the vehicle</strong> and behind a guardrail if possible</li>
-            <li><strong>Never try to cross lanes of traffic</strong> on foot</li>
-          </ul>
-
-          <h4>Step 4: Call for Help</h4>
-          <ul>
-            <li><strong>Call 911</strong> if you're in a dangerous location or feel unsafe</li>
-            <li><strong>Call roadside assistance</strong> (AAA, insurance company, or vehicle manufacturer program)</li>
-            <li><strong>Use Florida's *FHP (*347) number</strong> to reach Florida Highway Patrol</li>
-            <li><strong>Use apps like Waze or Google Maps</strong> to share your exact location with help</li>
-          </ul>
-
-          <div class="alert alert-danger">
-            <h4>⚠️ Critical Safety Warning</h4>
-            <p>Being struck by passing traffic is a leading cause of death for stranded motorists. <strong>Never stand behind or beside your vehicle</strong> when on the shoulder of a highway. If you must wait outside, move well away from the roadway and wait behind a guardrail or barrier.</p>
-          </div>
-
-          <h3>Tire Blowout: Staying in Control</h3>
-          
-          <p>A tire blowout—when a tire suddenly loses air pressure—is one of the most frightening experiences a driver can face. The key is to resist your instincts (which may be wrong) and follow the correct procedure.</p>
-
-          <h4>What Happens During a Blowout</h4>
-          <ul>
-            <li>You'll hear a loud bang or explosion</li>
-            <li>The vehicle will pull strongly to one side (toward the blown tire)</li>
-            <li>You may feel the steering wheel jerk or become difficult to control</li>
-            <li>You'll hear a loud flapping or thumping sound</li>
-            <li>If it's a rear tire, the back end may sway or fishtail</li>
-          </ul>
-
-          <h4>What to Do: The Counter-Intuitive Response</h4>
-          <ol>
-            <li><strong>DO NOT slam on the brakes</strong>—this is your instinct, but it's wrong. Hard braking can cause you to lose control completely.</li>
-            <li><strong>Keep a firm grip on the steering wheel</strong> with both hands at 9 and 3 o'clock positions.</li>
-            <li><strong>Maintain your direction</strong>—steer straight and resist the pull to one side.</li>
-            <li><strong>Gradually ease off the accelerator</strong>—don't lift your foot suddenly.</li>
-            <li><strong>Allow the vehicle to slow naturally</strong> through wind resistance and friction.</li>
-            <li><strong>Once below 30 mph, gently apply the brakes</strong> to slow further.</li>
-            <li><strong>Steer gradually to the shoulder</strong> and come to a complete stop.</li>
-            <li><strong>Turn on hazard lights</strong> and follow the breakdown procedures above.</li>
-          </ol>
-
-          <div class="case-study">
-            <h4>📋 Real-World Case Study: Correct Blowout Response</h4>
-            <p><strong>Jennifer's Experience (I-75, Near Gainesville):</strong></p>
-            <p>Jennifer was traveling 70 mph in the left lane when her front right tire blew out. Her car immediately pulled hard to the right toward the center lane.</p>
-            <p>"My first instinct was to slam on the brakes, but I remembered what I'd learned—don't brake hard during a blowout. I gripped the wheel tightly and steered straight. It felt like the car was fighting me, but I held firm."</p>
-            <p>Jennifer gradually let off the gas and let the car slow on its own. After about 10 seconds that "felt like minutes," she was able to carefully steer across traffic to the right shoulder.</p>
-            <p>"If I had hit the brakes like I wanted to, I probably would have spun out into other cars. Knowing the right response saved my life."</p>
-          </div>
-
-          <h4>Preventing Tire Blowouts</h4>
-          <ul>
-            <li><strong>Check tire pressure monthly</strong>—underinflation is the leading cause of blowouts</li>
-            <li><strong>Inspect tires regularly</strong> for wear, damage, or embedded objects</li>
-            <li><strong>Replace tires when tread is worn</strong>—use the penny test (if you can see Lincoln's entire head, it's time for new tires)</li>
-            <li><strong>Avoid road hazards</strong> when possible (potholes, debris, curbs)</li>
-            <li><strong>Don't overload your vehicle</strong>—excess weight stresses tires</li>
-            <li><strong>Slow down in hot weather</strong>—heat increases tire pressure and blowout risk</li>
-          </ul>
-
-          <h3>Brake Failure: Stopping Without Brakes</h3>
-          
-          <p>Complete brake failure is rare in modern vehicles with redundant brake systems, but partial failure or significant brake fade can occur. If your brakes fail or become ineffective:</p>
-
-          <h4>Immediate Actions</h4>
-          <ol>
-            <li><strong>Don't panic</strong>—you have options and time to use them.</li>
-            <li><strong>Pump the brake pedal rapidly</strong> several times. This may build up enough pressure in the system to slow the vehicle, especially if it's a hydraulic fluid leak.</li>
-            <li><strong>Shift to a lower gear</strong> to use engine braking:
-              <ul>
-                <li>Automatic transmission: Shift from D to 3, then 2, then 1 (or use manual mode if equipped)</li>
-                <li>Manual transmission: Downshift through gears progressively</li>
-              </ul>
-            </li>
-            <li><strong>Apply the parking brake (emergency brake) gradually</strong>—don't yank it or you may lock the rear wheels and skid. Most modern parking brakes are designed for this.</li>
-            <li><strong>Look for an escape route</strong>—an uphill road, open field, or runaway truck ramp.</li>
-            <li><strong>Friction can help</strong>—if necessary, allow wheels to rub against a curb to slow the vehicle.</li>
-          </ol>
-
-          <h4>Last Resort Options</h4>
-          <ul>
-            <li><strong>Aim for something soft</strong> if collision is unavoidable—bushes, snow banks, or sand rather than walls or other vehicles</li>
-            <li><strong>Sideswipe rather than head-on</strong>—a glancing blow against a guardrail is better than a direct collision</li>
-            <li><strong>Turn off the engine</strong> as a last resort (but know this will disable power steering and make steering very difficult)</li>
-          </ul>
-
-          <div class="alert alert-warning">
-            <h4>⚠️ Warning Signs of Brake Problems</h4>
-            <p>Don't ignore these signs that your brakes may be failing:</p>
-            <ul>
-              <li>Grinding or squealing sounds when braking</li>
-              <li>Soft or spongy brake pedal</li>
-              <li>Brake pedal goes to the floor</li>
-              <li>Vehicle pulls to one side when braking</li>
-              <li>Vibration when braking</li>
-              <li>Brake warning light on dashboard</li>
-              <li>Burning smell after hard braking</li>
-            </ul>
-            <p>If you notice any of these signs, have your brakes inspected immediately.</p>
-          </div>
-
-          <h3>Skidding: Regaining Control</h3>
-          
-          <p>Skids occur when your tires lose traction with the road surface, usually due to:</p>
-          <ul>
-            <li>Wet, icy, or slippery road surfaces</li>
-            <li>Braking too hard</li>
-            <li>Accelerating too quickly</li>
-            <li>Turning too sharply</li>
-            <li>Worn tires</li>
-          </ul>
-
-          <h4>Types of Skids and How to Correct Them</h4>
-          
-          <h5>Front-Wheel Skid (Understeer)</h5>
-          <p>Your front tires lose traction, and the car continues straight even though you're turning the wheel.</p>
-          <ul>
-            <li>Remove your foot from the gas</li>
-            <li>Do not brake</li>
-            <li>Straighten the steering wheel slightly</li>
-            <li>Wait for the front tires to regain traction</li>
-            <li>Then gently resume steering in your desired direction</li>
-          </ul>
-
-          <h5>Rear-Wheel Skid (Oversteer)</h5>
-          <p>Your rear tires lose traction, causing the back of the car to slide out.</p>
-          <ul>
-            <li>Remove your foot from the gas</li>
-            <li>Do not brake</li>
-            <li><strong>Steer in the direction you want the front of the car to go</strong> (often described as "turning into the skid")</li>
-            <li>As the vehicle straightens, straighten the steering wheel</li>
-            <li>Be prepared for the car to slide in the other direction and correct again if needed</li>
-          </ul>
-
-          <h5>Hydroplaning</h5>
-          <p>Your tires ride on top of water rather than the road surface.</p>
-          <ul>
-            <li>Gradually ease off the accelerator—do not brake</li>
-            <li>Keep the steering wheel straight</li>
-            <li>Wait for the tires to regain contact with the road</li>
-            <li>Once you regain traction, gently slow down</li>
-          </ul>
-
-          <div class="reflection-question">
-            <h4>🤔 Reflection Question</h4>
-            <p>Have you ever experienced a skid? What did you do? Now that you know the correct response, what would you do differently?</p>
-          </div>
-
-          <h3>Accelerator Stuck (Unintended Acceleration)</h3>
-          
-          <p>If your accelerator pedal gets stuck or the car accelerates on its own:</p>
-          
-          <ol>
-            <li><strong>Shift to neutral (N)</strong>—this disconnects the engine from the wheels, even if the engine revs high</li>
-            <li><strong>Apply the brakes firmly and steadily</strong>—modern brakes can overpower the engine</li>
-            <li><strong>Focus on steering</strong> to maintain control and find a safe place to stop</li>
-            <li><strong>Once stopped, turn off the engine</strong></li>
-            <li><strong>Do not turn off the engine while moving</strong> (if possible) as this will disable power steering and brakes</li>
-          </ol>
-
-          <h4>If You Cannot Shift to Neutral</h4>
-          <ul>
-            <li>Press the brake firmly with both feet if necessary</li>
-            <li>For push-button start: press and hold the button for 3+ seconds</li>
-            <li>For key ignition: turn to ACC position (not OFF, which locks the steering)</li>
-          </ul>
-
-          <h3>Engine Fire</h3>
-          
-          <p>If you notice smoke or flames coming from under your hood:</p>
-          
-          <ol>
-            <li><strong>Signal and pull over immediately</strong></li>
-            <li><strong>Turn off the engine</strong> to stop fuel flow</li>
-            <li><strong>Get all passengers out and away from the vehicle</strong> (at least 100 feet)</li>
-            <li><strong>Call 911</strong></li>
-            <li><strong>Do not open the hood</strong>—oxygen will feed the fire</li>
-            <li><strong>If you have a fire extinguisher</strong>, you can try to spray through the grille without opening the hood</li>
-            <li><strong>Do not try to save belongings</strong>—cars can be replaced, lives cannot</li>
-          </ol>
-
-          <div class="alert alert-danger">
-            <h4>⚠️ Warning: Vehicle Fire Danger</h4>
-            <p>Vehicle fires can spread rapidly and the fuel tank can explode. <strong>Never attempt to fight a large vehicle fire.</strong> Get everyone away from the vehicle and wait for firefighters.</p>
-          </div>
-
-          <h3>Submerged Vehicle</h3>
-          
-          <p>In Florida, with its many lakes, canals, and coastal areas, vehicles ending up in water is not uncommon. If your car enters water:</p>
-          
-          <ol>
-            <li><strong>Stay calm</strong>—you have time, but must act quickly</li>
-            <li><strong>Unbuckle your seatbelt immediately</strong></li>
-            <li><strong>Do not try to open the door</strong> until pressure equalizes—water pressure makes this nearly impossible</li>
-            <li><strong>Open or break the window</strong> while the car is still floating:
-              <ul>
-                <li>Electric windows may still work for a short time</li>
-                <li>If not, use a window-breaking tool (keep one in your car)</li>
-                <li>Aim for the corners of the window, not the center</li>
-              </ul>
-            </li>
-            <li><strong>Once the window is open, water will rush in—this is expected</strong></li>
-            <li><strong>Take a deep breath and swim out through the window</strong></li>
-            <li><strong>Swim toward light or rising bubbles</strong> to find the surface</li>
-            <li><strong>If trapped:</strong> Wait for the car to fill completely, then the door can be opened more easily</li>
-          </ol>
-
-          <h3>Emergency Equipment: What to Keep in Your Vehicle</h3>
-          
-          <p>Being prepared for emergencies means having the right equipment:</p>
-
-          <div class="equipment-list">
-            <h4>Essential Emergency Kit Contents</h4>
+          <p>A 3,000-lb vehicle at 60 mph has approximately 360,000 foot-pounds of kinetic energy \u2014 four times the energy at 30 mph, not twice.</p>
+          <div class="info-table-wrapper">
             <table class="info-table">
-              <tr><th>Item</th><th>Purpose</th></tr>
-              <tr><td>Flashlight with extra batteries</td><td>Visibility at night</td></tr>
-              <tr><td>Reflective warning triangles (3)</td><td>Warn approaching traffic</td></tr>
-              <tr><td>First-aid kit</td><td>Treat minor injuries</td></tr>
-              <tr><td>Jumper cables</td><td>Dead battery</td></tr>
-              <tr><td>Tire pressure gauge</td><td>Check and maintain proper tire pressure</td></tr>
-              <tr><td>Phone charger (car and portable)</td><td>Keep phone charged for emergencies</td></tr>
-              <tr><td>Bottled water (replaced regularly)</td><td>Hydration while waiting for help</td></tr>
-              <tr><td>Blanket</td><td>Warmth if stranded</td></tr>
-              <tr><td>Basic tools (screwdrivers, pliers, adjustable wrench)</td><td>Minor repairs</td></tr>
-              <tr><td>Duct tape</td><td>Temporary fixes</td></tr>
-              <tr><td>Window-breaking tool with seatbelt cutter</td><td>Escape from submerged vehicle</td></tr>
-              <tr><td>Rain poncho</td><td>Protection from Florida's sudden storms</td></tr>
+              <tr><th>Speed</th><th>Total Stopping Distance (dry pavement)</th></tr>
+              <tr><td>20 mph</td><td>~40 feet</td></tr>
+              <tr><td>30 mph</td><td>~75 feet</td></tr>
+              <tr><td>45 mph</td><td>~152 feet</td></tr>
+              <tr><td>55 mph</td><td>~225 feet</td></tr>
+              <tr><td>65 mph</td><td>~300+ feet</td></tr>
             </table>
           </div>
-
-          <h3>Module Summary</h3>
-          
+          <p>On wet pavement, multiply stopping distances by 1.5 to 2\xd7.</p>
+          <h3>Section 2.2 \u2014 The Three-Collision Concept</h3>
+          <h4>Collision 1: The Vehicle Collision</h4>
+          <p>The vehicle hits another object and decelerates rapidly. Objects and people inside continue moving at the original speed.</p>
+          <h4>Collision 2: The Human Collision</h4>
+          <p>The human body continues moving until it hits the steering wheel, windshield, or door. Without a seat belt, an occupant in a 30 mph crash hits the interior with the same force as falling three stories onto concrete.</p>
+          <h4>Collision 3: The Internal Collision</h4>
+          <p>Even after the body stops, internal organs continue moving. The brain slams against the skull; the heart pulls against the aorta. These internal collisions cause traumatic brain injury, aortic rupture, and organ damage \u2014 injuries that may not be immediately visible but can be fatal.</p>
+          <h3>Section 2.3 \u2014 Energy Absorption and Vehicle Design</h3>
+          <h4>Crumple Zones</h4>
+          <p>The front and rear sections of modern vehicles are designed to deform (crumple) in a controlled manner. This deformation absorbs kinetic energy and increases the duration of the crash event \u2014 longer time = less force transmitted to the occupant compartment.</p>
+          <h4>Direction of Impact</h4>
           <ul>
-            <li>When your vehicle breaks down, get off the road, make your car visible, stay safe, and call for help</li>
-            <li>During a tire blowout, don't brake hard—hold the wheel firmly, ease off the gas, and steer straight</li>
-            <li>If brakes fail, pump the pedal, downshift, use the parking brake gradually, and look for escape routes</li>
-            <li>When skidding, steer in the direction you want to go and avoid braking</li>
-            <li>For stuck accelerators, shift to neutral and brake firmly</li>
-            <li>In vehicle fires, evacuate immediately and call 911</li>
-            <li>In water submersion, unbuckle, open/break the window, and swim out</li>
-            <li>Keep an emergency kit in your vehicle at all times</li>
+            <li><strong>Frontal crashes:</strong> Crumple zone and airbags manage energy; belt holds occupant back</li>
+            <li><strong>Side-impact crashes:</strong> More dangerous per unit of force because less crumple zone space exists between the door and the occupant</li>
+            <li><strong>Rear-impact crashes:</strong> The seat and headrest absorb energy; whiplash is the most common injury</li>
           </ul>
-
-          <div class="alert alert-success">
-            <h4>✅ Module 3 Complete</h4>
-            <p>You've completed the Emergency Situations module. In the next module, we'll cover Florida's Move Over Law and how to properly respond to emergency vehicles on the road.</p>
-          </div>
         `,
         quizQuestions: [
           {
-            questionText: 'If you experience a tire blowout while driving, what should you do FIRST?',
-            options: ['Slam on the brakes to stop quickly', 'Keep a firm grip on the wheel and ease off the gas', 'Immediately steer to the shoulder', 'Turn off the engine'],
-            correctAnswer: 'Keep a firm grip on the wheel and ease off the gas',
-            explanation: 'During a blowout, grip the wheel firmly, maintain your direction, and gradually ease off the accelerator. Hard braking can cause loss of control.'
+            questionText: 'If you double your speed, the kinetic energy of your vehicle:',
+            options: ['Doubles', 'Stays the same', 'Quadruples', 'Triples'],
+            correctAnswer: 'Quadruples',
+            explanation: 'Kinetic energy increases with the square of speed (F = mv\xb2). Doubling speed quadruples kinetic energy and crash force.'
           },
           {
-            questionText: 'If your brakes fail, which action should you take first?',
-            options: ['Turn off the engine immediately', 'Pump the brake pedal rapidly', 'Jump out of the vehicle', 'Steer into oncoming traffic'],
-            correctAnswer: 'Pump the brake pedal rapidly',
-            explanation: 'Pumping the brake pedal may build enough pressure in the hydraulic system to slow the vehicle. Then downshift and use the parking brake gradually.'
+            questionText: 'The "second collision" in a crash is:',
+            options: ['Two cars hitting each other', 'The human body hitting the vehicle\'s interior', 'The internal organs impacting', 'A rear-end collision'],
+            correctAnswer: 'The human body hitting the vehicle\'s interior',
+            explanation: 'The second collision is the human body continuing to move and striking the steering wheel, windshield, or door after the vehicle has stopped.'
           },
           {
-            questionText: 'When correcting a rear-wheel skid (oversteer), you should steer:',
-            options: ['In the opposite direction of the skid', 'In the direction you want the front of the car to go', 'Sharply to the left', 'Keep the wheel completely straight'],
-            correctAnswer: 'In the direction you want the front of the car to go',
-            explanation: 'During a rear-wheel skid, steer in the direction you want the front of the car to go (often called "turning into the skid"). This helps the rear wheels regain traction.'
+            questionText: 'Crumple zones in modern vehicles are designed to:',
+            options: ['Make vehicles lighter', 'Improve fuel efficiency', 'Absorb kinetic energy during a crash', 'Reduce wind resistance'],
+            correctAnswer: 'Absorb kinetic energy during a crash',
+            explanation: 'Crumple zones deform in a controlled manner to absorb crash energy and reduce force transmitted to the passenger compartment.'
           },
           {
-            questionText: 'If your vehicle becomes submerged in water, what should you do first?',
-            options: ['Open the door and swim out', 'Unbuckle your seatbelt', 'Call 911', 'Wait for the car to sink to the bottom'],
-            correctAnswer: 'Unbuckle your seatbelt',
-            explanation: 'Your first action should be unbuckling your seatbelt so you can move freely. Then work on opening or breaking the window to escape before the car sinks.'
+            questionText: 'At 60 mph, stopping distance is approximately how far?',
+            options: ['75 feet', '150 feet', '240 feet', '400 feet'],
+            correctAnswer: '240 feet',
+            explanation: 'At 60 mph, total stopping distance is approximately 240 feet on dry pavement \u2014 more than three times the distance at 30 mph.'
           },
           {
-            questionText: 'True or False: If your vehicle breaks down on the highway, you should stand directly behind your car while waiting for help.',
-            questionType: 'true_false',
-            options: ['True', 'False'],
-            correctAnswer: 'False',
-            explanation: 'NEVER stand behind or beside your vehicle on a highway. If struck by another vehicle, you could be killed. Stay inside with your seatbelt on or move well away from the roadway behind a guardrail.'
-          },
-          {
-            questionText: 'If your accelerator gets stuck, what gear should you shift into?',
-            options: ['Drive', 'Reverse', 'Neutral', 'Park'],
-            correctAnswer: 'Neutral',
-            explanation: 'Shifting to neutral disconnects the engine from the wheels, allowing you to brake and steer to safety even if the engine continues to rev.'
+            questionText: 'Which type of crash leaves the least amount of crumple zone space between the impact point and the occupant?',
+            options: ['Frontal', 'Rear-end', 'Rollover', 'Side-impact'],
+            correctAnswer: 'Side-impact',
+            explanation: 'Side-impact crashes are more dangerous per unit of force because the door provides far less crumple zone space than the front of the vehicle.'
           }
         ]
       },
 
       // =========================================
-      // MODULE 4: Emergency Vehicles & Move Over Law
-      // Estimated Reading Time: 30-35 minutes
+      // MODULE 3: Crash Prevention Techniques
+      // Estimated Time: 50 minutes
       // =========================================
       {
-        title: 'Module 4: Emergency Vehicles & Move Over Law',
-        description: 'Florida\'s Move Over law, responding to emergency vehicles, and protecting first responders',
-        estimatedMinutes: 35,
-        content: `
-          <h2>Emergency Vehicles & Florida's Move Over Law</h2>
-          
-          <p>Emergency responders put their lives on the line every day to protect our communities. Police officers, firefighters, paramedics, tow truck operators, and roadside assistance workers regularly face danger from passing traffic while performing their duties. Florida's Move Over Law is designed to provide these heroes with a protective buffer zone—and it's every driver's legal and moral responsibility to comply.</p>
-
-          <div class="statistics-box">
-            <h4>📊 Roadside Safety Statistics</h4>
-            <ul>
-              <li><strong>Over 150</strong> law enforcement officers are killed nationally each year in traffic-related incidents</li>
-              <li><strong>23 tow truck operators</strong> are killed on average each year while working roadside</li>
-              <li><strong>Florida ranks among the top states</strong> for Move Over Law violations</li>
-              <li><strong>70%</strong> of Americans are unaware of their state's Move Over Law</li>
-              <li>The average emergency scene requires responders to work in <strong>live traffic for 20-45 minutes</strong></li>
-              <li>A vehicle traveling 70 mph covers <strong>103 feet per second</strong>—almost no time to react if a worker steps into traffic</li>
-            </ul>
-          </div>
-
-          <h3>Understanding Florida's Move Over Law (F.S. 316.126)</h3>
-          
-          <p>Florida Statutes Section 316.126, known as the "Move Over Law," requires drivers to take specific actions when approaching stopped emergency or service vehicles displaying flashing lights.</p>
-
-          <div class="law-box">
-            <h4>📜 The Law Applies When You See:</h4>
-            <ul>
-              <li>Law enforcement vehicles</li>
-              <li>Fire trucks and rescue vehicles</li>
-              <li>Ambulances</li>
-              <li>Tow trucks and roadside assistance vehicles</li>
-              <li>Utility service vehicles</li>
-              <li>Sanitation (garbage) vehicles</li>
-              <li>Florida Department of Transportation (FDOT) vehicles</li>
-              <li>Any authorized vehicle displaying flashing lights while stopped on the roadside</li>
-            </ul>
-          </div>
-
-          <h4>What the Law Requires</h4>
-          
-          <p>When approaching any of the vehicles listed above that are stopped on the roadside with flashing lights:</p>
-
-          <h5>On Roads with Two or More Lanes in Your Direction</h5>
-          <ol>
-            <li><strong>Move over to a lane that is not immediately adjacent to the stopped vehicle</strong>
-              <ul>
-                <li>If the emergency vehicle is on the right shoulder, move to the left lane</li>
-                <li>If safe to do so, change lanes as soon as you notice the stopped vehicle</li>
-              </ul>
-            </li>
-            <li><strong>If you cannot move over safely</strong> (due to traffic, road conditions, or other factors):
-              <ul>
-                <li>Slow down to 20 mph below the posted speed limit</li>
-                <li>On roads with speed limits of 25 mph or less, slow to 5 mph</li>
-              </ul>
-            </li>
-          </ol>
-
-          <h5>On Two-Lane Roads (One Lane in Each Direction)</h5>
-          <ul>
-            <li>Slow down to 20 mph below the posted speed limit</li>
-            <li>Be prepared to stop if necessary</li>
-            <li>Proceed with extreme caution</li>
-          </ul>
-
-          <h4>Penalties for Violations</h4>
-          <table class="info-table">
-            <tr><th>Violation</th><th>Penalty</th></tr>
-            <tr><td>Failure to move over or slow down</td><td>$120-$158 fine + 3 points on license</td></tr>
-            <tr><td>Violation resulting in property damage</td><td>$158-$500 fine + 3 points on license</td></tr>
-            <tr><td>Violation causing injury to another</td><td>$500+ fine + 4 points on license + possible criminal charges</td></tr>
-            <tr><td>Violation causing death</td><td>Felony charges + potential prison time</td></tr>
-          </table>
-
-          <div class="case-study">
-            <h4>📋 Real-World Case Study: The Cost of Not Moving Over</h4>
-            <p><strong>Officer's Story (Florida Turnpike):</strong></p>
-            <p>Florida Highway Patrol Trooper Joseph Bullock was assisting a stranded motorist on the shoulder of I-95 in Martin County. A distracted driver failed to move over and struck him, killing him instantly.</p>
-            <p>Trooper Bullock was 42 years old and a 19-year veteran of the Florida Highway Patrol. He left behind a wife and three children.</p>
-            <p>"He was just doing his job, helping someone who needed help," said a fellow trooper. "All the driver had to do was move to the left lane."</p>
-            <p><em>Failure to follow the Move Over Law doesn't just result in tickets—it can result in death.</em></p>
-          </div>
-
-          <h3>Responding to Approaching Emergency Vehicles</h3>
-          
-          <p>When an emergency vehicle is approaching you from any direction with flashing lights and/or sirens:</p>
-
-          <h4>What You Must Do</h4>
-          <ol>
-            <li><strong>Pull over to the nearest edge of the roadway</strong>
-              <ul>
-                <li>Move to the right side of the road when possible</li>
-                <li>Clear the travel lanes completely</li>
-              </ul>
-            </li>
-            <li><strong>Come to a complete stop</strong>
-              <ul>
-                <li>Remain stopped until the emergency vehicle has passed</li>
-                <li>Wait for any additional emergency vehicles that may be following</li>
-              </ul>
-            </li>
-            <li><strong>Proceed carefully after the emergency vehicle passes</strong>
-              <ul>
-                <li>Check for additional emergency vehicles</li>
-                <li>Re-enter traffic safely</li>
-              </ul>
-            </li>
-          </ol>
-
-          <h4>Special Situations</h4>
-          
-          <h5>At Intersections</h5>
-          <ul>
-            <li><strong>Do not stop in an intersection</strong>—proceed through first, then pull over</li>
-            <li><strong>If stopped at a red light</strong>, remain in place if pulling forward would enter the intersection</li>
-            <li><strong>If safe to do so</strong>, pull to the right after the intersection to allow the emergency vehicle to pass</li>
-          </ul>
-
-          <h5>On Divided Highways</h5>
-          <ul>
-            <li>If the emergency vehicle is on the opposite side of a divided highway with a median barrier, you typically don't need to pull over</li>
-            <li>However, always be cautious—emergency vehicles may cross medians</li>
-          </ul>
-
-          <h5>Multiple Lanes of Traffic</h5>
-          <ul>
-            <li>All lanes should attempt to pull to the right</li>
-            <li>Create a clear path for the emergency vehicle, usually in the left lane</li>
-            <li>Don't assume the emergency vehicle will pass on a specific side—they will take the clearest path</li>
-          </ul>
-
-          <div class="alert alert-warning">
-            <h4>⚠️ Important Restrictions</h4>
-            <ul>
-              <li><strong>Do not follow within 500 feet</strong> of any emergency vehicle responding to an emergency</li>
-              <li><strong>Never attempt to outrun</strong> an emergency vehicle</li>
-              <li><strong>Do not park or drive over fire hoses</strong> without permission from the fire department</li>
-              <li><strong>Do not pass through or park at an emergency scene</strong> unless directed by law enforcement</li>
-            </ul>
-          </div>
-
-          <h3>Why This Matters: Protecting Those Who Protect Us</h3>
-          
-          <p>Emergency responders face incredible danger every time they work on the roadside. Consider these facts:</p>
-
-          <ul>
-            <li><strong>Tunnel vision:</strong> Responders are focused on their task (accident victim, fire, disabled vehicle) and may not see approaching traffic</li>
-            <li><strong>Limited escape routes:</strong> They often work between their vehicle and the incident, with nowhere to go if a car approaches</li>
-            <li><strong>Darkness and weather:</strong> Many incidents occur at night or in rain, making visibility poor for everyone</li>
-            <li><strong>Speed of approaching traffic:</strong> At highway speeds, drivers have only seconds to react to a stopped vehicle ahead</li>
-            <li><strong>Secondary accidents:</strong> Crashes at emergency scenes are common and often more severe than the original incident</li>
-          </ul>
-
-          <h4>A Personal Perspective</h4>
-          <p>Imagine you're a tow truck operator called to help someone with a flat tire on I-4 at midnight. As you work to change the tire, cars and trucks zoom past just feet away at 70+ mph. Every vehicle that doesn't move over is a potential threat to your life. You have a family waiting for you at home, but your job requires you to stand in harm's way.</p>
-          
-          <p>Or imagine you're a paramedic treating a car accident victim on the shoulder of the Florida Turnpike. Your back is to traffic as you work to save a life. You're trusting that drivers will follow the law and move over.</p>
-          
-          <p>This is the reality for thousands of emergency workers every day. Moving over isn't just about avoiding a ticket—it's about respecting and protecting the people who help others in their worst moments.</p>
-
-          <div class="reflection-question">
-            <h4>🤔 Reflection Question</h4>
-            <p>Think about a time you saw emergency vehicles stopped on the roadside. Did you move over? If not, what prevented you? How will you handle this situation differently in the future?</p>
-          </div>
-
-          <h3>Tips for Safely Complying with the Move Over Law</h3>
-          
-          <ol>
-            <li><strong>Stay alert</strong>—continuously scan ahead for flashing lights</li>
-            <li><strong>Check mirrors early</strong>—when you see flashing lights ahead, immediately check if you can safely change lanes</li>
-            <li><strong>Signal your intentions</strong>—let other drivers know you're moving over</li>
-            <li><strong>Don't wait until the last moment</strong>—change lanes as soon as safely possible</li>
-            <li><strong>If you can't move over, slow down significantly</strong>—20 mph below the limit</li>
-            <li><strong>Stay focused</strong>—don't rubberneck at the scene; keep your eyes on the road</li>
-            <li><strong>Be patient</strong>—emergency scenes cause delays, but safety is more important than time</li>
-          </ol>
-
-          <h3>Module Summary</h3>
-          
-          <ul>
-            <li>Florida's Move Over Law (F.S. 316.126) requires drivers to move over or slow down for stopped emergency and service vehicles</li>
-            <li>The law applies to police, fire, EMS, tow trucks, FDOT vehicles, utility vehicles, and sanitation vehicles</li>
-            <li>On multi-lane roads, move to a non-adjacent lane; if unable, slow to 20 mph below the limit</li>
-            <li>On two-lane roads, slow to 20 mph below the limit</li>
-            <li>When emergency vehicles approach with lights/sirens, pull to the right and stop</li>
-            <li>Never follow within 500 feet of a responding emergency vehicle</li>
-            <li>Violations can result in fines, points, and criminal charges if injuries or death occur</li>
-          </ul>
-
-          <div class="alert alert-success">
-            <h4>✅ Module 4 Complete</h4>
-            <p>You've completed the Emergency Vehicles & Move Over Law module. In the next module, we'll cover Defensive Driving Techniques—proactive strategies to anticipate hazards and avoid collisions.</p>
-          </div>
-        `,
-        quizQuestions: [
-          {
-            questionText: 'On a highway with multiple lanes, what must you do when approaching a stopped emergency vehicle with flashing lights?',
-            options: ['Speed up to pass quickly', 'Honk your horn to alert them', 'Move over to a lane not immediately adjacent to the vehicle', 'Flash your headlights'],
-            correctAnswer: 'Move over to a lane not immediately adjacent to the vehicle',
-            explanation: 'Florida\'s Move Over Law requires you to move over to a lane that is not immediately adjacent to the stopped emergency vehicle when safe to do so.'
-          },
-          {
-            questionText: 'If you cannot safely change lanes when approaching a stopped emergency vehicle on a highway with a 70 mph speed limit, what must you do?',
-            options: ['Maintain your speed', 'Slow to 50 mph', 'Stop completely', 'Honk your horn'],
-            correctAnswer: 'Slow to 50 mph',
-            explanation: 'If you cannot safely move over, you must slow down to 20 mph below the posted speed limit (70 - 20 = 50 mph).'
-          },
-          {
-            questionText: 'The Move Over Law applies to which of the following?',
-            options: ['Only police vehicles', 'Only ambulances and fire trucks', 'All emergency and service vehicles with flashing lights', 'Only vehicles blocking the road'],
-            correctAnswer: 'All emergency and service vehicles with flashing lights',
-            explanation: 'The Move Over Law applies to police, fire, EMS, tow trucks, FDOT vehicles, utility vehicles, and sanitation vehicles displaying flashing lights.'
-          },
-          {
-            questionText: 'How close can you legally follow an emergency vehicle that is responding to an emergency?',
-            options: ['100 feet', '300 feet', '500 feet', 'Any distance as long as you\'re careful'],
-            correctAnswer: '500 feet',
-            explanation: 'Florida law prohibits following within 500 feet of any emergency vehicle responding to an emergency with lights and sirens activated.'
-          },
-          {
-            questionText: 'True or False: If you\'re stopped at a red light and an emergency vehicle approaches with sirens, you should drive through the red light to get out of the way.',
-            questionType: 'true_false',
-            options: ['True', 'False'],
-            correctAnswer: 'False',
-            explanation: 'Do not enter an intersection against a red light. Remain where you are if pulling forward would put you in the intersection. The emergency vehicle will go around you.'
-          }
-        ]
-      },
-
-      // =========================================
-      // MODULE 5: Defensive Driving Techniques
-      // Estimated Reading Time: 45-50 minutes
-      // =========================================
-      {
-        title: 'Module 5: Defensive Driving Techniques',
-        description: 'Proactive strategies for anticipating hazards, maintaining safe following distances, and avoiding collisions',
+        title: 'Module 3: Crash Prevention Techniques',
+        description: 'Scanning, following distance, stopping distance, environmental hazards, vehicle emergencies, sharing the road, passing, right of way, speed adjustment, and railroad crossings',
         estimatedMinutes: 50,
         content: `
-          <h2>Defensive Driving: Your Best Protection on the Road</h2>
-          
-          <p>Defensive driving is not just about avoiding accidents—it's about developing a mindset and set of skills that prepare you for anything that can happen on the road. While you can control your own actions, you cannot control the actions of other drivers, road conditions, weather, or unexpected hazards. Defensive driving bridges this gap by teaching you to anticipate problems and take action before they become emergencies.</p>
-
-          <p>Studies show that drivers trained in defensive driving techniques have significantly fewer accidents and violations. More importantly, they experience less stress while driving because they feel prepared and in control. In this module, you'll learn the core principles and practical techniques that will make you a safer, more confident driver.</p>
-
-          <div class="statistics-box">
-            <h4>📊 Why Defensive Driving Matters</h4>
-            <ul>
-              <li><strong>94%</strong> of all crashes involve human error as a contributing factor</li>
-              <li>Defensive driving can reduce crash involvement by up to <strong>50%</strong></li>
-              <li>Drivers who complete defensive driving courses have <strong>40% fewer</strong> at-fault accidents</li>
-              <li><strong>Most crashes are preventable</strong>—even when another driver makes an error, your actions can often avoid a collision</li>
-              <li>Insurance companies offer discounts of <strong>5-15%</strong> to drivers who complete defensive driving courses</li>
-            </ul>
-          </div>
-
-          <h3>The Foundation: Attitude and Awareness</h3>
-          
-          <p>Before diving into techniques, it's important to understand that defensive driving begins with your mindset.</p>
-
-          <h4>The Defensive Driving Mindset</h4>
+          <h2>Module 3: Crash Prevention Techniques</h2>
+          <p>Crash prevention is active, not passive. The following techniques, practiced consistently, will dramatically reduce your risk of being involved in a crash.</p>
+          <h3>Section 3.1 \u2014 Scanning and Visual Distance Guidelines</h3>
           <ul>
-            <li><strong>Accept that other drivers make mistakes</strong>—never assume others will do the right thing</li>
-            <li><strong>Take responsibility for your safety</strong>—you cannot rely on others to protect you</li>
-            <li><strong>Stay calm and patient</strong>—aggressive reactions create danger</li>
-            <li><strong>Expect the unexpected</strong>—be prepared for anything</li>
-            <li><strong>Continuously assess and reassess</strong>—conditions change constantly</li>
-            <li><strong>Value safety over ego</strong>—it doesn't matter who's "right" in a crash</li>
+            <li><strong>City streets:</strong> Look 12\u201315 seconds ahead (approximately one block)</li>
+            <li><strong>Highway:</strong> Look 20\u201330 seconds ahead (approximately a quarter mile)</li>
+            <li><strong>Mirrors:</strong> Check every 5\u20138 seconds</li>
           </ul>
-
-          <div class="quote-box">
-            <p><em>"The best drivers are not those who have never made mistakes, but those who have learned to anticipate and avoid situations where mistakes can become crashes."</em></p>
-          </div>
-
-          <h3>The Three-Second Rule: Safe Following Distance</h3>
-          
-          <p>Maintaining a safe following distance is one of the most fundamental defensive driving techniques. It gives you time to react if the vehicle ahead stops suddenly.</p>
-
-          <h4>How to Apply the Three-Second Rule</h4>
-          <ol>
-            <li><strong>Choose a fixed point</strong> ahead of you (a sign, tree, overpass, or road marking)</li>
-            <li><strong>When the vehicle ahead passes that point</strong>, start counting: "one-thousand-one, one-thousand-two, one-thousand-three"</li>
-            <li><strong>If you reach the same point before finishing</strong>, you're following too closely—slow down and increase your distance</li>
-          </ol>
-
+          <p>At intersections, check LEFT, RIGHT, then LEFT AGAIN before proceeding on green. Cross-traffic running late on a red light is a leading cause of intersection crashes in Florida.</p>
+          <h3>Section 3.2 \u2014 Following Distance</h3>
+          <p>Minimum following distance: <strong>2 seconds</strong> at highway speeds in ideal conditions. Pick a fixed point; when the rear bumper of the vehicle ahead passes that point, count "one thousand one, one thousand two." If your bumper reaches it first, you are too close.</p>
           <h4>When to Increase Following Distance</h4>
-          <p>The three-second rule is the minimum for ideal conditions. Increase your following distance to four, five, or even more seconds in these situations:</p>
-          
-          <table class="info-table">
-            <tr><th>Condition</th><th>Recommended Following Distance</th></tr>
-            <tr><td>Rain or wet roads</td><td>4-5 seconds</td></tr>
-            <tr><td>Fog or reduced visibility</td><td>5-6 seconds</td></tr>
-            <tr><td>Night driving</td><td>4-5 seconds</td></tr>
-            <tr><td>Following motorcycles</td><td>4+ seconds (they stop faster)</td></tr>
-            <tr><td>Following large trucks</td><td>4+ seconds (they block your view)</td></tr>
-            <tr><td>Icy or snowy roads</td><td>8-10 seconds</td></tr>
-            <tr><td>Towing a trailer</td><td>5+ seconds (increased stopping distance)</td></tr>
-            <tr><td>Heavy traffic</td><td>4+ seconds</td></tr>
-            <tr><td>When being tailgated</td><td>Extra space to allow gradual braking</td></tr>
-          </table>
-
-          <div class="case-study">
-            <h4>📋 Real-World Case Study: The Value of Following Distance</h4>
-            <p><strong>Marcus's Experience (I-4, Orlando):</strong></p>
-            <p>Marcus was driving home from work in moderate traffic, maintaining a four-second following distance from the pickup truck ahead. "My coworker always teases me about leaving too much space," he said. "He says cars just cut in front of me."</p>
-            <p>Suddenly, the pickup truck's brake lights came on hard. A mattress had fallen off a vehicle several cars ahead, creating a sudden obstacle. Cars scattered. The pickup swerved right, revealing the mattress directly in Marcus's path.</p>
-            <p>"Because I had that extra space, I had time to brake and steer around it. The car behind me wasn't so lucky—he hit the mattress and lost control."</p>
-            <p><em>Those four seconds saved Marcus's car and potentially his life.</em></p>
-          </div>
-
-          <h3>Scanning: See the Whole Picture</h3>
-          
-          <p>Many drivers focus only on the vehicle directly in front of them. Defensive drivers continuously scan their entire environment, building a mental picture of potential hazards in all directions.</p>
-
-          <h4>The Scanning Pattern</h4>
+          <ul>
+            <li>Rain or wet pavement: 4 seconds minimum</li>
+            <li>Fog, smoke, or heavy rain: 6+ seconds</li>
+            <li>Following a motorcycle: 4 seconds</li>
+            <li>Following a large truck: 4\u20136 seconds</li>
+            <li>Night driving: 4 seconds</li>
+          </ul>
+          <p>Do NOT brake-check a tailgater \u2014 move right and allow them to pass.</p>
+          <h3>Section 3.3 \u2014 Stopping Distance</h3>
+          <p>Total stopping distance = Perception + Reaction + Braking distance. Factors that increase stopping distance: wet pavement (1.5\u20133\xd7), worn tires or brakes, inattention, alcohol or drug use, and downhill grade.</p>
+          <h3>Section 3.4 \u2014 Environmental Hazards</h3>
+          <h4>Rain and Wet Roads</h4>
+          <p>The <strong>first 10 minutes of rain are the most dangerous</strong> \u2014 oil and rubber wash to the surface, creating extremely slippery conditions. <strong>Hydroplaning</strong> can occur at approximately 35 mph on a wet surface; response: ease off the gas, do NOT brake sharply.</p>
+          <p><strong>Florida Statute 316.217:</strong> Headlights MUST be on any time windshield wipers are in use.</p>
+          <h4>Fog</h4>
+          <ul>
+            <li>Use LOW-BEAM headlights (high beams reflect off fog)</li>
+            <li>Reduce speed to match actual sight distance</li>
+            <li>Use the right edge of the road as a guide</li>
+          </ul>
+          <h4>Standing Water</h4>
+          <p>Never drive into water of unknown depth. Six inches of moving water can knock an adult off their feet; 12 inches can float a small car; 2 feet can carry away most vehicles. <strong>"Turn around, don't drown."</strong></p>
+          <h3>Section 3.5 \u2014 Vehicle Emergencies</h3>
+          <h4>Tire Failure (Blowout)</h4>
           <ol>
-            <li><strong>Look 10-15 seconds ahead</strong>
-              <ul>
-                <li>At city speeds (30 mph), this is about one block</li>
-                <li>At highway speeds (60 mph), this is about a quarter mile</li>
-                <li>Look for brake lights, changing traffic patterns, hazards in the road</li>
-              </ul>
-            </li>
-            <li><strong>Check mirrors every 5-8 seconds</strong>
-              <ul>
-                <li>Rearview mirror: What's behind you?</li>
-                <li>Side mirrors: What's beside and slightly behind you?</li>
-                <li>Know who's around you at all times</li>
-              </ul>
-            </li>
-            <li><strong>Check blind spots before lane changes</strong>
-              <ul>
-                <li>Quick head turn to see areas mirrors can't show</li>
-                <li>Essential before every lane change or merge</li>
-              </ul>
-            </li>
-            <li><strong>Monitor intersection approaches</strong>
-              <ul>
-                <li>Watch cross streets for vehicles that might not stop</li>
-                <li>Look left-right-left before proceeding through intersections</li>
-              </ul>
-            </li>
-            <li><strong>Scan the sides of the road</strong>
-              <ul>
-                <li>Watch for pedestrians, cyclists, animals</li>
-                <li>Note driveways and parking lot exits</li>
-                <li>Look for children and pets near residential areas</li>
-              </ul>
-            </li>
+            <li>Do NOT brake suddenly</li>
+            <li>Grip the wheel firmly with both hands</li>
+            <li>Ease off the accelerator gradually</li>
+            <li>Steer to maintain your lane or move to the shoulder</li>
+            <li>Once below 30 mph, apply brakes gently</li>
           </ol>
-
-          <h4>What to Look For</h4>
-          <ul>
-            <li><strong>Traffic flow changes:</strong> Multiple brake lights ahead could signal a slowdown</li>
-            <li><strong>Erratic drivers:</strong> Weaving, sudden braking, inconsistent speed</li>
-            <li><strong>Potential conflicts:</strong> Cars approaching intersections, pedestrians near crossings</li>
-            <li><strong>Road conditions:</strong> Potholes, debris, wet surfaces, construction</li>
-            <li><strong>Escape routes:</strong> Where would you go if the vehicle ahead stopped suddenly?</li>
-          </ul>
-
-          <div class="reflection-question">
-            <h4>🤔 Reflection Question</h4>
-            <p>During your last drive, were you aware of what was happening behind and beside you, or only directly ahead? How might better scanning have helped you avoid a close call or stressful situation?</p>
-          </div>
-
-          <h3>Space Management: Creating a Safety Buffer</h3>
-          
-          <p>Defensive drivers create and maintain a "space cushion" around their vehicle. This buffer zone gives you options if something goes wrong.</p>
-
-          <h4>The Ideal Safety Buffer</h4>
-          <ul>
-            <li><strong>Front:</strong> At least 3 seconds of following distance (more in poor conditions)</li>
-            <li><strong>Rear:</strong> While you can't control tailgaters, you can add space ahead to compensate</li>
-            <li><strong>Sides:</strong> Avoid driving in other vehicles' blind spots; keep space when possible</li>
-          </ul>
-
-          <h4>What If Someone Is Tailgating You?</h4>
-          <p>When another driver follows too closely behind you:</p>
+          <h4>Brake Failure</h4>
           <ol>
-            <li><strong>Stay calm</strong>—don't brake check or try to "teach them a lesson"</li>
-            <li><strong>Increase your following distance</strong> ahead—this gives you more time to brake gradually if needed</li>
-            <li><strong>When safe, move to another lane</strong> and let them pass</li>
-            <li><strong>If on a single-lane road</strong>, pull over safely and let them go ahead</li>
-            <li><strong>Never speed up to satisfy a tailgater</strong>—you'll just be driving too fast with someone still on your bumper</li>
+            <li>Pump the brakes rapidly (builds pressure on non-ABS vehicles)</li>
+            <li>Engage the parking/emergency brake gradually</li>
+            <li>Downshift for engine braking</li>
           </ol>
-
-          <h3>Predicting Other Drivers' Actions</h3>
-          
-          <p>Part of defensive driving is learning to predict what other drivers might do—often before they know themselves.</p>
-
-          <h4>Warning Signs to Watch For</h4>
-          <table class="info-table">
-            <tr><th>You See...</th><th>Be Prepared For...</th></tr>
-            <tr><td>Driver looking at their phone</td><td>Sudden lane changes, delayed responses, weaving</td></tr>
-            <tr><td>Brake lights without apparent cause</td><td>Hazard or slowdown ahead you can't see yet</td></tr>
-            <tr><td>Driver in left lane looking over shoulder</td><td>Lane change into your lane</td></tr>
-            <tr><td>Vehicle in next lane gradually drifting toward your lane</td><td>Unintentional lane change</td></tr>
-            <tr><td>Delivery truck or taxi stopped in lane</td><td>Sudden door opening or driver stepping out</td></tr>
-            <tr><td>Ball rolling into street</td><td>Child chasing it</td></tr>
-            <tr><td>Car at side street facing your direction</td><td>Driver pulling out in front of you</td></tr>
-            <tr><td>Driver behind you getting close and frustrated</td><td>Aggressive pass or tailgating</td></tr>
-            <tr><td>Pedestrian at corner looking at phone</td><td>Walking into street without looking</td></tr>
-          </table>
-
-          <h4>Assume the Worst</h4>
-          <p>A key principle of defensive driving: <strong>Assume other drivers will do the wrong thing.</strong> Not because everyone is a bad driver, but because if you're prepared for the worst, you'll never be caught off guard.</p>
-          
+          <h3>Section 3.6 \u2014 Sharing the Road</h3>
+          <h4>Motorcycles</h4>
+          <p>Florida has 600+ motorcycle fatalities per year. Of Florida motorcycle fatalities, 49% occurred in crashes with other vehicles. Always check blind spots carefully before lane changes. Give motorcycles a full lane width.</p>
+          <h4>Large Trucks</h4>
+          <p>An 18-wheeler takes up to <strong>525 feet</strong> (about 40 car lengths) to stop from 65 mph. Trucks have four major blind spots (No-Zones) \u2014 directly in front (20 feet), directly behind (200 feet), the right side (2 lanes wide), and behind/left of the cab. <strong>If you cannot see the truck driver in their side mirror, they cannot see you.</strong></p>
+          <h4>Bicyclists</h4>
+          <p>Florida Statute 316.2065 requires at least <strong>3 feet of clearance</strong> when passing a bicyclist. Bicyclists have the same rights and responsibilities as motor vehicle drivers on all public roads except limited-access highways.</p>
+          <h4>Pedestrians</h4>
+          <p>Florida had 838 pedestrian fatalities in 2023. At crosswalks, yield to pedestrians even if no traffic signal is present (Florida Statute 316.130). Never block a crosswalk when stopped.</p>
+          <h3>Section 3.7 \u2014 Passing</h3>
+          <p>At 55 mph, passing a truck requires approximately <strong>1,500 feet</strong> of clear road ahead. Do NOT pass when: a solid yellow center line is on your side, within 100 feet of an intersection/railroad/bridge, on curves or hills with limited visibility, or in an active school zone.</p>
+          <h3>Section 3.8 \u2014 Right of Way</h3>
+          <p>No driver can legally claim the right of way. The rules establish who SHOULD yield.</p>
           <ul>
-            <li>Assume the car at the cross street won't stop completely</li>
-            <li>Assume the driver ahead might brake suddenly</li>
-            <li>Assume the pedestrian might not see you</li>
-            <li>Assume the car in the next lane might change lanes without signaling</li>
+            <li><strong>4-way stop:</strong> First to arrive proceeds first. Simultaneous arrival: driver to the right goes first.</li>
+            <li><strong>Entering from driveway or private road (Florida Statute 316.125):</strong> Always yield to traffic on the main road.</li>
+            <li><strong>Roundabouts:</strong> Yield to vehicles already in the roundabout; enter counterclockwise.</li>
           </ul>
-
-          <p>If they do the right thing, great! If they don't, you're ready.</p>
-
-          <h3>Escape Routes: Always Have an Out</h3>
-          
-          <p>Defensive drivers constantly identify escape routes—places they could steer if the vehicle ahead stops suddenly or something enters their path.</p>
-
-          <h4>Creating and Maintaining Escape Routes</h4>
+          <h4>Malfunctioning Signals</h4>
           <ul>
-            <li><strong>Avoid traveling in a "pack"</strong> of vehicles where you have no room to maneuver</li>
-            <li><strong>Keep space on at least one side</strong> whenever possible</li>
-            <li><strong>Know what's beside you</strong> at all times through regular mirror checks</li>
-            <li><strong>Identify where you would go</strong> if you needed to suddenly leave your lane</li>
-            <li><strong>On highways, prefer the center or right lanes</strong> which offer more escape options</li>
+            <li>Dark signal (power failure): Treat as a four-way stop</li>
+            <li>Flashing RED: Treat as a stop sign</li>
+            <li>Flashing YELLOW: Slow down and proceed with caution</li>
           </ul>
-
-          <h3>Intersection Safety</h3>
-          
-          <p>Intersections are the most dangerous places on the road. According to the Federal Highway Administration, more than 50% of all crashes that cause injury or death occur at or near intersections.</p>
-
-          <h4>Defensive Intersection Techniques</h4>
-          <ol>
-            <li><strong>Approach with caution</strong>—cover the brake as you near an intersection</li>
-            <li><strong>Look left-right-left</strong> before entering, even with a green light</li>
-            <li><strong>Watch for red-light runners</strong>—when your light turns green, pause briefly and check cross traffic</li>
-            <li><strong>Be extra careful at stale green lights</strong>—they may turn yellow/red suddenly</li>
-            <li><strong>At four-way stops</strong>, don't assume others understand right-of-way rules</li>
-            <li><strong>When making left turns</strong>, watch for oncoming vehicles speeding to make the light</li>
-            <li><strong>Never race to beat a yellow light</strong>—it's not worth the risk</li>
-          </ol>
-
-          <h3>Adapting to Conditions</h3>
-          
-          <p>Defensive driving means adjusting your driving to match current conditions—not driving the same way in rain as you would on a dry, sunny day.</p>
-
-          <h4>Condition-Specific Adjustments</h4>
-
-          <h5>Rain</h5>
+          <h3>Section 3.9 \u2014 Speed Adjustment</h3>
+          <p><strong>School zones:</strong> Speed drops to 15\u201320 mph when flashing signals are active. <strong>Construction zones (Florida Statute 316.0895):</strong> Fines doubled in active zones. A third offense within 3 years may result in license suspension.</p>
+          <h3>Section 3.10 \u2014 Railroad Crossings</h3>
           <ul>
-            <li>Reduce speed by 5-10 mph or more depending on intensity</li>
-            <li>Increase following distance to 4-5 seconds</li>
-            <li>Turn on headlights (Florida law requires this when wipers are on)</li>
-            <li>Avoid sudden braking or sharp turns</li>
-            <li>Be aware of hydroplaning, especially in the first 10 minutes of rain</li>
-            <li>Stay out of large puddles when possible</li>
+            <li>Never stop on railroad tracks</li>
+            <li>At active crossings: STOP and wait. A train at 60 mph needs over a mile to stop.</li>
+            <li>If stopped on tracks when a train approaches: EXIT the vehicle and run at a 45-degree angle away from the tracks in the direction the train is coming from</li>
+            <li>Multi-track crossings: After one train passes, look again for a second train</li>
           </ul>
-
-          <h5>Fog</h5>
-          <ul>
-            <li>Use low-beam headlights or fog lights (never high beams—they reflect off fog)</li>
-            <li>Reduce speed significantly</li>
-            <li>Increase following distance to 5-6 seconds or more</li>
-            <li>Use roadside markings as a guide</li>
-            <li>If visibility becomes too poor, pull completely off the road</li>
-          </ul>
-
-          <h5>Night</h5>
-          <ul>
-            <li>Ensure all your lights are clean and working</li>
-            <li>Use high beams on dark roads when no other vehicles are present</li>
-            <li>Switch to low beams for oncoming traffic or when following another car</li>
-            <li>Reduce speed to stay within your "sight distance"</li>
-            <li>Watch for pedestrians, cyclists, and animals that are harder to see</li>
-            <li>Be alert for impaired drivers (late nights and weekends)</li>
-          </ul>
-
-          <h5>Sun Glare</h5>
-          <ul>
-            <li>Keep your windshield clean (inside and outside)</li>
-            <li>Use your sun visor</li>
-            <li>Wear polarized sunglasses</li>
-            <li>Increase following distance when visibility is impaired</li>
-            <li>Be especially careful at dawn and dusk</li>
-          </ul>
-
-          <h5>Construction Zones</h5>
-          <ul>
-            <li>Obey reduced speed limits—fines are doubled</li>
-            <li>Watch for workers and equipment near the road</li>
-            <li>Be prepared for sudden lane changes and stops</li>
-            <li>Don't tailgate—conditions change rapidly</li>
-            <li>Merge early when lanes are ending</li>
-          </ul>
-
-          <h3>The Benefits of Defensive Driving</h3>
-          
-          <p>Practicing defensive driving techniques provides multiple benefits:</p>
-
-          <div class="benefits-box">
-            <h4>✅ Safety Benefits</h4>
-            <ul>
-              <li>Significantly reduced crash risk</li>
-              <li>Better ability to avoid crashes caused by others</li>
-              <li>Improved handling of emergency situations</li>
-              <li>Protection for yourself, passengers, and other road users</li>
-            </ul>
-
-            <h4>✅ Financial Benefits</h4>
-            <ul>
-              <li>Insurance discounts (5-15% from many providers)</li>
-              <li>Fewer tickets and points</li>
-              <li>No accident-related repair costs</li>
-              <li>No medical bills or lost wages from injuries</li>
-              <li>Lower long-term insurance rates from clean record</li>
-            </ul>
-
-            <h4>✅ Personal Benefits</h4>
-            <ul>
-              <li>Less stress while driving</li>
-              <li>Greater confidence on the road</li>
-              <li>More relaxed arrival at destinations</li>
-              <li>Being a positive example for other drivers and passengers</li>
-            </ul>
-          </div>
-
-          <h3>Module Summary</h3>
-          
-          <ul>
-            <li>Defensive driving starts with the right mindset—expecting the unexpected and prioritizing safety</li>
-            <li>The three-second rule provides minimum safe following distance; increase it in poor conditions</li>
-            <li>Continuous scanning (10-15 seconds ahead, mirrors every 5-8 seconds) builds situational awareness</li>
-            <li>Space management creates a safety buffer around your vehicle</li>
-            <li>Predicting other drivers' actions helps you prepare for their mistakes</li>
-            <li>Always have an escape route—know where you would go if something goes wrong</li>
-            <li>Intersections require extra caution—look left-right-left even with a green light</li>
-            <li>Adapt your driving to weather, visibility, and road conditions</li>
-          </ul>
-
-          <div class="alert alert-success">
-            <h4>✅ Module 5 Complete</h4>
-            <p>You've completed the Defensive Driving Techniques module. In the next module, we'll cover Road Signs and Signals—understanding the language of the road.</p>
-          </div>
         `,
         quizQuestions: [
           {
-            questionText: 'What is the minimum following distance recommended under ideal driving conditions?',
-            options: ['1 second', '2 seconds', '3 seconds', '5 seconds'],
-            correctAnswer: '3 seconds',
-            explanation: 'The three-second rule provides the minimum safe following distance under ideal conditions. Increase this in rain, fog, or other poor conditions.'
+            questionText: 'The minimum following distance recommended in ideal highway conditions is:',
+            options: ['1 second', '2 seconds', '5 seconds', '10 seconds'],
+            correctAnswer: '2 seconds',
+            explanation: 'Florida driving instructors recommend a minimum 2-second following distance at highway speeds in ideal conditions. Increase to 4+ seconds in rain or other hazardous conditions.'
           },
           {
-            questionText: 'How far ahead should you be scanning while driving at highway speeds?',
-            options: ['100 feet', '5-8 seconds', '10-15 seconds', '1 car length'],
-            correctAnswer: '10-15 seconds',
-            explanation: 'Defensive drivers scan 10-15 seconds ahead of their vehicle, which is about a quarter mile at highway speeds. This gives time to identify and prepare for hazards.'
+            questionText: 'What should you do first when your tire blows out at highway speed?',
+            options: ['Brake hard immediately', 'Swerve to the shoulder', 'Ease off the gas and grip the wheel firmly', 'Come to a stop in your lane'],
+            correctAnswer: 'Ease off the gas and grip the wheel firmly',
+            explanation: 'Sudden braking during a blowout can cause loss of control. Grip the wheel, ease off the gas, and steer to a safe stop.'
           },
           {
-            questionText: 'If someone is tailgating you, what should you do?',
-            options: ['Brake suddenly to teach them a lesson', 'Speed up to increase the gap behind you', 'Increase your following distance ahead and let them pass when safe', 'Match their aggressive driving'],
-            correctAnswer: 'Increase your following distance ahead and let them pass when safe',
-            explanation: 'When tailgated, increase your following distance ahead (so you can brake more gradually) and safely move over to let them pass. Never brake check or engage aggressively.'
-          },
-          {
-            questionText: 'True or False: When your traffic light turns green, you should immediately accelerate through the intersection.',
-            questionType: 'true_false',
-            options: ['True', 'False'],
-            correctAnswer: 'False',
-            explanation: 'Even with a green light, you should pause briefly and look left-right-left for red-light runners before proceeding through an intersection.'
-          },
-          {
-            questionText: 'Which of the following is NOT a key component of defensive driving?',
-            options: ['Maintaining safe following distance', 'Continuous scanning', 'Driving faster to spend less time on the road', 'Having an escape route'],
-            correctAnswer: 'Driving faster to spend less time on the road',
-            explanation: 'Defensive driving involves maintaining safe distances, scanning, having escape routes, and adapting to conditions—not driving faster.'
-          },
-          {
-            questionText: 'In rainy conditions, your following distance should be:',
-            options: ['The same as dry conditions (3 seconds)', 'Increased to 4-5 seconds', 'Decreased since you need to focus more', 'Whatever feels comfortable'],
-            correctAnswer: 'Increased to 4-5 seconds',
-            explanation: 'In rain, stopping distances increase significantly. You should increase your following distance to at least 4-5 seconds to allow for safe stopping.'
-          }
-        ]
-      },
-
-      // =========================================
-      // MODULE 6: Road Signs and Signals
-      // Estimated Reading Time: 30-35 minutes
-      // =========================================
-      {
-        title: 'Module 6: Road Signs and Signals',
-        description: 'Understanding traffic signs, signals, and pavement markings for safe navigation',
-        estimatedMinutes: 35,
-        content: `
-          <h2>Road Signs and Signals: The Language of the Road</h2>
-          
-          <p>Road signs and signals are the universal language that allows millions of drivers to share the roads safely. They communicate rules, warnings, and guidance without requiring a single word to be spoken. Understanding and obeying these signs isn't just about avoiding tickets—it's about keeping yourself and others safe.</p>
-
-          <p>In Florida alone, there are over 120,000 miles of public roads with millions of signs, signals, and pavement markings. Every driver is expected to know what these mean and respond appropriately. This module will refresh your knowledge of these critical communication tools.</p>
-
-          <h3>Categories of Road Signs</h3>
-          
-          <p>Road signs are categorized by their purpose, and you can often tell a sign's general meaning by its shape and color.</p>
-
-          <h4>Sign Shapes and Their Meanings</h4>
-          <table class="info-table">
-            <tr><th>Shape</th><th>Meaning</th><th>Examples</th></tr>
-            <tr><td>Octagon (8 sides)</td><td>Stop</td><td>Stop sign only</td></tr>
-            <tr><td>Triangle (pointing down)</td><td>Yield</td><td>Yield sign</td></tr>
-            <tr><td>Circle</td><td>Railroad crossing</td><td>Advance warning of railroad</td></tr>
-            <tr><td>Pentagon (5 sides)</td><td>School zone</td><td>School crossing, school zone</td></tr>
-            <tr><td>Diamond</td><td>Warning</td><td>Curve ahead, merging traffic, deer crossing</td></tr>
-            <tr><td>Rectangle (vertical)</td><td>Regulatory</td><td>Speed limit, no parking, one way</td></tr>
-            <tr><td>Rectangle (horizontal)</td><td>Guide or informational</td><td>Mile markers, exit info, street names</td></tr>
-          </table>
-
-          <h4>Sign Colors and Their Meanings</h4>
-          <table class="info-table">
-            <tr><th>Color</th><th>Meaning</th><th>Examples</th></tr>
-            <tr><td>Red</td><td>Stop, yield, or prohibition</td><td>Stop sign, yield, do not enter, wrong way</td></tr>
-            <tr><td>Yellow</td><td>Warning</td><td>Curve ahead, pedestrian crossing, slippery when wet</td></tr>
-            <tr><td>Orange</td><td>Construction/Work zone</td><td>Road work ahead, detour, lane closed</td></tr>
-            <tr><td>Green</td><td>Guide/Direction</td><td>Highway exits, mile markers, street names</td></tr>
-            <tr><td>Blue</td><td>Services</td><td>Hospital, food, gas, rest areas</td></tr>
-            <tr><td>Brown</td><td>Recreation/Cultural</td><td>Parks, historic sites, scenic areas</td></tr>
-            <tr><td>White</td><td>Regulatory</td><td>Speed limit, lane use, parking regulations</td></tr>
-          </table>
-
-          <h3>Regulatory Signs: Rules You Must Obey</h3>
-          
-          <p>Regulatory signs give you orders. They tell you what you must do or must not do. Disobeying regulatory signs can result in citations, points on your license, and increased risk of accidents.</p>
-
-          <h4>Stop Signs</h4>
-          <ul>
-            <li><strong>Shape:</strong> Octagon (8-sided), red with white letters</li>
-            <li><strong>Requirement:</strong> Come to a complete stop behind the stop line, crosswalk, or before entering the intersection</li>
-            <li><strong>At a 4-way stop:</strong> First vehicle to stop has right-of-way; if arriving simultaneously, yield to the vehicle on your right</li>
-            <li><strong>Common mistake:</strong> Rolling stops—the vehicle must come to a complete stop with no forward motion</li>
-          </ul>
-
-          <h4>Yield Signs</h4>
-          <ul>
-            <li><strong>Shape:</strong> Triangle pointing downward, red and white</li>
-            <li><strong>Requirement:</strong> Slow down and prepare to stop if necessary; give right-of-way to traffic and pedestrians</li>
-            <li><strong>When to stop:</strong> If traffic is approaching that you would interfere with</li>
-          </ul>
-
-          <h4>Speed Limit Signs</h4>
-          <ul>
-            <li><strong>Shape:</strong> Vertical rectangle, white with black letters</li>
-            <li><strong>Requirement:</strong> Do not exceed the posted speed under normal conditions</li>
-            <li><strong>Important:</strong> Speed limits are maximum speeds for ideal conditions—you must reduce speed in rain, fog, or heavy traffic</li>
-          </ul>
-
-          <div class="alert alert-info">
-            <h4>💡 Florida Speed Limit Guide</h4>
-            <ul>
-              <li><strong>School zones:</strong> 20 mph (when children present or during posted hours)</li>
-              <li><strong>Residential areas:</strong> 30 mph (unless otherwise posted)</li>
-              <li><strong>Business districts:</strong> 30 mph (unless otherwise posted)</li>
-              <li><strong>Highways:</strong> 55-70 mph (as posted)</li>
-              <li><strong>Interstate rural areas:</strong> Up to 70 mph</li>
-            </ul>
-          </div>
-
-          <h4>Other Important Regulatory Signs</h4>
-          <ul>
-            <li><strong>Do Not Enter:</strong> Red circle with white rectangle—do not drive past this point</li>
-            <li><strong>Wrong Way:</strong> Red rectangle—you are driving against traffic; stop and turn around</li>
-            <li><strong>One Way:</strong> Black/white arrow—traffic flows only in the direction shown</li>
-            <li><strong>No U-Turn:</strong> You may not make a U-turn at this location</li>
-            <li><strong>No Left Turn/No Right Turn:</strong> Turns in the indicated direction are prohibited</li>
-            <li><strong>Keep Right:</strong> Stay to the right of a divider or obstruction</li>
-            <li><strong>Lane Use Control:</strong> Indicates which lanes may be used for through traffic, turns, etc.</li>
-          </ul>
-
-          <h3>Warning Signs: Alerts to Potential Hazards</h3>
-          
-          <p>Warning signs alert you to conditions that require caution or a change in your driving. They are typically yellow (permanent) or orange (temporary/construction).</p>
-
-          <h4>Common Warning Signs</h4>
-          <ul>
-            <li><strong>Curve/Turn Ahead:</strong> Arrow showing direction of curve—slow down before entering</li>
-            <li><strong>Intersection Ahead:</strong> Cross or T-shape—prepare for cross traffic</li>
-            <li><strong>Merge:</strong> Traffic from another road will be entering your lane</li>
-            <li><strong>Lane Ends:</strong> Your lane is ending; merge into adjacent lane</li>
-            <li><strong>Pedestrian Crossing:</strong> Watch for people crossing the road</li>
-            <li><strong>School Zone/Crossing:</strong> Reduce speed and watch for children</li>
-            <li><strong>Deer Crossing:</strong> Animals may be on or near the road</li>
-            <li><strong>Slippery When Wet:</strong> Road surface is dangerous in rain</li>
-            <li><strong>Railroad Crossing:</strong> Train tracks ahead—be prepared to stop</li>
-            <li><strong>Stop Ahead:</strong> Stop sign is coming—begin slowing</li>
-            <li><strong>Signal Ahead:</strong> Traffic signal is coming</li>
-          </ul>
-
-          <h4>Construction Zone Signs (Orange)</h4>
-          <ul>
-            <li><strong>Road Work Ahead:</strong> Construction or maintenance activity ahead</li>
-            <li><strong>Flagger Ahead:</strong> A person will be directing traffic</li>
-            <li><strong>Lane Closed:</strong> One or more lanes are not available</li>
-            <li><strong>Detour:</strong> Follow alternate route</li>
-            <li><strong>Speed Limit (in work zones):</strong> Reduced speeds are strictly enforced with doubled fines</li>
-          </ul>
-
-          <div class="alert alert-warning">
-            <h4>⚠️ Construction Zone Penalties in Florida</h4>
-            <p>Fines for speeding and other violations are <strong>doubled</strong> in construction zones when workers are present. A $150 speeding ticket becomes $300. These zones are strictly enforced to protect workers.</p>
-          </div>
-
-          <h3>Traffic Signals</h3>
-          
-          <p>Traffic signals control the flow of traffic at intersections and other locations. Understanding exactly what each signal means—and what it requires—is essential.</p>
-
-          <h4>Standard Traffic Lights</h4>
-          
-          <h5>Red Light</h5>
-          <ul>
-            <li><strong>Meaning:</strong> Stop</li>
-            <li><strong>Action:</strong> Come to a complete stop behind the stop line or crosswalk</li>
-            <li><strong>Right turn on red:</strong> Permitted after a complete stop, unless a sign prohibits it; you must yield to all traffic and pedestrians</li>
-            <li><strong>Left turn on red:</strong> Only permitted from a one-way street onto another one-way street (after stopping and yielding)</li>
-          </ul>
-
-          <h5>Yellow Light</h5>
-          <ul>
-            <li><strong>Meaning:</strong> Caution—the light is about to turn red</li>
-            <li><strong>Action:</strong> Stop if you can do so safely; if you're too close to stop safely, proceed with caution</li>
-            <li><strong>Common mistake:</strong> Using yellow as a signal to speed up—this is dangerous and can result in running a red light</li>
-          </ul>
-
-          <h5>Green Light</h5>
-          <ul>
-            <li><strong>Meaning:</strong> Go (if safe)</li>
-            <li><strong>Action:</strong> Proceed through the intersection if it is clear; yield to vehicles and pedestrians already in the intersection</li>
-            <li><strong>Important:</strong> Green means it's legal to go, not that it's necessarily safe—always verify before entering</li>
-          </ul>
-
-          <h4>Arrow Signals</h4>
-          <ul>
-            <li><strong>Green arrow:</strong> Protected turn in the direction indicated; oncoming traffic is stopped</li>
-            <li><strong>Yellow arrow:</strong> Protected turn is ending; prepare to stop or complete turn with caution</li>
-            <li><strong>Red arrow:</strong> Do not turn in the indicated direction; wait for green arrow or green light</li>
-          </ul>
-
-          <h4>Flashing Signals</h4>
-          <ul>
-            <li><strong>Flashing red:</strong> Treat as a stop sign—come to complete stop, then proceed when safe</li>
-            <li><strong>Flashing yellow:</strong> Proceed with caution; slow down and watch for hazards</li>
-          </ul>
-
-          <h3>Pavement Markings</h3>
-          
-          <p>Pavement markings provide guidance without requiring you to look away from the road. Understanding these markings is crucial for lane positioning and legal driving.</p>
-
-          <h4>Line Colors</h4>
-          <ul>
-            <li><strong>Yellow lines:</strong> Separate traffic flowing in opposite directions</li>
-            <li><strong>White lines:</strong> Separate traffic flowing in the same direction</li>
-          </ul>
-
-          <h4>Yellow Line Markings</h4>
-          <ul>
-            <li><strong>Broken yellow line:</strong> Passing is permitted when safe</li>
-            <li><strong>Solid yellow line:</strong> Passing is prohibited on your side</li>
-            <li><strong>Double solid yellow lines:</strong> No passing in either direction</li>
-            <li><strong>Solid yellow next to broken yellow:</strong> Passing permitted only from the broken-line side</li>
-          </ul>
-
-          <h4>White Line Markings</h4>
-          <ul>
-            <li><strong>Broken white line:</strong> Lane changes permitted when safe</li>
-            <li><strong>Solid white line:</strong> Lane changes discouraged (but not always prohibited)</li>
-            <li><strong>Double solid white lines:</strong> Lane changes prohibited</li>
-          </ul>
-
-          <h4>Other Pavement Markings</h4>
-          <ul>
-            <li><strong>Stop line:</strong> White line showing where to stop at intersections</li>
-            <li><strong>Crosswalk:</strong> White lines marking pedestrian crossing area</li>
-            <li><strong>Turn arrows:</strong> Indicate required or permitted lane movements</li>
-            <li><strong>"ONLY" markings:</strong> Indicate turn-only or through-only lanes</li>
-            <li><strong>HOV markings:</strong> Diamond shape indicates high-occupancy vehicle lane</li>
-            <li><strong>Railroad crossing:</strong> Large X marks pavement near tracks</li>
-          </ul>
-
-          <div class="case-study">
-            <h4>📋 Real-World Case Study: The Cost of Ignoring Signs</h4>
-            <p><strong>Wrong-Way Driver (Florida Turnpike):</strong></p>
-            <p>A driver unfamiliar with an interchange entered the Florida Turnpike the wrong way, ignoring "Do Not Enter" and "Wrong Way" signs. Despite multiple signs and reflectors designed to warn of the mistake, the driver continued for nearly a mile before a head-on collision with another vehicle.</p>
-            <p>The crash killed two people and seriously injured three others. The investigation found that the wrong-way driver had been distracted and missed the clear signage warning of the error.</p>
-            <p><em>Signs save lives—but only if you see them and obey them.</em></p>
-          </div>
-
-          <h3>Special Florida Considerations</h3>
-          
-          <h4>School Zones</h4>
-          <ul>
-            <li>Speed limit reduced to 20 mph during posted hours or when children are present</li>
-            <li>Watch for flashing lights indicating active school zone hours</li>
-            <li>Fines are increased in school zones</li>
-            <li>Cell phones must be hands-free in school zones</li>
-          </ul>
-
-          <h4>Toll Roads</h4>
-          <ul>
-            <li>Florida has extensive toll roads (Turnpike, expressways)</li>
-            <li>SunPass, E-Pass, and other transponders allow cashless payment</li>
-            <li>Watch for toll-by-plate lanes vs. SunPass-only lanes</li>
-            <li>Speed limits may vary on toll roads</li>
-          </ul>
-
-          <h3>Module Summary</h3>
-          
-          <ul>
-            <li>Sign shapes and colors indicate their general purpose before you read them</li>
-            <li>Regulatory signs (like stop, yield, speed limits) must be obeyed</li>
-            <li>Warning signs alert you to hazards—slow down and prepare</li>
-            <li>Construction zones have doubled fines—always obey reduced speeds</li>
-            <li>Traffic signals: Red = Stop, Yellow = Caution/Prepare to Stop, Green = Go if safe</li>
-            <li>Yellow pavement lines separate opposing traffic; white lines separate same-direction traffic</li>
-            <li>School zones require 20 mph speeds and hands-free phone use</li>
-          </ul>
-
-          <div class="alert alert-success">
-            <h4>✅ Module 6 Complete</h4>
-            <p>You've completed the Road Signs and Signals module. In the next module, we'll cover Sharing the Road—safely interacting with pedestrians, cyclists, motorcyclists, and large vehicles.</p>
-          </div>
-        `,
-        quizQuestions: [
-          {
-            questionText: 'What shape is a stop sign?',
-            options: ['Circle', 'Diamond', 'Octagon (8 sides)', 'Rectangle'],
-            correctAnswer: 'Octagon (8 sides)',
-            explanation: 'A stop sign is the only sign with an octagonal (8-sided) shape, making it recognizable even if damaged or covered with snow.'
-          },
-          {
-            questionText: 'What color are construction zone warning signs?',
-            options: ['Yellow', 'Orange', 'Red', 'Green'],
-            correctAnswer: 'Orange',
-            explanation: 'Construction and work zone signs are orange. Regular warning signs are yellow.'
-          },
-          {
-            questionText: 'A flashing red traffic signal means:',
-            options: ['Speed up to clear the intersection', 'Proceed with caution', 'Treat it as a stop sign', 'The signal is broken—ignore it'],
-            correctAnswer: 'Treat it as a stop sign',
-            explanation: 'A flashing red signal requires you to come to a complete stop and yield to traffic and pedestrians before proceeding.'
-          },
-          {
-            questionText: 'Double solid yellow lines on the road indicate:',
-            options: ['Passing is permitted with caution', 'Passing is prohibited in both directions', 'Lane change is encouraged', 'The road is under construction'],
-            correctAnswer: 'Passing is prohibited in both directions',
-            explanation: 'Double solid yellow lines separate opposing traffic and indicate no passing is allowed from either direction.'
-          },
-          {
-            questionText: 'True or False: When a traffic light is green, you should immediately enter the intersection without checking cross traffic.',
-            questionType: 'true_false',
-            options: ['True', 'False'],
-            correctAnswer: 'False',
-            explanation: 'A green light means it\'s legal to proceed, but you should still verify the intersection is clear. Always check for red-light runners before entering.'
-          },
-          {
-            questionText: 'What is the speed limit in Florida school zones when children are present?',
-            options: ['15 mph', '20 mph', '25 mph', '30 mph'],
-            correctAnswer: '20 mph',
-            explanation: 'Florida school zones have a 20 mph speed limit during posted hours or when children are present.'
-          }
-        ]
-      },
-
-      // =========================================
-      // MODULE 7: Sharing the Road
-      // Estimated Reading Time: 35-40 minutes
-      // =========================================
-      {
-        title: 'Module 7: Sharing the Road',
-        description: 'Safely interacting with pedestrians, cyclists, motorcyclists, and large vehicles',
-        estimatedMinutes: 40,
-        content: `
-          <h2>Sharing the Road: Safely Coexisting with All Road Users</h2>
-          
-          <p>Florida's roads aren't just for cars and trucks. Every day, millions of people travel by foot, bicycle, motorcycle, or large commercial vehicle—each with different capabilities, vulnerabilities, and rights. Understanding how to safely share the road with these different users is essential for preventing crashes and ensuring everyone reaches their destination safely.</p>
-
-          <div class="statistics-box">
-            <h4>📊 Vulnerable Road User Statistics in Florida</h4>
-            <ul>
-              <li><strong>Florida leads the nation</strong> in pedestrian and cyclist fatalities</li>
-              <li>Over <strong>700 pedestrians</strong> are killed on Florida roads each year</li>
-              <li>Over <strong>150 cyclists</strong> are killed annually in Florida</li>
-              <li><strong>Motorcycle fatalities</strong> average over 550 per year in Florida</li>
-              <li><strong>80%</strong> of pedestrian deaths occur in urban areas</li>
-              <li>Most pedestrian and cyclist crashes happen at <strong>non-intersection locations</strong></li>
-              <li><strong>Large truck crashes</strong> result in fatalities at twice the rate of passenger vehicle crashes</li>
-            </ul>
-          </div>
-
-          <h3>Pedestrians: Protecting the Most Vulnerable</h3>
-          
-          <p>Pedestrians have no protection in a collision with a motor vehicle. Even at low speeds, being struck by a car can cause serious injury or death. Florida law gives pedestrians specific rights, and drivers have a legal and moral obligation to protect them.</p>
-
-          <h4>Florida Pedestrian Laws</h4>
-          <ul>
-            <li><strong>Crosswalks:</strong> Drivers must yield to pedestrians in crosswalks, whether marked or unmarked (an unmarked crosswalk exists at any intersection)</li>
-            <li><strong>Stopping for pedestrians:</strong> When a pedestrian is crossing in a crosswalk, you must stop and remain stopped until they have completely crossed</li>
-            <li><strong>No passing:</strong> It is illegal to pass a vehicle that has stopped for a pedestrian at a crosswalk</li>
-            <li><strong>Sidewalks:</strong> When crossing a sidewalk (such as exiting a driveway or parking lot), you must yield to pedestrians</li>
-          </ul>
-
-          <h4>High-Risk Pedestrian Situations</h4>
-          
-          <h5>School Zones</h5>
-          <ul>
-            <li>Reduce speed to 20 mph during posted hours</li>
-            <li>Watch for children who may dart into the street unexpectedly</li>
-            <li>Be especially alert at crosswalks and crossing guard locations</li>
-            <li>Stop when a school crossing guard displays a stop sign</li>
-            <li>Never pass a stopped school bus with flashing red lights</li>
-          </ul>
-
-          <h5>Residential Areas</h5>
-          <ul>
-            <li>Watch for children playing near the street</li>
-            <li>Be alert for balls, toys, or pets that might indicate children nearby</li>
-            <li>Reduce speed even if there's no posted speed limit change</li>
-            <li>Check driveways and between parked cars for pedestrians</li>
-          </ul>
-
-          <h5>Night Time</h5>
-          <ul>
-            <li>Pedestrians are much harder to see at night, especially if wearing dark clothing</li>
-            <li>Be especially vigilant in areas near bars, restaurants, and entertainment venues</li>
-            <li>Impaired pedestrians may behave unpredictably</li>
-            <li>Use your headlights properly and scan for movement at the edge of your light beam</li>
-          </ul>
-
-          <div class="case-study">
-            <h4>📋 Real-World Case Study: The Hidden Pedestrian</h4>
-            <p><strong>A Tragic Lesson (Orlando, FL):</strong></p>
-            <p>A driver was traveling on International Drive after dark. The road was busy and well-lit, but a pedestrian wearing dark clothing was crossing mid-block—not at a crosswalk. The driver didn't see the pedestrian until it was too late.</p>
-            <p>Although the pedestrian was partially at fault for crossing improperly, the driver faced years of guilt and legal consequences. "I wish I had been driving slower," the driver said. "I wish I had been scanning more carefully. A few seconds of extra caution might have saved a life."</p>
-            <p><em>Even when pedestrians make mistakes, drivers often have the last chance to prevent a tragedy.</em></p>
-          </div>
-
-          <h3>Cyclists: Sharing the Lane</h3>
-          
-          <p>Bicyclists in Florida have the same rights and responsibilities as motor vehicle drivers. They are legally entitled to use the road, and drivers must respect their space.</p>
-
-          <h4>Florida Bicycle Laws</h4>
-          <ul>
-            <li><strong>Same rights:</strong> Cyclists have the same rights to the roadway as motor vehicles</li>
-            <li><strong>Passing distance:</strong> When passing a cyclist, you must provide at least <strong>3 feet of clearance</strong> (though Florida Safe Passing law recommends more when possible)</li>
-            <li><strong>Bike lanes:</strong> When a bike lane is present, cyclists should use it, but they may leave it for safety reasons</li>
-            <li><strong>No honking:</strong> Honking at cyclists can startle them and cause crashes; pass safely instead</li>
-          </ul>
-
-          <h4>Safe Practices Around Cyclists</h4>
-          <ul>
-            <li><strong>Pass only when safe:</strong> Wait for a safe opportunity—never squeeze past a cyclist with oncoming traffic</li>
-            <li><strong>Give plenty of space:</strong> 3 feet minimum, more at higher speeds</li>
-            <li><strong>Check before turning right:</strong> A cyclist may be in your blind spot or the bike lane</li>
-            <li><strong>Check before opening your door:</strong> "Dooring" (opening a car door into a cyclist's path) is a common cause of serious injuries</li>
-            <li><strong>Be patient:</strong> Cyclists may need to move into the travel lane to avoid hazards</li>
-            <li><strong>Expect the unexpected:</strong> Cyclists may swerve to avoid potholes or debris</li>
-          </ul>
-
-          <div class="alert alert-warning">
-            <h4>⚠️ The "Dutch Reach" Technique</h4>
-            <p>To prevent "dooring" cyclists when exiting your parked car, use the "Dutch Reach": open the door with your <strong>far hand</strong> (right hand if you're the driver). This naturally turns your body and helps you see approaching cyclists and traffic before opening the door fully.</p>
-          </div>
-
-          <h3>Motorcyclists: See Them, Save Them</h3>
-          
-          <p>Motorcyclists face unique dangers on the road. Their smaller profile makes them harder to see, and they have no protection in a crash. As a driver, your awareness can save a motorcyclist's life.</p>
-
-          <h4>Why Motorcycles Are Hard to See</h4>
-          <ul>
-            <li><strong>Small profile:</strong> Motorcycles take up a fraction of the visual space of a car</li>
-            <li><strong>Hidden by objects:</strong> They can disappear behind posts, mirrors, or other vehicles</li>
-            <li><strong>Speed deception:</strong> Their small size makes it hard to judge their speed and distance</li>
-            <li><strong>Inattentional blindness:</strong> When drivers are looking for cars, they may literally not "see" motorcycles</li>
-          </ul>
-
-          <h4>The Most Common Motorcycle Crash</h4>
-          <p>The most common type of fatal motorcycle crash involves a car turning left in front of an oncoming motorcycle. The driver typically says, "I never saw them." This is why the "Look Twice—Save a Life" campaign exists.</p>
-
-          <h4>Safe Practices Around Motorcycles</h4>
-          <ul>
-            <li><strong>Look twice:</strong> Before turning or changing lanes, look specifically for motorcycles</li>
-            <li><strong>Double-check blind spots:</strong> Motorcycles can easily hide in your blind spots</li>
-            <li><strong>Give extra following distance:</strong> Motorcycles can stop much faster than cars</li>
-            <li><strong>Don't share lanes:</strong> Even though motorcycles are small, they are entitled to the full lane</li>
-            <li><strong>Watch for turn signals:</strong> Many motorcycle turn signals don't self-cancel</li>
-            <li><strong>Be careful at intersections:</strong> Look both ways specifically for motorcycles</li>
-            <li><strong>Account for road conditions:</strong> Motorcycles are more affected by rain, gravel, and debris</li>
-          </ul>
-
-          <div class="reflection-question">
-            <h4>🤔 Reflection Question</h4>
-            <p>Think about the last time you turned left across traffic. Did you specifically look for motorcycles? How might you change your scanning habits to better protect motorcyclists?</p>
-          </div>
-
-          <h3>Large Trucks and Buses: Respecting Their Limitations</h3>
-          
-          <p>Commercial vehicles like semi-trucks, buses, and delivery vehicles operate under different constraints than passenger cars. Understanding their limitations helps you stay safe around them.</p>
-
-          <h4>Key Differences for Large Vehicles</h4>
-          <ul>
-            <li><strong>Stopping distance:</strong> A fully loaded semi-truck traveling 65 mph needs nearly 600 feet to stop—almost the length of two football fields</li>
-            <li><strong>Acceleration:</strong> Large vehicles accelerate slowly, especially on hills</li>
-            <li><strong>Maneuverability:</strong> Wide turns, limited ability to swerve</li>
-            <li><strong>Blind spots:</strong> Much larger than passenger vehicles</li>
-            <li><strong>Wind effects:</strong> Large vehicles create air turbulence when passed</li>
-          </ul>
-
-          <h4>The "No-Zone": Truck Blind Spots</h4>
-          <p>Large trucks have four major blind spots where cars can effectively disappear from the driver's view:</p>
-          
-          <ul>
-            <li><strong>Front blind spot:</strong> 20 feet directly in front of the cab—truck drivers can't see vehicles that cut in too closely</li>
-            <li><strong>Rear blind spot:</strong> 30 feet or more behind the trailer—no rearview mirror can see this area</li>
-            <li><strong>Left side blind spot:</strong> Runs from the cab door back at an angle—smaller than the right side</li>
-            <li><strong>Right side blind spot:</strong> The largest—extends from the cab door diagonally backward for multiple lanes</li>
-          </ul>
-
-          <div class="alert alert-info">
-            <h4>💡 The Mirror Rule</h4>
-            <p>Here's a simple rule: <strong>If you can't see the truck driver's face in their side mirror, they can't see you.</strong> Avoid lingering in blind spots—either pass or drop back to where you're visible.</p>
-          </div>
-
-          <h4>Safe Practices Around Large Vehicles</h4>
-          <ul>
-            <li><strong>Don't cut in front:</strong> Allow at least one car length for every 10 mph when passing</li>
-            <li><strong>Pass quickly and safely:</strong> Don't linger alongside—pass and move ahead</li>
-            <li><strong>Stay visible:</strong> Avoid the no-zones, especially the right side</li>
-            <li><strong>Watch for wide turns:</strong> Trucks may swing wide left before turning right</li>
-            <li><strong>Give extra space:</strong> Following too closely means you can't see ahead</li>
-            <li><strong>Be patient:</strong> Trucks on hills may slow down significantly</li>
-            <li><strong>Avoid distractions around trucks:</strong> You have less room for error</li>
-          </ul>
-
-          <h3>School Buses: Protecting Our Children</h3>
-          
-          <p>School buses carry our most precious cargo. Florida law imposes strict requirements on drivers when approaching school buses.</p>
-
-          <h4>Florida School Bus Laws</h4>
-          <ul>
-            <li><strong>When bus lights flash red and the stop arm extends:</strong> ALL traffic in BOTH directions must stop (unless separated by a raised median or barrier)</li>
-            <li><strong>Where to stop:</strong> At least 20 feet from the bus</li>
-            <li><strong>How long to stop:</strong> Remain stopped until the lights stop flashing and the stop arm retracts</li>
-            <li><strong>Divided highways with barrier:</strong> Traffic in the opposite direction is not required to stop if there's a physical barrier (median, concrete divider)</li>
-          </ul>
-
-          <h4>Penalties for Passing a Stopped School Bus</h4>
-          <table class="info-table">
-            <tr><th>Violation</th><th>Penalty</th></tr>
-            <tr><td>First offense</td><td>$400-$500 fine + 4 points on license</td></tr>
-            <tr><td>Second offense within 5 years</td><td>$800-$1000 fine + 4 points + possible suspension</td></tr>
-            <tr><td>Third offense within 5 years</td><td>Minimum $1000 fine + 4 points + license suspension</td></tr>
-            <tr><td>Causing injury to a child</td><td>Felony charges possible</td></tr>
-          </table>
-
-          <div class="alert alert-danger">
-            <h4>⚠️ Children Are Unpredictable</h4>
-            <p>Children exiting school buses may run into the street unexpectedly. They may drop something and go back for it. They may not look for traffic. <strong>Always assume children will do the unexpected</strong> and be prepared to stop.</p>
-          </div>
-
-          <h3>Emergency Vehicles: Reviewed</h3>
-          
-          <p>As covered in Module 4, always yield to emergency vehicles with flashing lights and sirens. Move over and stop when they approach. When passing emergency vehicles stopped on the roadside, move over a lane or slow to 20 mph below the speed limit.</p>
-
-          <h3>Module Summary</h3>
-          
-          <ul>
-            <li><strong>Pedestrians:</strong> Yield at crosswalks, watch for them in school zones and at night, stop when they're crossing</li>
-            <li><strong>Cyclists:</strong> Give at least 3 feet when passing, don't honk, check before turning right</li>
-            <li><strong>Motorcyclists:</strong> Look twice before turning or changing lanes, don't share lanes, give extra following distance</li>
-            <li><strong>Large trucks:</strong> Avoid blind spots, don't cut in front, allow extra room for stopping and turning</li>
-            <li><strong>School buses:</strong> Stop when red lights flash and stop arm extends, wait until they retract</li>
-            <li>Every road user deserves respect and safety consideration</li>
-          </ul>
-
-          <div class="alert alert-success">
-            <h4>✅ Module 7 Complete</h4>
-            <p>You've completed the Sharing the Road module. In the final module, we'll cover Certification Requirements and prepare you for the Final Assessment.</p>
-          </div>
-        `,
-        quizQuestions: [
-          {
-            questionText: 'When passing a cyclist in Florida, you must maintain a minimum distance of:',
+            questionText: 'How much clearance must Florida drivers give a bicyclist when passing?',
             options: ['1 foot', '2 feet', '3 feet', '5 feet'],
             correctAnswer: '3 feet',
-            explanation: 'Florida law requires a minimum of 3 feet clearance when passing a cyclist, though more distance is recommended at higher speeds.'
+            explanation: 'Florida Statute 316.2065 requires a minimum 3-foot clearance when passing a bicyclist.'
           },
           {
-            questionText: 'What should you do when a school bus displays flashing red lights and extends its stop arm?',
-            options: ['Slow down and proceed with caution', 'Stop only if you\'re behind the bus', 'Stop in both directions unless divided by a barrier', 'Honk to warn the children'],
-            correctAnswer: 'Stop in both directions unless divided by a barrier',
-            explanation: 'When a school bus has flashing red lights and the stop arm extended, ALL traffic in BOTH directions must stop (unless separated by a raised median or physical barrier).'
+            questionText: 'A flashing RED traffic signal should be treated as:',
+            options: ['A yield sign', 'A green light', 'A stop sign', 'A caution light'],
+            correctAnswer: 'A stop sign',
+            explanation: 'A flashing red signal requires a complete stop, then proceed when safe \u2014 the same as a stop sign.'
           },
           {
-            questionText: 'The most common type of fatal motorcycle crash involves:',
-            options: ['Rear-end collisions', 'A car turning left in front of the motorcycle', 'Motorcycle speeding', 'Road debris'],
-            correctAnswer: 'A car turning left in front of the motorcycle',
-            explanation: 'The most common fatal motorcycle crash occurs when a car driver turns left in front of an oncoming motorcycle, often because the driver didn\'t see the motorcycle.'
+            questionText: 'What is the primary danger during the first 10 minutes of a rainstorm?',
+            options: ['Flooding', 'Oil and rubber surfacing, making roads especially slippery', 'Lightning strikes', 'Reduced engine performance'],
+            correctAnswer: 'Oil and rubber surfacing, making roads especially slippery',
+            explanation: 'During the first 10 minutes of rain, oil and rubber residue rise to the surface before being diluted, creating the most slippery conditions of the storm.'
           },
           {
-            questionText: 'If you can\'t see a truck driver\'s face in their side mirror, what does that mean?',
-            options: ['The mirror is broken', 'The driver is distracted', 'The truck driver can\'t see you', 'You\'re following at a safe distance'],
-            correctAnswer: 'The truck driver can\'t see you',
-            explanation: 'If you can\'t see the truck driver\'s face in their mirror, you\'re in their blind spot and they cannot see you.'
+            questionText: 'How many feet does it take an 18-wheeler to stop from 65 mph?',
+            options: ['100 feet', '240 feet', '316 feet', '525 feet'],
+            correctAnswer: '525 feet',
+            explanation: 'A fully loaded 18-wheeler requires up to 525 feet (about 40 car lengths) to stop from 65 mph, compared to approximately 316 feet for a passenger car.'
           },
           {
-            questionText: 'True or False: Cyclists in Florida have the same rights to use the roadway as motor vehicles.',
-            questionType: 'true_false',
-            options: ['True', 'False'],
-            correctAnswer: 'True',
-            explanation: 'Florida law gives cyclists the same rights and responsibilities as motor vehicle drivers. They are legally entitled to use the road.'
+            questionText: 'Florida law requires headlights to be on whenever:',
+            options: ['After dark', 'In construction zones', 'Windshield wipers are in use', 'On highways'],
+            correctAnswer: 'Windshield wipers are in use',
+            explanation: 'Florida Statute 316.217 requires headlights to be on any time windshield wipers are in use.'
           },
           {
-            questionText: 'What is the penalty for a first offense of passing a stopped school bus in Florida?',
-            options: ['$100-$200 fine', '$400-$500 fine + 4 points', 'Warning only', 'License suspension'],
-            correctAnswer: '$400-$500 fine + 4 points',
-            explanation: 'A first offense for passing a stopped school bus carries a $400-$500 fine plus 4 points on your driving record.'
+            questionText: 'How much clear road is needed at minimum to safely pass a truck at 55 mph?',
+            options: ['500 feet', '800 feet', '1,500 feet', '2,000 feet'],
+            correctAnswer: '1,500 feet',
+            explanation: 'At 55 mph, safely passing a large truck requires approximately 1,500 feet of clear road ahead.'
+          },
+          {
+            questionText: 'In Florida, what does a solid yellow center line on YOUR side of the road mean?',
+            options: ['No passing allowed for you', 'Passing is permitted with caution', 'A construction zone ahead', 'Speed limit is reduced'],
+            correctAnswer: 'No passing allowed for you',
+            explanation: 'A solid yellow line on your side of the road means no passing is permitted for vehicles in your direction.'
+          },
+          {
+            questionText: 'What is the maximum speed in a Florida school zone when the flashing signals are active?',
+            options: ['25 mph', '35 mph', '15\u201320 mph (as posted)', '10 mph'],
+            correctAnswer: '15\u201320 mph (as posted)',
+            explanation: 'Florida school zones reduce the speed limit to 15\u201320 mph (as posted) when flashing signals are active.'
           }
         ]
       },
 
       // =========================================
-      // MODULE 8: Certification & Final Assessment
-      // Estimated Reading Time: 20-25 minutes
+      // MODULE 4: Vulnerable Road Users
+      // Estimated Time: 30 minutes
       // =========================================
       {
-        title: 'Module 8: Certification & Final Assessment',
-        description: 'Course completion requirements, certificate information, and final exam preparation',
-        estimatedMinutes: 25,
+        title: 'Module 4: Vulnerable Road Users',
+        description: 'Definition, characteristics, environments, Florida laws, statistics, and driver responsibilities for vulnerable road users',
+        estimatedMinutes: 30,
         content: `
-          <h2>Certification & Final Assessment</h2>
-          
-          <p>Congratulations on reaching the final module of the Quick Pass Traffic School 4-Hour Basic Driver Improvement Course! You've covered essential topics including distracted driving, emergency situations, defensive driving techniques, road signs and signals, and sharing the road safely with all users.</p>
-
-          <p>This final module will explain the certification process, what happens after you complete the course, and prepare you for the final assessment.</p>
-
-          <h3>Course Completion Requirements</h3>
-          
-          <p>To successfully complete this course and receive your certificate, you must:</p>
-          
+          <h2>Module 4: Vulnerable Road Users</h2>
+          <h3>Section 4.1 \u2014 Definition</h3>
+          <p>A <strong>Vulnerable Road User (VRU)</strong> is any person using a public roadway who does not have the protection of an enclosed motor vehicle. VRUs face significantly higher risks of serious injury or death in collisions because they lack airbags, crumple zones, and seat belts.</p>
+          <h4>Types of VRUs</h4>
           <ol>
-            <li><strong>Complete all course modules:</strong> You must view all content in each of the 8 modules</li>
-            <li><strong>Pass module quizzes:</strong> Each module includes quiz questions to reinforce learning</li>
-            <li><strong>Pass the final examination:</strong> Score at least 80% on the final exam</li>
-            <li><strong>Verify your identity:</strong> Complete identity verification as required by Florida law</li>
+            <li>Pedestrians</li>
+            <li>Cyclists</li>
+            <li>Motorcyclists and moped/scooter operators</li>
+            <li>Users of personal mobility devices (wheelchairs, mobility scooters)</li>
+            <li>Users of micromobility devices (electric scooters, skateboards)</li>
+            <li>Construction and roadway workers</li>
+            <li>Emergency responders at crash scenes</li>
           </ol>
-
-          <h4>Final Examination Details</h4>
-          <table class="info-table">
-            <tr><th>Requirement</th><th>Details</th></tr>
-            <tr><td>Number of Questions</td><td>Minimum 30 questions</td></tr>
-            <tr><td>Question Types</td><td>Multiple choice and True/False</td></tr>
-            <tr><td>Passing Score</td><td>80% or higher</td></tr>
-            <tr><td>Attempts Allowed</td><td>Multiple (if you don't pass, you can retake)</td></tr>
-            <tr><td>Format</td><td>Open-book (you may refer to course materials)</td></tr>
-            <tr><td>Time Limit</td><td>No strict time limit—take your time</td></tr>
-          </table>
-
-          <h3>What Your Certificate Accomplishes</h3>
-          
-          <p>Your certificate of completion serves several important purposes:</p>
-
-          <h4>Traffic Ticket Dismissal</h4>
-          <p>If you elected to take this course to dismiss a traffic ticket:</p>
+          <h4>Especially Vulnerable Groups</h4>
           <ul>
-            <li>The ticket will be dismissed (no points added to your record)</li>
-            <li>You avoid the fine associated with the violation</li>
-            <li>Your insurance company typically won't be notified of the violation</li>
-            <li>You must complete the course by the court-ordered deadline</li>
+            <li><strong>Children (under 16):</strong> More impulsive, smaller stature, less visible, less able to judge vehicle speed</li>
+            <li><strong>Elderly persons (over 65):</strong> Slower walking speed, reduced hearing and vision</li>
+            <li><strong>Persons with disabilities:</strong> May have limited mobility, vision, or hearing</li>
           </ul>
-
-          <h4>Point Prevention</h4>
-          <p>If you elected to take this course to prevent points from a violation:</p>
+          <h3>Section 4.2 \u2014 Florida VRU Statistics (2023)</h3>
           <ul>
-            <li>Points will not be added to your driving record</li>
-            <li>You may have already paid the fine for the violation</li>
-            <li>This option can be used up to 5 times in your lifetime (no more than once every 12 months)</li>
+            <li><strong>Pedestrians: 838 fatalities</strong> \u2014 Florida ranked 3rd nationally; pedestrians = 21% of all Florida traffic fatalities</li>
+            <li><strong>Cyclists: 176 fatalities</strong> \u2014 Florida ranks <strong>#1 in the nation for bicycle fatalities per capita</strong></li>
+            <li><strong>Motorcyclists: 601 fatalities</strong> \u2014 15% of all Florida traffic fatalities</li>
+            <li>National NHTSA 2023: 7,522 pedestrian fatalities (highest since 1981); 1,105 cyclist fatalities</li>
           </ul>
-
-          <h4>Insurance Discounts</h4>
-          <p>Many insurance companies offer discounts for completing driver improvement courses:</p>
+          <h3>Section 4.3 \u2014 Florida Laws Protecting VRUs</h3>
+          <h4>Pedestrian Laws (Florida Statute 316.130)</h4>
           <ul>
-            <li>Discounts typically range from 5-15%</li>
-            <li>Check with your insurance provider for specific discount amounts</li>
-            <li>You may need to provide a copy of your certificate</li>
-            <li>Discounts usually last for 3 years before requiring course renewal</li>
+            <li>Drivers must yield to pedestrians in crosswalks \u2014 both marked and unmarked</li>
+            <li>A crosswalk exists at every intersection whether painted or not</li>
+            <li>Walking on roadways: use sidewalks where available; if no sidewalk, walk FACING traffic on the left side</li>
           </ul>
-
-          <h3>Certificate Delivery</h3>
-          
-          <p>After successfully completing the course and passing the final exam:</p>
-
-          <h4>Electronic Submission to Florida DHSMV</h4>
+          <h4>Cyclist Laws (Florida Statute 316.2065)</h4>
           <ul>
-            <li>Your completion is reported electronically to the Florida Department of Highway Safety and Motor Vehicles</li>
-            <li>This is typically completed within 1-2 business days</li>
-            <li>The court and DMV will be notified automatically</li>
+            <li>Cyclists have the same rights and duties as motor vehicle operators</li>
+            <li>3-foot minimum passing clearance required by law</li>
+            <li>Cyclists may NOT ride on limited-access expressways</li>
           </ul>
-
-          <h4>Your Certificate</h4>
+          <h4>Move Over Law (Florida Statute 316.126)</h4>
           <ul>
-            <li>An electronic certificate is available immediately upon completion</li>
-            <li>You can download and print it for your records</li>
-            <li>Keep a copy for your insurance company</li>
-            <li>Store it safely—you may need proof of completion in the future</li>
+            <li>Move to the next lane left for stationary emergency vehicles with lights activated</li>
+            <li>If unable to move over, reduce speed to 20 mph below the posted limit</li>
+            <li>Expanded in 2023 to include disabled vehicles with hazard lights</li>
+            <li>Violation: 3-point noncriminal moving violation, fine up to $500</li>
           </ul>
-
-          <h3>Important Reminders</h3>
-
-          <div class="alert alert-warning">
-            <h4>⚠️ Course Limitations</h4>
-            <ul>
-              <li>This course can only be used for point prevention once every 12 months</li>
-              <li>You can only use the BDI course 5 times total in your lifetime for point prevention</li>
-              <li>This course does NOT dismiss DUI charges, criminal traffic violations, or crashes resulting in death</li>
-              <li>If you have questions about your eligibility, contact the court or your attorney</li>
-            </ul>
-          </div>
-
-          <h3>Final Exam Preparation</h3>
-          
-          <p>Before taking the final exam, review these key concepts from each module:</p>
-
-          <h4>Module 1: Introduction</h4>
+          <h4>School Bus Laws (Florida Statute 316.172)</h4>
           <ul>
-            <li>The Florida points system (12 points in 12 months = 30-day suspension)</li>
-            <li>Course usage limitations (5 times lifetime, once per 12 months)</li>
+            <li>ALL traffic in BOTH directions must stop when a school bus has the stop arm extended and red lights flashing</li>
+            <li>Exception: On divided highways with a physical median barrier (raised median) \u2014 a painted line is NOT a physical barrier</li>
+            <li>Passing a stopped school bus: 4-point moving violation</li>
           </ul>
-
-          <h4>Module 2: Distracted Driving</h4>
+          <h3>Section 4.4 \u2014 Physical Environment and VRU Safety</h3>
           <ul>
-            <li>Three types of distraction: visual, manual, cognitive</li>
-            <li>Florida texting law—texting is prohibited, even at red lights</li>
-            <li>Hands-free requirement in school and work zones</li>
+            <li><strong>Sidewalks:</strong> The single most effective pedestrian safety measure</li>
+            <li><strong>Lighting:</strong> 76% of Florida pedestrian deaths occur at night; adequate lighting cuts risk by 30%</li>
+            <li><strong>Crosswalk markings:</strong> Reduce pedestrian crash risk by up to 50%</li>
+            <li><strong>Bike lanes:</strong> Reduce cyclist injury rates by 30\u201340%</li>
+            <li><strong>Roundabouts:</strong> Reduce severe-injury and fatal crashes by 82\u201387% vs. signalized intersections (FHWA)</li>
           </ul>
-
-          <h4>Module 3: Emergency Situations</h4>
+          <h3>Section 4.5 \u2014 Driver Responsibility</h3>
           <ul>
-            <li>Tire blowout response: grip wheel, ease off gas, steer straight</li>
-            <li>Brake failure response: pump brakes, downshift, use parking brake</li>
-            <li>Skid recovery: steer in the direction you want to go</li>
+            <li>Enter crosswalks slowly enough to STOP if a pedestrian appears</li>
+            <li>Before turning right on red, look left, right, then LEFT AGAIN for cyclists and pedestrians</li>
+            <li>Use the Dutch Reach (open door with right hand) to force your body to check for cyclists</li>
+            <li>At night, drive more slowly in areas with pedestrian activity</li>
+            <li><strong>Bike boxes:</strong> Stop BEHIND the bike box; never enter it with your vehicle</li>
           </ul>
-
-          <h4>Module 4: Emergency Vehicles & Move Over Law</h4>
-          <ul>
-            <li>Move over or slow to 20 mph below the limit</li>
-            <li>Law applies to all emergency and service vehicles</li>
-            <li>Don't follow within 500 feet of responding emergency vehicles</li>
-          </ul>
-
-          <h4>Module 5: Defensive Driving</h4>
-          <ul>
-            <li>Three-second following distance rule (increase in poor conditions)</li>
-            <li>Scan 10-15 seconds ahead</li>
-            <li>Check mirrors every 5-8 seconds</li>
-            <li>Always have an escape route</li>
-          </ul>
-
-          <h4>Module 6: Road Signs and Signals</h4>
-          <ul>
-            <li>Sign shapes and colors and their meanings</li>
-            <li>Traffic signal meanings (red, yellow, green, flashing)</li>
-            <li>Pavement markings (yellow = opposite directions, white = same direction)</li>
-          </ul>
-
-          <h4>Module 7: Sharing the Road</h4>
-          <ul>
-            <li>3 feet minimum when passing cyclists</li>
-            <li>Look twice for motorcycles before turning</li>
-            <li>Truck blind spots and the "no-zone"</li>
-            <li>School bus stopping requirements</li>
-          </ul>
-
-          <h3>Your Commitment Going Forward</h3>
-          
-          <p>Completing this course is an important step, but the real test begins when you get behind the wheel. We challenge you to:</p>
-
-          <div class="pledge-box">
-            <h4>🎯 Post-Course Goals</h4>
-            <ul>
-              <li>Put your phone away every time you drive—no exceptions</li>
-              <li>Maintain at least a 3-second following distance at all times</li>
-              <li>Always move over or slow down for stopped emergency vehicles</li>
-              <li>Scan the road continuously and check mirrors regularly</li>
-              <li>Give extra space and attention to pedestrians, cyclists, and motorcyclists</li>
-              <li>Adapt your driving to weather, traffic, and road conditions</li>
-              <li>Be patient, courteous, and calm—even when others aren't</li>
-              <li>Be an example of safe driving for family, friends, and other drivers</li>
-            </ul>
-          </div>
-
-          <h3>Thank You</h3>
-          
-          <p>Thank you for taking this course seriously. By investing this time in improving your driving knowledge and skills, you're making a positive contribution to road safety in Florida. Every driver who commits to safe driving habits helps reduce accidents, injuries, and fatalities on our roads.</p>
-
-          <p>Remember: <strong>Safe driving is not just about following laws—it's about protecting lives, including your own.</strong></p>
-
-          <div class="alert alert-success">
-            <h4>✅ Module 8 Complete - Ready for Final Exam</h4>
-            <p>You've completed all 8 modules of the 4-Hour Basic Driver Improvement Course. When you're ready, proceed to the Final Examination. Good luck!</p>
-            <p><strong>Remember:</strong> You need 80% or higher to pass. Take your time and think through each question carefully.</p>
-          </div>
         `,
         quizQuestions: [
           {
-            questionText: 'What is the minimum passing score required for the final examination?',
-            options: ['70%', '75%', '80%', '90%'],
-            correctAnswer: '80%',
-            explanation: 'You must score at least 80% on the final examination to pass the course and receive your certificate.'
+            questionText: 'Which of the following is NOT considered a vulnerable road user?',
+            options: ['A cyclist', 'A pedestrian', 'An occupant of an SUV', 'A motorcyclist'],
+            correctAnswer: 'An occupant of an SUV',
+            explanation: 'VRUs are road users without the protection of an enclosed motor vehicle. An SUV occupant has structural protection, airbags, and a seat belt.'
           },
           {
-            questionText: 'How many times can you use the Basic Driver Improvement course for point prevention in your lifetime?',
-            options: ['Unlimited', '3 times', '5 times', '10 times'],
-            correctAnswer: '5 times',
-            explanation: 'Florida law limits the use of the BDI course for point prevention to 5 times in your lifetime, and no more than once every 12 months.'
+            questionText: 'Florida ranked what position nationally for bicycle fatalities per capita in 2023?',
+            options: ['3rd', '5th', '1st', '10th'],
+            correctAnswer: '1st',
+            explanation: 'Florida ranks #1 in the nation for bicycle fatalities per capita, with 176 cyclist deaths in 2023.'
           },
           {
-            questionText: 'True or False: This course can be used to dismiss DUI charges.',
-            questionType: 'true_false',
-            options: ['True', 'False'],
-            correctAnswer: 'False',
-            explanation: 'The Basic Driver Improvement course cannot be used to dismiss DUI charges, criminal traffic violations, or violations resulting in a crash causing death or serious injury.'
+            questionText: 'Under Florida\'s Move Over Law, if you cannot move to the next lane for a stopped emergency vehicle, you must:',
+            options: ['Stop completely', 'Slow to 20 mph below the speed limit', 'Honk as you pass', 'Use your hazard lights and maintain speed'],
+            correctAnswer: 'Slow to 20 mph below the speed limit',
+            explanation: 'Florida Statute 316.126 requires reducing speed to 20 mph below the posted limit when unable to change lanes for a stationary emergency vehicle.'
+          },
+          {
+            questionText: 'Passing a stopped school bus with flashing red lights is what type of violation?',
+            options: ['1-point', '2-point', '3-point', '4-point'],
+            correctAnswer: '4-point',
+            explanation: 'Passing a stopped school bus with activated red lights is a 4-point moving violation in Florida.'
+          },
+          {
+            questionText: 'Florida pedestrian fatalities account for what percentage of all Florida traffic fatalities?',
+            options: ['5%', '10%', '21%', '35%'],
+            correctAnswer: '21%',
+            explanation: 'In 2023, Florida recorded 838 pedestrian fatalities \u2014 approximately 21% of all traffic fatalities in the state.'
+          },
+          {
+            questionText: 'A "bike box" at an intersection is designed to:',
+            options: ['Store bicycles', 'Allow cyclists to position ahead of traffic before a junction', 'Serve as a bicycle repair area', 'Mark a bicycle-free zone'],
+            correctAnswer: 'Allow cyclists to position ahead of traffic before a junction',
+            explanation: 'A bike box is a marked area at the front of an intersection where cyclists can position ahead of motor vehicles, improving visibility and safety.'
+          },
+          {
+            questionText: 'What is the minimum clearance Florida law requires when passing a bicyclist?',
+            options: ['1 foot', '2 feet', '3 feet', '4 feet'],
+            correctAnswer: '3 feet',
+            explanation: 'Florida Statute 316.2065 requires at least 3 feet of clearance when passing a bicyclist.'
+          }
+        ]
+      },
+
+      // =========================================
+      // MODULE 5: DUI Prevention
+      // Estimated Time: 30 minutes
+      // =========================================
+      {
+        title: 'Module 5: DUI Prevention',
+        description: 'Effects of alcohol and drugs on driving, BAC and consumption, DUI legal and financial consequences, and ways to avoid driving impaired',
+        estimatedMinutes: 30,
+        content: `
+          <h2>Module 5: DUI Prevention</h2>
+          <h3>Section 5.1 \u2014 Effects of Alcohol and Drugs on Driver Capabilities</h3>
+          <p>Alcohol affects driving through a predictable progression. <strong>Impairment begins before the legal limit of 0.08 BAC.</strong></p>
+          <div class="info-table-wrapper">
+            <table class="info-table">
+              <tr><th>BAC Level</th><th>Effects on Driving</th></tr>
+              <tr><td>0.02</td><td>Loss of judgment, altered mood, reduced visual function, divided attention impaired</td></tr>
+              <tr><td>0.05</td><td>Reduced coordination, difficulty steering, reduced information processing</td></tr>
+              <tr><td>0.08 (legal limit)</td><td>Muscle coordination severely impaired, speed control impaired, crash risk <strong>4\xd7 higher</strong> than sober</td></tr>
+              <tr><td>0.15</td><td>Far less muscle control, major loss of balance, crash risk <strong>12\xd7 higher</strong> than sober</td></tr>
+            </table>
+          </div>
+          <p>Order of impairment: <strong>Judgment impairs FIRST</strong>, then coordination, then vision, then reaction time worsens. By the time speech is slurred, the driver is dangerously impaired.</p>
+          <h4>Effect of Other Drugs</h4>
+          <ul>
+            <li><strong>Cannabis:</strong> Impairs divided attention and tracking for 4\u20136+ hours. Driving within 1\u20133 hours of use doubles crash risk.</li>
+            <li><strong>Prescription opioids:</strong> Cause drowsiness and impaired judgment. Driving on prescribed opioids constitutes DUI if normal faculties are impaired.</li>
+            <li><strong>Benzodiazepines:</strong> Similar to alcohol in effect; increase crash risk even at therapeutic doses.</li>
+            <li><strong>Combination effects:</strong> Mixing alcohol with any drug amplifies impairment beyond what either causes alone.</li>
+          </ul>
+          <h3>Section 5.2 \u2014 Relationship Between Alcohol Consumed and BAC</h3>
+          <p>BAC is affected by: number of drinks, time period, body weight, sex, food consumption, and alcohol tolerance. <strong>Tolerance does NOT mean less impairment</strong> \u2014 it means you feel less drunk, but your driving ability is still degraded.</p>
+          <p>Each standard drink contains approximately 0.6 oz of pure alcohol: 12 oz beer (5%) = 5 oz wine = 1.5 oz spirits = 1 standard drink.</p>
+          <h4>BAC Elimination Rate</h4>
+          <p>The liver processes approximately <strong>0.015 BAC per hour</strong>. Coffee, cold showers, food, and exercise do NOT accelerate this. <strong>Only time lowers BAC.</strong></p>
+          <h3>Section 5.3 \u2014 Legal Consequences of DUI in Florida (Florida Statute 316.193)</h3>
+          <div class="info-table-wrapper">
+            <table class="info-table">
+              <tr><th>Offense</th><th>Fine</th><th>Imprisonment</th><th>License Revocation</th></tr>
+              <tr><td>1st (BAC 0.08\u20130.14)</td><td>$500\u2013$1,000</td><td>Up to 6 months</td><td>Min. 180 days</td></tr>
+              <tr><td>2nd (within 5 years)</td><td>$1,000\u2013$2,000</td><td>Up to 9 months</td><td>Min. 5 years + ignition interlock</td></tr>
+              <tr><td>3rd within 10 years of 2nd</td><td>$2,000\u2013$5,000</td><td>Up to 5 years (felony)</td><td>Min. 10 years</td></tr>
+            </table>
+          </div>
+          <h4>Aggravating Factors</h4>
+          <ul>
+            <li>BAC 0.15+: enhanced penalties regardless of offense number</li>
+            <li>DUI with minor in vehicle: mandatory jail time</li>
+            <li>DUI causing serious bodily injury: 3rd-degree felony</li>
+            <li>DUI manslaughter: 2nd-degree felony (minimum 4 years prison)</li>
+          </ul>
+          <h3>Section 5.4 \u2014 Financial Consequences</h3>
+          <p>Average total cost of a first DUI conviction in Florida: <strong>$10,000\u2013$25,000+</strong>, including fines ($1,500\u2013$5,000), attorney fees ($3,000\u2013$10,000), DUI school ($500\u2013$2,000), license reinstatement ($650+), and insurance increases ($1,500\u2013$3,000/year for 3+ years).</p>
+          <h3>Section 5.5 \u2014 Ways to Avoid Driving Impaired</h3>
+          <p>Plan safe transportation BEFORE you begin drinking: designate a driver, use Uber/Lyft, call a taxi, stay overnight, or use public transit. If already impaired with no option available \u2014 call 911. Note: In Florida, sitting in the driver's seat with the engine running while impaired can constitute DUI.</p>
+        `,
+        quizQuestions: [
+          {
+            questionText: 'At what BAC does Florida\'s per se DUI law begin?',
+            options: ['0.05', '0.08', '0.10', '0.15'],
+            correctAnswer: '0.08',
+            explanation: 'Florida\'s per se DUI limit is 0.08 BAC. However, impairment begins at much lower levels and drivers can be charged with DUI at any BAC if faculties are impaired.'
+          },
+          {
+            questionText: 'At BAC 0.08, driving crash risk compared to a sober driver is:',
+            options: ['Twice as high', 'Three times', 'Four times', 'Eight times'],
+            correctAnswer: 'Four times',
+            explanation: 'At a BAC of 0.08, a driver\'s crash risk is 4 times higher than a sober driver. At 0.15, risk increases to 12 times higher.'
+          },
+          {
+            questionText: 'Which of the following is equivalent to one standard drink?',
+            options: ['22 oz beer', '12 oz beer (5% ABV)', '9 oz wine', '3 oz liquor'],
+            correctAnswer: '12 oz beer (5% ABV)',
+            explanation: 'One standard drink contains approximately 0.6 oz of pure alcohol. 12 oz beer (5%) = 5 oz wine = 1.5 oz spirits = 1 standard drink.'
+          },
+          {
+            questionText: 'What is the approximate BAC elimination rate per hour?',
+            options: ['0.05', '0.02', '0.015', '0.01'],
+            correctAnswer: '0.015',
+            explanation: 'The liver processes approximately 0.015 BAC per hour. Nothing \u2014 coffee, food, or exercise \u2014 accelerates this. Only time lowers BAC.'
+          },
+          {
+            questionText: 'A first-time DUI conviction in Florida requires a minimum community service of:',
+            options: ['100 hours', '25 hours', 'No requirement', '50 hours'],
+            correctAnswer: '50 hours',
+            explanation: 'A first DUI conviction in Florida requires 50 hours of mandatory community service.'
+          },
+          {
+            questionText: 'Which of the following will speed up BAC reduction?',
+            options: ['Coffee', 'Cold shower', 'Food', 'None of the above'],
+            correctAnswer: 'None of the above',
+            explanation: 'Nothing speeds up BAC reduction. Only time reduces BAC as the liver processes approximately 0.015 per hour.'
+          },
+          {
+            questionText: 'DUI causing serious bodily injury in Florida is classified as:',
+            options: ['A misdemeanor', 'A 3rd-degree felony', 'A 2nd-degree felony', 'An infraction'],
+            correctAnswer: 'A 3rd-degree felony',
+            explanation: 'DUI causing serious bodily injury is a 3rd-degree felony in Florida. DUI manslaughter is a 2nd-degree felony.'
+          },
+          {
+            questionText: 'What is the FIRST ability to be impaired by alcohol?',
+            options: ['Coordination', 'Vision', 'Judgment', 'Reaction time'],
+            correctAnswer: 'Judgment',
+            explanation: 'Judgment is the first ability impaired by alcohol, beginning at very low BAC levels \u2014 well before coordination, vision, or reaction time are noticeably affected.'
+          }
+        ]
+      },
+
+      // =========================================
+      // MODULE 6: Safety Equipment
+      // Estimated Time: 20 minutes
+      // =========================================
+      {
+        title: 'Module 6: Safety Equipment',
+        description: 'Safety belts, head restraints, child restraints, air bags, and vehicle safety maintenance',
+        estimatedMinutes: 20,
+        content: `
+          <h2>Module 6: Safety Equipment</h2>
+          <h3>Section 6.1 \u2014 Safety Belts</h3>
+          <ul>
+            <li>Seat belts reduce the risk of death in a frontal crash by <strong>45%</strong> (NHTSA)</li>
+            <li>Seat belts reduce death risk by <strong>60%</strong> for light truck occupants</li>
+            <li>In Florida in 2022, <strong>51% of all traffic fatalities were unrestrained occupants</strong></li>
+            <li>Ejection occurs in 1% of crashes but accounts for 21% of fatalities; a seat belt prevents ejection</li>
+          </ul>
+          <h4>Proper Positioning</h4>
+          <ul>
+            <li><strong>Lap belt:</strong> Across the upper thighs/hip bones \u2014 NOT across the abdomen</li>
+            <li><strong>Shoulder belt:</strong> Across the chest and shoulder \u2014 NOT tucked behind the back or under the arm</li>
+          </ul>
+          <h4>Florida Law (Florida Statute 316.614)</h4>
+          <ul>
+            <li>All front-seat occupants must wear a seat belt</li>
+            <li>All rear-seat passengers under age 18 must wear a seat belt</li>
+            <li>The DRIVER is responsible for ensuring all passengers under 18 are buckled</li>
+          </ul>
+          <h3>Section 6.2 \u2014 Head Restraints</h3>
+          <p>Head restraints are <strong>critical safety devices</strong>, not comfort features. They prevent whiplash in rear-end collisions.</p>
+          <ul>
+            <li>Top of head restraint: level with the <strong>TOP of your head</strong></li>
+            <li>Restraint should be within 4 inches of the back of your head</li>
+            <li>Proper positioning reduces whiplash injury severity by 40%</li>
+          </ul>
+          <h3>Section 6.3 \u2014 Child Restraints (Florida Statute 316.613)</h3>
+          <ul>
+            <li>Children <strong>under age 5</strong>: must be in a federally approved child restraint device</li>
+            <li>Children <strong>under age 3</strong>: must be in a separate carrier (not the vehicle seat belt alone)</li>
+            <li>Children <strong>aged 3\u20135</strong>: may use a separate carrier OR a booster seat with the vehicle's seat belt</li>
+          </ul>
+          <h4>Types of Child Restraints</h4>
+          <ol>
+            <li><strong>Rear-facing infant seat (birth to 2+ years):</strong> Back seat only; NEVER in front of an active airbag; keep rear-facing as long as possible</li>
+            <li><strong>Forward-facing car seat (2\u20135 years, 40\u201365 lbs):</strong> Back seat, forward-facing with internal harness</li>
+            <li><strong>Booster seat (40\u2013120 lbs):</strong> Reduces injury risk by 45% vs. seat belt alone for this age group</li>
+            <li><strong>Vehicle seat belt:</strong> When the child is 4'9" or taller (typically age 8\u201312)</li>
+          </ol>
+          <h3>Section 6.4 \u2014 Air Bags</h3>
+          <ul>
+            <li>Airbags <strong>supplement</strong> seat belts \u2014 they do NOT replace them</li>
+            <li>Children under age 13 should NEVER sit in front of an active frontal airbag</li>
+            <li>Rear-facing infant seats must NEVER be placed in the front passenger seat with an active airbag</li>
+            <li>Airbags deploy at 100\u2013220 mph and are designed for an adult's chest \u2014 not a child's head</li>
+          </ul>
+          <h3>Section 6.5 \u2014 Vehicle Safety Maintenance</h3>
+          <ul>
+            <li><strong>Tires:</strong> Check pressure monthly. Tread below 2/32" (penny test: Lincoln's head fully visible) = replace</li>
+            <li><strong>Brakes:</strong> Service every 12,000 miles or if pulsation, grinding, or extended stopping distances are detected</li>
+            <li><strong>Lights:</strong> Test all exterior lights monthly</li>
+            <li><strong>Carbon monoxide (CO):</strong> Colorless, odorless, lethal gas produced by all gasoline engines. Never run engine in an enclosed space. Symptoms: headache, nausea, dizziness, confusion \u2014 exit vehicle immediately and move to fresh air.</li>
+          </ul>
+        `,
+        quizQuestions: [
+          {
+            questionText: 'Where should the top of a head restraint be positioned?',
+            options: ['Level with the ear', 'Level with the top of the head', 'Level with the shoulders', 'As low as possible'],
+            correctAnswer: 'Level with the top of the head',
+            explanation: 'The top of the head restraint should be level with the top of your head to properly prevent whiplash in a rear-end collision.'
+          },
+          {
+            questionText: 'In Florida, children under what age must use a separate child restraint device?',
+            options: ['2', '5', '8', '13'],
+            correctAnswer: '5',
+            explanation: 'Florida Statute 316.613 requires children under age 5 to be secured in a federally approved child restraint device.'
+          },
+          {
+            questionText: 'Carbon monoxide gas is:',
+            options: ['Brown and has a rotten egg smell', 'White with a sweet odor', 'Colorless and odorless', 'Blue with a sharp smell'],
+            correctAnswer: 'Colorless and odorless',
+            explanation: 'Carbon monoxide is a colorless, odorless, potentially lethal gas produced by gasoline engines. It cannot be detected by sight or smell.'
+          },
+          {
+            questionText: 'A rear-facing infant seat should NEVER be placed where?',
+            options: ['In the back seat', 'In front of an active airbag', 'On a seat with LATCH anchors', 'Facing the rear of the vehicle'],
+            correctAnswer: 'In front of an active airbag',
+            explanation: 'A rear-facing infant seat must NEVER be placed in front of an active airbag. The airbag deploys directly into the back of the infant seat near the child\'s head.'
+          },
+          {
+            questionText: 'Seat belts reduce the risk of death in a frontal crash by what percentage?',
+            options: ['15%', '25%', '35%', '45%'],
+            correctAnswer: '45%',
+            explanation: 'Seat belts reduce the risk of death in a frontal crash by 45% for front-seat occupants (NHTSA).'
+          }
+        ]
+      },
+
+      // =========================================
+      // MODULE 7: Psychological Factors
+      // Estimated Time: 20 minutes
+      // =========================================
+      {
+        title: 'Module 7: Psychological Factors',
+        description: 'How stress, fatigue, and emotional distress affect driving, and how an appropriate attitude prevents crashes',
+        estimatedMinutes: 20,
+        content: `
+          <h2>Module 7: Psychological Factors</h2>
+          <h3>Section 7.1 \u2014 Stress and Driving</h3>
+          <p>Stress narrows attention, makes drivers impatient, and increases risk-taking (following too closely, unsafe passes, running yellow lights). A 2023 AAA study found that emotional distress increased crash risk by <strong>9.8 times</strong> compared to calm driving.</p>
+          <h4>Managing Stress Before Driving</h4>
+          <ul>
+            <li>Recognize if you are in a highly emotional state before getting behind the wheel</li>
+            <li>Allow extra travel time so you are not rushed</li>
+            <li>Deep breathing (4 counts in, hold 4, 4 counts out) activates the parasympathetic nervous system within minutes</li>
+            <li>If significantly emotionally distressed, delay driving or ask someone else to drive</li>
+          </ul>
+          <h3>Section 7.2 \u2014 Fatigue and Driving</h3>
+          <p>NHTSA estimates drowsy driving causes over <strong>100,000</strong> police-reported crashes per year (likely 3\u20136\xd7 higher due to underreporting).</p>
+          <p><strong>Microsleeps</strong> \u2014 involuntary 1\u201330 second lapses in consciousness \u2014 can occur without driver awareness. At 60 mph, a 4-second microsleep = <strong>352 feet</strong> driven with no awareness or control.</p>
+          <h4>Fatigue Equivalence to Alcohol</h4>
+          <ul>
+            <li>18 hours awake = impairment equivalent to BAC <strong>0.05</strong></li>
+            <li>24 hours awake = equivalent to BAC <strong>0.10</strong></li>
+          </ul>
+          <h4>Warning Signs of Fatigue</h4>
+          <p>Difficulty keeping eyes open, repeated yawning, wandering thoughts, drifting lanes, missing exits, not remembering the last few miles. <em>Any of these means you are too tired to drive safely.</em></p>
+          <h4>Managing Fatigue</h4>
+          <ul>
+            <li>Don't start a long drive tired \u2014 sleep before departure</li>
+            <li>Take breaks every 2 hours or 100 miles</li>
+            <li>A <strong>20-minute power nap</strong> at a rest area significantly improves alertness for 1\u20133 hours</li>
+            <li>Caffeine provides only 1\u20132 hours of temporary relief \u2014 NOT a substitute for sleep</li>
+          </ul>
+          <h3>Section 7.3 \u2014 Emotional Distress and Driving</h3>
+          <p>Grief, anger, fear, depression, and anxiety impair driving similarly to chemical impairment. Road rage escalates into crashes and violence; Florida Statute 316.1923 defines aggressive careless driving as a moving violation. Road rage incidents involving firearms have increased in Florida \u2014 never engage.</p>
+          <h4>If Another Driver Acts Aggressively</h4>
+          <ol>
+            <li>Do NOT engage \u2014 no eye contact, no gestures, no honking</li>
+            <li>Create space between your vehicle and theirs</li>
+            <li>Drive to a public place or police station; do not go home</li>
+            <li>If threatened, call 911 while continuing to drive</li>
+          </ol>
+          <h3>Section 7.4 \u2014 Appropriate Attitude Toward Driving</h3>
+          <ol>
+            <li><strong>Respect:</strong> Every other vehicle contains a person \u2014 treat them as you want to be treated</li>
+            <li><strong>Patience:</strong> A few minutes late is never worth a crash</li>
+            <li><strong>Humility:</strong> Overconfidence is a crash risk; every driver makes mistakes</li>
+            <li><strong>Responsibility:</strong> You operate a 3,000-lb machine; consequences fall on others as well as yourself</li>
+            <li><strong>Attentiveness:</strong> Driving requires full cognitive attention \u2014 put down the phone</li>
+          </ol>
+        `,
+        quizQuestions: [
+          {
+            questionText: 'A 4-second microsleep at 60 mph results in traveling approximately:',
+            options: ['50 feet', '100 feet', '200 feet', '352 feet'],
+            correctAnswer: '352 feet',
+            explanation: 'At 60 mph, a 4-second microsleep means the driver travels 352 feet \u2014 well over a football field \u2014 with no awareness or control.'
+          },
+          {
+            questionText: 'Being awake for 24 hours produces impairment comparable to a BAC of:',
+            options: ['0.05', '0.08', '0.10', '0.15'],
+            correctAnswer: '0.10',
+            explanation: 'Research shows that being awake for 24 hours produces driving impairment equivalent to a BAC of 0.10 \u2014 above Florida\'s per se DUI limit.'
+          },
+          {
+            questionText: 'If another driver is acting aggressively toward you, you should:',
+            options: ['Honk and confront them', 'Increase your speed to escape', 'Do not engage; create space and drive to a public place', 'Block them in'],
+            correctAnswer: 'Do not engage; create space and drive to a public place',
+            explanation: 'Engaging with an aggressive driver escalates risk. The safe response is to create space, avoid eye contact, and drive to a public place or police station.'
+          },
+          {
+            questionText: 'Which of the following is the most effective countermeasure for driver fatigue?',
+            options: ['Coffee', 'Opening a window', 'Turning up the radio', 'A 20-minute nap'],
+            correctAnswer: 'A 20-minute nap',
+            explanation: 'A 20-minute power nap is among the most effective fatigue countermeasures, improving alertness for 1\u20133 hours. Coffee provides only 1\u20132 hours of temporary relief.'
+          },
+          {
+            questionText: 'The AAA study mentioned in this course found that emotional distress increased crash risk by approximately:',
+            options: ['2\xd7', '5\xd7', '9.8\xd7', '15\xd7'],
+            correctAnswer: '9.8\xd7',
+            explanation: 'A 2023 AAA study found that emotional distress (agitation, sadness, crying) increased crash risk by 9.8 times compared to calm, focused driving.'
+          },
+          {
+            questionText: 'An appropriate attitude toward driving includes all EXCEPT:',
+            options: ['Patience', 'Humility', 'Overconfidence', 'Responsibility'],
+            correctAnswer: 'Overconfidence',
+            explanation: 'Overconfidence is a crash risk. Safe driving requires patience, humility, responsibility, and attentiveness.'
+          }
+        ]
+      },
+
+      // =========================================
+      // MODULE 8: Florida Traffic Laws
+      // Estimated Time: 30 minutes
+      // =========================================
+      {
+        title: 'Module 8: Florida Traffic Laws',
+        description: 'Florida\'s point system, speed limits, signs and signals, school buses, emergency vehicles, and required vehicle safety equipment',
+        estimatedMinutes: 30,
+        content: `
+          <h2>Module 8: Florida Traffic Laws</h2>
+          <h3>Section 8.1 \u2014 Florida Point System (Florida Statute 322.27)</h3>
+          <div class="info-table-wrapper">
+            <table class="info-table">
+              <tr><th>Points</th><th>Violations</th></tr>
+              <tr><td>3 points</td><td>Speeding 15 mph or less over; improper passing; failure to yield; running red light (no crash); stop sign violation; unlawful speed in school zone</td></tr>
+              <tr><td>4 points</td><td>Speeding 16+ mph over; reckless driving (no accident); improper turn; failing to stop for school bus</td></tr>
+              <tr><td>6 points</td><td>Any moving violation causing a crash; reckless driving (accident); leaving scene of crash</td></tr>
+            </table>
+          </div>
+          <h4>Point Accumulation Thresholds</h4>
+          <ul>
+            <li>12 points in 12 months = <strong>30-day suspension</strong></li>
+            <li>18 points in 18 months = <strong>3-month suspension</strong></li>
+            <li>24 points in 36 months = <strong>1-year suspension</strong> (automatic)</li>
+          </ul>
+          <h4>Habitual Traffic Offender (HTO) Status (Florida Statute 322.264)</h4>
+          <p>Designated if 3+ qualifying offenses (felony vehicle charges, DUI offenses, or 15+ points total) within 5 years. Penalty: <strong>5-year license revocation</strong>. Must complete the 12-hour ADI course before reinstatement.</p>
+          <h3>Section 8.2 \u2014 Speed Limits in Florida</h3>
+          <p>Default limits where not otherwise posted:</p>
+          <ul>
+            <li>Residential/business areas: <strong>30 mph</strong></li>
+            <li>Rural interstate: <strong>70 mph</strong></li>
+            <li>Urban interstate: <strong>65 mph</strong></li>
+            <li>All other roads: <strong>55 mph</strong></li>
+          </ul>
+          <h3>Section 8.3 \u2014 Signs, Signals, and Road Markings</h3>
+          <ul>
+            <li><strong>GREEN:</strong> Proceed if clear (does not guarantee safety)</li>
+            <li><strong>YELLOW:</strong> Prepare to stop; only proceed if stopping safely is not possible</li>
+            <li><strong>RED:</strong> Stop before the stop line; remain stopped until green</li>
+            <li><strong>GREEN ARROW:</strong> Protected turn; cross traffic is stopped</li>
+            <li><strong>FLASHING RED:</strong> Treat as a stop sign</li>
+            <li><strong>FLASHING YELLOW:</strong> Slow and proceed with caution</li>
+            <li><strong>DARK SIGNAL (power failure):</strong> Treat as a 4-way stop</li>
+          </ul>
+          <p><strong>Right Turn on Red (Florida Statute 316.075):</strong> Permitted after a complete stop unless a "No Turn on Red" sign is posted. Yield to all pedestrians and vehicles with a green light.</p>
+          <h4>Centerline Markings</h4>
+          <ul>
+            <li>Broken yellow: Passing permitted both directions when safe</li>
+            <li>Solid yellow on YOUR side: No passing for you</li>
+            <li>Double solid yellow: No passing either direction</li>
+          </ul>
+          <h3>Section 8.4 \u2014 School Buses (Florida Statute 316.172)</h3>
+          <p>ALL vehicles in BOTH directions on undivided roads must STOP when a school bus has the stop arm extended AND red lights flashing. Remain stopped until lights stop, arm retracts, and all children have cleared the roadway.</p>
+          <p><strong>Exception:</strong> Divided highways with a physical median barrier (raised concrete or raised divider). A painted center line is NOT a physical barrier. <strong>Violation: 4-point moving violation.</strong></p>
+          <h3>Section 8.5 \u2014 Emergency Vehicles (Florida Statute 316.126)</h3>
+          <p>When an emergency vehicle is approaching with sirens/lights: (1) Pull to the RIGHT edge of the roadway; (2) Stop completely; (3) Remain stopped until the vehicle has passed. <strong>Move Over Law:</strong> For stationary emergency vehicles on the shoulder \u2014 move left if safe; if not, reduce speed to 20 mph below posted limit.</p>
+          <h3>Section 8.6 \u2014 Required Vehicle Safety Equipment (Florida Statute 316.610)</h3>
+          <p>Every motor vehicle in Florida must have in working order: brakes (including parking brake), steering, tires (minimum 2/32" tread), horn (audible 200 feet), windshield wipers, rearview mirror, two headlights (visible 450 feet), four turn signals, two brake lights (visible 300 feet), muffler, and windows meeting Florida tinting transparency requirements.</p>
+        `,
+        quizQuestions: [
+          {
+            questionText: 'What happens to a Florida driver who accumulates 18 points in 18 months?',
+            options: ['30-day suspension', '3-month suspension', '1-year suspension', 'Revocation'],
+            correctAnswer: '3-month suspension',
+            explanation: 'Accumulating 18 points in 18 months results in a 3-month license suspension. 24 points in 36 months triggers an automatic 1-year suspension.'
+          },
+          {
+            questionText: 'What is the default speed limit in a Florida residential area where no sign is posted?',
+            options: ['25 mph', '30 mph', '35 mph', '45 mph'],
+            correctAnswer: '30 mph',
+            explanation: 'In Florida, the default speed limit in residential and business districts is 30 mph when no speed limit sign is posted.'
+          },
+          {
+            questionText: 'In Florida, when a traffic signal has completely lost power (dark signal), drivers must:',
+            options: ['Proceed at reduced speed', 'Yield to oncoming traffic', 'Treat it as a four-way stop', 'Follow the direction of the last working signal'],
+            correctAnswer: 'Treat it as a four-way stop',
+            explanation: 'A completely dark traffic signal must be treated as a four-way stop \u2014 each vehicle must stop and yield appropriately.'
+          },
+          {
+            questionText: 'Under Florida\'s Move Over Law, when must you reduce speed for a stationary emergency vehicle?',
+            options: ['Only during nighttime hours', 'When you cannot safely move to the next lane', 'Always, regardless of lane availability', 'Only when directed by law enforcement'],
+            correctAnswer: 'When you cannot safely move to the next lane',
+            explanation: 'Florida\'s Move Over Law requires moving to the next lane if safe; if not, you must reduce speed to 20 mph below the posted limit.'
+          },
+          {
+            questionText: 'A driver who reaches Habitual Traffic Offender (HTO) status in Florida faces:',
+            options: ['1-year revocation', '3-year revocation', '5-year revocation', 'Permanent revocation'],
+            correctAnswer: '5-year revocation',
+            explanation: 'Florida Statute 322.264 designates HTO status for qualifying offenses within 5 years, resulting in a 5-year license revocation. The driver must complete the ADI course before reinstatement.'
+          },
+          {
+            questionText: 'What action is NOT a 4-point violation in Florida?',
+            options: ['Reckless driving (no accident)', 'Speeding 16 mph over the limit', 'Speeding 10 mph over the limit', 'Failing to stop for a school bus'],
+            correctAnswer: 'Speeding 10 mph over the limit',
+            explanation: 'Speeding 15 mph or less over the limit is a 3-point violation. Speeding 16+ mph over the limit, reckless driving, and failing to stop for a school bus are all 4-point violations.'
           }
         ]
       }
+
     ],
-    // Final exam questions for the 4-hour course
-    finalExamQuestions: [
-      {
-        questionText: 'What is the legal stance on texting and driving in Florida?',
-        options: ['Allowed at red lights', 'Allowed only on highways', 'Completely prohibited', 'Allowed if using hands-free features'],
-        correctAnswer: 'Completely prohibited',
-        explanation: 'In Florida, texting while driving is completely prohibited, even when stopped at a red light.'
-      },
-      {
-        questionText: 'If your car breaks down on the road, what is the first thing you should do?',
-        options: ['Call a tow truck immediately', 'Pull over safely and turn on hazard lights', 'Attempt to fix the car yourself', 'Abandon the car'],
-        correctAnswer: 'Pull over safely and turn on hazard lights',
-        explanation: 'The safest first action is to pull over to a secure spot and turn on your hazard lights to alert other drivers.'
-      },
-      {
-        questionText: 'What are the three types of driving distractions?',
-        options: ['Physical, emotional, mental', 'Visual, manual, cognitive', 'Primary, secondary, tertiary', 'Internal, external, environmental'],
-        correctAnswer: 'Visual, manual, cognitive',
-        explanation: 'The three types of driving distractions are visual (eyes off road), manual (hands off wheel), and cognitive (mind off driving).'
-      },
-      {
-        questionText: 'It is legal to use your phone at a red light in Florida.',
-        questionType: 'true_false',
-        options: ['True', 'False'],
-        correctAnswer: 'False',
-        explanation: 'Florida law prohibits texting while driving even when stopped at a red light.'
-      },
-      {
-        questionText: 'You must always slow down and move over for emergency vehicles stopped on the roadside.',
-        questionType: 'true_false',
-        options: ['True', 'False'],
-        correctAnswer: 'True',
-        explanation: 'Florida\'s Move Over law requires drivers to move over or slow down for stopped emergency vehicles with flashing lights.'
-      },
-      {
-        questionText: 'What is the recommended following distance rule under normal driving conditions?',
-        options: ['1-second rule', '2-second rule', '3-second rule', '5-second rule'],
-        correctAnswer: '3-second rule',
-        explanation: 'The 3-second rule provides adequate reaction time under normal driving conditions.'
-      },
-      {
-        questionText: 'When approaching a stopped emergency vehicle on a multi-lane highway, you must:',
-        options: ['Speed up to pass quickly', 'Maintain your speed', 'Move over to a non-adjacent lane or slow to 20 mph below the limit', 'Stop completely'],
-        correctAnswer: 'Move over to a non-adjacent lane or slow to 20 mph below the limit',
-        explanation: 'Florida\'s Move Over Law requires you to change lanes away from the stopped vehicle if possible, or slow to 20 mph below the speed limit.'
-      },
-      {
-        questionText: 'If you experience a tire blowout, you should:',
-        options: ['Slam on the brakes', 'Keep a firm grip on the wheel and ease off the gas', 'Turn the steering wheel sharply', 'Accelerate to maintain control'],
-        correctAnswer: 'Keep a firm grip on the wheel and ease off the gas',
-        explanation: 'During a blowout, maintain control by gripping the wheel firmly, easing off the accelerator gradually, and steering straight until you can safely stop.'
-      },
-      {
-        questionText: 'What does a flashing red traffic signal mean?',
-        options: ['Proceed with caution', 'Stop, then proceed when safe', 'Yield to oncoming traffic', 'Signal is broken - ignore it'],
-        correctAnswer: 'Stop, then proceed when safe',
-        explanation: 'A flashing red signal should be treated like a stop sign - come to a complete stop, then proceed when safe.'
-      },
-      {
-        questionText: 'Defensive driving can help you:',
-        options: ['Ignore traffic laws', 'Avoid potential hazards on the road', 'Speed without getting caught', 'Drive more aggressively'],
-        correctAnswer: 'Avoid potential hazards on the road',
-        explanation: 'Defensive driving helps you anticipate and avoid potential hazards, making you a safer driver.'
-      },
-      {
-        questionText: 'When passing a bicycle, Florida law requires you to maintain a minimum distance of:',
-        options: ['1 foot', '2 feet', '3 feet', '5 feet'],
-        correctAnswer: '3 feet',
-        explanation: 'Florida law requires a minimum of 3 feet of clearance when passing a cyclist.'
-      },
-      {
-        questionText: 'The minimum score required to pass the final examination is:',
-        options: ['70%', '75%', '80%', '90%'],
-        correctAnswer: '80%',
-        explanation: 'The final exam requires a minimum score of 80% to pass.'
-      },
-      {
-        questionText: 'You should always check your blind spots before changing lanes.',
-        questionType: 'true_false',
-        options: ['True', 'False'],
-        correctAnswer: 'True',
-        explanation: 'Checking blind spots before lane changes is essential to avoid collisions with vehicles not visible in mirrors.'
-      },
-      {
-        questionText: 'If you see a pedestrian crossing the road at a crosswalk, you should:',
-        options: ['Honk to alert them', 'Slow down and let them cross', 'Speed past them', 'Flash your lights at them'],
-        correctAnswer: 'Slow down and let them cross',
-        explanation: 'Pedestrians have the right of way at crosswalks. You must slow down or stop and let them cross safely.'
-      },
-      {
-        questionText: 'What should you do when approaching a school bus with flashing red lights?',
-        options: ['Slow down and proceed carefully', 'Stop until the lights stop flashing', 'Pass on the left side only', 'Honk your horn'],
-        correctAnswer: 'Stop until the lights stop flashing',
-        explanation: 'You must stop for a school bus with flashing red lights and remain stopped until the lights stop flashing and the stop arm retracts.'
-      },
-      {
-        questionText: 'Drivers must yield to cyclists when making a turn.',
-        questionType: 'true_false',
-        options: ['True', 'False'],
-        correctAnswer: 'True',
-        explanation: 'Cyclists have the same rights as motor vehicles, and drivers must yield to them when turning.'
-      },
-      {
-        questionText: 'What color are construction zone warning signs?',
-        options: ['Yellow', 'Orange', 'Red', 'Green'],
-        correctAnswer: 'Orange',
-        explanation: 'Construction and work zone signs are orange to alert drivers to temporary changes and workers.'
-      },
-      {
-        questionText: 'If your brakes fail, which action should you take first?',
-        options: ['Turn off the engine', 'Pump the brake pedal rapidly', 'Jump from the vehicle', 'Pull the emergency brake hard immediately'],
-        correctAnswer: 'Pump the brake pedal rapidly',
-        explanation: 'Pumping the brake pedal may build enough pressure in the system to slow the vehicle. Then downshift and gradually apply the parking brake.'
-      },
-      {
-        questionText: 'How far ahead should you scan the road while driving at highway speeds?',
-        options: ['5 seconds', '10-15 seconds', '30 seconds', '1 minute'],
-        correctAnswer: '10-15 seconds',
-        explanation: 'Defensive drivers scan 10-15 seconds ahead at highway speeds to identify potential hazards early.'
-      },
-      {
-        questionText: 'Double solid yellow lines on the road indicate:',
-        options: ['Passing is permitted with caution', 'Passing is prohibited in both directions', 'Lane change is encouraged', 'Construction zone ahead'],
-        correctAnswer: 'Passing is prohibited in both directions',
-        explanation: 'Double solid yellow lines separate opposing traffic and indicate that passing is not allowed from either direction.'
-      },
-      {
-        questionText: 'Completing this course guarantees that you will never receive a traffic violation.',
-        questionType: 'true_false',
-        options: ['True', 'False'],
-        correctAnswer: 'False',
-        explanation: 'Completing this course improves your driving knowledge but does not guarantee you will never receive a violation.'
-      },
-      {
-        questionText: 'If someone is tailgating you, the safest response is to:',
-        options: ['Brake suddenly to warn them', 'Speed up to increase distance', 'Increase your following distance ahead and let them pass when safe', 'Gesture angrily at them'],
-        correctAnswer: 'Increase your following distance ahead and let them pass when safe',
-        explanation: 'When tailgated, increase your following distance ahead (so you can brake gradually) and move over to let them pass when it\'s safe.'
-      },
-      {
-        questionText: 'The shape of a stop sign is:',
-        options: ['Circle', 'Diamond', 'Octagon (8 sides)', 'Rectangle'],
-        correctAnswer: 'Octagon (8 sides)',
-        explanation: 'A stop sign is the only sign with an octagonal shape, making it recognizable even when damaged or covered.'
-      },
-      {
-        questionText: 'What is the primary reason for Florida\'s Move Over Law?',
-        options: ['To prevent traffic jams', 'To ensure the safety of emergency responders', 'To give police an excuse to issue tickets', 'To slow down traffic'],
-        correctAnswer: 'To ensure the safety of emergency responders',
-        explanation: 'The Move Over Law is designed to protect emergency responders who work in dangerous positions near traffic.'
-      },
-      {
-        questionText: 'When your vehicle skids, you should steer:',
-        options: ['In the opposite direction of the skid', 'In the direction you want the front of the vehicle to go', 'Sharply to the left', 'The wheel should be held completely straight'],
-        correctAnswer: 'In the direction you want the front of the vehicle to go',
-        explanation: 'During a skid, steer smoothly in the direction you want the front of the vehicle to go to regain traction and control.'
-      },
-      {
-        questionText: 'Speed limits are suggestions rather than laws.',
-        questionType: 'true_false',
-        options: ['True', 'False'],
-        correctAnswer: 'False',
-        explanation: 'Speed limits are laws, not suggestions. Exceeding the posted limit can result in fines, points, and increased accident risk.'
-      },
-      {
-        questionText: 'How many points within 12 months will result in a 30-day license suspension in Florida?',
-        options: ['6 points', '12 points', '18 points', '24 points'],
-        correctAnswer: '12 points',
-        explanation: 'Accumulating 12 points within 12 months results in a 30-day license suspension in Florida.'
-      },
-      {
-        questionText: 'The most common type of fatal motorcycle crash involves:',
-        options: ['Rear-end collisions', 'A car turning left in front of the motorcycle', 'Single-vehicle accidents', 'Side-swipe accidents'],
-        correctAnswer: 'A car turning left in front of the motorcycle',
-        explanation: 'The most common fatal motorcycle crash occurs when a driver turns left in front of an oncoming motorcycle.'
-      },
-      {
-        questionText: 'In Florida school zones, when children are present, the speed limit is:',
-        options: ['15 mph', '20 mph', '25 mph', '30 mph'],
-        correctAnswer: '20 mph',
-        explanation: 'Florida school zones have a 20 mph speed limit during posted hours or when children are present.'
-      },
-      {
-        questionText: 'What should you do if your accelerator pedal gets stuck?',
-        options: ['Slam on the brakes', 'Turn off the engine while driving', 'Shift to neutral and brake firmly', 'Jump from the vehicle'],
-        correctAnswer: 'Shift to neutral and brake firmly',
-        explanation: 'Shifting to neutral disconnects the engine from the wheels, allowing you to brake and steer safely even if the engine continues to rev.'
-      }
-    ]
   },
 
   // =====================================================
@@ -3911,2025 +2345,716 @@ const floridaCourseDataExpanded = {
   // 12-HOUR ADVANCED DRIVER IMPROVEMENT (ADI) COURSE
   // Required for: License reinstatement after suspension
   // =====================================================
+  // =====================================================
+  // 12-HOUR ADVANCED DRIVER IMPROVEMENT (ADI) COURSE
+  // Required for: License reinstatement after suspension
+  // =====================================================
   course12Hour: {
     name: '12-Hour Advanced Driver Improvement (ADI)',
     slug: 'florida-12-hour-adi',
-    description: 'This comprehensive 12-hour course is required for drivers seeking to reinstate their license after suspension due to excessive points or habitual traffic offenses. It provides the most in-depth education on defensive driving, traffic law compliance, and developing lasting safe driving habits.',
+    description: 'Florida-required 12-hour behavioral change course for license reinstatement. \"The Better Driver Within You\" — covers driving problem patterns, habit loops, self-awareness, motivation, emotions, personality, the change system, simulated situations, vulnerable road users, and personal commitment.',
     durationHours: 12,
     price: 45.00,
     modules: [
       // =========================================
-      // MODULE 1: Introduction to Driver Improvement
-      // Estimated Reading Time: 45-50 minutes
+      // COURSE INTRODUCTION
+      // Estimated Time: 20 minutes
       // =========================================
       {
-        title: 'Module 1: Introduction to Driver Improvement',
-        description: 'Course objectives, Florida driving statistics, and the importance of safe driving',
-        estimatedMinutes: 50,
+        title: 'Course Introduction: The Better Driver Within You',
+        description: 'An overview of the 12-hour ADI course structure, learning approach, and the behavioral change framework',
+        estimatedMinutes: 20,
         content: `
-          <h2>Introduction to Driver Improvement</h2>
-          
-          <p>Welcome to the Florida 12-Hour Advanced Driver Improvement (ADI) Course. This is the most comprehensive driver improvement course offered in Florida, and it's required for reinstatement of your driving privileges after a suspension due to point accumulation or habitual traffic offenses.</p>
-
-          <p>If you're taking this course, you've likely faced significant consequences from past driving behaviors—license suspension, increased insurance costs, perhaps even employment challenges. This course represents an opportunity to fundamentally change your approach to driving and regain the privilege to operate a motor vehicle in Florida.</p>
-
-          <div class="statistics-box">
-            <h4>📊 Florida Driving Statistics: The Reality of Our Roads</h4>
-            <ul>
-              <li><strong>Over 400,000 crashes</strong> occur on Florida roads each year</li>
-              <li><strong>More than 3,500 people</strong> die in Florida traffic crashes annually</li>
-              <li><strong>Over 250,000 people</strong> sustain injuries in Florida crashes each year</li>
-              <li>Florida consistently ranks among the <strong>top 3 most dangerous states</strong> for drivers</li>
-              <li><strong>Approximately 85%</strong> of all crashes are caused by driver behavior—not vehicle failure or road conditions</li>
-              <li><strong>Distracted driving</strong> is involved in nearly 50,000 Florida crashes annually</li>
-              <li><strong>DUI crashes</strong> account for approximately 5,000 fatalities and serious injuries in Florida each year</li>
-            </ul>
-          </div>
-
-          <h3>Purpose of This Course</h3>
-          
-          <p>The Advanced Driver Improvement Course is designed to provide comprehensive education that goes far beyond basic traffic law review. This course aims to:</p>
-
+          <h2>Welcome \u2014 The Better Driver Within You</h2>
+          <p>This Advanced Driver Improvement course is required by the Florida Department of Highway Safety and Motor Vehicles for drivers seeking license reinstatement after a suspension due to excessive points or Habitual Traffic Offender (HTO) designation.</p>
+          <p>But this is not about memorizing rules. It is about understanding why you drive the way you do \u2014 and changing the patterns that put you and others at risk.</p>
+          <h3>What You Will Learn in 12 Hours</h3>
           <ol>
-            <li><strong>Rebuild your driving foundation:</strong> Review and reinforce all aspects of safe driving, from basic vehicle control to advanced defensive techniques</li>
-            <li><strong>Address the behaviors that led to suspension:</strong> Help you understand and change the specific patterns that accumulated enough violations to lose your license</li>
-            <li><strong>Develop lasting safe driving habits:</strong> Provide strategies for maintaining safe driving over the long term, not just while under scrutiny</li>
-            <li><strong>Understand the full impact of violations:</strong> Explore the legal, financial, personal, and social consequences of traffic offenses</li>
-            <li><strong>Meet reinstatement requirements:</strong> Fulfill the state-mandated requirements for restoring your driving privileges</li>
+            <li>The magnitude of Florida's driving problem and how it connects to your situation</li>
+            <li>Your own driving history and the behavioral patterns behind it</li>
+            <li>How habits form, persist, and how they can be replaced</li>
+            <li>Whether there is a genuine problem \u2014 and why that is hard to see</li>
+            <li>What motivates real and lasting change</li>
+            <li>How emotions and driving identity affect your behavior behind the wheel</li>
+            <li>How your personality traits interact with driving risk</li>
+            <li>A six-step system for behavior change</li>
+            <li>Application of these principles in simulated real-life situations</li>
+            <li>Your responsibility toward vulnerable road users</li>
+            <li>A personal commitment to change</li>
           </ol>
-
-          <h3>Why You're Here: Understanding License Suspension</h3>
-          
-          <p>Florida suspends driving privileges for several reasons:</p>
-
-          <h4>Point Accumulation Suspensions</h4>
-          <table class="info-table">
-            <tr><th>Points Accumulated</th><th>Time Period</th><th>Suspension Length</th></tr>
-            <tr><td>12 points</td><td>Within 12 months</td><td>30 days</td></tr>
-            <tr><td>18 points</td><td>Within 18 months</td><td>3 months (90 days)</td></tr>
-            <tr><td>24 points</td><td>Within 36 months</td><td>1 year</td></tr>
-          </table>
-
-          <h4>Habitual Traffic Offender (HTO) Designation</h4>
-          <p>Florida may classify you as a Habitual Traffic Offender if you accumulate:</p>
-          <ul>
-            <li><strong>Three or more major offenses</strong> within 5 years (DUI, driving on suspended license, vehicular manslaughter, etc.)</li>
-            <li><strong>Fifteen or more convictions</strong> for moving violations (each worth 4+ points) within 5 years</li>
-          </ul>
-          <p>HTO designation results in a <strong>5-year license revocation</strong>.</p>
-
-          <h4>Other Common Suspension Reasons</h4>
-          <ul>
-            <li>DUI conviction (180 days to permanent, depending on circumstances)</li>
-            <li>Failure to pay traffic fines</li>
-            <li>Failure to appear in court</li>
-            <li>Failure to maintain required insurance</li>
-            <li>Refusal to submit to breath/blood/urine test</li>
-          </ul>
-
-          <div class="case-study">
-            <h4>📋 Real-World Case Study: The Road to Suspension</h4>
-            <p><strong>David's Story:</strong></p>
-            <p>David, 32, didn't think of himself as a dangerous driver. He was just "always in a hurry." Over two years, he accumulated:</p>
-            <ul>
-              <li>3 speeding tickets (15+ mph over)</li>
-              <li>2 red light violations</li>
-              <li>1 improper lane change</li>
-              <li>1 following too closely</li>
-            </ul>
-            <p>Total: 24 points in 30 months. His license was suspended for one year.</p>
-            <p><strong>The consequences:</strong></p>
-            <ul>
-              <li>Lost his sales job that required driving to client sites</li>
-              <li>Had to rely on family and ride-shares for a year</li>
-              <li>Insurance increased from $150/month to $420/month</li>
-              <li>Required to complete the 12-hour ADI course at his expense</li>
-              <li>Had to pay reinstatement fees</li>
-              <li>Estimated total cost: over $25,000 in fines, lost wages, insurance, and fees</li>
-            </ul>
-            <p><em>"I never thought it would add up like this," David said. "Each ticket seemed minor at the time. I didn't realize I was building toward losing my license entirely."</em></p>
-          </div>
-
-          <h3>The Reinstatement Process</h3>
-          
-          <p>To reinstate your license after suspension, you typically must:</p>
-          <ol>
-            <li><strong>Serve the full suspension period</strong> (no driving during this time)</li>
-            <li><strong>Complete required education</strong> (this 12-hour ADI course)</li>
-            <li><strong>Pay reinstatement fees</strong> ($45-$75 for standard suspensions, more for DUI)</li>
-            <li><strong>Show proof of insurance</strong> (FR-44 may be required for certain violations)</li>
-            <li><strong>Pass any required tests</strong> (vision, written, road test for some cases)</li>
-            <li><strong>Clear any outstanding fines or court obligations</strong></li>
-          </ol>
-
-          <div class="alert alert-danger">
-            <h4>⚠️ WARNING: Do Not Drive on a Suspended License</h4>
-            <p>Driving while suspended is a criminal offense in Florida:</p>
-            <ul>
-              <li><strong>First offense:</strong> Misdemeanor, up to $500 fine, up to 60 days jail</li>
-              <li><strong>Second offense:</strong> Misdemeanor, up to $1,000 fine, up to 1 year jail</li>
-              <li><strong>Third offense (within 5 years):</strong> <strong>Felony</strong>, up to 5 years prison</li>
-            </ul>
-            <p>Each offense also extends your suspension period. <strong>It is never worth the risk.</strong></p>
-          </div>
-
-          <h3>Course Structure</h3>
-          
-          <p>This comprehensive 12-hour course covers eight modules:</p>
-          <ol>
-            <li><strong>Module 1:</strong> Introduction to Driver Improvement (current module)</li>
-            <li><strong>Module 2:</strong> Florida Traffic Laws and Regulations</li>
-            <li><strong>Module 3:</strong> Defensive Driving Techniques</li>
-            <li><strong>Module 4:</strong> Hazard Recognition and Avoidance</li>
-            <li><strong>Module 5:</strong> Effects of Impairment on Driving</li>
-            <li><strong>Module 6:</strong> Crash Prevention Strategies</li>
-            <li><strong>Module 7:</strong> Traffic Violation Consequences</li>
-            <li><strong>Module 8:</strong> Final Assessment and Certification</li>
-          </ol>
-
-          <h3>Making This Course Count</h3>
-          
-          <p>You can approach this course as a requirement to check off, or as a genuine opportunity for change. The latter will serve you far better in the long run. Consider:</p>
-          <ul>
-            <li><strong>Reflect honestly</strong> on the driving behaviors that led to your suspension</li>
-            <li><strong>Engage fully</strong> with the material—don't just skim through</li>
-            <li><strong>Apply what you learn</strong> starting immediately, not someday later</li>
-            <li><strong>Think long-term</strong> about the driver you want to be</li>
-          </ul>
-
-          <div class="pledge-box">
-            <h4>🎯 Course Commitment</h4>
-            <p>As I begin this course, I commit to:</p>
-            <ul>
-              <li>Taking full responsibility for the actions that led to my license suspension</li>
-              <li>Engaging honestly with this material and reflecting on my driving behaviors</li>
-              <li>Learning and applying the defensive driving principles taught in this course</li>
-              <li>Making permanent changes to my driving habits, not temporary fixes</li>
-              <li>Understanding that safe driving is a responsibility I owe to myself and everyone who shares the road with me</li>
-            </ul>
-          </div>
-
-          <div class="alert alert-success">
-            <h4>✅ Module 1 Complete</h4>
-            <p>You've completed the Introduction to Driver Improvement. The next module covers Florida Traffic Laws and Regulations in detail.</p>
-          </div>
+          <p>By the time you complete this course, you will not only understand what went wrong \u2014 you will have a plan to drive differently for the rest of your life.</p>
         `,
         quizQuestions: [
           {
-            questionText: 'What is the license suspension period for accumulating 24 points within 36 months?',
-            options: ['30 days', '90 days', '6 months', '1 year'],
-            correctAnswer: '1 year',
-            explanation: 'Accumulating 24 points within 36 months results in a 1-year license suspension in Florida.'
-          },
-          {
-            questionText: 'How many major offenses within 5 years can result in Habitual Traffic Offender status?',
-            options: ['2 offenses', '3 offenses', '5 offenses', '10 offenses'],
-            correctAnswer: '3 offenses',
-            explanation: 'Three or more major offenses within 5 years can result in HTO designation and a 5-year license revocation.'
-          },
-          {
-            questionText: 'What percentage of crashes are caused by driver behavior?',
-            options: ['About 50%', 'About 65%', 'About 75%', 'About 85%'],
-            correctAnswer: 'About 85%',
-            explanation: 'Approximately 85% of all crashes are caused by driver behavior, not vehicle failure or road conditions.'
-          },
-          {
-            questionText: 'True or False: A third offense of driving on a suspended license within 5 years is a felony.',
-            questionType: 'true_false',
-            options: ['True', 'False'],
-            correctAnswer: 'True',
-            explanation: 'A third offense of driving on a suspended license within 5 years is a felony, punishable by up to 5 years in prison.'
+            questionText: 'What is the primary goal of the 12-hour ADI course?',
+            options: ['Memorize Florida traffic laws', 'Understand and change the behavioral patterns behind unsafe driving', 'Learn defensive driving maneuvers', 'Prepare for a driving test'],
+            correctAnswer: 'Understand and change the behavioral patterns behind unsafe driving',
+            explanation: 'The ADI course is a behavioral change curriculum, not simply a review of traffic laws. Its goal is lasting behavior change.'
           }
         ]
       },
 
       // =========================================
-      // MODULE 2: Florida Traffic Laws & Regulations
-      // Estimated Reading Time: 55-60 minutes
+      // MODULE 1: The Driving Problem
+      // Estimated Time: 60 minutes
       // =========================================
       {
-        title: 'Module 2: Florida Traffic Laws & Regulations',
-        description: 'Comprehensive overview of Florida traffic laws, speed limits, right-of-way, and violations',
+        title: 'Module 1: The Driving Problem',
+        description: 'The scale of the Florida and national traffic crash problem and how human behavior \u2014 not mechanical failure \u2014 drives 94% of crashes',
         estimatedMinutes: 60,
         content: `
-          <h2>Florida Traffic Laws & Regulations</h2>
-          
-          <p>Florida maintains a comprehensive system of traffic laws designed to ensure safety and order on our roads. These laws govern everything from speed limits and right-of-way to equipment requirements and driver licensing. Understanding and consistently following these laws is essential for safe driving and maintaining your driving privileges.</p>
-
-          <h3>Speed Limits in Florida</h3>
-          
-          <p>Speed limits are established based on road type, surrounding environment, and safety considerations. They are not suggestions—they are the maximum legal speeds under ideal conditions.</p>
-
-          <h4>Standard Speed Limits</h4>
-          <table class="info-table">
-            <tr><th>Location</th><th>Speed Limit</th><th>Key Considerations</th></tr>
-            <tr><td>Residential areas</td><td>30 mph</td><td>Watch for children, pets, pedestrians</td></tr>
-            <tr><td>Business districts</td><td>30 mph</td><td>Higher pedestrian traffic, frequent stops</td></tr>
-            <tr><td>School zones (when active)</td><td>20 mph</td><td>Strictly enforced; watch for crossing guards</td></tr>
-            <tr><td>Rural undivided highways</td><td>55 mph</td><td>May have cross traffic, driveways</td></tr>
-            <tr><td>Rural interstate highways</td><td>70 mph</td><td>Higher speeds require more stopping distance</td></tr>
-            <tr><td>Urban interstate highways</td><td>55-65 mph</td><td>More traffic, more exits, more merging</td></tr>
-            <tr><td>Construction zones</td><td>As posted</td><td>Fines doubled; workers present</td></tr>
-          </table>
-
-          <div class="alert alert-warning">
-            <h4>⚠️ "Too Fast for Conditions"</h4>
-            <p>Even if you're driving below the posted limit, you can be cited for driving "too fast for conditions" if road, weather, or traffic conditions make that speed unsafe. Speed limits assume ideal conditions.</p>
-          </div>
-
-          <h3>Right-of-Way Rules</h3>
-          
-          <p>Right-of-way rules determine who goes first in various traffic situations. Understanding these prevents confusion and collisions.</p>
-
-          <h4>Pedestrians</h4>
+          <h2>Module 1: The Driving Problem</h2>
+          <h3>Section 1.1 \u2014 The Scale of the Problem</h3>
+          <p>Traffic crashes are not random or inevitable. They are largely the result of predictable human behaviors. This is critically important because it means they are preventable.</p>
+          <h4>Florida</h4>
           <ul>
-            <li><strong>Crosswalks:</strong> Pedestrians always have right-of-way in marked and unmarked crosswalks</li>
-            <li><strong>Stopping requirement:</strong> You must stop and remain stopped until the pedestrian has crossed</li>
-            <li><strong>No passing:</strong> It is illegal to pass a vehicle stopped for a pedestrian at a crosswalk</li>
-            <li><strong>Sidewalks:</strong> When crossing a sidewalk, you must yield to pedestrians</li>
+            <li>Over <strong>401,000 crashes</strong> in 2023</li>
+            <li><strong>3,500+ fatalities</strong> \u2014 approximately one death every 2.5 hours</li>
+            <li><strong>250,000+ injuries</strong> annually</li>
+            <li>Economic cost: over <strong>$40 billion</strong> per year</li>
           </ul>
-
-          <h4>Intersections</h4>
+          <h4>Nationwide</h4>
           <ul>
-            <li><strong>Four-way stops:</strong> First to arrive goes first; if simultaneous, yield to driver on right</li>
-            <li><strong>Uncontrolled intersections:</strong> Yield to vehicle on right; proceed with caution</li>
-            <li><strong>Turning left:</strong> Yield to oncoming traffic and pedestrians</li>
-            <li><strong>Turning right on red:</strong> Must stop first; yield to all traffic and pedestrians; not permitted where signs prohibit</li>
+            <li><strong>40,990 deaths</strong> in 2023 (NHTSA)</li>
+            <li>Traffic crashes are the leading cause of death for Americans ages 1\u201354</li>
+            <li>One person fatally injured every 13 minutes in the United States</li>
           </ul>
-
-          <h4>Emergency Vehicles</h4>
-          <ul>
-            <li>When emergency vehicle approaches with lights/siren, pull over to right and stop</li>
-            <li>Don't follow within 500 feet of responding emergency vehicle</li>
-            <li>Clear intersections before pulling over</li>
-          </ul>
-
-          <h3>Traffic Signals and Signs</h3>
-          
-          <h4>Traffic Signal Meanings</h4>
-          <table class="info-table">
-            <tr><th>Signal</th><th>Meaning</th></tr>
-            <tr><td>Steady RED</td><td>Stop and remain stopped until green</td></tr>
-            <tr><td>Steady YELLOW</td><td>Warning—light changing to red; stop if safe</td></tr>
-            <tr><td>Steady GREEN</td><td>Proceed if intersection is clear</td></tr>
-            <tr><td>Flashing RED</td><td>Treat as stop sign—full stop, proceed when safe</td></tr>
-            <tr><td>Flashing YELLOW</td><td>Proceed with caution</td></tr>
-            <tr><td>Green ARROW</td><td>Protected turn in direction of arrow</td></tr>
-            <tr><td>Yellow ARROW</td><td>Protected turn ending; prepare to stop</td></tr>
-            <tr><td>Red ARROW</td><td>No turn in that direction</td></tr>
-          </table>
-
-          <h4>Sign Shapes and Colors</h4>
-          <table class="info-table">
-            <tr><th>Shape/Color</th><th>Meaning</th><th>Examples</th></tr>
-            <tr><td>Octagon (Red)</td><td>Stop</td><td>Stop sign</td></tr>
-            <tr><td>Triangle (Red/White)</td><td>Yield</td><td>Yield sign</td></tr>
-            <tr><td>Rectangle (White)</td><td>Regulatory</td><td>Speed limit, do not enter</td></tr>
-            <tr><td>Diamond (Yellow)</td><td>Warning</td><td>Curve ahead, pedestrian crossing</td></tr>
-            <tr><td>Pentagon (Yellow)</td><td>School</td><td>School zone, school crossing</td></tr>
-            <tr><td>Rectangle (Green)</td><td>Guide</td><td>Distance, direction, destinations</td></tr>
-            <tr><td>Rectangle (Blue)</td><td>Services</td><td>Hospital, rest area, food</td></tr>
-            <tr><td>Rectangle (Orange)</td><td>Construction</td><td>Road work, detours</td></tr>
-          </table>
-
-          <h3>Lane Markings</h3>
-          
-          <ul>
-            <li><strong>Yellow lines:</strong> Separate traffic moving in opposite directions</li>
-            <li><strong>White lines:</strong> Separate traffic moving in the same direction</li>
-            <li><strong>Broken lines:</strong> May be crossed (for passing or lane changes)</li>
-            <li><strong>Solid lines:</strong> Should not be crossed (except in emergencies)</li>
-            <li><strong>Double solid yellow:</strong> No passing from either direction</li>
-            <li><strong>Solid + broken yellow:</strong> May pass from broken line side only</li>
-          </ul>
-
-          <h3>Common Traffic Violations and Points</h3>
-          
-          <table class="info-table">
-            <tr><th>Violation</th><th>Points</th></tr>
-            <tr><td>Speeding (1-15 mph over)</td><td>3 points</td></tr>
-            <tr><td>Speeding (16+ mph over)</td><td>4 points</td></tr>
-            <tr><td>Running red light or stop sign</td><td>4 points</td></tr>
-            <tr><td>Improper lane change</td><td>3 points</td></tr>
-            <tr><td>Following too closely</td><td>3 points</td></tr>
-            <tr><td>Failure to yield</td><td>3 points</td></tr>
-            <tr><td>Reckless driving</td><td>4 points</td></tr>
-            <tr><td>Passing stopped school bus</td><td>4 points</td></tr>
-            <tr><td>Leaving scene (property damage)</td><td>6 points</td></tr>
-            <tr><td>Violation causing crash</td><td>+2 additional points</td></tr>
-          </table>
-
-          <h3>Insurance Requirements</h3>
-          
-          <p>Florida requires all drivers to maintain minimum insurance coverage:</p>
-          <ul>
-            <li><strong>Personal Injury Protection (PIP):</strong> $10,000 minimum</li>
-            <li><strong>Property Damage Liability (PDL):</strong> $10,000 minimum</li>
-          </ul>
-          <p>Note: Florida does not require bodily injury liability, but it's strongly recommended.</p>
-
-          <h4>FR-44 Insurance</h4>
-          <p>After certain violations (DUI, driving uninsured, etc.), you may be required to carry FR-44 insurance, which requires:</p>
-          <ul>
-            <li>$100,000 bodily injury per person</li>
-            <li>$300,000 bodily injury per accident</li>
-            <li>$50,000 property damage</li>
-          </ul>
-          <p>FR-44 rates are significantly higher than standard insurance and must be maintained for 3 years.</p>
-
-          <div class="reflection-question">
-            <h4>🤔 Reflection Question</h4>
-            <p>Review the traffic violations that contributed to your license suspension. Which traffic laws did you violate most frequently? What situations or conditions were typically present when you committed these violations?</p>
-          </div>
-
-          <h3>Module Summary</h3>
-          
-          <ul>
-            <li>Speed limits vary by location; always observe posted limits and adjust for conditions</li>
-            <li>Right-of-way rules establish who proceeds first; pedestrians have priority at crosswalks</li>
-            <li>Traffic signals and signs convey essential information; know their meanings</li>
-            <li>Lane markings indicate when passing or lane changes are permitted</li>
-            <li>All violations add points; enough points lead to suspension</li>
-            <li>Insurance is required; FR-44 may be required after certain violations</li>
-          </ul>
-
-          <div class="alert alert-success">
-            <h4>✅ Module 2 Complete</h4>
-            <p>You've completed the Florida Traffic Laws and Regulations module. The next module covers comprehensive defensive driving techniques.</p>
-          </div>
-        `,
-        quizQuestions: [
-          {
-            questionText: 'What is the speed limit in Florida school zones when children are present?',
-            options: ['15 mph', '20 mph', '25 mph', '30 mph'],
-            correctAnswer: '20 mph',
-            explanation: 'School zones have a 20 mph speed limit during posted hours or when children are present.'
-          },
-          {
-            questionText: 'What does a flashing red traffic signal mean?',
-            options: ['Proceed with caution', 'Yield to cross traffic', 'Stop, then proceed when safe', 'Signal is malfunctioning'],
-            correctAnswer: 'Stop, then proceed when safe',
-            explanation: 'A flashing red signal should be treated like a stop sign—come to a complete stop, then proceed when safe.'
-          },
-          {
-            questionText: 'Double solid yellow lines indicate:',
-            options: ['Passing permitted with caution', 'No passing from either direction', 'Passing permitted from the right lane', 'Construction zone'],
-            correctAnswer: 'No passing from either direction',
-            explanation: 'Double solid yellow lines prohibit passing from both directions.'
-          },
-          {
-            questionText: 'True or False: You can be cited for driving "too fast for conditions" even if below the speed limit.',
-            questionType: 'true_false',
-            options: ['True', 'False'],
-            correctAnswer: 'True',
-            explanation: 'Speed limits assume ideal conditions. You can be cited if your speed is unsafe for current conditions.'
-          }
-        ]
-      },
-
-      // =========================================
-      // MODULE 3: Defensive Driving Techniques
-      // Estimated Reading Time: 60-65 minutes
-      // =========================================
-      {
-        title: 'Module 3: Defensive Driving Techniques',
-        description: 'Core defensive driving principles, following distance, scanning, and anticipation',
-        estimatedMinutes: 65,
-        content: `
-          <h2>Defensive Driving Techniques</h2>
-          
-          <p>Defensive driving is the foundation of safe vehicle operation. It's a proactive approach that goes beyond simply following traffic laws—it means anticipating hazards, preparing for the unexpected actions of others, and always positioning yourself to avoid collisions, even when others make mistakes.</p>
-
-          <p>For drivers working to reinstate their licenses, mastering defensive driving is essential. The techniques in this module, consistently applied, can prevent the violations and crashes that lead to license suspension.</p>
-
-          <div class="statistics-box">
-            <h4>📊 The Impact of Defensive Driving</h4>
-            <ul>
-              <li>Drivers trained in defensive driving are <strong>up to 50% less likely</strong> to be involved in crashes</li>
-              <li><strong>Rear-end collisions</strong>—the most common crash type—are almost entirely preventable with proper following distance</li>
-              <li><strong>Intersection crashes</strong> can largely be prevented through defensive scanning</li>
-              <li>Insurance companies often provide <strong>10-15% discounts</strong> for defensive driving course completion</li>
-            </ul>
-          </div>
-
-          <h3>The Five Principles of Defensive Driving</h3>
-
-          <h4>1. Stay Alert and Focused</h4>
-          <p>Defensive driving requires your full attention. A distracted or fatigued driver cannot anticipate hazards or react quickly.</p>
-          <ul>
-            <li><strong>Eliminate distractions:</strong> Phone away, eating done, music low</li>
-            <li><strong>Stay rested:</strong> Don't drive when fatigued</li>
-            <li><strong>Continuous monitoring:</strong> Check mirrors every 5-8 seconds; scan ahead 10-15 seconds</li>
-            <li><strong>Expect mistakes:</strong> Assume other drivers may do something unexpected</li>
-          </ul>
-
-          <div class="alert alert-info">
-            <h4>💡 The SIPDE Method</h4>
-            <p>Professional drivers use SIPDE:</p>
-            <ul>
-              <li><strong>S</strong>can – Look ahead, to sides, and behind continuously</li>
-              <li><strong>I</strong>dentify – Recognize potential hazards</li>
-              <li><strong>P</strong>redict – Anticipate what could happen</li>
-              <li><strong>D</strong>ecide – Choose the safest response</li>
-              <li><strong>E</strong>xecute – Take smooth, decisive action</li>
-            </ul>
-          </div>
-
-          <h4>2. Maintain Safe Following Distance</h4>
-          <p>Following distance is one of the most critical defensive driving factors. It gives you time to react and space to stop.</p>
-
-          <h5>The Second Rules</h5>
-          <table class="info-table">
-            <tr><th>Condition</th><th>Minimum Following Distance</th></tr>
-            <tr><td>Normal, dry conditions</td><td>3 seconds</td></tr>
-            <tr><td>Light rain or traffic</td><td>4-5 seconds</td></tr>
-            <tr><td>Heavy rain, fog, snow</td><td>6-8 seconds</td></tr>
-            <tr><td>Following large trucks</td><td>4-5 seconds (to see ahead)</td></tr>
-            <tr><td>Being tailgated</td><td>4+ seconds (extra stopping room)</td></tr>
-          </table>
-
-          <h5>How to Measure Following Distance</h5>
+          <p>These numbers are shocking. But what is even more important is understanding why they occur.</p>
+          <h3>Section 1.2 \u2014 The Human Factor</h3>
+          <p>NHTSA research consistently shows that <strong>94% of serious crashes are caused primarily by driver error</strong> \u2014 not mechanical failure, road design, or weather. Driver error falls into four major categories:</p>
           <ol>
-            <li>Pick a fixed object (sign, tree, overpass)</li>
-            <li>When the vehicle ahead passes it, start counting: "one thousand one, one thousand two..."</li>
-            <li>If you reach the object before finishing your count, you're too close</li>
+            <li>Recognition errors (distraction, inattention, not looking far enough ahead)</li>
+            <li>Decision errors (excessive speed, misjudgment of gap or speed)</li>
+            <li>Performance errors (oversteering, poor emergency response)</li>
+            <li>Behavioral choices (DUI, aggressive driving, deliberate risk-taking)</li>
           </ol>
-
-          <h4>3. Anticipate Others' Actions</h4>
-          <p>Never assume other drivers will do the right thing. Watch for signs of potential problems:</p>
+          <h3>Section 1.3 \u2014 Personal Costs of Unsafe Driving</h3>
+          <p>You are in this course because your driving behavior has already had consequences. The personal costs of unsafe driving include:</p>
           <ul>
-            <li><strong>Lane changes without signals:</strong> Common—expect it</li>
-            <li><strong>Hard braking:</strong> Be ready for sudden stops</li>
-            <li><strong>Red light runners:</strong> Check before proceeding on green</li>
-            <li><strong>Distracted drivers:</strong> Watch for weaving, inconsistent speed</li>
-            <li><strong>Pedestrians:</strong> May enter road unexpectedly</li>
+            <li><strong>Points and license suspension:</strong> Loss of driving privilege, employment disruption</li>
+            <li><strong>Insurance costs:</strong> A DUI or major speeding violation can increase premiums by $1,500\u2013$3,000 per year for 3\u20135 years</li>
+            <li><strong>Civil liability:</strong> You can be sued for damages: medical bills, lost wages, pain and suffering of others</li>
+            <li><strong>Criminal conviction:</strong> DUI, reckless driving, and leaving the scene are criminal charges in Florida</li>
+            <li><strong>Injury and death:</strong> The most permanent and irreversible cost</li>
           </ul>
-
-          <div class="case-study">
-            <h4>📋 Real-World Case Study: The Anticipated Turn</h4>
-            <p><strong>Maria's Save:</strong></p>
-            <p>Maria was driving through a residential area when she noticed a car ahead slow down near a driveway. The car had no turn signal on, but Maria anticipated they might turn and began slowing down.</p>
-            <p>Sure enough, the car suddenly turned left across Maria's path. Because she had already slowed and was prepared to stop, she avoided what would have been a serious collision.</p>
-            <p><em>"They had no signal, no brake lights at first—but something told me they were going to turn. Always trust those instincts and prepare for the worst."</em></p>
-          </div>
-
-          <h4>4. Adapt to Conditions</h4>
-          <p>Conditions change constantly. Defensive drivers adjust accordingly:</p>
-
-          <h5>Weather Adjustments</h5>
-          <ul>
-            <li><strong>Rain:</strong> Reduce speed, increase distance, use low beams, avoid sudden movements</li>
-            <li><strong>Fog:</strong> Low beams only, significantly reduce speed, use road markings</li>
-            <li><strong>Sun glare:</strong> Sun visors, sunglasses, slow down when visibility reduced</li>
-            <li><strong>Wind:</strong> Firm grip on wheel, caution passing large vehicles</li>
-          </ul>
-
-          <h5>Time of Day</h5>
-          <ul>
-            <li><strong>Dawn/dusk:</strong> Reduced visibility, sun glare, active wildlife</li>
-            <li><strong>Night:</strong> Can't see as far, harder to judge speed/distance, more impaired drivers</li>
-            <li><strong>Rush hour:</strong> Higher stress, more aggressive driving, congestion</li>
-          </ul>
-
-          <h4>5. Always Have an Escape Route</h4>
-          <p>Position your vehicle so you always have options if something goes wrong:</p>
-          <ul>
-            <li><strong>Avoid being boxed in:</strong> Maintain space on at least one side</li>
-            <li><strong>Stagger position:</strong> Don't drive directly beside other vehicles</li>
-            <li><strong>Know your surroundings:</strong> Be aware of what's beside you, not just ahead/behind</li>
-            <li><strong>Plan ahead:</strong> Where would you go if you had to avoid a collision right now?</li>
-          </ul>
-
-          <h3>Scanning Techniques</h3>
-
-          <h4>Scanning the Road Ahead</h4>
-          <ul>
-            <li>Look 10-15 seconds ahead (about 1/4 mile on highways)</li>
-            <li>Watch for brake lights several cars ahead</li>
-            <li>Note traffic signals as you approach</li>
-            <li>Spot road hazards, debris, construction early</li>
-          </ul>
-
-          <h4>Mirror Checks</h4>
-          <ul>
-            <li>Check mirrors every 5-8 seconds</li>
-            <li>Know what's beside and behind you at all times</li>
-            <li>Check more frequently in heavy traffic or when being tailgated</li>
-          </ul>
-
-          <h4>Blind Spot Management</h4>
-          <ul>
-            <li>Adjust mirrors to minimize blind spots</li>
-            <li>Always turn your head to check blind spots before lane changes</li>
-            <li>Don't linger in others' blind spots—pass or drop back</li>
-            <li>Be extra careful around trucks (much larger blind spots)</li>
-          </ul>
-
-          <h3>Speed Management</h3>
-          
-          <p>Speed affects every aspect of safe driving:</p>
-          <ul>
-            <li><strong>Reaction distance:</strong> At 60 mph, you travel 88 feet per second</li>
-            <li><strong>Stopping distance:</strong> Doubling speed quadruples stopping distance</li>
-            <li><strong>Impact force:</strong> Crash severity increases exponentially with speed</li>
-            <li><strong>Control:</strong> Higher speeds reduce ability to steer around obstacles</li>
-          </ul>
-
-          <table class="info-table">
-            <tr><th>Speed</th><th>Feet per Second</th><th>Approx. Stopping Distance</th></tr>
-            <tr><td>30 mph</td><td>44 ft/sec</td><td>90 feet</td></tr>
-            <tr><td>45 mph</td><td>66 ft/sec</td><td>180 feet</td></tr>
-            <tr><td>60 mph</td><td>88 ft/sec</td><td>300 feet</td></tr>
-            <tr><td>75 mph</td><td>110 ft/sec</td><td>450 feet</td></tr>
-          </table>
-
-          <div class="reflection-question">
-            <h4>🤔 Reflection Question</h4>
-            <p>Think about the driving behaviors that led to your license suspension. Which of the five defensive driving principles, if applied consistently, might have prevented some of your violations?</p>
-          </div>
-
-          <h3>Module Summary</h3>
-          
-          <ul>
-            <li>Stay alert—eliminate distractions, never drive fatigued</li>
-            <li>Maintain 3+ second following distance, more in adverse conditions</li>
-            <li>Anticipate others' mistakes—don't assume they'll do the right thing</li>
-            <li>Adapt driving to conditions—weather, time of day, traffic</li>
-            <li>Always have an escape route—position yourself with options</li>
-            <li>Scan 10-15 seconds ahead, check mirrors every 5-8 seconds</li>
-            <li>Manage speed—it affects reaction time, stopping distance, and crash severity</li>
-          </ul>
-
-          <div class="alert alert-success">
-            <h4>✅ Module 3 Complete</h4>
-            <p>You've completed the Defensive Driving Techniques module. The next module covers Hazard Recognition and Avoidance.</p>
-          </div>
+          <h3>Section 1.4 \u2014 The Crash is Not the Beginning</h3>
+          <p>Crashes do not simply "happen." They are the end point of a chain of decisions and behaviors. The moment you exceeded the speed limit, reached for your phone, or had that last drink and got behind the wheel \u2014 that was the real beginning of the crash.</p>
+          <p>This course asks you to trace your behavior all the way back to the beginning of that chain \u2014 and interrupt it.</p>
         `,
         quizQuestions: [
           {
-            questionText: 'What does SIPDE stand for in defensive driving?',
-            options: ['Stop, Identify, Proceed, Drive, Exit', 'Scan, Identify, Predict, Decide, Execute', 'Speed, Indicate, Pass, Drive, Exit', 'Steer, Identify, Park, Drive, Engage'],
-            correctAnswer: 'Scan, Identify, Predict, Decide, Execute',
-            explanation: 'SIPDE stands for Scan, Identify, Predict, Decide, Execute—a systematic approach to defensive driving.'
+            questionText: 'According to NHTSA, what percentage of serious crashes are caused primarily by driver error?',
+            options: ['55%', '72%', '94%', '100%'],
+            correctAnswer: '94%',
+            explanation: 'NHTSA research shows 94% of serious crashes are caused primarily by driver behavior \u2014 not mechanical failure or environmental factors.'
           },
           {
-            questionText: 'Under heavy rain conditions, what is the recommended following distance?',
-            options: ['2-3 seconds', '3-4 seconds', '4-5 seconds', '6-8 seconds'],
-            correctAnswer: '6-8 seconds',
-            explanation: 'In heavy rain, fog, or snow, increase your following distance to 6-8 seconds.'
-          },
-          {
-            questionText: 'How often should you check your mirrors while driving?',
-            options: ['Every 30 seconds', 'Every 15-20 seconds', 'Every 5-8 seconds', 'Only when changing lanes'],
-            correctAnswer: 'Every 5-8 seconds',
-            explanation: 'Checking mirrors every 5-8 seconds maintains awareness of traffic around you.'
-          },
-          {
-            questionText: 'What happens to stopping distance when you double your speed?',
-            options: ['It doubles', 'It triples', 'It quadruples', 'It increases slightly'],
-            correctAnswer: 'It quadruples',
-            explanation: 'Stopping distance increases with the square of speed—doubling speed quadruples stopping distance.'
+            questionText: 'Which of the following is NOT one of NHTSA\'s four driver error categories?',
+            options: ['Recognition errors', 'Road design errors', 'Decision errors', 'Behavioral choices'],
+            correctAnswer: 'Road design errors',
+            explanation: 'NHTSA\u2019s four driver error categories are recognition errors, decision errors, performance errors, and behavioral choices. Road design errors are a separate, non-driver factor.'
           }
         ]
       },
 
       // =========================================
-      // MODULE 4: Hazard Recognition & Avoidance
-      // Estimated Reading Time: 55-60 minutes
+      // MODULE 2: Your Driving History
+      // Estimated Time: 60 minutes
       // =========================================
       {
-        title: 'Module 4: Hazard Recognition & Avoidance',
-        description: 'Identifying static, dynamic, and environmental hazards and developing avoidance strategies',
+        title: 'Module 2: Your Driving History',
+        description: 'Identifying patterns in your own driving behavior, understanding pre-crash behavior, and how habituation shapes risk perception',
         estimatedMinutes: 60,
         content: `
-          <h2>Hazard Recognition & Avoidance</h2>
-          
-          <p>Every time you drive, you navigate through an environment filled with potential hazards. The ability to recognize these hazards early and take appropriate action is what separates drivers who avoid crashes from those who become crash statistics.</p>
-
-          <p>Hazard recognition is a skill that improves with practice and intention. This module will help you develop a systematic approach to identifying dangers and responding appropriately.</p>
-
-          <h3>Types of Hazards</h3>
-          
-          <p>Driving hazards generally fall into three categories:</p>
-
-          <h4>1. Static Hazards (Fixed Objects)</h4>
-          <p>These are hazards that don't move but can still cause problems:</p>
-          <ul>
-            <li><strong>Road features:</strong> Curves, hills, narrow lanes, merges</li>
-            <li><strong>Infrastructure:</strong> Guardrails, signs, poles, bridges</li>
-            <li><strong>Surface conditions:</strong> Potholes, debris, gravel, uneven pavement</li>
-            <li><strong>Fixed obstacles:</strong> Parked vehicles, construction barriers</li>
-          </ul>
-
-          <h4>2. Dynamic Hazards (Moving Objects)</h4>
-          <p>These hazards move and their behavior can change unpredictably:</p>
-          <ul>
-            <li><strong>Other vehicles:</strong> Cars, trucks, motorcycles, emergency vehicles</li>
-            <li><strong>Vulnerable road users:</strong> Pedestrians, cyclists, scooter riders</li>
-            <li><strong>Animals:</strong> Deer, dogs, birds, livestock</li>
-            <li><strong>Moving debris:</strong> Objects blown by wind, items falling from vehicles</li>
-          </ul>
-
-          <h4>3. Environmental Hazards</h4>
-          <p>Conditions that affect visibility, traction, or vehicle control:</p>
-          <ul>
-            <li><strong>Weather:</strong> Rain, fog, wind, heat shimmer</li>
-            <li><strong>Light conditions:</strong> Sun glare, darkness, headlight glare</li>
-            <li><strong>Road surface:</strong> Wet pavement, standing water, oil slicks</li>
-            <li><strong>Atmospheric:</strong> Smoke, dust, blowing sand</li>
-          </ul>
-
-          <div class="statistics-box">
-            <h4>📊 Florida Hazard Statistics</h4>
-            <ul>
-              <li>Florida has <strong>over 6,500 wildlife-vehicle crashes</strong> annually</li>
-              <li><strong>Wet pavement</strong> is a factor in 25% of Florida crashes</li>
-              <li><strong>Pedestrian fatalities</strong> make Florida one of the most dangerous states for walking</li>
-              <li>Florida averages <strong>2,500+ motorcycle fatalities and injuries</strong> per year</li>
-              <li><strong>Sun glare</strong> contributes to thousands of crashes, especially at dawn/dusk</li>
-            </ul>
-          </div>
-
-          <h3>The Hazard Recognition Process</h3>
-          
-          <h4>Step 1: Continuous Scanning</h4>
-          <p>Effective hazard recognition requires constant, systematic scanning:</p>
-          <ul>
-            <li><strong>Look far ahead:</strong> 12-15 seconds (1/4 mile on highways)</li>
-            <li><strong>Scan side to side:</strong> Especially at intersections</li>
-            <li><strong>Check mirrors:</strong> Every 5-8 seconds</li>
-            <li><strong>Monitor blind spots:</strong> Before any lane change or turn</li>
-          </ul>
-
-          <h4>Step 2: Early Identification</h4>
-          <p>Learn to recognize hazards before they become emergencies:</p>
-          <ul>
-            <li><strong>Ball rolling into street:</strong> Child may follow</li>
-            <li><strong>Brake lights ahead:</strong> Traffic slowing—prepare</li>
-            <li><strong>Vehicle drifting:</strong> Distracted or impaired driver</li>
-            <li><strong>Pedestrian at crosswalk edge:</strong> May step out</li>
-            <li><strong>Deer crossing sign:</strong> Watch for actual deer</li>
-          </ul>
-
-          <h4>Step 3: Risk Assessment</h4>
-          <p>Evaluate the level of risk each hazard presents:</p>
-          <ul>
-            <li><strong>Probability:</strong> How likely is it to become a problem?</li>
-            <li><strong>Severity:</strong> If it does become a problem, how bad could it be?</li>
-            <li><strong>Time available:</strong> How much time do you have to respond?</li>
-          </ul>
-
-          <h4>Step 4: Response Planning</h4>
-          <p>For each significant hazard, have a plan:</p>
-          <ul>
-            <li><strong>Cover your brake:</strong> Position foot to brake quickly without pressing</li>
-            <li><strong>Reduce speed:</strong> Slower speeds = more reaction time</li>
-            <li><strong>Increase space:</strong> Create buffer zones around hazards</li>
-            <li><strong>Prepare escape route:</strong> Know where you'll go if needed</li>
-          </ul>
-
-          <div class="case-study">
-            <h4>📋 Real-World Case Study: The Hidden Pedestrian</h4>
-            <p><strong>Robert's Close Call:</strong></p>
-            <p>Robert was driving through a shopping center parking lot. A van was parked in a handicapped spot near the store entrance. Robert recognized this as a potential hazard—someone could step out from behind the van.</p>
-            <p>He slowed down and moved slightly left in his lane to create more space. A woman with a shopping cart suddenly pushed out from behind the van, not looking. Because Robert had anticipated this possibility and prepared, he stopped easily with room to spare.</p>
-            <p><em>"If I'd been at normal speed and close to that van, I would have hit her. She never even looked. But that's what you have to expect—people don't always look."</em></p>
-          </div>
-
-          <h3>Specific Hazard Situations</h3>
-
-          <h4>Intersections</h4>
-          <p>Intersections are among the most hazardous locations on roads:</p>
-          <ul>
-            <li><strong>Look left, right, left again</strong> before proceeding on green</li>
-            <li><strong>Watch for red-light runners</strong>—common in Florida</li>
-            <li><strong>Check for turning vehicles</strong> that may cut across your path</li>
-            <li><strong>Yield to pedestrians</strong> in all crosswalks</li>
-            <li><strong>Be especially cautious</strong> when first in line at a red light</li>
-          </ul>
-
-          <h4>Construction Zones</h4>
-          <ul>
-            <li><strong>Reduced lanes</strong> require careful merging</li>
-            <li><strong>Changed patterns</strong> may be confusing—follow signs</li>
-            <li><strong>Workers present</strong>—their lives are at stake</li>
-            <li><strong>Fines doubled</strong> for violations in construction zones</li>
-            <li><strong>Equipment</strong> may enter roadway unexpectedly</li>
-          </ul>
-
-          <div class="alert alert-danger">
-            <h4>⚠️ Florida Construction Zone Facts</h4>
-            <ul>
-              <li>Over <strong>15,000 crashes</strong> occur in Florida work zones annually</li>
-              <li>Fines are <strong>doubled</strong> in construction zones</li>
-              <li><strong>Workers are killed</strong> in work zone crashes each year</li>
-            </ul>
-            <p><strong>Slow down. Workers' lives depend on it.</strong></p>
-          </div>
-
-          <h4>Parking Lots</h4>
-          <p>Parking lots have unique hazards:</p>
-          <ul>
-            <li><strong>Pedestrians everywhere</strong>—often distracted with phones or packages</li>
-            <li><strong>Reversing vehicles</strong>—limited visibility backing out</li>
-            <li><strong>Obstructed views</strong>—large vehicles block sight lines</li>
-            <li><strong>Children</strong>—small, unpredictable, hard to see</li>
-          </ul>
-          <p><strong>Drive slowly (5-10 mph)</strong> and expect the unexpected.</p>
-
-          <h4>Rural Roads</h4>
-          <ul>
-            <li><strong>Wildlife</strong>—deer, alligators, wild hogs</li>
-            <li><strong>Farm equipment</strong>—slow-moving, may turn suddenly</li>
-            <li><strong>Narrow shoulders</strong>—limited escape routes</li>
-            <li><strong>Curves and hills</strong>—limited visibility</li>
-            <li><strong>Oncoming traffic</strong>—no median separation</li>
-          </ul>
-
-          <h3>Animal Hazards</h3>
-          
-          <p>Florida's wildlife creates significant driving hazards:</p>
-          <ul>
-            <li><strong>Deer:</strong> Most active dawn/dusk; travel in groups; don't swerve</li>
-            <li><strong>Alligators:</strong> Cross roads near water; stop if possible</li>
-            <li><strong>Wild hogs:</strong> Can cause serious damage; active at night</li>
-            <li><strong>Turtles:</strong> Slow-moving; stop safely if you can</li>
-            <li><strong>Birds:</strong> Can strike windshields; startle drivers</li>
-          </ul>
-
-          <div class="law-box">
-            <h4>📖 If You Hit an Animal</h4>
-            <ul>
-              <li><strong>Large animal:</strong> Report to law enforcement; may be required for insurance</li>
-              <li><strong>Injured animal:</strong> Call Florida Fish and Wildlife (FWC): 888-404-FWCC</li>
-              <li><strong>Never approach</strong> injured wildlife—they may attack</li>
-            </ul>
-          </div>
-
-          <h3>Avoiding Hazards</h3>
-          
-          <h4>The SEE Strategy</h4>
-          <ul>
-            <li><strong>Search:</strong> Actively scan for hazards</li>
-            <li><strong>Evaluate:</strong> Determine threat level and your options</li>
-            <li><strong>Execute:</strong> Take smooth, controlled action</li>
-          </ul>
-
-          <h4>When Evasive Action Is Needed</h4>
-          <ul>
-            <li><strong>Don't panic</strong>—sudden overcorrection causes crashes</li>
-            <li><strong>Brake smoothly</strong> if time permits</li>
-            <li><strong>Steer around</strong> if braking won't work</li>
-            <li><strong>Generally, hitting something is better than swerving into traffic</strong></li>
-            <li><strong>ABS:</strong> Press firmly and steer; don't pump</li>
-          </ul>
-
-          <div class="reflection-question">
-            <h4>🤔 Reflection Question</h4>
-            <p>Think about a time you were surprised by a hazard while driving. What type of hazard was it? With the knowledge from this module, how might you have recognized it earlier?</p>
-          </div>
-
-          <h3>Module Summary</h3>
-          
-          <ul>
-            <li>Hazards are static (fixed), dynamic (moving), or environmental</li>
-            <li>Continuous scanning is essential—12-15 seconds ahead, mirrors every 5-8 seconds</li>
-            <li>Early identification gives you more time to respond</li>
-            <li>Assess risk probability, severity, and available response time</li>
-            <li>Always have a plan and an escape route</li>
-            <li>Intersections, construction zones, parking lots, and rural roads have unique hazards</li>
-            <li>Animal hazards are significant in Florida—especially at dawn/dusk</li>
-          </ul>
-
-          <div class="alert alert-success">
-            <h4>✅ Module 4 Complete</h4>
-            <p>You've completed the Hazard Recognition and Avoidance module. The next module covers Effects of Impairment on Driving.</p>
-          </div>
+          <h2>Module 2: Your Driving History</h2>
+          <h3>Section 2.1 \u2014 Five Categories of Problematic Driving Behavior</h3>
+          <p>Research on driving violations and crashes identifies five behavioral categories that account for the majority of preventable crashes in Florida:</p>
+          <ol>
+            <li><strong>Speed:</strong> Exceeding posted limits, driving too fast for conditions</li>
+            <li><strong>Distraction:</strong> Phone use, eating, grooming, in-car conversation</li>
+            <li><strong>Aggression:</strong> Tailgating, unsafe passing, road rage, honking out of frustration</li>
+            <li><strong>Impairment:</strong> Alcohol, drugs (including legal prescription medications), fatigue</li>
+            <li><strong>Failure to yield:</strong> Running red lights, failure to yield right of way, stop sign violations</li>
+          </ol>
+          <p>Which categories appear in your driving history? This is not a judgment exercise \u2014 it is a diagnostic one. You cannot change what you cannot name.</p>
+          <h3>Section 2.2 \u2014 Pre-Crash Behavior Patterns</h3>
+          <p>NHTSA research on repeat violators shows that the behaviors leading up to a crash are nearly always preceded by weeks, months, or years of the same behavior without consequence. This is called the "near-miss" pattern:</p>
+          <ol>
+            <li>Driver begins engaging in risky behavior (speeding, tailgating, phone use)</li>
+            <li>Nothing bad happens \u2014 not today</li>
+            <li>Brain interprets this as <em>confirmation that the behavior is safe</em></li>
+            <li>Behavior is reinforced and repeated</li>
+            <li>Eventually, conditions change: wet road, unexpected pedestrian, sudden braking by another car</li>
+            <li>The crash occurs</li>
+          </ol>
+          <p>The crash was not bad luck. It was the logical endpoint of a repeated pattern.</p>
+          <h3>Section 2.3 \u2014 Habituation</h3>
+          <p><strong>Habituation</strong> is the psychological process by which repeated exposure to a stimulus reduces our response to it. In driving, this means: the more often you drive aggressively, speed, or use your phone, the more <em>normal</em> it feels. The perceived risk decreases even as the actual risk remains unchanged or increases.</p>
+          <h4>Example:</h4>
+          <p>A new driver immediately feels the danger of following too closely. After years of habituation, the same behavior no longer triggers any anxiety. The driver believes they are just "an experienced driver with quick reflexes" \u2014 when in fact they are operating at high risk with reduced situational awareness.</p>
+          <p>This is one reason why experienced drivers are often less safe than they believe themselves to be.</p>
         `,
         quizQuestions: [
           {
-            questionText: 'Which of the following is an example of a dynamic hazard?',
-            options: ['A pothole', 'A pedestrian', 'A guardrail', 'A curve in the road'],
-            correctAnswer: 'A pedestrian',
-            explanation: 'Dynamic hazards move and can change behavior unpredictably, like pedestrians, cyclists, and other vehicles.'
-          },
-          {
-            questionText: 'How far ahead should you scan while driving on a highway?',
-            options: ['3-5 seconds', '5-8 seconds', '8-10 seconds', '12-15 seconds'],
-            correctAnswer: '12-15 seconds',
-            explanation: 'On highways, scan 12-15 seconds ahead (about 1/4 mile) to identify hazards early.'
-          },
-          {
-            questionText: 'In Florida, what happens to fines in construction zones?',
-            options: ['They remain the same', 'They are reduced', 'They are doubled', 'They are tripled'],
-            correctAnswer: 'They are doubled',
-            explanation: 'Fines for traffic violations in Florida construction zones are doubled to protect workers.'
-          },
-          {
-            questionText: 'What time of day are deer most active?',
-            options: ['Midday', 'Midnight', 'Dawn and dusk', 'Early morning only'],
-            correctAnswer: 'Dawn and dusk',
-            explanation: 'Deer are most active during dawn and dusk, which is also when visibility is reduced.'
+            questionText: 'What is habituation in the context of driving behavior?',
+            options: [
+              'Getting better at driving with experience',
+              'The process by which repeated risky behavior feels increasingly normal',
+              'Memorizing traffic laws through repetition',
+              'The habit of checking mirrors regularly'
+            ],
+            correctAnswer: 'The process by which repeated risky behavior feels increasingly normal',
+            explanation: 'Habituation means repeated exposure to risky behaviors (like speeding or tailgating) reduces the perceived risk over time, even as actual risk remains the same or increases.'
           }
         ]
       },
 
       // =========================================
-      // MODULE 5: Effects of Impairment on Driving
-      // Estimated Reading Time: 55-60 minutes
+      // MODULE 3: The Habit Loop
+      // Estimated Time: 60 minutes
       // =========================================
       {
-        title: 'Module 5: Effects of Impairment on Driving',
-        description: 'Alcohol, drugs, fatigue, and emotional distress—how impairment affects driving ability',
+        title: 'Module 3: The Habit Loop',
+        description: 'How driving habits form neurologically, the cue-routine-reward framework applied to driving, and why habits cannot be deleted \u2014 only replaced',
         estimatedMinutes: 60,
         content: `
-          <h2>Effects of Impairment on Driving</h2>
-          
-          <p>Impaired driving is one of the most serious threats on our roads. "Impairment" doesn't just mean alcohol or drugs—it includes any condition that diminishes your ability to operate a vehicle safely, including fatigue, illness, emotional distress, and certain medications.</p>
-
-          <p>Understanding impairment is critical for making responsible decisions about when it's safe to drive and when you need to find an alternative.</p>
-
-          <div class="statistics-box">
-            <h4>📊 Florida Impaired Driving Statistics</h4>
-            <ul>
-              <li>Florida has approximately <strong>5,000 alcohol-related crashes</strong> annually</li>
-              <li><strong>Nearly 800 people</strong> die in impaired driving crashes in Florida each year</li>
-              <li>Impaired driving is involved in about <strong>25% of all fatal crashes</strong></li>
-              <li><strong>Drugged driving arrests</strong> have increased over 30% in the past decade</li>
-              <li>Florida ranks in the <strong>top 5 states</strong> for DUI fatalities</li>
-              <li><strong>Peak times:</strong> Friday-Saturday nights, holidays</li>
-            </ul>
-          </div>
-
-          <h3>Alcohol Impairment</h3>
-          
-          <h4>How Alcohol Affects Driving</h4>
-          <p>Alcohol is a central nervous system depressant that impairs virtually every driving-related function:</p>
-
-          <table class="info-table">
-            <tr><th>BAC Level</th><th>Effects</th></tr>
-            <tr><td>0.02%</td><td>Some loss of judgment; relaxation; slight body warmth</td></tr>
-            <tr><td>0.05%</td><td>Lowered alertness; impaired judgment; released inhibitions; harder to track moving objects</td></tr>
-            <tr><td>0.08%</td><td>Poor muscle coordination; impaired judgment, reasoning, self-control; reduced concentration; short-term memory loss</td></tr>
-            <tr><td>0.10%</td><td>Clear deterioration of coordination and reaction time; slurred speech; difficulty maintaining lane position</td></tr>
-            <tr><td>0.15%</td><td>Far less muscle control; major loss of balance; vomiting may occur; substantial impairment</td></tr>
-          </table>
-
-          <div class="alert alert-danger">
-            <h4>⚠️ Florida Legal Limits</h4>
-            <ul>
-              <li><strong>0.08% BAC:</strong> Legal limit for drivers 21+</li>
-              <li><strong>0.02% BAC:</strong> "Zero tolerance" for drivers under 21</li>
-              <li><strong>0.04% BAC:</strong> Commercial vehicle drivers</li>
-            </ul>
-            <p><strong>Note:</strong> You can be arrested for DUI at ANY BAC if your driving is impaired.</p>
-          </div>
-
-          <h4>Factors Affecting BAC</h4>
+          <h2>Module 3: The Habit Loop</h2>
+          <h3>Section 3.1 \u2014 The Science of Habits</h3>
+          <p>Charles Duhigg's research (and the underlying neuroscience) defines a habit as a three-part loop:</p>
+          <ol>
+            <li><strong>CUE:</strong> A trigger that tells your brain to enter automatic mode \u2014 a time of day, an emotion, an environment, or a situation</li>
+            <li><strong>ROUTINE:</strong> The behavior itself \u2014 the physical, mental, or emotional pattern that follows the cue</li>
+            <li><strong>REWARD:</strong> The benefit your brain receives that reinforces the loop \u2014 reduced anxiety, time saved, physical relief, dopamine release</li>
+          </ol>
+          <p>Once established, habits run without conscious thought. This is efficient \u2014 it frees up attention for more demanding tasks. But it also means dangerous driving habits can operate below conscious awareness.</p>
+          <h3>Section 3.2 \u2014 Driving Habit Loops</h3>
+          <h4>Example 1: Tailgating</h4>
           <ul>
-            <li><strong>Body weight:</strong> Heavier people generally have lower BAC for same alcohol</li>
-            <li><strong>Sex:</strong> Women typically reach higher BAC faster than men of same weight</li>
-            <li><strong>Rate of consumption:</strong> Faster drinking = higher BAC</li>
-            <li><strong>Food:</strong> Eating slows alcohol absorption</li>
-            <li><strong>Carbonation:</strong> Carbonated mixers speed absorption</li>
-            <li><strong>Medications:</strong> Can intensify alcohol's effects</li>
+            <li>CUE: Running late</li>
+            <li>ROUTINE: Follow closely to attempt to pressure the driver ahead or fill any gap that opens</li>
+            <li>REWARD: Slight arrival time improvement (real or perceived), reduction of frustration</li>
           </ul>
-
-          <h4>Myths About Sobering Up</h4>
-          <table class="info-table">
-            <tr><th>Myth</th><th>Reality</th></tr>
-            <tr><td>Coffee sobers you up</td><td>Only time reduces BAC (~0.015%/hour)</td></tr>
-            <tr><td>Cold shower helps</td><td>May wake you up but doesn't reduce impairment</td></tr>
-            <tr><td>Exercise speeds it up</td><td>No effect on alcohol metabolism rate</td></tr>
-            <tr><td>"I can hold my liquor"</td><td>Tolerance means you feel less drunk—impairment is the same</td></tr>
-          </table>
-
-          <h3>Drug Impairment</h3>
-          
-          <p>Drugs—whether illegal, prescription, or over-the-counter—can significantly impair driving:</p>
-
-          <h4>Marijuana</h4>
+          <h4>Example 2: Speeding</h4>
           <ul>
-            <li>Slows reaction time</li>
-            <li>Impairs judgment of time and distance</li>
-            <li>Reduces concentration</li>
-            <li>May cause lane weaving</li>
-            <li>Effects can last hours after feeling "normal"</li>
+            <li>CUE: Highway on-ramp, open road, familiar route</li>
+            <li>ROUTINE: Accelerate above posted limit</li>
+            <li>REWARD: Reduced travel time, sensation of control and competence</li>
           </ul>
-
-          <h4>Prescription and OTC Medications</h4>
+          <h4>Example 3: Phone Use</h4>
           <ul>
-            <li><strong>Sleep aids/antihistamines:</strong> Drowsiness, slowed reactions</li>
-            <li><strong>Pain medications (opioids):</strong> Drowsiness, impaired judgment</li>
-            <li><strong>Anti-anxiety medications:</strong> Sedation, slowed reflexes</li>
-            <li><strong>Cold medicines:</strong> Drowsiness, confusion</li>
+            <li>CUE: Notification sound, boring stretch of road, stopped at red light</li>
+            <li>ROUTINE: Pick up or check phone</li>
+            <li>REWARD: Dopamine hit from social media/messages, reduced boredom</li>
           </ul>
-
-          <div class="law-box">
-            <h4>📖 Florida DUI Law</h4>
-            <p>Florida Statute 316.193 makes it illegal to drive while:</p>
-            <ul>
-              <li>Under the influence of alcohol</li>
-              <li>Under the influence of any controlled substance</li>
-              <li>Under the combined influence of alcohol and any substance</li>
-              <li>Normal faculties are impaired</li>
-            </ul>
-            <p><strong>You can get a DUI for legal prescription medications if they impair your driving.</strong></p>
-          </div>
-
-          <h4>Stimulants (Cocaine, Methamphetamine)</h4>
+          <h4>Example 4: Road Rage</h4>
           <ul>
-            <li>Aggressive, risk-taking behavior</li>
-            <li>Overconfidence in abilities</li>
-            <li>May be followed by crash/exhaustion</li>
-            <li>Impaired judgment</li>
+            <li>CUE: Another driver cuts you off, drives slowly, or encroaches into your lane</li>
+            <li>ROUTINE: Honk, tailgate, gesture, or attempt to confront</li>
+            <li>REWARD: Momentary sense of justice or dominance</li>
           </ul>
-
-          <h3>Fatigue Impairment</h3>
-          
-          <p>Drowsy driving is often underestimated but is extremely dangerous:</p>
+          <h3>Section 3.3 \u2014 Why Habits Cannot Be Deleted</h3>
+          <p>Habit loops, once encoded in the basal ganglia of the brain, <strong>cannot be erased</strong>. They can only be <strong>replaced</strong>. This is why "just stop doing it" usually fails. The brain will find a way to revert to the original loop under stress.</p>
+          <p>The effective strategy is to <strong>keep the cue and reward, but insert a new routine</strong> between them \u2014 one that achieves a similar reward without the risk.</p>
+          <h4>Example: Replacing the Phone-Check Habit</h4>
           <ul>
-            <li>Being awake 18+ hours impairs you similarly to 0.05% BAC</li>
-            <li>Being awake 24 hours = approximately 0.10% BAC (over legal limit)</li>
-            <li>About <strong>100,000 crashes annually</strong> involve drowsy driving</li>
-            <li>Drowsy driving crashes tend to be severe (no braking)</li>
+            <li>CUE: Notification sound</li>
+            <li>NEW ROUTINE: Touch the screen and say aloud "I'll see that when I arrive" (or use Do Not Disturb While Driving)</li>
+            <li>REWARD: Maintained focus; positive self-identity as a safe driver</li>
           </ul>
-
-          <h4>Warning Signs of Fatigue</h4>
-          <ul>
-            <li>Frequent yawning or blinking</li>
-            <li>Difficulty keeping eyes open</li>
-            <li>Head nodding</li>
-            <li>Drifting from your lane</li>
-            <li>Missing exits or signs</li>
-            <li>Difficulty remembering the last few miles</li>
-            <li>Following too closely</li>
-          </ul>
-
-          <div class="case-study">
-            <h4>📋 Real-World Case Study: The Drowsy Driver</h4>
-            <p><strong>James's Story:</strong></p>
-            <p>James, 28, was driving home from working a double shift. He had been awake for 20 hours. "I thought I could make it—it was only 30 more minutes," he said.</p>
-            <p>He fell asleep at the wheel on I-95. His car drifted across the median and struck an oncoming vehicle. The other driver survived but suffered permanent injuries. James spent 6 months in the hospital and was charged with reckless driving causing serious bodily injury.</p>
-            <p><em>"I knew I was tired. I felt my eyes getting heavy. But I kept thinking I could push through. That decision almost killed two people."</em></p>
-          </div>
-
-          <h4>Combating Fatigue</h4>
-          <ul>
-            <li><strong>Sleep before driving:</strong> Get 7-8 hours before long trips</li>
-            <li><strong>Take breaks:</strong> Stop every 100 miles or 2 hours</li>
-            <li><strong>Avoid driving 2-4 AM:</strong> Body's natural low point</li>
-            <li><strong>If drowsy, stop:</strong> The only real solution is sleep</li>
-            <li><strong>Coffee/nap combo:</strong> Drink coffee, nap 20 minutes while it kicks in</li>
-          </ul>
-
-          <h3>Emotional Impairment</h3>
-          
-          <p>Strong emotions affect driving ability:</p>
-          <ul>
-            <li><strong>Anger:</strong> Aggressive driving, poor decisions, road rage</li>
-            <li><strong>Grief/sadness:</strong> Reduced attention, slower reactions</li>
-            <li><strong>Anxiety:</strong> Hypervigilance, overreaction, panic</li>
-            <li><strong>Excitement:</strong> Distraction, risk-taking</li>
-          </ul>
-
-          <p><strong>If you're experiencing strong emotions, delay driving until you've calmed down.</strong></p>
-
-          <h3>DUI Consequences in Florida</h3>
-          
-          <table class="info-table">
-            <tr><th>Offense</th><th>Jail Time</th><th>Fines</th><th>License Suspension</th></tr>
-            <tr><td>First DUI</td><td>Up to 6 months</td><td>$500-$1,000</td><td>180 days - 1 year</td></tr>
-            <tr><td>Second DUI (within 5 years)</td><td>10 days - 9 months</td><td>$1,000-$2,000</td><td>5 years (minimum)</td></tr>
-            <tr><td>Third DUI (within 10 years)</td><td>30 days - 5 years</td><td>$2,000-$5,000</td><td>10 years (minimum)</td></tr>
-            <tr><td>Fourth DUI</td><td>Up to 5 years (felony)</td><td>$2,000+</td><td>Permanent revocation</td></tr>
-            <tr><td>DUI with injury</td><td>Up to 5 years</td><td>$1,000-$5,000</td><td>3 years minimum</td></tr>
-            <tr><td>DUI manslaughter</td><td>4-15 years</td><td>$10,000+</td><td>Permanent revocation</td></tr>
-          </table>
-
-          <p><strong>Additional consequences:</strong></p>
-          <ul>
-            <li>FR-44 insurance requirement (3 years)</li>
-            <li>Vehicle impoundment</li>
-            <li>Ignition interlock device</li>
-            <li>Substance abuse treatment</li>
-            <li>Community service</li>
-            <li>Permanent criminal record</li>
-          </ul>
-
-          <div class="reflection-question">
-            <h4>🤔 Reflection Question</h4>
-            <p>Think honestly: Have you ever driven when impaired—by alcohol, drugs, fatigue, or strong emotion? What might have happened? What will you do differently going forward?</p>
-          </div>
-
-          <h3>Module Summary</h3>
-          
-          <ul>
-            <li>Alcohol impairs judgment, coordination, and reaction time at all levels</li>
-            <li>Florida's legal limit is 0.08% BAC, but impairment begins much lower</li>
-            <li>Only time reduces BAC—approximately 0.015% per hour</li>
-            <li>Drugs—including legal medications—can impair driving</li>
-            <li>Fatigue is as dangerous as alcohol—being awake 24 hours ≈ 0.10% BAC</li>
-            <li>Strong emotions affect driving ability and decision-making</li>
-            <li>DUI consequences are severe and include potential felony charges</li>
-            <li>When impaired, don't drive—use alternatives</li>
-          </ul>
-
-          <div class="alert alert-success">
-            <h4>✅ Module 5 Complete</h4>
-            <p>You've completed the Effects of Impairment on Driving module. The next module covers Crash Prevention Strategies.</p>
-          </div>
+          <p>Replacement requires: (1) identifying the cue, (2) identifying the reward, (3) designing an alternative routine, and (4) practicing it repeatedly until it becomes the new habit.</p>
         `,
         quizQuestions: [
           {
-            questionText: 'Being awake for 24 hours impairs you similarly to what BAC level?',
-            options: ['0.02%', '0.05%', '0.08%', '0.10%'],
-            correctAnswer: '0.10%',
-            explanation: 'Being awake for 24 hours impairs your driving similarly to a 0.10% BAC—above the legal limit.'
-          },
-          {
-            questionText: "What is Florida's BAC limit for drivers under 21?",
-            options: ['0.08%', '0.04%', '0.02%', '0.00%'],
-            correctAnswer: '0.02%',
-            explanation: 'Florida has a "zero tolerance" policy for underage drinking—the limit is 0.02% BAC for drivers under 21.'
-          },
-          {
-            questionText: 'Which of these actually helps reduce BAC?',
-            options: ['Coffee', 'Cold shower', 'Exercise', 'Time'],
-            correctAnswer: 'Time',
-            explanation: 'Only time reduces BAC. The liver metabolizes alcohol at about 0.015% per hour; nothing else speeds this up.'
-          },
-          {
-            questionText: 'True or False: You cannot get a DUI for taking prescription medication.',
-            questionType: 'true_false',
-            options: ['True', 'False'],
-            correctAnswer: 'False',
-            explanation: 'You can be charged with DUI for driving while impaired by any substance, including legal prescription medications.'
+            questionText: 'According to habit science, why can\'t a dangerous driving habit simply be deleted?',
+            options: [
+              'Habits are stored in long-term memory which is read-only',
+              'The brain encodes habits permanently in the basal ganglia; they can only be replaced with a new routine',
+              'Habits become part of personality and cannot be changed',
+              'Only childhood habits are permanent'
+            ],
+            correctAnswer: 'The brain encodes habits permanently in the basal ganglia; they can only be replaced with a new routine',
+            explanation: 'Once a habit loop is established neurologically, it cannot be erased \u2014 only replaced. Simply trying to "stop" a behavior without substituting a new routine typically fails, especially under stress.'
           }
         ]
       },
 
       // =========================================
-      // MODULE 6: Crash Prevention Strategies
-      // Estimated Reading Time: 55-60 minutes
+      // MODULE 4: Is There a Problem?
+      // Estimated Time: 60 minutes
       // =========================================
       {
-        title: 'Module 6: Crash Prevention Strategies',
-        description: 'Advanced techniques for preventing crashes, emergency maneuvers, and vehicle safety systems',
+        title: 'Module 4: Is There a Problem?',
+        description: 'Self-serving attribution bias, the Lake Wobegon effect in driving, and the specific blind spots that prevent drivers from seeing their own risk behaviors',
         estimatedMinutes: 60,
         content: `
-          <h2>Crash Prevention Strategies</h2>
-          
-          <p>Most crashes are preventable. They result from a chain of events and decisions that, if interrupted at any point, would prevent the crash from occurring. This module focuses on advanced techniques for preventing crashes and responding effectively when emergencies occur.</p>
-
-          <div class="statistics-box">
-            <h4>📊 Crash Prevention Facts</h4>
-            <ul>
-              <li><strong>94% of crashes</strong> involve human error as a contributing factor</li>
-              <li><strong>Proper following distance alone</strong> could prevent most rear-end crashes</li>
-              <li><strong>Defensive scanning</strong> can identify hazards 10-15 seconds earlier</li>
-              <li><strong>Modern safety systems</strong> can reduce crash severity by 50% or more</li>
-              <li><strong>Seat belt use</strong> reduces fatal injury risk by 45% (cars) and 60% (trucks/SUVs)</li>
-            </ul>
-          </div>
-
-          <h3>The Crash Prevention Mindset</h3>
-          
-          <p>Crash prevention starts with your attitude and approach:</p>
-          <ul>
-            <li><strong>Accept responsibility:</strong> You control your driving decisions</li>
-            <li><strong>Stay vigilant:</strong> Every trip requires attention</li>
-            <li><strong>Anticipate problems:</strong> Plan for others' mistakes</li>
-            <li><strong>Maintain margins:</strong> Always leave room for error</li>
-            <li><strong>Know your limits:</strong> Recognize when conditions exceed your abilities</li>
-          </ul>
-
-          <h3>Space Management</h3>
-          
-          <p>The space around your vehicle is your safety buffer. Managing it effectively is key to crash prevention.</p>
-
-          <h4>The Three-Second Rule</h4>
-          <p>Maintain at least 3 seconds of following distance under normal conditions:</p>
+          <h2>Module 4: Is There a Problem?</h2>
+          <h3>Section 4.1 \u2014 The Self-Serving Attribution Bias</h3>
+          <p>One of the most well-documented findings in social psychology is the <strong>self-serving attribution bias</strong>: humans tend to attribute their successes to their own skill and intelligence, and their failures to external factors (bad luck, other people, circumstances).</p>
+          <p>Applied to driving: when we drive badly, we say the other driver provoked us, we were in a hurry, the road was unclear, or it was an honest mistake. When another driver makes the same error, we call them reckless or dangerous.</p>
+          <h3>Section 4.2 \u2014 The Lake Wobegon Effect</h3>
+          <p>Psychologist David Dunning found that approximately <strong>80% of drivers rate themselves as above-average drivers</strong> \u2014 including drivers with multiple DUIs, drivers in the middle of driver improvement courses, and drivers who have caused fatal accidents. This is statistically impossible. It is called the <strong>Dunning-Kruger effect</strong> or in driving literature the <strong>"Lake Wobegon effect"</strong> (from the Garrison Keillor joke about a fictional town where "all the children are above average").</p>
+          <p>The implication: <em>the worse the driver, the less aware they typically are of how bad they are.</em> Incompetence undermines the ability to recognize incompetence.</p>
+          <h3>Section 4.3 \u2014 Driving-Specific Blind Spots</h3>
+          <h4>1. Tailgating Rationalization</h4>
+          <p>"I have quick reflexes." Reality: At 60 mph with a 1-second following gap, even a 0.3-second reaction time leaves only 0.7 seconds for braking \u2014 while the vehicle in front decelerates from full braking pressure. The physics are unavoidable regardless of reflex speed.</p>
+          <h4>2. Speeding Minimization</h4>
+          <p>"I was only going a little over." At 10 mph over the limit in a 55 mph zone, stopping distance increases by approximately 34 feet. Speed also reduces the window in which a driver can respond to unexpected events.</p>
+          <h4>3. Phone Use Rationalization</h4>
+          <p>"I only check it at red lights" / "I can multitask." Reality: NHTSA data shows manual phone use while driving increases crash risk by 23 times (Virginia Tech Transportation Institute, 2006; replicated 2013). Even glancing at a phone at a red light establishes a habitual cue and reduces situational awareness when the light changes.</p>
+          <h3>Section 4.4 \u2014 The Honest Inventory</h3>
+          <p>Answering these questions honestly is a prerequisite for change:</p>
           <ol>
-            <li>Pick a fixed point (sign, tree, overpass)</li>
-            <li>When the vehicle ahead passes it, count: "one thousand one, one thousand two, one thousand three"</li>
-            <li>If you reach the point before finishing, you're too close</li>
+            <li>In the last year, how often did you exceed the speed limit by 10+ mph?</li>
+            <li>In the last year, how often did you follow within 1 second of the vehicle ahead at highway speeds?</li>
+            <li>In the last year, how often did you use your phone while driving?</li>
+            <li>In the last year, how often did you drive within 12 hours of consuming alcohol?</li>
+            <li>In the last year, how often did you feel angry while driving and act on that anger?</li>
           </ol>
-
-          <h4>Adjusting for Conditions</h4>
-          <table class="info-table">
-            <tr><th>Condition</th><th>Following Distance</th></tr>
-            <tr><td>Normal, dry</td><td>3-4 seconds</td></tr>
-            <tr><td>Light rain, heavy traffic</td><td>4-5 seconds</td></tr>
-            <tr><td>Heavy rain, fog, night</td><td>6-8 seconds</td></tr>
-            <tr><td>Snow, ice</td><td>10+ seconds</td></tr>
-            <tr><td>Behind large trucks</td><td>4-5 seconds (for visibility)</td></tr>
-            <tr><td>Being tailgated</td><td>4+ seconds (extra stopping room)</td></tr>
-          </table>
-
-          <h4>Side and Front Space</h4>
-          <ul>
-            <li><strong>Don't drive beside other vehicles</strong>—stay staggered</li>
-            <li><strong>Avoid being boxed in</strong>—always have an escape route</li>
-            <li><strong>At stops, leave space</strong> to see tires of car ahead</li>
-            <li><strong>Create buffer zones</strong> around hazards</li>
-          </ul>
-
-          <h3>Preventing Common Crash Types</h3>
-
-          <h4>Rear-End Collisions</h4>
-          <p>The most common crash type—almost always preventable:</p>
-          <ul>
-            <li><strong>Maintain following distance</strong>—your #1 protection</li>
-            <li><strong>Watch brake lights ahead</strong>—not just the car in front</li>
-            <li><strong>If stopped, check mirrors</strong>—be ready to move if rear-ended</li>
-            <li><strong>Tap brakes early</strong>—alert following drivers you're slowing</li>
-          </ul>
-
-          <h4>Intersection Collisions</h4>
-          <ul>
-            <li><strong>Look left-right-left</strong> before proceeding on green</li>
-            <li><strong>Count to three</strong> after light turns green before moving</li>
-            <li><strong>Watch for red-light runners</strong> at every intersection</li>
-            <li><strong>Make eye contact</strong> with other drivers when possible</li>
-            <li><strong>Never assume</strong> others will yield when they should</li>
-          </ul>
-
-          <h4>Lane-Change Collisions</h4>
-          <ul>
-            <li><strong>Always signal</strong>—at least 100 feet before changing</li>
-            <li><strong>Check mirrors</strong> and blind spots</li>
-            <li><strong>Don't cut off other drivers</strong>—ensure adequate space</li>
-            <li><strong>Complete lane changes smoothly</strong>—don't linger between lanes</li>
-          </ul>
-
-          <h4>Single-Vehicle Crashes</h4>
-          <ul>
-            <li><strong>Speed is the primary factor</strong>—especially on curves</li>
-            <li><strong>Fatigue and impairment</strong>—stay alert and sober</li>
-            <li><strong>Overcorrection</strong>—gradual steering corrections only</li>
-            <li><strong>Road conditions</strong>—adjust speed for weather and road surface</li>
-          </ul>
-
-          <div class="case-study">
-            <h4>📋 Real-World Case Study: Breaking the Chain</h4>
-            <p><strong>Laura's Avoidance:</strong></p>
-            <p>Laura was driving on I-4 in heavy traffic. She noticed the car three vehicles ahead brake suddenly. Instead of waiting to see what the car directly in front of her would do, she immediately began braking.</p>
-            <p>Sure enough, the car in front of her stopped suddenly. But because Laura had anticipated the problem and started braking early, she stopped with room to spare. The car behind her, which wasn't paying attention, nearly hit her—but because she had left extra space in front, she could pull forward and avoid being rear-ended.</p>
-            <p><em>"It was like slow motion. I saw it developing and I reacted before I had to. That's what they mean by defensive driving—you're always thinking ahead."</em></p>
-          </div>
-
-          <h3>Emergency Maneuvers</h3>
-
-          <h4>Emergency Braking</h4>
-          <ul>
-            <li><strong>With ABS:</strong> Press the brake firmly and steer; don't pump</li>
-            <li><strong>Without ABS:</strong> Apply steady pressure; release briefly if wheels lock</li>
-            <li><strong>Threshold braking:</strong> Maximum pressure just before lockup</li>
-            <li><strong>Look where you want to go</strong>—not at what you're trying to avoid</li>
-          </ul>
-
-          <h4>Evasive Steering</h4>
-          <ul>
-            <li><strong>Steering is faster than braking</strong> at highway speeds</li>
-            <li><strong>Look at your escape path</strong>—you steer where you look</li>
-            <li><strong>Make one smooth motion</strong>—avoid jerky overcorrection</li>
-            <li><strong>Generally, steer right</strong> (off road) rather than left (into traffic)</li>
-          </ul>
-
-          <h4>Skid Recovery</h4>
-          <p><strong>Front-wheel skid (understeer):</strong></p>
-          <ul>
-            <li>Release accelerator</li>
-            <li>Don't brake hard</li>
-            <li>Straighten wheels slightly until traction returns</li>
-          </ul>
-          <p><strong>Rear-wheel skid (oversteer):</strong></p>
-          <ul>
-            <li>Release accelerator</li>
-            <li>Turn steering wheel in direction of skid ("turn into the skid")</li>
-            <li>When traction returns, straighten wheels</li>
-            <li>Be ready for counter-skid</li>
-          </ul>
-
-          <h4>Tire Blowout</h4>
-          <ol>
-            <li><strong>Don't brake hard</strong>—grip wheel firmly</li>
-            <li><strong>Ease off accelerator gradually</strong></li>
-            <li><strong>Steer straight</strong>—counteract pulling</li>
-            <li><strong>Let vehicle slow on its own</strong></li>
-            <li><strong>Signal and pull safely off road</strong></li>
-            <li><strong>Turn on hazard lights</strong></li>
-          </ol>
-
-          <h3>Vehicle Safety Systems</h3>
-          
-          <p>Modern vehicles include numerous systems designed to prevent crashes or reduce their severity:</p>
-
-          <h4>Active Safety Systems</h4>
-          <ul>
-            <li><strong>Anti-lock Braking System (ABS):</strong> Prevents wheel lockup during hard braking</li>
-            <li><strong>Electronic Stability Control (ESC):</strong> Helps prevent skids and loss of control</li>
-            <li><strong>Traction Control:</strong> Prevents wheel spin during acceleration</li>
-            <li><strong>Forward Collision Warning:</strong> Alerts you to imminent front crash</li>
-            <li><strong>Automatic Emergency Braking:</strong> Applies brakes if crash is imminent</li>
-            <li><strong>Blind Spot Detection:</strong> Warns of vehicles in blind spots</li>
-            <li><strong>Lane Departure Warning:</strong> Alerts when drifting from lane</li>
-          </ul>
-
-          <h4>Passive Safety Systems</h4>
-          <ul>
-            <li><strong>Airbags:</strong> Cushion occupants during impact</li>
-            <li><strong>Seat belts:</strong> Keep occupants in place; work with airbags</li>
-            <li><strong>Crumple zones:</strong> Absorb crash energy</li>
-            <li><strong>Reinforced passenger compartment:</strong> Protects occupants</li>
-          </ul>
-
-          <div class="alert alert-warning">
-            <h4>⚠️ Technology Is Not a Substitute</h4>
-            <p>Safety systems are designed to assist drivers, not replace driver attention and good judgment. Never rely on technology to prevent crashes—it should be your backup, not your primary defense.</p>
-          </div>
-
-          <h3>If a Crash Occurs</h3>
-          
-          <ol>
-            <li><strong>Move to safety</strong> if possible and it's safe to move your vehicle</li>
-            <li><strong>Check for injuries</strong>—call 911 if anyone is hurt</li>
-            <li><strong>Call law enforcement</strong>—required for any crash with injury, death, or significant damage</li>
-            <li><strong>Exchange information</strong>—name, contact, insurance, driver's license</li>
-            <li><strong>Document the scene</strong>—photos of damage, positions, conditions</li>
-            <li><strong>Don't admit fault</strong>—let insurance and authorities determine</li>
-            <li><strong>Report to your insurance company</strong>—promptly</li>
-          </ol>
-
-          <div class="reflection-question">
-            <h4>🤔 Reflection Question</h4>
-            <p>Think about any crashes or close calls you've experienced. Looking back with what you now know, what specific actions might have prevented or avoided those situations?</p>
-          </div>
-
-          <h3>Module Summary</h3>
-          
-          <ul>
-            <li>94% of crashes involve human error—most are preventable</li>
-            <li>Space management is crucial—3+ second following distance minimum</li>
-            <li>Each crash type has specific prevention strategies</li>
-            <li>Emergency maneuvers: ABS braking, evasive steering, skid recovery</li>
-            <li>Know your vehicle's safety systems but don't over-rely on them</li>
-            <li>If a crash occurs, prioritize safety, call for help, document the scene</li>
-          </ul>
-
-          <div class="alert alert-success">
-            <h4>✅ Module 6 Complete</h4>
-            <p>You've completed the Crash Prevention Strategies module. The next module covers Traffic Violation Consequences.</p>
-          </div>
+          <p>Honest answers matter. No one else will see them. But your future driving behavior will reflect whether you answered honestly.</p>
         `,
         quizQuestions: [
           {
-            questionText: 'What percentage of crashes involve human error?',
-            options: ['About 50%', 'About 75%', 'About 85%', 'About 94%'],
-            correctAnswer: 'About 94%',
-            explanation: '94% of crashes involve human error as a contributing factor, making most crashes preventable.'
-          },
-          {
-            questionText: 'When following large trucks, what is the recommended following distance?',
-            options: ['2-3 seconds', '3-4 seconds', '4-5 seconds', '6-8 seconds'],
-            correctAnswer: '4-5 seconds',
-            explanation: 'When following large trucks, maintain 4-5 seconds to ensure you can see the road ahead around them.'
-          },
-          {
-            questionText: 'During a tire blowout, you should:',
-            options: ['Brake hard immediately', 'Grip the wheel firmly and ease off the accelerator', 'Turn the steering wheel sharply', 'Accelerate to regain control'],
-            correctAnswer: 'Grip the wheel firmly and ease off the accelerator',
-            explanation: 'During a blowout, grip the wheel firmly, ease off the accelerator gradually, steer straight, and let the vehicle slow down.'
-          },
-          {
-            questionText: 'True or False: With ABS, you should pump the brakes during emergency braking.',
-            questionType: 'true_false',
-            options: ['True', 'False'],
-            correctAnswer: 'False',
-            explanation: 'With ABS, press the brake firmly and hold it—do not pump. ABS does the pumping for you electronically.'
+            questionText: 'According to research, using a handheld phone while driving increases crash risk by approximately:',
+            options: ['2 times', '5 times', '23 times', '50 times'],
+            correctAnswer: '23 times',
+            explanation: 'The Virginia Tech Transportation Institute found manual cell phone use while driving increases crash risk by 23 times \u2014 a finding replicated in subsequent studies.'
           }
         ]
       },
 
       // =========================================
-      // MODULE 7: Traffic Violation Consequences
-      // Estimated Reading Time: 55-60 minutes
+      // MODULE 5: The Desire to Change
+      // Estimated Time: 60 minutes
       // =========================================
       {
-        title: 'Module 7: Traffic Violation Consequences',
-        description: 'The Florida point system, insurance impacts, license suspension, revocation, and reinstatement',
+        title: 'Module 5: The Desire to Change',
+        description: 'Intrinsic vs. extrinsic motivation, values-based change, the biology of reward, and the timeline for sustained habit replacement',
         estimatedMinutes: 60,
         content: `
-          <h2>Traffic Violation Consequences</h2>
-          
-          <p>Every traffic violation carries consequences—some immediate, others long-lasting. Understanding the full scope of these consequences is essential for making better driving decisions. If you're taking this course, you've already experienced some of these consequences firsthand.</p>
-
-          <p>This module provides a comprehensive overview of Florida's point system, insurance implications, license suspension and revocation, and the reinstatement process.</p>
-
-          <h3>Florida's Point System</h3>
-          
-          <p>Florida assigns points to your driving record for moving violations. Points remain on your record for years and accumulate toward suspension thresholds.</p>
-
-          <h4>Point Values for Common Violations</h4>
-          <table class="info-table">
-            <tr><th>Violation</th><th>Points</th></tr>
-            <tr><td>Speeding (1-15 mph over limit)</td><td>3 points</td></tr>
-            <tr><td>Speeding (16+ mph over limit)</td><td>4 points</td></tr>
-            <tr><td>Running a red light</td><td>4 points</td></tr>
-            <tr><td>Running a stop sign</td><td>4 points</td></tr>
-            <tr><td>Improper lane change</td><td>3 points</td></tr>
-            <tr><td>Following too closely</td><td>3 points</td></tr>
-            <tr><td>Failure to yield</td><td>3 points</td></tr>
-            <tr><td>Improper passing</td><td>3 points</td></tr>
-            <tr><td>Reckless driving</td><td>4 points</td></tr>
-            <tr><td>Passing stopped school bus</td><td>4 points</td></tr>
-            <tr><td>Leaving scene of crash (property damage only)</td><td>6 points</td></tr>
-            <tr><td>Any violation resulting in crash</td><td>Additional 2 points</td></tr>
-          </table>
-
-          <div class="alert alert-warning">
-            <h4>⚠️ Important Point System Facts</h4>
-            <ul>
-              <li>Points stay on your record for <strong>3-5 years</strong> depending on the violation</li>
-              <li>You <strong>cannot "pay extra" to avoid points</strong>—points are assigned by law</li>
-              <li>Electing traffic school keeps points off your record (limited use)</li>
-              <li>Out-of-state violations may add points to your Florida record</li>
-            </ul>
-          </div>
-
-          <h3>Suspension Thresholds</h3>
-          
-          <table class="info-table">
-            <tr><th>Points Accumulated</th><th>Time Period</th><th>Suspension Length</th></tr>
-            <tr><td>12 points</td><td>Within 12 months</td><td>30 days</td></tr>
-            <tr><td>18 points</td><td>Within 18 months</td><td>3 months (90 days)</td></tr>
-            <tr><td>24 points</td><td>Within 36 months</td><td>1 year</td></tr>
-          </table>
-
-          <h4>Example Point Accumulation</h4>
-          <div class="case-study">
-            <p><strong>Scenario: How Points Add Up</strong></p>
-            <ul>
-              <li>January: Speeding 12 mph over (3 points)</li>
-              <li>March: Red light violation (4 points)</li>
-              <li>May: Improper lane change (3 points)</li>
-              <li>August: Speeding 18 mph over (4 points)</li>
-            </ul>
-            <p><strong>Total: 14 points in 8 months = 30-day suspension</strong></p>
-            <p>Just four violations—each seeming minor—can cost you your license.</p>
-          </div>
-
-          <h3>Other Suspension Triggers</h3>
-          
-          <p>Points aren't the only way to lose your license. Other common suspension causes include:</p>
-
-          <h4>DUI-Related Suspensions</h4>
+          <h2>Module 5: The Desire to Change</h2>
+          <h3>Section 5.1 \u2014 Why External Pressure Alone Doesn't Work</h3>
+          <p>You are in this course because of a legal requirement. That is external motivation. Research on behavior change shows clearly that <strong>externally-driven change rarely lasts</strong>. Drivers who complete a court-ordered class and resume their previous behaviors are not unusual \u2014 they are the majority in programs that rely solely on compliance pressure.</p>
+          <p>What works: <strong>intrinsic motivation</strong> \u2014 change driven by authentic personal values, self-respect, and genuine desire to be different.</p>
+          <h3>Section 5.2 \u2014 Intrinsic vs. Extrinsic Motivation (Deci & Ryan)</h3>
+          <p>Psychologists Edward Deci and Richard Ryan (Self-Determination Theory, 1985; 2000) distinguished:</p>
           <ul>
-            <li><strong>First DUI:</strong> 180 days to 1 year</li>
-            <li><strong>Second DUI (within 5 years):</strong> 5 years minimum</li>
-            <li><strong>Third DUI (within 10 years):</strong> 10 years minimum</li>
-            <li><strong>Fourth or subsequent DUI:</strong> Permanent revocation</li>
-            <li><strong>Refusing breath/blood/urine test:</strong> 1 year (first), 18 months (subsequent)</li>
+            <li><strong>Extrinsic motivation:</strong> Doing something to avoid punishment, get a reward, or meet others' expectations. Fades when external pressure is removed.</li>
+            <li><strong>Intrinsic motivation:</strong> Doing something because it aligns with who you are and what you value. Sustains behavior change over time.</li>
           </ul>
-
-          <h4>Financial Responsibility Suspensions</h4>
+          <h3>Section 5.3 \u2014 Values Clarification</h3>
+          <p>Real change begins with the question: <em>What do I actually value?</em></p>
+          <p>If you value your family, you need to understand that every time you drove impaired, texted, or drove aggressively, you were gambling with the lives of the people you love most.</p>
+          <p>If you value your freedom, a second DUI in Florida means a minimum 5-year license revocation and mandatory ignition interlock. A third is a felony conviction.</p>
+          <p>If you value your financial stability, one serious crash can create civil liability exceeding your lifetime insurance coverage.</p>
+          <p>Connecting your driving behavior to your actual, deeply held values is the beginning of intrinsic motivation.</p>
+          <h3>Section 5.4 \u2014 The Biology of Reward and the 60\u201390 Day Reset</h3>
+          <p>Dopamine \u2014 the brain's "reward" neurotransmitter \u2014 is released by habitual rewards (checking the phone, the sensation of speed). Changing habits requires allowing the brain's reward system to gradually re-associate with the new routine.</p>
+          <p>Research suggests it takes approximately <strong>60\u201390 days</strong> of consistent practice to establish a new habit at the same neurological depth as an existing one. During those first weeks, the pull toward the old behavior will be strongest. This is expected and normal \u2014 not a sign of failure.</p>
+          <h4>Practical Guidance</h4>
           <ul>
-            <li><strong>Failure to maintain insurance:</strong> Suspension until proof of compliance + reinstatement fee</li>
-            <li><strong>Failure to pay traffic fines:</strong> Indefinite suspension until paid</li>
-            <li><strong>Failure to pay child support:</strong> Indefinite suspension</li>
+            <li>Define one driving behavior you will change as a first step</li>
+            <li>Practice the replacement behavior every single trip for 60 days</li>
+            <li>Track your performance \u2014 people who measure behavior change achieve significantly better outcomes than those who do not</li>
           </ul>
+        `,
+        quizQuestions: [
+          {
+            questionText: 'What distinguishes intrinsic motivation from extrinsic motivation?',
+            options: [
+              'Intrinsic motivation uses rewards; extrinsic uses punishments',
+              'Intrinsic motivation comes from personal values and identity; extrinsic comes from external pressure',
+              'Intrinsic motivation is short-term; extrinsic is long-term',
+              'They are the same thing with different labels'
+            ],
+            correctAnswer: 'Intrinsic motivation comes from personal values and identity; extrinsic comes from external pressure',
+            explanation: 'Deci and Ryan\'s Self-Determination Theory found that intrinsic motivation \u2014 driven by authentic personal values \u2014 sustains behavior change far more effectively than external pressure like fines or court orders.'
+          }
+        ]
+      },
 
-          <h4>Court-Related Suspensions</h4>
+      // =========================================
+      // MODULE 6: Emotions, Attitudes, and Driving Identity
+      // Estimated Time: 70 minutes
+      // =========================================
+      {
+        title: 'Module 6: Emotions, Attitudes, and Driving Identity',
+        description: 'How specific emotions affect crash risk, dangerous driving attitudes, and how identity-based change produces lasting behavioral transformation',
+        estimatedMinutes: 70,
+        content: `
+          <h2>Module 6: Emotions, Attitudes, and Driving Identity</h2>
+          <h3>Section 6.1 \u2014 Emotional States and Crash Risk</h3>
+          <p>A Harvard University study (2019) found that drivers who were angry in the 6 minutes before a crash were <strong>10 times more likely to crash</strong> than calm drivers. Other emotional states also significantly elevated risk:</p>
           <ul>
-            <li><strong>Failure to appear in court:</strong> Indefinite suspension</li>
-            <li><strong>Failure to complete court-ordered requirements:</strong> Varies</li>
+            <li><strong>Sadness/crying:</strong> 9 times crash risk increase</li>
+            <li><strong>Anxiety/stress:</strong> Estimated 3\u20135 times increase (AAA, 2023)</li>
           </ul>
+          <p>The mechanism: strong emotions direct cognitive resources toward internal processing (rumination, worry, anger) and away from the continuous environmental monitoring that driving requires.</p>
+          <h3>Section 6.2 \u2014 Specific Emotional States</h3>
+          <h4>Anger</h4>
+          <p>Anger is the most dangerous emotion in a vehicle. It narrows attention, disrupts judgment, triggers impulsive decisions, and creates the perception of urgency (hurrying, forcing through gaps). Road rage \u2014 where anger leads to deliberate dangerous behavior toward another driver \u2014 is classified as aggressive careless driving in Florida (Statute 316.1923).</p>
+          <h4>Anxiety and Excessive Worry</h4>
+          <p>Anxiety produces hypervigilance to some threats and inattention to others. A driver preoccupied with work stress may monitor imagined scenarios while failing to notice a real pedestrian entering a crosswalk.</p>
+          <h4>Sadness and Grief</h4>
+          <p>Grief and deep sadness produce a generalized attentional fog. Studies consistently show elevated crash risk in the weeks following major personal loss events.</p>
+          <h3>Section 6.3 \u2014 Dangerous Driving Attitudes</h3>
+          <ol>
+            <li><strong>Entitlement:</strong> "I have the right of way" / "That car should move out of my way" \u2014 treating the road as a domain where your preferences override safety rules</li>
+            <li><strong>Overconfidence:</strong> "I never crash" / "I can handle it" \u2014 underestimating risk based on past success (habituation)</li>
+            <li><strong>Risk normalization:</strong> "Everyone drives this way" / "It's not a big deal" \u2014 using others' risky behavior as moral permission</li>
+            <li><strong>Contempt:</strong> "That driver is an idiot" / "Pedestrians shouldn't be there" \u2014 dehumanizing other road users, which makes their safety less salient</li>
+          </ol>
+          <h3>Section 6.4 \u2014 Identity-Based Change</h3>
+          <p>James Clear (Atomic Habits, 2018) argues that the most durable behavior change occurs not at the level of outcomes ("I want to stop getting tickets") or processes ("I will check my speed every minute") but at the level of <strong>identity</strong>: <em>"I am a safe driver."</em></p>
+          <h4>How to Apply This:</h4>
+          <ol>
+            <li>Define the identity you want to embody: "I am a safe, patient, and responsible driver"</li>
+            <li>Each driving decision becomes a vote for or against that identity</li>
+            <li>Over time, actions accumulate into genuine identity change</li>
+          </ol>
+          <p>You are not trying to resist your "real" self. You are becoming your better self, one driven mile at a time.</p>
+        `,
+        quizQuestions: [
+          {
+            questionText: 'A Harvard study found that driver anger in the 6 minutes before a crash increases crash risk by:',
+            options: ['2 times', '5 times', '10 times', '20 times'],
+            correctAnswer: '10 times',
+            explanation: 'Harvard University research (2019) found that acute anger in the minutes before a crash was associated with a 10-fold increase in crash risk.'
+          }
+        ]
+      },
 
-          <h3>Habitual Traffic Offender (HTO)</h3>
-          
-          <p>Florida may designate you as a Habitual Traffic Offender, resulting in a <strong>5-year license revocation</strong>, if you accumulate:</p>
-          <ul>
-            <li><strong>Three or more major offenses within 5 years:</strong>
-              <ul>
-                <li>DUI</li>
-                <li>Driving while license suspended or revoked</li>
-                <li>Failure to stop and render aid</li>
-                <li>Fleeing or eluding police</li>
-                <li>Vehicular homicide or manslaughter</li>
-              </ul>
+      // =========================================
+      // MODULE 7: Personality Structure and the Road
+      // Estimated Time: 70 minutes
+      // =========================================
+      {
+        title: 'Module 7: Personality Structure and the Road',
+        description: 'How five personality dimensions relate to driving risk, tailored strategies for each, and the effects of stress and fatigue on driver personality',
+        estimatedMinutes: 70,
+        content: `
+          <h2>Module 7: Personality Structure and the Road</h2>
+          <h3>Section 7.1 \u2014 Personality and Driving Risk</h3>
+          <p>Decades of research in traffic psychology have identified personality dimensions that consistently predict driving risk. Understanding your own personality allows you to design compensating strategies.</p>
+          <h4>Five Risk-Relevant Dimensions</h4>
+          <ol>
+            <li>
+              <strong>Sensation-Seeking</strong>
+              <p>High sensation-seekers are drawn to speed, aggressive driving, and risk-taking for the stimulation. They are overrepresented in serious crash statistics.</p>
+              <p><em>Strategy:</em> Recognize the physiological pull toward stimulation. Channel it elsewhere (sports, exercise). Make the deliberate decision that the road is not an appropriate arena for thrills.</p>
             </li>
-            <li><strong>OR 15 or more convictions within 5 years</strong> for moving violations worth 4+ points each</li>
-          </ul>
-
-          <div class="alert alert-danger">
-            <h4>⚠️ HTO Consequences</h4>
-            <p>HTO status means:</p>
-            <ul>
-              <li><strong>5-year mandatory revocation</strong></li>
-              <li><strong>No hardship license available</strong> for first 12 months (most cases)</li>
-              <li><strong>Driving during revocation = felony</strong> (5 years prison possible)</li>
-              <li><strong>Extended FR-44 insurance requirements</strong></li>
-            </ul>
-          </div>
-
-          <h3>Insurance Consequences</h3>
-          
-          <p>Traffic violations significantly impact your insurance costs:</p>
-
-          <h4>Typical Insurance Increases</h4>
-          <table class="info-table">
-            <tr><th>Violation</th><th>Typical Rate Increase</th></tr>
-            <tr><td>Minor speeding (1-15 over)</td><td>15-25%</td></tr>
-            <tr><td>Major speeding (16+ over)</td><td>25-40%</td></tr>
-            <tr><td>Red light/stop sign</td><td>20-35%</td></tr>
-            <tr><td>Reckless driving</td><td>40-70%</td></tr>
-            <tr><td>At-fault crash</td><td>30-50%</td></tr>
-            <tr><td>DUI (first offense)</td><td>70-150%</td></tr>
-            <tr><td>Multiple violations</td><td>Cumulative increases</td></tr>
-          </table>
-
-          <h4>FR-44 Insurance</h4>
-          <p>After certain serious violations (DUI, driving without insurance in crash, etc.), Florida requires <strong>FR-44 insurance</strong> with much higher coverage limits:</p>
-          <table class="info-table">
-            <tr><th>Coverage Type</th><th>Standard Minimum</th><th>FR-44 Requirement</th></tr>
-            <tr><td>Bodily Injury (per person)</td><td>Not required</td><td>$100,000</td></tr>
-            <tr><td>Bodily Injury (per accident)</td><td>Not required</td><td>$300,000</td></tr>
-            <tr><td>Property Damage</td><td>$10,000</td><td>$50,000</td></tr>
-          </table>
-          <p>FR-44 must be maintained for <strong>3 years</strong> and typically costs <strong>$2,000-$8,000+ annually</strong>.</p>
-
-          <div class="case-study">
-            <h4>📋 Real-World Case Study: The Cost of Violations</h4>
-            <p><strong>Michael's 5-Year Cost Analysis:</strong></p>
-            <p>Michael, 35, accumulated enough points for a 1-year suspension. Here's what it cost him over 5 years:</p>
-            <ul>
-              <li><strong>Fines and court costs:</strong> $2,800</li>
-              <li><strong>This 12-hour course:</strong> $150</li>
-              <li><strong>Reinstatement fees:</strong> $125</li>
-              <li><strong>Alternative transportation during suspension:</strong> $8,400</li>
-              <li><strong>Lost wages (reduced mobility affected job):</strong> $6,500</li>
-              <li><strong>Insurance increase ($180/month × 5 years):</strong> $10,800</li>
-            </ul>
-            <p><strong>Total estimated cost: $28,775</strong></p>
-            <p><em>"I used to think tickets were just a few hundred bucks. I had no idea how expensive they really were."</em></p>
-          </div>
-
-          <h3>License Reinstatement</h3>
-          
-          <p>After your suspension period ends, you must actively reinstate your license:</p>
-
-          <h4>General Reinstatement Requirements</h4>
-          <ol>
-            <li><strong>Serve the full suspension period</strong>—no early release</li>
-            <li><strong>Complete required education</strong>—this course for point suspensions</li>
-            <li><strong>Pay reinstatement fees</strong>—$45-$75 (more for DUI)</li>
-            <li><strong>Show proof of insurance</strong>—standard or FR-44 as required</li>
-            <li><strong>Clear all outstanding obligations</strong>—fines, child support, etc.</li>
-            <li><strong>Pass any required tests</strong>—may include vision, written, road test</li>
+            <li>
+              <strong>Trait Anxiety</strong>
+              <p>Highly anxious drivers may be over-cautious in some situations (erratic braking, under-merging at highway speeds) while being mentally consumed by worry. Their crash profile differs from sensation-seekers but is equally real.</p>
+              <p><em>Strategy:</em> Develop a pre-drive mental reset routine. Focus exclusively on driving tasks for the duration of the trip.</p>
+            </li>
+            <li>
+              <strong>Agreeableness</strong>
+              <p>Low-agreeableness drivers are more competitive on the road, more likely to take offense at perceived slights, and more prone to road rage.</p>
+              <p><em>Strategy:</em> Reframe: Other drivers are not your competitors. Their behavior is largely unrelated to you personally.</p>
+            </li>
+            <li>
+              <strong>Conscientiousness</strong>
+              <p>High conscientiousness generally predicts safer driving. Low-conscientiousness drivers are impulsive, less attentive to rules, and more likely to skip safety steps (seat belt, signal use, pre-drive vehicle checks).</p>
+              <p><em>Strategy:</em> Use checklists and structured pre-drive routines to compensate for natural impulsivity.</p>
+            </li>
+            <li>
+              <strong>Impulsivity</strong>
+              <p>Highly impulsive drivers respond to frustration immediately, have trouble maintaining following distance, are more likely to use their phone while driving, and more prone to passing in unsafe conditions.</p>
+              <p><em>Strategy:</em> Introduce a deliberate pause before reacting to driving situations. Count 3 seconds before taking action in frustrating scenarios.</p>
+            </li>
           </ol>
-
-          <h4>DUI Reinstatement</h4>
-          <p>DUI reinstatement requires additional steps:</p>
-          <ul>
-            <li>Complete DUI school (as ordered)</li>
-            <li>Complete substance abuse evaluation and treatment</li>
-            <li>Install ignition interlock device (if ordered)</li>
-            <li>Maintain FR-44 insurance</li>
-            <li>Pay increased reinstatement fees ($130-$500)</li>
-          </ul>
-
-          <h3>Hardship Licenses</h3>
-          
-          <p>In some cases, you may be eligible for a restricted "hardship" license during suspension that allows driving for:</p>
-          <ul>
-            <li>Work or business purposes</li>
-            <li>Educational purposes</li>
-            <li>Medical purposes</li>
-            <li>Church attendance</li>
-          </ul>
-          <p><strong>Note:</strong> Hardship licenses are not automatic—you must apply, pay fees, and be approved. They are not available for all suspension types (e.g., first 12 months of HTO revocation).</p>
-
-          <h3>Criminal Consequences</h3>
-          
-          <p>Some traffic violations carry criminal penalties beyond points and suspension:</p>
-          <table class="info-table">
-            <tr><th>Offense</th><th>Classification</th><th>Potential Penalty</th></tr>
-            <tr><td>Reckless driving</td><td>Misdemeanor</td><td>Up to 90 days jail, $500 fine</td></tr>
-            <tr><td>DUI (first offense)</td><td>Misdemeanor</td><td>Up to 6 months jail, $1,000 fine</td></tr>
-            <tr><td>Driving while suspended (third)</td><td>Felony</td><td>Up to 5 years prison</td></tr>
-            <tr><td>Leaving scene with injury</td><td>Felony</td><td>Up to 5 years prison</td></tr>
-            <tr><td>Vehicular manslaughter</td><td>Felony</td><td>Up to 15 years prison</td></tr>
-            <tr><td>DUI manslaughter</td><td>Felony</td><td>4-15+ years prison</td></tr>
-          </table>
-
-          <div class="reflection-question">
-            <h4>🤔 Reflection Question</h4>
-            <p>Calculate the estimated total cost of your violations—fines, this course, insurance increases, alternative transportation, any lost income. Was the "benefit" of any violation worth this cost?</p>
-          </div>
-
-          <h3>Module Summary</h3>
-          
-          <ul>
-            <li>Florida's point system tracks moving violations; 12, 18, or 24 points trigger suspensions</li>
-            <li>Points stay on your record 3-5 years</li>
-            <li>DUI and other serious violations can cause long suspension/revocation without points</li>
-            <li>Habitual Traffic Offender status means 5-year revocation</li>
-            <li>Insurance costs can increase 15-150%+ depending on violations</li>
-            <li>FR-44 insurance after serious violations costs $2,000-$8,000+ annually</li>
-            <li>Reinstatement requires completing suspension, education, fees, and insurance proof</li>
-            <li>Total cost of violations often exceeds $20,000-$30,000 over 5 years</li>
-          </ul>
-
-          <div class="alert alert-success">
-            <h4>✅ Module 7 Complete</h4>
-            <p>You've completed the Traffic Violation Consequences module. The final module covers your certification and final assessment.</p>
-          </div>
+          <h3>Section 7.2 \u2014 State vs. Trait</h3>
+          <p>Personality <em>traits</em> are baseline tendencies. But <em>states</em> \u2014 stress, fatigue, intoxication, hunger, or extreme emotion \u2014 can temporarily amplify trait tendencies. A driver who is moderately impulsive becomes significantly more impulsive when stressed. This is why driving when emotionally distressed is particularly dangerous for certain personality types.</p>
+          <h3>Section 7.3 \u2014 Sleep Deprivation and Personality</h3>
+          <p>Sleep deprivation specifically degrades emotional regulation and impulse control \u2014 the exact capacities most needed to override dangerous driving habits. After 20 hours awake, the average person's driving impairment is equivalent to a BAC of 0.08. After 24 hours, it reaches 0.10.</p>
+          <p>The tired version of yourself is more irritable, less patient, more sensation-seeking, and less conscientious. It is genuinely a different driver. Plan accordingly.</p>
         `,
         quizQuestions: [
           {
-            questionText: 'How many points does running a red light add to your Florida driving record?',
-            options: ['3 points', '4 points', '5 points', '6 points'],
-            correctAnswer: '4 points',
-            explanation: 'Running a red light adds 4 points to your Florida driving record.'
-          },
-          {
-            questionText: 'What triggers a 1-year license suspension under the point system?',
-            options: ['12 points in 12 months', '18 points in 18 months', '24 points in 36 months', '30 points in 48 months'],
-            correctAnswer: '24 points in 36 months',
-            explanation: 'Accumulating 24 points within 36 months results in a 1-year license suspension.'
-          },
-          {
-            questionText: 'How long must FR-44 insurance typically be maintained?',
-            options: ['1 year', '2 years', '3 years', '5 years'],
-            correctAnswer: '3 years',
-            explanation: 'FR-44 insurance must be maintained for 3 years after the qualifying violation.'
-          },
-          {
-            questionText: 'What is the penalty for a third offense of driving while license suspended (within 5 years)?',
-            options: ['30 days jail', 'Misdemeanor, up to 1 year jail', 'Felony, up to 5 years prison', '$500 fine only'],
-            correctAnswer: 'Felony, up to 5 years prison',
-            explanation: 'A third offense of driving while suspended within 5 years is a felony, punishable by up to 5 years in prison.'
+            questionText: 'Driving after 20 hours without sleep produces impairment equivalent to a BAC of approximately:',
+            options: ['0.02', '0.05', '0.08', '0.15'],
+            correctAnswer: '0.08',
+            explanation: 'Research shows that 20 hours of wakefulness produces driving impairment equivalent to a BAC of 0.08 \u2014 exactly Florida\'s per se DUI threshold.'
           }
         ]
       },
 
       // =========================================
-      // MODULE 8: Final Assessment & Certification
-      // Estimated Reading Time: 35-40 minutes
+      // MODULE 8: The Change System
+      // Estimated Time: 70 minutes
       // =========================================
       {
-        title: 'Module 8: Final Assessment & Certification',
-        description: 'Course review, final examination, and course completion certification',
-        estimatedMinutes: 40,
+        title: 'Module 8: The Change System',
+        description: 'A six-step behavioral change framework applied to driving, replacement routines for the four highest-risk behaviors, and implementation intentions',
+        estimatedMinutes: 70,
         content: `
-          <h2>Final Assessment & Certification</h2>
-          
-          <p>Congratulations on reaching the final module of the 12-Hour Advanced Driver Improvement Course. You've covered a tremendous amount of material over the past twelve hours, and you're nearly ready to complete your course certification.</p>
-
-          <p>This module provides a comprehensive review of all course content and prepares you for the final examination.</p>
-
-          <h3>Comprehensive Course Review</h3>
-
-          <h4>Module 1: Introduction to Driver Improvement</h4>
-          <ul>
-            <li>Florida has over 400,000 crashes and 3,500+ fatalities annually</li>
-            <li>Approximately 85% of crashes are caused by driver behavior</li>
-            <li>Point accumulation: 12 points/12 months (30-day), 18 points/18 months (90-day), 24 points/36 months (1-year)</li>
-            <li>Habitual Traffic Offender status results in 5-year revocation</li>
-            <li>Driving on suspended license can be a felony (third offense)</li>
-          </ul>
-
-          <h4>Module 2: Florida Traffic Laws & Regulations</h4>
-          <ul>
-            <li>Speed limits: Residential (30), School zone (20), Rural interstate (70)</li>
-            <li>Right-of-way: Pedestrians at crosswalks, vehicle on right at uncontrolled intersections</li>
-            <li>Traffic signals: Red (stop), Yellow (prepare to stop), Green (proceed if clear)</li>
-            <li>Sign shapes: Octagon (stop), Triangle (yield), Diamond (warning)</li>
-            <li>Lane markings: Yellow separates opposite traffic, White separates same direction</li>
-            <li>Florida requires PIP ($10,000) and PDL ($10,000) minimum insurance</li>
-          </ul>
-
-          <h4>Module 3: Defensive Driving Techniques</h4>
-          <ul>
-            <li>Five principles: Stay alert, maintain following distance, anticipate others, adapt to conditions, have escape route</li>
-            <li>SIPDE method: Scan, Identify, Predict, Decide, Execute</li>
-            <li>Following distance: 3 seconds minimum, 6-8 seconds in adverse conditions</li>
-            <li>Scan 10-15 seconds ahead, check mirrors every 5-8 seconds</li>
-            <li>Doubling speed quadruples stopping distance</li>
-          </ul>
-
-          <h4>Module 4: Hazard Recognition & Avoidance</h4>
-          <ul>
-            <li>Hazard types: Static (fixed), Dynamic (moving), Environmental (conditions)</li>
-            <li>SEE strategy: Search, Evaluate, Execute</li>
-            <li>Construction zones: Fines doubled, workers present</li>
-            <li>Animal hazards: Deer most active at dawn/dusk, alligators near water</li>
-            <li>Parking lots: Drive 5-10 mph, watch for pedestrians and backing vehicles</li>
-          </ul>
-
-          <h4>Module 5: Effects of Impairment on Driving</h4>
-          <ul>
-            <li>Florida BAC limits: 0.08% (21+), 0.02% (under 21), 0.04% (commercial)</li>
-            <li>Only time reduces BAC (approximately 0.015% per hour)</li>
-            <li>24 hours awake ≈ 0.10% BAC impairment</li>
-            <li>Prescription medications can cause DUI charges if they impair driving</li>
-            <li>DUI penalties increase dramatically with each offense</li>
-            <li>Fourth DUI = permanent license revocation</li>
-          </ul>
-
-          <h4>Module 6: Crash Prevention Strategies</h4>
-          <ul>
-            <li>94% of crashes involve human error</li>
-            <li>Space management is key: 3+ seconds following distance</li>
-            <li>ABS braking: Press firmly and steer, don't pump</li>
-            <li>Tire blowout: Grip wheel, ease off accelerator, steer straight</li>
-            <li>Skid recovery: Turn into the skid, ease off accelerator</li>
-            <li>Modern safety systems assist but don't replace driver judgment</li>
-          </ul>
-
-          <h4>Module 7: Traffic Violation Consequences</h4>
-          <ul>
-            <li>Points: 3 points (minor speeding), 4 points (major violations), 6 points (leaving scene)</li>
-            <li>Insurance increases: 15-150%+ depending on violations</li>
-            <li>FR-44 insurance: Required after serious violations, 3 years, $2,000-$8,000+/year</li>
-            <li>Reinstatement: Complete suspension, education, fees, insurance proof</li>
-            <li>Total violation costs can exceed $20,000-$30,000 over 5 years</li>
-          </ul>
-
-          <h3>Key Commitments for Safe Driving</h3>
-          
-          <p>As you complete this course and work toward reinstating your driving privileges, commit to these principles:</p>
-
-          <div class="pledge-box">
-            <h4>🎯 Safe Driving Commitments</h4>
-            <ol>
-              <li><strong>I will never drive impaired</strong>—by alcohol, drugs, fatigue, or strong emotions</li>
-              <li><strong>I will maintain safe following distance</strong>—at least 3 seconds, more in adverse conditions</li>
-              <li><strong>I will obey speed limits</strong>—and adjust for conditions that require even slower speeds</li>
-              <li><strong>I will eliminate distractions</strong>—phone put away, full attention on driving</li>
-              <li><strong>I will scan continuously</strong>—10-15 seconds ahead, mirrors every 5-8 seconds</li>
-              <li><strong>I will anticipate hazards</strong>—expecting others to make mistakes</li>
-              <li><strong>I will yield right-of-way</strong>—even when I technically have it, if it's safer</li>
-              <li><strong>I will always wear my seat belt</strong>—and ensure all passengers do too</li>
-              <li><strong>I will take responsibility</strong>—for my driving decisions and their consequences</li>
-              <li><strong>I will be patient</strong>—no destination is worth risking lives to reach quickly</li>
-            </ol>
-          </div>
-
-          <h3>Your Path Forward</h3>
-          
-          <p>Completing this course is a significant step, but it's just the beginning of your journey back to being a licensed driver. Here's what comes next:</p>
-
-          <h4>Immediate Steps</h4>
+          <h2>Module 8: The Change System</h2>
+          <h3>Section 8.1 \u2014 Why Good Intentions Aren't Enough</h3>
+          <p>Research consistently shows that the gap between intention and behavior is large, especially for habitual behaviors under cognitive load (like driving). "I'll drive better" is not a plan. A plan specifies what, when, and how.</p>
+          <h3>Section 8.2 \u2014 The Six-Step Change Framework</h3>
           <ol>
-            <li><strong>Pass the final examination</strong> with at least 80% to complete the course</li>
-            <li><strong>Print or save your certificate</strong> of completion</li>
-            <li><strong>Gather required documents</strong> for reinstatement</li>
-            <li><strong>Visit your local DHSMV office</strong> to complete reinstatement</li>
+            <li>
+              <strong>IDENTIFY the behavior to change</strong>
+              <p>Be specific: not "I'll drive more safely" but "I will not use my phone while the vehicle is in motion."</p>
+            </li>
+            <li>
+              <strong>MAP the habit loop</strong>
+              <p>What is the cue? What is the routine? What is the reward? You cannot change what you have not mapped.</p>
+            </li>
+            <li>
+              <strong>UNDERSTAND the root</strong>
+              <p>Why do you engage in this behavior? What are the underlying needs (time saving, stimulation, anxiety reduction, social connection)?</p>
+            </li>
+            <li>
+              <strong>CHOOSE a replacement routine</strong>
+              <p>Select a new behavior that responds to the same cue and delivers a similar reward, but without the risk.</p>
+            </li>
+            <li>
+              <strong>PRE-COMMIT</strong>
+              <p>Decide in advance how you will respond to the cue. This is called an <strong>implementation intention</strong> (Gollwitzer, 1999). Format: "When [cue], I will [new routine] in order to [reward/value]."</p>
+            </li>
+            <li>
+              <strong>PRACTICE until automatic</strong>
+              <p>Expect 60\u201390 days of consistent effort. Track performance. Review and adjust.</p>
+            </li>
           </ol>
-
-          <h4>Before You Drive Again</h4>
+          <h3>Section 8.3 \u2014 Replacement Routines for the Four Highest-Risk Behaviors</h3>
+          <h4>1. Speeding</h4>
           <ul>
-            <li>Ensure your vehicle is properly maintained</li>
-            <li>Verify your insurance is active and adequate</li>
-            <li>Review any restrictions on your reinstated license</li>
-            <li>Plan your first few drives—start in familiar, lower-stress areas</li>
+            <li>CUE: Open road, highway, familiar route</li>
+            <li>REPLACEMENT: Cruise control at 5 mph over or at the limit; leave 10 minutes early to remove time pressure</li>
+            <li>REWARD: No ticket risk; lower insurance; fuel efficiency; relaxed driving</li>
           </ul>
-
-          <h4>Long-Term Success</h4>
+          <h4>2. Phone Use</h4>
           <ul>
-            <li>Apply the defensive driving techniques from this course consistently</li>
-            <li>Monitor your driving record—you can check at Florida DHSMV</li>
-            <li>Consider voluntary refresher courses periodically</li>
-            <li>If you feel old habits returning, pause and recommit</li>
+            <li>CUE: Notification sound, red light, boredom</li>
+            <li>REPLACEMENT: Phone in glove box or back seat; Do Not Disturb While Driving activated; audio response only via Bluetooth</li>
+            <li>REWARD: Reduced anxiety; safe arrival; positive self-identity</li>
           </ul>
-
-          <h3>Final Examination Information</h3>
-          
-          <div class="alert alert-info">
-            <h4>📝 Exam Details</h4>
-            <ul>
-              <li><strong>Number of questions:</strong> 40 questions covering all modules</li>
-              <li><strong>Question types:</strong> Multiple choice and true/false</li>
-              <li><strong>Passing score:</strong> 80% (32 out of 40 correct)</li>
-              <li><strong>Time limit:</strong> No time limit—take your time</li>
-              <li><strong>Retakes:</strong> If you don't pass, you may review material and retake</li>
-            </ul>
-          </div>
-
-          <h3>Tips for Success</h3>
-          
+          <h4>3. Tailgating</h4>
           <ul>
-            <li><strong>Read each question carefully</strong>—make sure you understand what's being asked</li>
-            <li><strong>Watch for keywords</strong>—"always," "never," "must," "should"</li>
-            <li><strong>Eliminate obviously wrong answers</strong> first</li>
-            <li><strong>Trust your preparation</strong>—you've covered all the material</li>
-            <li><strong>Don't rush</strong>—there's no time pressure</li>
+            <li>CUE: Running late, slow driver ahead, congested traffic</li>
+            <li>REPLACEMENT: 3-second following distance; move right if possible; use navigation app for routing instead of time-pressure driving</li>
+            <li>REWARD: Less stress; reaction time buffer; no liability in rear-end crash</li>
           </ul>
-
-          <div class="reflection-question">
-            <h4>🤔 Final Reflection</h4>
-            <p>Before taking the exam, reflect on what you've learned. What was the most important insight you gained from this course? How will it change your driving behavior going forward?</p>
-          </div>
-
-          <div class="alert alert-success">
-            <h4>✅ Course Content Complete</h4>
-            <p>You have completed all eight modules of the 12-Hour Advanced Driver Improvement Course. When you're ready, proceed to the Final Examination to complete your certification.</p>
-            <p><strong>Good luck!</strong></p>
-          </div>
+          <h4>4. Road Rage</h4>
+          <ul>
+            <li>CUE: Another driver's perceived rudeness or incompetence</li>
+            <li>REPLACEMENT: Physical removal (10-second rule: hands at 9 and 3, no reaction for 10 seconds); cognitive reframe ("They may be having a crisis; this is not about me")</li>
+            <li>REWARD: Emotional equilibrium; no escalation risk; identity as a mature driver</li>
+          </ul>
+          <h3>Section 8.4 \u2014 Implementation Intentions</h3>
+          <p>Research by Peter Gollwitzer (New York University) shows that people who specify exactly when, where, and how they will perform a new behavior are 2\u20133 times more likely to actually do it than those who simply intend to change.</p>
+          <p>The format: <strong>"When [cue], I will [specific action], because [personal value]."</strong></p>
+          <p>Example: "When I hear my phone notification while driving, I will tap the screen to dismiss it without looking, because my family is more important than any message."</p>
         `,
         quizQuestions: [
           {
-            questionText: 'What is the minimum passing score for the 12-hour ADI course final exam?',
-            options: ['70%', '75%', '80%', '85%'],
-            correctAnswer: '80%',
-            explanation: 'You must score at least 80% on the final examination to pass the course.'
-          },
+            questionText: 'An implementation intention in the context of behavior change means:',
+            options: [
+              'Planning to change behavior in the future when convenient',
+              'A specific if-then plan: when [cue occurs], I will [specific new routine]',
+              'Intending to implement a court order',
+              'Setting a reminder to check your driving behavior'
+            ],
+            correctAnswer: 'A specific if-then plan: when [cue occurs], I will [specific new routine]',
+            explanation: 'Gollwitzer\'s research found that specifying the exact cue and planned response \u2014 an implementation intention \u2014 dramatically increases follow-through on behavior change intentions.'
+          }
+        ]
+      },
+
+      // =========================================
+      // MODULE 9: Application — Simulated Situations
+      // Estimated Time: 70 minutes
+      // =========================================
+      {
+        title: 'Module 9: Application \u2014 Simulated Situations',
+        description: 'Five high-risk driving scenarios with reflection prompts and decision-analysis, applying the behavioral change tools from earlier modules',
+        estimatedMinutes: 70,
+        content: `
+          <h2>Module 9: Application \u2014 Simulated Situations</h2>
+          <p>The following five scenarios are drawn from common high-risk driving situations in Florida. For each, read carefully and consider what you would do \u2014 and why.</p>
+
+          <h3>Scenario 1: Running Late</h3>
+          <p>It's Monday morning. You are already 10 minutes late for work. Traffic is frustrating. You are behind a driver going exactly the speed limit in the left lane. In your frustration, you consider tailgating to pressure them or passing illegally on the right.</p>
+          <div class="reflection-prompt">
+            <h4>Reflection</h4>
+            <p>What is the cue in this scenario? What habit loop is being activated? If you tailgate or pass illegally, what is the actual time you will save? What is the risk you are accepting? What implementation intention could you have prepared for this exact scenario?</p>
+          </div>
+          <p><strong>Analysis:</strong> The cue is time pressure. The routine is aggressive driving. The "reward" is the feeling of doing something about the pressure. But the actual time saved is typically under 60 seconds on most urban drives. The risk: rear-end crash (4-point violation, 6-point if crash caused, civil liability), traffic stop (more tardiness), loss of control. The implementation intention: "When I am running late, I call ahead before I start the car and leave 15 minutes earlier the next time."</p>
+
+          <h3>Scenario 2: Pedestrian at an Unmarked Crosswalk</h3>
+          <p>You're making a right turn at an intersection without a pedestrian signal. A pedestrian is standing at the corner and appears to be waiting to cross. Traffic behind you is backing up. You are in a hurry.</p>
+          <div class="reflection-prompt">
+            <h4>Reflection</h4>
+            <p>What does Florida law require? What human factors make this situation risky? What would the consequences be if the pedestrian stepped out as you turned?</p>
+          </div>
+          <p><strong>Analysis:</strong> Every intersection in Florida has a legal crosswalk, marked or not (Florida Statute 316.003). You are legally required to yield to pedestrians. The back-up behind you creates no legal exception. A crash with a pedestrian you had the opportunity to see is criminally and civilly actionable. The identity-based response: "I am a driver who yields to pedestrians. It will cost me 15 seconds."</p>
+
+          <h3>Scenario 3: Phone Notification During Driving</h3>
+          <p>You are driving on I-95. Traffic is steady at 65 mph. You feel your phone vibrate in your pocket. You're 30 miles from home. You reach for it "just to see who it is."</p>
+          <div class="reflection-prompt">
+            <h4>Reflection</h4>
+            <p>What is the real risk in this moment? What is the actual probability that the message requires immediate response? What has your implementation intention been for this exact scenario?</p>
+          </div>
+          <p><strong>Analysis:</strong> At 65 mph, a 3-second glance = 286 feet driven without attention. The probability that any notification requires a response while traveling at highway speed is near zero. The implementation intention: "Phone is in the glove box on Do Not Disturb for the duration of every drive."</p>
+
+          <h3>Scenario 4: Aggressive Driver</h3>
+          <p>A driver tailgates you closely for two miles, honks repeatedly, and flashes high beams. When you reach a red light, he rolls down his window and begins shouting at you.</p>
+          <div class="reflection-prompt">
+            <h4>Reflection</h4>
+            <p>What are your options? What happens physiologically when someone provokes your anger in a vehicle? What does research say about road rage escalation? What is the safest sequence of actions?</p>
+          </div>
+          <p><strong>Analysis:</strong> Do NOT engage. Road rage escalation involving firearms has increased in Florida year over year. Engaging \u2014 even with words \u2014 signals to an unstable individual that you are a participant in a conflict. Correct response: windows up, doors locked, no eye contact, drive to a well-populated area or police station. Call 911 from a safe location. Never go to your home or workplace.</p>
+
+          <h3>Scenario 5: Fatigue on a Long Drive</h3>
+          <p>You are returning home from a 4-hour trip. You are 45 minutes from home. You are tired. You have been yawning for 20 minutes. You tell yourself you can push through.</p>
+          <div class="reflection-prompt">
+            <h4>Reflection</h4>
+            <p>What is a microsleep? How does your real crash risk compare to how you feel right now? What are your options, and which one is safest?</p>
+          </div>
+          <p><strong>Analysis:</strong> Fatigue-related crashes spike in the afternoon (2\u20134pm) and late night (midnight\u20136am). Research shows that drivers are notoriously poor at self-assessing fatigue-related impairment. Options: pull off at the next exit and take a 20-minute nap (most effective), call someone to stay awake (less effective), consume caffeine (buys 1\u20132 hours only). The option "push through" has no scientific support and is the option that leads to fatal single-vehicle runoff crashes.</p>
+        `,
+        quizQuestions: [
           {
-            questionText: 'After completing this course, what is your next step toward reinstatement?',
-            options: ['Wait 30 days', 'Take a road test', 'Visit DHSMV with required documents', 'Automatically reinstated'],
-            correctAnswer: 'Visit DHSMV with required documents',
-            explanation: 'After completing the course, you must visit your local DHSMV office with required documents to complete reinstatement.'
-          },
+            questionText: 'When an aggressive driver in another vehicle starts shouting at you at a red light, the correct response is:',
+            options: [
+              'Explain calmly that you did nothing wrong',
+              'Roll down your window and apologize to de-escalate',
+              'Make no eye contact, keep windows up, and drive to a safe public location',
+              'Confront them to establish that you will not be intimidated'
+            ],
+            correctAnswer: 'Make no eye contact, keep windows up, and drive to a safe public location',
+            explanation: 'Any engagement signals participation in a conflict. The safe response is to disengage completely, drive to a public location, and call 911 if threatened. Never go to your home or workplace.'
+          }
+        ]
+      },
+
+      // =========================================
+      // MODULE 10: Vulnerable Road Users
+      // Estimated Time: 60 minutes
+      // =========================================
+      {
+        title: 'Module 10: Vulnerable Road Users',
+        description: 'Advanced treatment of VRU vulnerability, Florida fatality statistics, applicable laws, infrastructure, and the special responsibility of ADI drivers',
+        estimatedMinutes: 60,
+        content: `
+          <h2>Module 10: Vulnerable Road Users</h2>
+          <h3>Section 10.1 \u2014 Definition and Categories</h3>
+          <p>A <strong>Vulnerable Road User (VRU)</strong> is any road user without the structural protection of an enclosed motor vehicle. VRUs include pedestrians, cyclists, motorcyclists, users of personal mobility devices, construction workers, and emergency responders.</p>
+          <p>Especially vulnerable sub-groups:</p>
+          <ul>
+            <li><strong>Children:</strong> Impulsive, smaller, less visible, poor traffic judgment</li>
+            <li><strong>Elderly:</strong> Slower gait, reduced vision and hearing, longer crossing times</li>
+            <li><strong>People with disabilities:</strong> May have reduced visibility, mobility, or awareness of traffic</li>
+          </ul>
+          <h3>Section 10.2 \u2014 Florida VRU Statistics</h3>
+          <ul>
+            <li><strong>Pedestrian fatalities:</strong> 838 in 2023; Florida ranked 3rd nationally; pedestrians = 21% of all FL traffic fatalities</li>
+            <li><strong>Cyclist fatalities:</strong> 176 in 2023; Florida ranked <strong>#1 per capita nationally</strong></li>
+            <li><strong>Motorcyclist fatalities:</strong> 601 in 2023; motorcyclists = 15% of all FL traffic fatalities; 49% occurred in multi-vehicle crashes</li>
+            <li>76% of Florida pedestrian fatalities occur at night</li>
+            <li>NHTSA 2023: 7,522 pedestrian deaths nationally \u2014 highest since 1981</li>
+          </ul>
+          <h3>Section 10.3 \u2014 Florida Laws Protecting VRUs</h3>
+          <h4>Pedestrians (Florida Statute 316.130)</h4>
+          <ul>
+            <li>Yield to pedestrians in ALL crosswalks (marked and unmarked)</li>
+            <li>A crosswalk exists at every intersection by law, whether painted or not</li>
+            <li>Never drive into a crosswalk area even when the crosswalk is not visible</li>
+          </ul>
+          <h4>Cyclists (Florida Statute 316.2065)</h4>
+          <ul>
+            <li>Cyclists have full vehicle rights on all public roads except limited-access highways</li>
+            <li>Minimum <strong>3-foot clearance</strong> required when passing</li>
+            <li>To pass safely at speed, move to the adjacent lane when possible</li>
+          </ul>
+          <h4>Move Over Law (Florida Statute 316.126)</h4>
+          <ul>
+            <li>Move to the next lane for stationary emergency vehicles AND disabled vehicles with hazard lights (2023 expansion)</li>
+            <li>If unable to move over: reduce speed to 20 mph below the posted limit</li>
+          </ul>
+          <h4>School Bus Law (Florida Statute 316.172)</h4>
+          <ul>
+            <li>All traffic both directions must stop for a school bus with extended stop arm and flashing red lights</li>
+            <li>Exception: physically divided highway with raised median (not a painted line)</li>
+            <li>Violation: 4-point moving violation</li>
+          </ul>
+          <h3>Section 10.4 \u2014 Infrastructure and Safety Features</h3>
+          <ul>
+            <li><strong>Sidewalks:</strong> Single most effective pedestrian safety measure</li>
+            <li><strong>Crosswalk markings:</strong> Reduce pedestrian crash risk up to 50%</li>
+            <li><strong>Bike lanes:</strong> Reduce cyclist injury rates 30\u201340%</li>
+            <li><strong>Bike boxes:</strong> Area at intersection front \u2014 stop BEHIND bike box; never enter it with a motor vehicle</li>
+            <li><strong>Roundabouts:</strong> Reduce fatal crashes 82\u201387% vs. signalized intersections (FHWA)</li>
+            <li><strong>Speed humps:</strong> Reduce pedestrian crashes near schools by 60%</li>
+          </ul>
+          <h3>Section 10.5 \u2014 Driver Responsibility \u2014 The Extra Standard for ADI Graduates</h3>
+          <p>You are completing a course required after license suspension. The state of Florida is reinvesting in your ability to drive. With that comes a heightened responsibility \u2014 not just to comply with laws, but to set a standard for VRU protection that goes beyond the legal minimum.</p>
+          <ul>
+            <li>Yield to pedestrians even when there is no traffic signal and no legal obligation</li>
+            <li>Treat every cyclist as if they were a family member on that bike</li>
+            <li>Slow down proactively in areas where children, elderly, or disabled pedestrians may be present</li>
+            <li>Apply the Dutch Reach when opening your door in areas where cyclists may be present</li>
+          </ul>
+        `,
+        quizQuestions: [
           {
-            questionText: 'True or False: Completing this course guarantees automatic license reinstatement.',
-            questionType: 'true_false',
-            options: ['True', 'False'],
-            correctAnswer: 'False',
-            explanation: 'Course completion is one requirement. You must also serve your suspension period, pay fees, and meet all other requirements.'
-          },
+            questionText: 'Florida Statute 316.2065 requires drivers to give cyclists how much clearance when passing?',
+            options: ['1 foot', '2 feet', '3 feet', '5 feet'],
+            correctAnswer: '3 feet',
+            explanation: 'Florida law requires a minimum 3-foot clearance when passing a cyclist. The safest practice is to move to the adjacent lane entirely when possible.'
+          }
+        ]
+      },
+
+      // =========================================
+      // MODULE 11: Your Commitment
+      // Estimated Time: 30 minutes
+      // =========================================
+      {
+        title: 'Module 11: Your Commitment',
+        description: 'Final commitment statement, integration of course content, and a personal declaration of identity-based change',
+        estimatedMinutes: 30,
+        content: `
+          <h2>Module 11: Your Commitment</h2>
+          <h3>The End of the Course — The Beginning of the Change</h3>
+          <p>You have spent 12 hours examining the driving problem, your own history, the neurological basis of habits, the psychology of self-deception, the science of motivation, how your emotions and personality interact with risk, a six-step change system, simulated high-risk scenarios, and the lives of vulnerable people who share the road with you.</p>
+          <p>This is not the end of the course. It is the beginning of the change.</p>
+          <h3>What a Commitment Means Here</h3>
+          <p>A commitment is different from an intention. An intention is abstract ("I'll drive better"). A commitment is specific, personal, and binding. It specifies the behaviors you will change, the reasons that matter to you, and the plan you will execute.</p>
+          <h3>Your Commitment Statement</h3>
+          <p>Before completing this course, you will write (in the text area below) a commitment statement of at least 150 words that addresses:</p>
+          <ol>
+            <li>The specific driving behaviors that led you to this course</li>
+            <li>At least one replacement behavior for your highest-risk pattern, using the habit loop framework</li>
+            <li>Your intrinsic motivation (the personal values that make safe driving important to you)</li>
+            <li>At least three implementation intentions in the format: "When [cue], I will [action], because [value]"</li>
+            <li>An identity statement: "I am a driver who..."</li>
+          </ol>
+          <div class="commitment-prompt">
+            <p><em>This commitment is not reviewed by the state or any authority. It is for you. The value of writing it comes from the act of specificity and commitment \u2014 the psychological recognition that you have made a decision, not just expressed a wish.</em></p>
+          </div>
+          <h3>A Final Note</h3>
+          <p>Every driver on Florida's roads has people who depend on them: families, employers, neighbors, strangers whose lives would be permanently altered by a crash that was within your power to prevent.</p>
+          <p>The license you are reinstating is not just a legal privilege. It is trust. It is the state of Florida trusting you with a machine capable of killing. Repay that trust with the best driving of your life.</p>
+          <p><strong>Drive well. Drive safely. Drive as if someone you love is walking on that road ahead.</strong></p>
+        `,
+        quizQuestions: [
           {
-            questionText: 'What is the recommended minimum following distance under normal conditions?',
-            options: ['2 seconds', '3 seconds', '4 seconds', '5 seconds'],
-            correctAnswer: '3 seconds',
-            explanation: 'Maintain at least 3 seconds following distance under normal, dry conditions.'
+            questionText: 'What is the difference between a driving intention and a driving commitment?',
+            options: [
+              'There is no difference; they mean the same thing',
+              'A commitment is legally enforceable; an intention is not',
+              'A commitment is specific, personal and tied to values; an intention is vague and abstract',
+              'Intentions come before commitments and are more powerful'
+            ],
+            correctAnswer: 'A commitment is specific, personal and tied to values; an intention is vague and abstract',
+            explanation: 'The research on behavior change distinguishes abstract intentions ("I\'ll do better") from specific, value-linked commitments. The latter are significantly more predictive of actual behavior change.'
           }
         ]
       }
-    ],
-    finalExamQuestions: [
-      // Module 1 Questions (5 questions)
-      {
-        questionText: 'What percentage of crashes are caused by driver behavior?',
-        options: ['About 50%', 'About 65%', 'About 75%', 'About 85%'],
-        correctAnswer: 'About 85%',
-        explanation: 'Approximately 85% of all crashes are caused by driver behavior, not vehicle failure or road conditions.'
-      },
-      {
-        questionText: 'What is the license suspension period for accumulating 18 points within 18 months?',
-        options: ['30 days', '90 days', '6 months', '1 year'],
-        correctAnswer: '90 days',
-        explanation: 'Accumulating 18 points within 18 months results in a 90-day (3-month) license suspension.'
-      },
-      {
-        questionText: 'How many major offenses within 5 years can result in Habitual Traffic Offender status?',
-        options: ['2 offenses', '3 offenses', '5 offenses', '10 offenses'],
-        correctAnswer: '3 offenses',
-        explanation: 'Three or more major offenses within 5 years can result in HTO designation and a 5-year license revocation.'
-      },
-      {
-        questionText: 'What is the maximum penalty for a third offense of driving on a suspended license within 5 years?',
-        options: ['30 days jail', '6 months jail', '1 year jail', 'Up to 5 years prison'],
-        correctAnswer: 'Up to 5 years prison',
-        explanation: 'A third offense of driving on a suspended license within 5 years is a felony, punishable by up to 5 years in prison.'
-      },
-      {
-        questionText: 'True or False: You can drive while awaiting reinstatement if you have proof of course completion.',
-        questionType: 'true_false',
-        options: ['True', 'False'],
-        correctAnswer: 'False',
-        explanation: 'You must not drive until your license is fully reinstated. Course completion is only one step in the process.'
-      },
 
-      // Module 2 Questions (5 questions)
-      {
-        questionText: 'What is the speed limit in Florida school zones when children are present?',
-        options: ['15 mph', '20 mph', '25 mph', '30 mph'],
-        correctAnswer: '20 mph',
-        explanation: 'School zones have a 20 mph speed limit during posted hours or when children are present.'
-      },
-      {
-        questionText: 'What does a flashing red traffic signal mean?',
-        options: ['Proceed with caution', 'Yield to cross traffic', 'Stop, then proceed when safe', 'Signal is malfunctioning'],
-        correctAnswer: 'Stop, then proceed when safe',
-        explanation: 'A flashing red signal should be treated like a stop sign—come to a complete stop, then proceed when safe.'
-      },
-      {
-        questionText: 'Double solid yellow lines indicate:',
-        options: ['Passing permitted with caution', 'No passing from either direction', 'Passing permitted from the right lane', 'HOV lane'],
-        correctAnswer: 'No passing from either direction',
-        explanation: 'Double solid yellow lines prohibit passing from both directions.'
-      },
-      {
-        questionText: 'What minimum insurance coverage does Florida require for Property Damage Liability?',
-        options: ['$5,000', '$10,000', '$25,000', '$50,000'],
-        correctAnswer: '$10,000',
-        explanation: 'Florida requires minimum Property Damage Liability coverage of $10,000.'
-      },
-      {
-        questionText: 'True or False: You can be cited for driving "too fast for conditions" even if below the speed limit.',
-        questionType: 'true_false',
-        options: ['True', 'False'],
-        correctAnswer: 'True',
-        explanation: 'Speed limits assume ideal conditions. You can be cited if your speed is unsafe for current conditions.'
-      },
-
-      // Module 3 Questions (5 questions)
-      {
-        questionText: 'What does SIPDE stand for in defensive driving?',
-        options: ['Stop, Identify, Proceed, Drive, Exit', 'Scan, Identify, Predict, Decide, Execute', 'Speed, Indicate, Pass, Drive, Exit', 'Steer, Identify, Park, Drive, Engage'],
-        correctAnswer: 'Scan, Identify, Predict, Decide, Execute',
-        explanation: 'SIPDE stands for Scan, Identify, Predict, Decide, Execute—a systematic approach to defensive driving.'
-      },
-      {
-        questionText: 'Under heavy rain conditions, what is the recommended following distance?',
-        options: ['2-3 seconds', '3-4 seconds', '4-5 seconds', '6-8 seconds'],
-        correctAnswer: '6-8 seconds',
-        explanation: 'In heavy rain, fog, or snow, increase your following distance to 6-8 seconds.'
-      },
-      {
-        questionText: 'How often should you check your mirrors while driving?',
-        options: ['Every 30 seconds', 'Every 15-20 seconds', 'Every 5-8 seconds', 'Only when changing lanes'],
-        correctAnswer: 'Every 5-8 seconds',
-        explanation: 'Check mirrors every 5-8 seconds to maintain awareness of traffic around you.'
-      },
-      {
-        questionText: 'What happens to stopping distance when you double your speed?',
-        options: ['It doubles', 'It triples', 'It quadruples', 'It increases slightly'],
-        correctAnswer: 'It quadruples',
-        explanation: 'Stopping distance increases with the square of speed—doubling speed quadruples stopping distance.'
-      },
-      {
-        questionText: 'How far ahead should you scan while driving?',
-        options: ['3-5 seconds', '5-8 seconds', '10-15 seconds', '20-30 seconds'],
-        correctAnswer: '10-15 seconds',
-        explanation: 'Scan 10-15 seconds ahead to identify hazards early and allow time to respond.'
-      },
-
-      // Module 4 Questions (5 questions)
-      {
-        questionText: 'Which of the following is an example of a dynamic hazard?',
-        options: ['A pothole', 'A pedestrian', 'A guardrail', 'A curve in the road'],
-        correctAnswer: 'A pedestrian',
-        explanation: 'Dynamic hazards move and can change behavior unpredictably, like pedestrians, cyclists, and other vehicles.'
-      },
-      {
-        questionText: 'In Florida, what happens to fines in construction zones?',
-        options: ['They remain the same', 'They are reduced', 'They are doubled', 'They are tripled'],
-        correctAnswer: 'They are doubled',
-        explanation: 'Fines for traffic violations in Florida construction zones are doubled to protect workers.'
-      },
-      {
-        questionText: 'What time of day are deer most active?',
-        options: ['Midday', 'Midnight', 'Dawn and dusk', 'Early morning only'],
-        correctAnswer: 'Dawn and dusk',
-        explanation: 'Deer are most active during dawn and dusk, which is also when visibility is reduced.'
-      },
-      {
-        questionText: 'What is the recommended speed in parking lots?',
-        options: ['5-10 mph', '15-20 mph', '20-25 mph', 'Posted speed limit'],
-        correctAnswer: '5-10 mph',
-        explanation: 'Drive 5-10 mph in parking lots where pedestrians, children, and backing vehicles create hazards.'
-      },
-      {
-        questionText: 'What does the SEE strategy stand for?',
-        options: ['Stop, Evaluate, Enter', 'Search, Evaluate, Execute', 'Scan, Enter, Exit', 'Speed, Environment, Execute'],
-        correctAnswer: 'Search, Evaluate, Execute',
-        explanation: 'SEE stands for Search (for hazards), Evaluate (threat level), Execute (appropriate response).'
-      },
-
-      // Module 5 Questions (5 questions)
-      {
-        questionText: 'Being awake for 24 hours impairs you similarly to what BAC level?',
-        options: ['0.02%', '0.05%', '0.08%', '0.10%'],
-        correctAnswer: '0.10%',
-        explanation: 'Being awake for 24 hours impairs your driving similarly to a 0.10% BAC—above the legal limit.'
-      },
-      {
-        questionText: "What is Florida's BAC limit for drivers under 21?",
-        options: ['0.08%', '0.04%', '0.02%', '0.00%'],
-        correctAnswer: '0.02%',
-        explanation: 'Florida has a "zero tolerance" policy—the limit is 0.02% BAC for drivers under 21.'
-      },
-      {
-        questionText: 'Which of these actually helps reduce BAC?',
-        options: ['Coffee', 'Cold shower', 'Exercise', 'Time'],
-        correctAnswer: 'Time',
-        explanation: 'Only time reduces BAC. The liver metabolizes alcohol at about 0.015% per hour.'
-      },
-      {
-        questionText: 'True or False: You cannot get a DUI for taking prescription medication.',
-        questionType: 'true_false',
-        options: ['True', 'False'],
-        correctAnswer: 'False',
-        explanation: 'You can be charged with DUI for driving while impaired by any substance, including legal prescriptions.'
-      },
-      {
-        questionText: 'What is the penalty for a first DUI offense in Florida?',
-        options: ['Warning only', 'Up to 6 months jail, $500-$1,000 fine', 'Up to 1 year jail, $5,000 fine', 'Automatic felony charge'],
-        correctAnswer: 'Up to 6 months jail, $500-$1,000 fine',
-        explanation: 'A first DUI offense in Florida can result in up to 6 months jail and $500-$1,000 in fines, plus license suspension.'
-      },
-
-      // Module 6 Questions (5 questions)
-      {
-        questionText: 'What percentage of crashes involve human error?',
-        options: ['About 50%', 'About 75%', 'About 85%', 'About 94%'],
-        correctAnswer: 'About 94%',
-        explanation: '94% of crashes involve human error as a contributing factor, making most crashes preventable.'
-      },
-      {
-        questionText: 'When following large trucks, what is the recommended following distance?',
-        options: ['2-3 seconds', '3-4 seconds', '4-5 seconds', '6-8 seconds'],
-        correctAnswer: '4-5 seconds',
-        explanation: 'When following large trucks, maintain 4-5 seconds to ensure you can see the road ahead around them.'
-      },
-      {
-        questionText: 'During a tire blowout, you should:',
-        options: ['Brake hard immediately', 'Grip the wheel firmly and ease off the accelerator', 'Turn the steering wheel sharply', 'Accelerate to regain control'],
-        correctAnswer: 'Grip the wheel firmly and ease off the accelerator',
-        explanation: 'During a blowout, grip the wheel firmly, ease off the accelerator gradually, and steer straight.'
-      },
-      {
-        questionText: 'True or False: With ABS, you should pump the brakes during emergency braking.',
-        questionType: 'true_false',
-        options: ['True', 'False'],
-        correctAnswer: 'False',
-        explanation: 'With ABS, press the brake firmly and hold it—do not pump. ABS does the pumping electronically.'
-      },
-      {
-        questionText: 'During a rear-wheel skid (oversteer), you should:',
-        options: ['Turn the wheel away from the skid', 'Turn the wheel into the skid', 'Brake hard', 'Accelerate'],
-        correctAnswer: 'Turn the wheel into the skid',
-        explanation: 'During a rear-wheel skid, turn the steering wheel in the direction of the skid to regain control.'
-      },
-
-      // Module 7 Questions (5 questions)
-      {
-        questionText: 'How many points does running a red light add to your Florida driving record?',
-        options: ['3 points', '4 points', '5 points', '6 points'],
-        correctAnswer: '4 points',
-        explanation: 'Running a red light adds 4 points to your Florida driving record.'
-      },
-      {
-        questionText: 'How long must FR-44 insurance typically be maintained?',
-        options: ['1 year', '2 years', '3 years', '5 years'],
-        correctAnswer: '3 years',
-        explanation: 'FR-44 insurance must be maintained for 3 years after the qualifying violation.'
-      },
-      {
-        questionText: 'What is the typical insurance rate increase for a first DUI?',
-        options: ['15-25%', '40-70%', '70-150%', 'No increase'],
-        correctAnswer: '70-150%',
-        explanation: 'A first DUI typically increases insurance rates by 70-150% or more.'
-      },
-      {
-        questionText: 'How long can points remain on your driving record?',
-        options: ['1-2 years', '3-5 years', '7-10 years', 'Permanently'],
-        correctAnswer: '3-5 years',
-        explanation: 'Points stay on your driving record for 3-5 years depending on the violation.'
-      },
-      {
-        questionText: 'True or False: A hardship license is available for all types of suspensions.',
-        questionType: 'true_false',
-        options: ['True', 'False'],
-        correctAnswer: 'False',
-        explanation: 'Hardship licenses are not available for all suspension types. For example, they are not available during the first 12 months of HTO revocation.'
-      },
-
-      // Module 8 Questions (5 questions)
-      {
-        questionText: 'What is the minimum passing score for the 12-hour ADI course final exam?',
-        options: ['70%', '75%', '80%', '85%'],
-        correctAnswer: '80%',
-        explanation: 'You must score at least 80% on the final examination to pass the course.'
-      },
-      {
-        questionText: 'After completing this course, what document must you obtain from DHSMV?',
-        options: ['A new driver\'s license', 'Certificate of completion', 'Proof of insurance', 'Reinstatement approval'],
-        correctAnswer: 'Reinstatement approval',
-        explanation: 'After completing required courses and meeting all conditions, you must visit DHSMV to complete the reinstatement process.'
-      },
-      {
-        questionText: 'Which of the following is NOT a requirement for license reinstatement?',
-        options: ['Pay reinstatement fees', 'Complete required education', 'Pass a driving test in all cases', 'Show proof of insurance'],
-        correctAnswer: 'Pass a driving test in all cases',
-        explanation: 'A driving test is required only in some cases of reinstatement, not all. Fees, education, and insurance are typically required.'
-      },
-      {
-        questionText: 'True or False: Completing this course automatically reinstates your driving privileges.',
-        questionType: 'true_false',
-        options: ['True', 'False'],
-        correctAnswer: 'False',
-        explanation: 'Course completion is one requirement. You must also serve your suspension, pay fees, and meet all other requirements.'
-      },
-      {
-        questionText: 'What is the most important factor in maintaining safe driving after reinstatement?',
-        options: ['Vehicle type', 'Consistent application of defensive driving principles', 'Driving only during daytime', 'Avoiding highways'],
-        correctAnswer: 'Consistent application of defensive driving principles',
-        explanation: 'Consistently applying defensive driving techniques is the key to long-term safe driving success.'
-      }
     ]
   }
 };

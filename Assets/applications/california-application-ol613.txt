@@ -1,0 +1,534 @@
+============================================================
+CALIFORNIA — TRAFFIC VIOLATOR SCHOOL (TVS) OWNER APPLICATION
+FORM OL 613 — PRE-FILLED FOR DMV SUBMISSION
+============================================================
+Regulatory Body:
+  California Department of Motor Vehicles
+  Occupational Licensing Section
+  Traffic Violator School Unit
+  P.O. Box 932342
+  Sacramento, CA 94232-3420
+
+Phone: (916) 229-3126
+Fax:   (916) 229-3145
+Web:   https://www.dmv.ca.gov/portal/occupational-licensing/
+
+Reference: California Vehicle Code §11200-11222
+           Title 13 CCR, Division 1, Chapter 1, Article 5
+
+============================================================
+NOTE: Download the official OL 613 form from DMV or request 
+by calling (916) 229-3126. The information below maps to 
+the OL 613 fields. Transfer this info to the official form.
+============================================================
+
+
+╔══════════════════════════════════════════════════════════╗
+║  FORM OL 613 — APPLICATION FOR TVS OWNER LICENSE        ║
+╚══════════════════════════════════════════════════════════╝
+
+--------------------------------------------------------------
+SECTION 1: TYPE OF APPLICATION
+--------------------------------------------------------------
+
+[X] Original Application — Traffic Violator School OWNER
+[ ] Renewal
+[ ] Change of Name
+[ ] Change of Address
+[ ] Change of Ownership
+[ ] Branch Office
+
+School Type:              [X] Online
+                          [ ] Classroom
+                          [ ] Home Study
+
+--------------------------------------------------------------
+SECTION 2: APPLICANT INFORMATION
+--------------------------------------------------------------
+
+Full Legal Name:
+  First:                  Jordan
+  Middle:                 [____]  <<<< FILL IN (or N/A)
+  Last:                   Lovelace
+  Suffix:                 [____]
+
+Date of Birth:            [____/____/____] <<<< FILL IN
+Place of Birth:           [____, ____]     <<<< City, State
+
+Social Security #:        [___-__-____]    <<<< FILL IN
+
+California Driver License: [ ] Yes  [X] No
+  If Yes, DL #:           [______________]
+  If No, Other State DL:  Florida
+  Other State DL #:       [______________] <<<< FILL IN
+
+Gender:                   [____]           <<<< FILL IN
+Height:                   [____]           <<<< FILL IN
+Weight:                   [____]           <<<< FILL IN
+Hair Color:               [____]           <<<< FILL IN
+Eye Color:                [____]           <<<< FILL IN
+
+Home Address:             NW rd Way
+City:                     Parkland
+State:                    FL
+ZIP:                      33067
+Home Phone:               (714) 312-9994
+Email:                    support@quickpasstrafficschool.com
+
+--------------------------------------------------------------
+SECTION 3: BUSINESS INFORMATION
+--------------------------------------------------------------
+
+Business/School Name:     Quick Pass Traffic School
+DBA (if different):       N/A
+
+Business Address:         NW rd Way
+City:                     Parkland
+State:                    FL
+ZIP:                      33067
+County:                   Broward
+
+Business Phone:           (714) 312-9994
+Business Fax:             [____________________]
+Business Email:           support@quickpasstrafficschool.com
+Business Website:         www.quickpasstrafficschool.com
+
+Entity Type:              [X] Sole Proprietorship
+                          [ ] Corporation
+                          [ ] LLC
+                          [ ] Partnership
+                          [ ] Other: ____
+
+Federal EIN:              [PENDING — SS-4 faxed to IRS]
+
+State of Formation:       Florida (Sole Proprietorship)
+Date Business Established: [____/____/____] <<<< FILL IN
+
+California Registered Agent (REQUIRED for out-of-state):
+  Agent Name:             [____________________] <<<< DESIGNATE
+  Agent Address:          [____________________]
+  City/State/ZIP:         [__________, CA _____]
+  Agent Phone:            [____________________]
+
+  RECOMMENDED AGENTS (pick one):
+  • Northwest Registered Agent — $125/year
+    https://www.northwestregisteredagent.com
+  • LegalZoom — $299/year
+    https://www.legalzoom.com
+  • Incfile — $119/year
+    https://www.incfile.com
+  • Harbor Compliance — $99/year
+    https://www.harborcompliance.com
+
+--------------------------------------------------------------
+SECTION 4: SCHOOL LOCATION(S)
+--------------------------------------------------------------
+
+Primary Location Type:    [X] Online — no physical classroom
+Website URL:              www.quickpasstrafficschool.com
+
+Physical Office Address:  NW rd Way
+(for records/admin)       Parkland, FL 33067
+
+Branch Locations:         [ ] None — online only
+
+Hours of Operation:       24/7 (online platform available 
+                          around the clock)
+                          Customer Support: Mon-Fri 9am-5pm ET
+
+--------------------------------------------------------------
+SECTION 5: COURSE INFORMATION
+--------------------------------------------------------------
+
+Course Title:             California Traffic Violator School
+Course Duration:          8 Hours (minimum, timer-enforced)
+Course Price:             $29.95
+
+Course Delivery:          [X] Internet/Online
+                          [ ] Classroom
+                          [ ] Home Study
+
+Language(s):              [X] English
+                          [ ] Spanish (planned future addition)
+
+Student Eligibility:      California drivers eligible per 
+                          CVC §41501 (once every 18 months):
+                          - Valid CA driver license holders
+                          - Non-commercial vehicle violation
+                          - Court grants TVS attendance
+                          - Allows confidential conviction 
+                            (point masked on driving record)
+
+--------------------------------------------------------------
+SECTION 6: CURRICULUM SUMMARY (8 Hours, 7 Modules)
+--------------------------------------------------------------
+Per Title 13 CCR §345.56
+
+Module 1: Introduction & California Vehicle Code
+(70 minutes)
+  - California traffic law fundamentals
+  - NOTS point system (4/12, 6/24, 8/36 thresholds)
+  - TVS eligibility requirements
+  - Speed laws (Basic Speed Law, Max Speed Law)
+  - Right-of-way rules
+  - Hands-Free Law (CVC §23123, §23123.5)
+  - Move Over/Slow Down Law (CVC §21809)
+  - Financial responsibility requirements
+
+Module 2: Defensive Driving Techniques
+(70 minutes)
+  - 3-second following distance
+  - SIPDE scanning process
+  - Space cushion management
+  - Mirror usage and blind spots
+  - Intersection navigation
+  - Freeway driving (California highways)
+  - Speed management and stopping distance
+
+Module 3: Impaired Driving & California DUI Laws
+(70 minutes)
+  - CVC §23152, §23153 (DUI/DUI with injury)
+  - BAC limits: 0.08% / 0.04% / 0.01% (under 21)
+  - Implied Consent Law (CVC §23612)
+  - Administrative Per Se (APS) process
+  - DUI penalties and enhancements
+  - Drug-impaired driving (incl. marijuana)
+  - Zero Tolerance for under-21
+
+Module 4: Distracted Driving
+(60 minutes)
+  - California Hands-Free Law enforcement
+  - CVC §23123 (handheld phone)
+  - CVC §23123.5 (texting)
+  - Under-18 complete wireless ban
+  - Three types of distraction
+  - Work zone and school zone focus
+
+Module 5: Sharing California Roads
+(60 minutes)
+  - Three Feet for Safety Act (CVC §21760)
+  - Lane splitting: legal in CA (AB 51)
+  - Motorcycle awareness
+  - Pedestrian right-of-way
+  - Large truck "No-Zones"
+  - School bus laws
+  - Emergency vehicle response (CVC §21806)
+  - Railroad crossings
+
+Module 6: California Weather & Road Conditions
+(60 minutes)
+  - Rain driving and hydroplaning
+  - Tule fog (Central Valley hazard)
+  - Mountain driving (chains: R1/R2/R3)
+  - Earthquake safety while driving
+  - Wildfire smoke driving precautions
+  - Night driving techniques
+  - Construction zone safety
+
+Module 7: Fatigue, Emotions & Course Review
+(60 minutes)
+  - Drowsy driving recognition
+  - Road rage and aggressive driving
+  - Emotional fitness to drive
+  - Comprehensive course review
+  - Final exam preparation
+
+--------------------------------------------------------------
+SECTION 7: ASSESSMENT STRUCTURE
+--------------------------------------------------------------
+
+Module Quizzes:           7 quizzes (one per module)
+                          4 questions each (28 total)
+                          70% passing score
+                          Must pass to advance
+
+Final Examination:        20 questions (multiple choice)
+                          80% passing score (16/20)
+                          Questions from 50+ question bank
+                          Randomized questions and answers
+                          Unlimited retakes at no cost
+
+--------------------------------------------------------------
+SECTION 8: TECHNOLOGY PLATFORM
+--------------------------------------------------------------
+Per Title 13 CCR requirements for online TVS
+
+ FEATURE                          DESCRIPTION
+--------------------------------------------------------------
+ Identity Verification             Government photo ID uploaded
+                                   at enrollment; verified before
+                                   course access; periodic 
+                                   re-verification during course
+
+ Time Enforcement                  Server-side minimum time timers
+                                   per module; 8-hour total minimum;
+                                   students cannot skip or fast-
+                                   forward; idle timeout after 5 min
+
+ Assessment Security               Questions randomly drawn from
+                                   expanded question bank; answer
+                                   options randomized; copy/paste
+                                   disabled during exams; each
+                                   student gets unique exam
+
+ Certificate Generation            Electronic certificate with
+                                   unique certificate #; issued
+                                   immediately upon passing;
+                                   contains all DMV-required info
+
+ Data Security                     SSL/TLS (HTTPS) encryption;
+                                   BCrypt password hashing;
+                                   AES-256 data encryption at rest;
+                                   CCPA-compliant privacy practices
+
+ Accessibility                     WCAG 2.1 Level AA compliant;
+                                   mobile responsive; screen reader
+                                   compatible; keyboard navigation
+
+ Record Retention                  Student records stored in
+                                   encrypted PostgreSQL database;
+                                   retained per DMV requirements
+                                   (minimum 3 years)
+
+ Platform Access                   24/7 availability; 99.9% uptime;
+                                   accessible via any modern browser
+                                   (Chrome, Firefox, Safari, Edge)
+
+--------------------------------------------------------------
+SECTION 9: SURETY BOND (FORM OL 601)
+--------------------------------------------------------------
+
+Bond Amount:              $10,000 (per CVC §11200.5)
+Surety Company:           [____________________] <<<< FROM BOND APP
+Bond Number:              [____________________]
+Bond Effective Date:      [____/____/____]
+Bond Expiration Date:     [____/____/____]
+
+NOTE: 
+  - Use DMV Form OL 601 for the bond
+  - Surety must be admitted in California
+  - Bond must be submitted with this application
+  - See surety bond application document for pre-filled info
+
+--------------------------------------------------------------
+SECTION 10: LIVE SCAN FINGERPRINTING
+--------------------------------------------------------------
+
+Live Scan is REQUIRED for all TVS Owner applicants.
+
+Status:                   [ ] Completed
+                          [X] Not yet completed
+
+Live Scan Location:       [____________________]
+Date Completed:           [____/____/____]
+ATI Number (receipt):     [____________________]
+
+INSTRUCTIONS FOR OUT-OF-STATE APPLICANTS:
+  Option 1: Travel to California and complete Live Scan at 
+            any DOJ-authorized location
+  Option 2: Call DMV OL at (916) 229-3126 to ask about 
+            out-of-state fingerprinting alternatives
+  Option 3: Some states have reciprocal arrangements — 
+            FL may accept FBI fingerprint cards that CA 
+            can process (confirm with DMV)
+
+  Live Scan Locations Finder:
+  https://oag.ca.gov/fingerprints/locations
+
+  Info needed at Live Scan appointment:
+  • Valid photo ID
+  • ORI Number: [FROM DMV — request when you call]
+  • Reason: "Traffic Violator School Owner License"
+  • Authorized Applicant Type: "TVS Owner"
+  • Fee: ~$49 (rolling) + $32 (DOJ) + $17 (FBI) = ~$98 total
+
+--------------------------------------------------------------
+SECTION 11: BACKGROUND & CRIMINAL HISTORY
+--------------------------------------------------------------
+
+Have you ever been convicted of a crime 
+(felony or misdemeanor)?                       [ ] Yes  [X] No
+
+Have you ever had any traffic school, driving 
+school, or occupational license revoked, 
+suspended, or denied in any state?             [ ] Yes  [X] No
+
+Have you ever been the subject of any 
+administrative action by any state regulatory 
+agency?                                        [ ] Yes  [X] No
+
+Are you currently under investigation by any 
+law enforcement or regulatory agency?          [ ] Yes  [X] No
+
+  (If Yes to any, provide detailed explanation on 
+   separate sheet with dates, charges, disposition)
+
+--------------------------------------------------------------
+SECTION 12: PRIOR ADDRESSES (LAST 5 YEARS)
+--------------------------------------------------------------
+
+Address 1:
+  Street:                 [____________________] <<<< FILL IN
+  City:                   [____________________]
+  State:                  [____]
+  ZIP:                    [________]
+  Dates:                  [____/____] to [____/____]
+
+Address 2:
+  Street:                 [____________________]
+  City:                   [____________________]
+  State:                  [____]
+  ZIP:                    [________]
+  Dates:                  [____/____] to [____/____]
+
+Address 3 (if applicable):
+  Street:                 [____________________]
+  City:                   [____________________]
+  State:                  [____]
+  ZIP:                    [________]
+  Dates:                  [____/____] to [____/____]
+
+--------------------------------------------------------------
+SECTION 13: REFERENCES (typically 3 required)
+--------------------------------------------------------------
+
+Reference 1:
+  Name:                   [____________________] <<<< FILL IN
+  Relationship:           [____________________]
+  Phone:                  [____________________]
+  Address:                [____________________]
+  City/State/ZIP:         [____________________]
+
+Reference 2:
+  Name:                   [____________________]
+  Relationship:           [____________________]
+  Phone:                  [____________________]
+  Address:                [____________________]
+  City/State/ZIP:         [____________________]
+
+Reference 3:
+  Name:                   [____________________]
+  Relationship:           [____________________]
+  Phone:                  [____________________]
+  Address:                [____________________]
+  City/State/ZIP:         [____________________]
+
+--------------------------------------------------------------
+SECTION 14: APPLICATION FEE
+--------------------------------------------------------------
+
+Fee Amount:               $250.00
+Payment Method:           [ ] Check payable to "Department of 
+                              Motor Vehicles"
+                          [ ] Money Order payable to "Department 
+                              of Motor Vehicles"
+
+NOTE: Fee is NON-REFUNDABLE regardless of application outcome.
+
+--------------------------------------------------------------
+SECTION 15: CCPA COMPLIANCE DECLARATION
+--------------------------------------------------------------
+
+As an online service operating in California, Quick Pass 
+Traffic School will comply with the California Consumer 
+Privacy Act (CCPA) and California Privacy Rights Act (CPRA):
+
+  [X] Privacy policy posted on website
+  [X] Students can request data deletion
+  [X] Students can opt out of data sale (we do not sell data)
+  [X] Data breach notification procedures in place
+  [X] Consumer request response within 45 days
+
+--------------------------------------------------------------
+SECTION 16: CERTIFICATION & SIGNATURE
+--------------------------------------------------------------
+
+APPLICANT DECLARATION:
+
+I, Jordan Lovelace, declare under penalty of perjury under 
+the laws of the State of California that the information 
+contained in this application and all accompanying documents 
+is true, accurate, and complete.
+
+I understand that:
+  • Furnishing false information is grounds for denial or 
+    revocation of my license (CVC §11215)
+  • The DMV may investigate my background, business practices, 
+    and course content at any time
+  • I must maintain the surety bond for the duration of my license
+  • I must comply with all applicable provisions of the 
+    California Vehicle Code and Code of Regulations
+  • I must report student completions to the DMV as required
+  • My license must be renewed as required by the DMV
+  • I am responsible for the conduct of all employees and agents
+
+
+Applicant Signature: ________________________________
+
+Printed Name: Jordan Lovelace
+
+Title: Owner
+
+Date: ____/____/2026
+
+Phone: (714) 312-9994
+
+
+╔══════════════════════════════════════════════════════════╗
+║  COMPLETE SUBMISSION PACKAGE CHECKLIST                   ║
+╚══════════════════════════════════════════════════════════╝
+
+[ ] Form OL 613 (completed and signed — official DMV form)
+[ ] $250 application fee (check or money order to "DMV")
+[ ] Cover letter (DONE — california-cover-letter.txt)
+[ ] Form OL 601 Surety Bond ($10,000) — executed original
+[ ] Live Scan fingerprint receipt (ATI number)
+[ ] Full curriculum document (8-hour, 7 modules)
+[ ] Quiz and final exam question banks with answer keys
+[ ] Technology platform documentation with screenshots
+[ ] CA Registered Agent designation letter
+[ ] CA Secretary of State registration confirmation
+[ ] Business registration documents (FL)
+[ ] CCPA compliance documentation / Privacy Policy
+[ ] Copy of government-issued photo ID
+[ ] EIN documentation (when received from IRS)
+[ ] Three character references (names, contact info)
+[ ] Prior address history (last 5 years)
+[ ] Proof of business insurance (if applicable)
+
+SUBMIT TO:
+  Department of Motor Vehicles
+  Occupational Licensing Section
+  P.O. Box 932342
+  Sacramento, CA 94232-3420
+
+Date Submitted:     ________________
+Tracking Info:      ________________
+
+
+============================================================
+ACTIONS REQUIRED BEFORE SUBMISSION
+============================================================
+
+IMMEDIATE:
+  1. [ ] Call DMV OL (916) 229-3126 to:
+         - Request official OL 613 and OL 601 forms
+         - Confirm all current requirements
+         - Ask about out-of-state Live Scan process
+         - Get ORI number for Live Scan
+         - Confirm if curriculum must be pre-approved
+  2. [ ] Designate California Registered Agent
+  3. [ ] Register with CA Secretary of State (~$70)
+
+AFTER EIN RECEIVED:
+  4. [ ] Update EIN on all forms
+  5. [ ] Obtain $10,000 surety bond (Form OL 601)
+
+BEFORE SUBMISSION:
+  6. [ ] Complete Live Scan fingerprinting
+  7. [ ] Fill in all [____] blank fields (DOB, SSN, DL#, 
+         height, weight, hair, eyes, addresses, references)
+  8. [ ] Create demo account for DMV reviewer
+  9. [ ] Write check for $250 to "Department of Motor Vehicles"
+  10. [ ] Print, sign, compile complete package
+  11. [ ] Send via certified mail with return receipt

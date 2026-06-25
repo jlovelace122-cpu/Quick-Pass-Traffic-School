@@ -234,7 +234,7 @@
                         <div class="course-icon" id="courseHours">4</div>
                         <div class="course-info">
                             <h3 id="courseName">Loading...</h3>
-                            <p id="courseDescription">Florida Driver Improvement Course</p>
+                            <p id="courseDescription">State-Approved Traffic School Course</p>
                         </div>
                     </div>
                     
@@ -332,6 +332,7 @@
                 // Update UI
                 document.getElementById('courseName').textContent = course.name;
                 document.getElementById('courseHours').textContent = course.durationHours;
+                document.getElementById('courseDescription').textContent = course.description ? course.description.substring(0, 80) + '...' : 'State-Approved Traffic School Course';
                 document.getElementById('priceSubtotal').textContent = `$${course.price.toFixed(2)}`;
                 document.getElementById('priceTotal').textContent = `$${course.price.toFixed(2)}`;
 

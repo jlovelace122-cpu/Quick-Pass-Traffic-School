@@ -1,0 +1,259 @@
+============================================================
+IRS FORM SS-4 — APPLICATION FOR EMPLOYER IDENTIFICATION NUMBER
+PRE-FILLED FOR FAX SUBMISSION
+============================================================
+>>> FAX TO: (855) 641-6935 <<<
+>>> Include this as Page 2 behind your cover sheet <<<
+>>> Expected turnaround: ~4 business days <<<
+
+============================================================
+COVER SHEET (Page 1 of fax)
+============================================================
+
+TO:     Internal Revenue Service
+        EIN Assignment — Fax Unit
+FAX:    (855) 641-6935
+
+FROM:   Jordan Lovelace
+        Quick Pass Traffic School
+        NW rd Way
+        Parkland, FL 33067
+PHONE:  (714) 312-9994
+
+DATE:   ____/____/2026
+
+RE:     Form SS-4 — Application for Employer Identification 
+        Number (EIN) for Quick Pass Traffic School
+
+PAGES:  3 (including cover sheet)
+
+NOTES:  
+Please fax the EIN assignment letter back to: 
+  Fax: [YOUR FAX NUMBER — see note below]
+
+  -OR-
+
+Please mail the EIN assignment letter to:
+  Jordan Lovelace
+  NW rd Way
+  Parkland, FL 33067
+
+NOTE: If you don't have a fax number to receive the 
+response, you can:
+  • Use an online fax service (eFax, MyFax, FaxZero)
+  • Use a UPS Store or FedEx Office fax number
+  • Request mail delivery instead (takes 4-6 weeks)
+  • Call (800) 829-4933 after 4 days to get your EIN by phone
+
+
+============================================================
+FORM SS-4 — LINE BY LINE (Page 2-3 of fax)
+============================================================
+Download the actual form at:
+https://www.irs.gov/pub/irs-pdf/fss4.pdf
+
+Fill in as follows:
+
+--------------------------------------------------------------
+LINE 1 — Legal name of entity (or individual)
+--------------------------------------------------------------
+Jordan Lovelace
+
+--------------------------------------------------------------
+LINE 2 — Trade name of business (if different from Line 1)
+--------------------------------------------------------------
+Quick Pass Traffic School
+
+--------------------------------------------------------------
+LINE 3 — Executor, administrator, trustee, "care of" name
+--------------------------------------------------------------
+[LEAVE BLANK]
+
+--------------------------------------------------------------
+LINE 4a — Mailing address (street address, room, suite)
+--------------------------------------------------------------
+NW rd Way
+
+--------------------------------------------------------------
+LINE 4b — City, state, and ZIP code
+--------------------------------------------------------------
+Parkland, FL 33067
+
+--------------------------------------------------------------
+LINE 5a — Street address (if different from Line 4a)
+--------------------------------------------------------------
+[SAME AS ABOVE — leave blank if same]
+
+--------------------------------------------------------------
+LINE 5b — City, state, and ZIP code
+--------------------------------------------------------------
+[SAME AS ABOVE — leave blank if same]
+
+--------------------------------------------------------------
+LINE 6 — County and state where principal business is located
+--------------------------------------------------------------
+Broward County, Florida
+
+--------------------------------------------------------------
+LINE 7a — Name of responsible party
+--------------------------------------------------------------
+Jordan Lovelace
+
+--------------------------------------------------------------
+LINE 7b — SSN, ITIN, or EIN of responsible party
+--------------------------------------------------------------
+[___-__-____]  <<<< FILL IN YOUR SSN
+
+--------------------------------------------------------------
+LINE 8a — Is this application for an LLC?
+--------------------------------------------------------------
+[X] No    [ ] Yes
+(Sole Proprietorship — NOT an LLC)
+
+--------------------------------------------------------------
+LINE 8b — If Yes to 8a, number of LLC members
+--------------------------------------------------------------
+[N/A]
+
+--------------------------------------------------------------
+LINE 9a — Type of entity (check one)
+--------------------------------------------------------------
+[X] Sole proprietor (SSN) ___-__-____ <<<< YOUR SSN AGAIN
+
+[ ] Partnership
+[ ] Corporation (enter form number) ____
+[ ] Personal service corporation
+[ ] Church or church-controlled organization
+[ ] Other nonprofit organization (specify) ____
+[ ] Other (specify) ____
+
+--------------------------------------------------------------
+LINE 9b — If a corporation, enter the state or foreign 
+           country where incorporated
+--------------------------------------------------------------
+[N/A — Sole Proprietorship]
+
+--------------------------------------------------------------
+LINE 10 — Reason for applying (check one)
+--------------------------------------------------------------
+[X] Started new business (specify type) → 
+    "Online Traffic School / Defensive Driving Education"
+
+[ ] Hired employees (date of first wages) ____
+[ ] Compliance with IRS withholding regulations
+[ ] Other (specify) ____
+
+--------------------------------------------------------------
+LINE 11 — Date business started or acquired
+--------------------------------------------------------------
+[____/____/2026]  <<<< FILL IN DATE YOU STARTED OPERATING
+
+--------------------------------------------------------------
+LINE 12 — Closing month of accounting year
+--------------------------------------------------------------
+December (12)
+
+--------------------------------------------------------------
+LINE 13 — Highest number of employees expected in the 
+           next 12 months
+--------------------------------------------------------------
+Agricultural: 0    Household: 0    Other: 0
+
+(If you plan to hire anyone, enter estimated count in "Other")
+
+--------------------------------------------------------------
+LINE 14 — Check one box that best describes the principal 
+           activity of your business
+--------------------------------------------------------------
+[ ] Construction    [ ] Real estate     [ ] Manufacturing
+[ ] Transportation  [ ] Finance/Insurance
+[ ] Health care     [ ] Accommodation/Food
+[X] Other (specify) → "Online Education Services — 
+    Traffic Safety / Defensive Driving Courses"
+
+[ ] Retail          [ ] Wholesale
+
+--------------------------------------------------------------
+LINE 15 — Indicate the principal line of merchandise sold, 
+           specific construction type, or services provided
+--------------------------------------------------------------
+"Online traffic school courses and defensive driving education"
+
+--------------------------------------------------------------
+LINE 16 — Check the appropriate box indicating whether the 
+           entity applying has ever applied for and received 
+           an EIN
+--------------------------------------------------------------
+[X] Yes  <<<< THIS IS WHY THEY REQUIRE FAX
+    Previous EIN: [___-_______]  <<<< ENTER PREVIOUS EIN 
+                                      IF YOU KNOW IT
+[ ] No
+
+--------------------------------------------------------------
+LINE 17 — First date wages or annuities were paid
+--------------------------------------------------------------
+[N/A — no employees expected initially]
+
+If you plan to hire: [____/____/2026]
+
+--------------------------------------------------------------
+LINE 18 — Check the highest number of employees expected 
+           in the next 12 months
+--------------------------------------------------------------
+[ ] 1-4    [ ] 5-9    [ ] 10-19    [ ] 20+
+[X] None expected (sole proprietor, no employees)
+
+--------------------------------------------------------------
+THIRD PARTY DESIGNEE
+--------------------------------------------------------------
+Do you want to allow another person to receive the EIN 
+and answer questions about this form?
+
+[ ] Yes (complete below)    [X] No
+
+Designee's name: ____________________
+Address: ____________________
+Telephone: ____________________
+
+--------------------------------------------------------------
+SIGNATURE
+--------------------------------------------------------------
+
+Signature: ________________________________  
+
+Name (print): Jordan Lovelace
+
+Title: Owner
+
+Date: ____/____/2026
+
+Telephone: (714) 312-9994
+
+Fax: [YOUR FAX NUMBER or leave blank]
+
+
+============================================================
+SUBMISSION INSTRUCTIONS
+============================================================
+
+1. Download actual Form SS-4 from:
+   https://www.irs.gov/pub/irs-pdf/fss4.pdf
+
+2. Fill in the PDF using the information above
+
+3. Print the completed form
+
+4. Print the cover sheet (page 1 of this document)
+
+5. Stack: Cover Sheet → Form SS-4 (2 pages)
+
+6. Fax to: (855) 641-6935
+
+7. Wait 4 business days
+
+8. If no response by day 5, call: (800) 829-4933
+   Hours: Mon-Fri 7am-7pm ET
+   Have your SSN ready — they can issue EIN over the phone
+
+9. Once received, update ALL state application documents 
+   with the new EIN number

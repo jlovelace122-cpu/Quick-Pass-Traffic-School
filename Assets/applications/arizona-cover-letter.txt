@@ -1,0 +1,144 @@
+============================================================
+ARIZONA TRAFFIC SURVIVAL SCHOOL PROVIDER APPLICATION
+COVER LETTER
+============================================================
+
+Date: April 12, 2026
+
+Arizona Department of Transportation
+Motor Vehicle Division
+Driver Improvement Unit
+1801 W. Jefferson Street, Mail Drop 530M
+Phoenix, AZ 85007
+
+RE: Application for Traffic Survival School Provider Approval
+    Online Course Delivery
+
+Dear Driver Improvement Unit Review Committee,
+
+I am writing to submit an application for approval as a Traffic Survival 
+School (TSS) provider with the Arizona Department of Transportation, 
+Motor Vehicle Division, pursuant to Arizona Revised Statutes Title 28, 
+Chapter 8.
+
+APPLICANT INFORMATION:
+--------------------------------------------------------------
+Business Name:    Quick Pass Traffic School
+Owner/Principal:  Jordan Lovelace
+Business Address: NW rd Way, Parkland, FL 33067
+Phone:            (714) 312-9994
+Email:            support@quickpasstrafficschool.com
+Website:          www.quickpasstrafficschool.com
+Entity Type:      Sole Proprietorship
+EIN:              [PENDING — Form SS-4 faxed to IRS; awaiting assignment]
+
+COURSE OVERVIEW:
+--------------------------------------------------------------
+Quick Pass Traffic School seeks approval to offer a 4-Hour Traffic 
+Survival School course delivered entirely online. Our course has been 
+developed to meet and exceed the requirements set forth by the MVD 
+for defensive driving education.
+
+Course Title:     Arizona Traffic Survival School
+Duration:         4 Hours
+Delivery Method:  100% Online (asynchronous, self-paced)
+Platform:         Proprietary web-based Learning Management System
+Passing Score:    Module quizzes: 70% | Final Exam: 80%
+
+CURRICULUM CONTENT:
+--------------------------------------------------------------
+Our course curriculum covers the following Arizona-specific topics:
+
+Module 1: Introduction & Arizona Traffic Laws (55 minutes)
+  - Arizona's point system (8-12 points = TSS requirement)
+  - Arizona speed limits and enforcement
+  - Hands-Free Law (effective 2021)
+  - Move Over Law requirements and penalties
+  - Arizona's "Stupid Motorist Law" (ARS 28-910)
+  - Seat belt laws and child restraint requirements
+
+Module 2: Defensive Driving Fundamentals (55 minutes)
+  - SIPDE defensive driving process
+  - Following distance (3-4 second rule)
+  - Speed management and stopping distances
+  - Intersection safety and red-light running prevention
+  - Arizona-specific hazards (wildlife, desert highways, tourist traffic)
+
+Module 3: Impaired and Distracted Driving (55 minutes)
+  - Arizona DUI laws (0.08%, Extreme 0.15%, Super Extreme 0.20%)
+  - Mandatory jail time penalties (10 days first offense)
+  - Implied Consent Law
+  - Zero Tolerance for under 21 and drug DUI
+  - Hands-free law enforcement and distracted driving penalties
+  - Drowsy driving and highway hypnosis
+
+Module 4: Arizona Weather and Road Conditions (55 minutes)
+  - Extreme heat preparedness and hot car deaths
+  - Monsoon season hazards (June-September)
+  - Flash flooding and "Turn Around, Don't Drown"
+  - Dust storm safety: "Pull Aside, Stay Alive" protocol
+  - Winter driving in northern Arizona
+  - Sharing the road (pedestrians, cyclists, trucks)
+
+Assessment:       15-question final exam (multiple choice)
+Certificate:      Electronic delivery upon successful completion
+
+WHY QUICK PASS TRAFFIC SCHOOL:
+--------------------------------------------------------------
+Quick Pass Traffic School is dedicated to improving road safety 
+through accessible, engaging, and affordable online traffic education. 
+Our platform features:
+
+  • Mobile-responsive design accessible from any device
+  • 24/7 availability for student convenience
+  • AI-powered customer support chat
+  • Secure student identity verification
+  • Electronic certificate delivery
+  • 100% pass rate guarantee with unlimited exam retakes
+  • $24.95 course price with no hidden fees
+
+We are currently in the process of obtaining approval in multiple 
+states and have developed comprehensive, state-specific curricula 
+tailored to each jurisdiction's traffic laws, penalties, and 
+driving conditions.
+
+TECHNOLOGY & SECURITY:
+--------------------------------------------------------------
+  • SSL-encrypted platform (HTTPS)
+  • Secure student data storage (encrypted at rest)
+  • Timer-based module progression (prevents rushing)
+  • Randomized exam questions from question bank
+  • Student identity verification via photo ID upload
+  • Detailed progress tracking and audit logs
+  • WCAG 2.1 accessibility compliance
+
+REQUESTED ACTION:
+--------------------------------------------------------------
+I respectfully request that the MVD review our application and 
+course materials for approval as an authorized Traffic Survival 
+School provider. I am available to provide any additional 
+documentation, make curriculum modifications as required, or 
+schedule a meeting to discuss our application.
+
+Thank you for your time and consideration. I look forward to 
+working with the Arizona Department of Transportation to promote 
+safer driving throughout the state.
+
+Respectfully submitted,
+
+
+_________________________________
+Jordan Lovelace
+Owner, Quick Pass Traffic School
+(714) 312-9994
+support@quickpasstrafficschool.com
+www.quickpasstrafficschool.com
+
+
+ENCLOSURES:
+  1. Course curriculum outline (detailed)
+  2. Sample course content and screenshots
+  3. Technology platform specifications
+  4. Background check authorization form
+  5. Business registration documents
+  6. [EIN documentation — to be included upon receipt]

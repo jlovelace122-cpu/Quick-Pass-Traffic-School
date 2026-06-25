@@ -1,0 +1,563 @@
+============================================================
+STATE APPROVAL APPLICATION CHECKLISTS
+Quick Pass Traffic School — Jordan Lovelace
+============================================================
+Last Updated: [Date]
+
+╔══════════════════════════════════════════════════════════╗
+║  PRIORITY #0: GET YOUR EIN (DO THIS FIRST!)             ║
+║  Required for ALL state applications                    ║
+╚══════════════════════════════════════════════════════════╝
+
+[ ] Apply for EIN (Employer Identification Number)
+    • IRS Form SS-4 — MUST BE FAXED (per IRS instruction)
+    • FREE — No cost
+    • IRS requires fax because sole proprietorship already 
+      has an existing record on file
+    • Download Form SS-4: https://www.irs.gov/pub/irs-pdf/fss4.pdf
+    • Complete the form, then fax to:
+      - Fax Number: (855) 641-6935 (domestic applicants)
+    • Turnaround: ~4 business days — IRS will fax back your 
+      EIN assignment letter
+    • Include a cover sheet with your return fax # or mailing 
+      address so they can send the EIN back
+    • If no response after 5 business days, call IRS Business 
+      & Specialty Tax Line: (800) 829-4933 (Mon-Fri 7am-7pm ET)
+    • You need this before you can apply to ANY state
+    • KEEP THE ASSIGNMENT LETTER — you'll need copies for 
+      all state applications
+
+[ ] Once received, update:
+    - Arizona cover letter
+    - Texas cover letter
+    - California cover letter
+    - All application forms
+
+
+============================================================
+ CHECKLIST 1: ARIZONA — Traffic Survival School Provider
+============================================================
+Regulatory Body: ADOT Motor Vehicle Division (MVD)
+Reference: ARS Title 28, Chapter 8, Article 8 (§28-3306+)
+Timeline: Approximately 4-8 weeks for approval
+Estimated Total Cost: ~$300-500
+
+STEP 1: PREPARATION
+--------------------------------------------------------------
+[ ] Obtain EIN (see Priority #0 above)
+[ ] Register business with Arizona Corporation Commission
+    • Foreign entity registration (out-of-state business)
+    • Website: https://azcc.gov
+    • Fee: ~$150
+    • You may need a Statutory Agent in Arizona
+[ ] Obtain Arizona Business License (if required for your 
+    business activities)
+
+STEP 2: APPLICATION PACKAGE
+--------------------------------------------------------------
+[ ] Contact ADOT MVD to request current TSS provider 
+    application package
+    • Phone: (602) 255-0072
+    • Email: MVDCustomerServiceCenter@azdot.gov
+    • Website: https://azdot.gov/mvd
+    • Ask specifically for:
+      - TSS Provider Application Form
+      - Current fee schedule
+      - Online provider requirements
+      - Curriculum submission guidelines
+
+[ ] Complete the TSS Provider Application Form
+    • Business Name: Quick Pass Traffic School
+    • Owner: Jordan Lovelace
+    • Address: NW rd Way, Parkland, FL 33067
+    • Phone: (714) 312-9994
+    • EIN: [Insert when received]
+    • Delivery method: Online
+
+[ ] Prepare curriculum for MVD review
+    • Print/format the 4-hour, 4-module curriculum
+    • Ensure all ARS references are accurate
+    • Include Stupid Motorist Law (ARS §28-910)
+    • Include Pull Aside Stay Alive content
+    • Include DUI tiers (Regular/Extreme/Super Extreme)
+    • Include module quizzes and final exam questions
+
+[ ] Pay application fee
+    • Amount: Contact MVD for current fee
+    • Payment methods: Check, money order, or as directed
+
+[ ] Prepare cover letter (DONE ✓)
+    • File: Assets/applications/arizona-cover-letter.txt
+
+STEP 3: BACKGROUND & COMPLIANCE
+--------------------------------------------------------------
+[ ] Complete background check (if required)
+    • Arizona may require fingerprint-based background check
+    • Contact MVD for specific requirements
+[ ] Prepare proof of insurance (General Liability)
+[ ] Prepare technology platform documentation
+    • Screenshots of course interface
+    • Identity verification procedures
+    • Time tracking mechanism details
+    • Security measures documentation
+
+STEP 4: SUBMISSION
+--------------------------------------------------------------
+[ ] Compile complete application package
+[ ] Make copies of everything for your records
+[ ] Submit via certified mail or as directed:
+
+    ADOT Motor Vehicle Division
+    Customer Records Services
+    1801 W. Jefferson Street
+    Phoenix, AZ 85007
+
+[ ] Note tracking number: ________________
+[ ] Date submitted: ________________
+
+STEP 5: FOLLOW-UP
+--------------------------------------------------------------
+[ ] Follow up 2 weeks after submission
+[ ] Respond to any deficiency notices within required timeline
+[ ] Schedule any required interviews/meetings
+[ ] Upon approval:
+    [ ] Receive approval letter/license number
+    [ ] Update website with AZ approval credentials
+    [ ] Begin accepting AZ students
+[ ] Date approved: ________________
+[ ] License/Provider #: ________________
+
+
+============================================================
+ CHECKLIST 2: TEXAS — Driving Safety Course Provider
+============================================================
+Regulatory Body: Texas Department of Licensing and Regulation (TDLR)
+                  + Texas Education Agency (TEA)
+Reference: Texas Transportation Code Chapter 1001
+           Texas Education Code §1001.101
+           16 Texas Administrative Code (TAC) Chapter 84
+Timeline: 6-12 weeks for full approval
+Estimated Total Cost: ~$1,200-1,500+
+
+STEP 1: PREPARATION
+--------------------------------------------------------------
+[ ] Obtain EIN (see Priority #0 above)
+[ ] Register as a Foreign Entity with Texas Secretary of State
+    • Website: https://www.sos.state.tx.us
+    • Filing: Foreign Sole Proprietorship registration
+    • Fee: ~$750 (varies)
+    • Designate a Registered Agent in Texas
+[ ] Obtain $10,000 Surety Bond
+    • Must be from a Texas-admitted surety company
+    • Annual premium: typically $100-300 (based on credit)
+    • Required per Texas Transportation Code §1001.204
+    • Bond must name TDLR as obligee
+    • Recommended surety companies:
+      - SuretyBonds.com
+      - JW Surety Bonds
+      - BondExchange.com
+    • Note: Get quotes from multiple companies
+
+STEP 2: TEA COURSE APPROVAL
+--------------------------------------------------------------
+[ ] Contact TEA for course approval requirements
+    • Texas Education Agency
+    • 1701 North Congress Avenue
+    • Austin, TX 78701
+    • Phone: (512) 463-9734
+    • Website: https://tea.texas.gov
+    • Ask about:
+      - Online driving safety course curriculum standards
+      - Required submission format
+      - Review timeline
+      - Any instructor requirements
+
+[ ] Submit curriculum for TEA review
+    • 6-hour course, 6 modules
+    • Must meet Texas Education Code §1001.101 requirements
+    • Include all module content, quiz questions, final exam
+    • Include Texas-specific content:
+      - DWI (not DUI) terminology
+      - Texas speed limits (85 mph max on SH 130)
+      - Turn Around Don't Drown
+      - IPDE process
+      - Move Over/Slow Down Law
+      - Texas GDL provisions
+
+[ ] Respond to any TEA revision requests
+[ ] Receive TEA course approval
+[ ] TEA Approval #: ________________
+[ ] Date approved: ________________
+
+STEP 3: TDLR APPLICATION
+--------------------------------------------------------------
+[ ] Create TDLR Online Account
+    • Website: https://www.tdlr.texas.gov
+    • Go to: Apply for a License → Driving Safety
+    
+[ ] Complete TDLR Application
+    • License Type: Driving Safety Course Provider
+    • Business Name: Quick Pass Traffic School
+    • Owner: Jordan Lovelace
+    • Business Address: NW rd Way, Parkland, FL 33067
+    • Phone: (714) 312-9994
+    • EIN: [Insert when received]
+    • Course Delivery: Online
+    • TEA Course Approval # (from Step 2)
+
+[ ] Pay TDLR Application Fee
+    • Amount: $500
+    • Payment: Credit card or check
+    • NOTE: This is the PROVIDER fee, not instructor
+
+[ ] Submit $10,000 Surety Bond documentation
+    • Original bond with required language
+    • Surety company must be TX-admitted
+
+[ ] Submit proof of business registration (TX SOS)
+
+STEP 4: TECHNOLOGY COMPLIANCE (16 TAC §84.501)
+--------------------------------------------------------------
+[ ] Prepare technology compliance documentation:
+    [ ] Student identity verification system
+    [ ] Minimum time enforcement mechanism (6 hrs)
+    [ ] Assessment security (randomized questions/answers)
+    [ ] Certificate generation system
+    [ ] Student record retention system (3+ years)
+    [ ] Idle timeout detection
+    [ ] ADA compliance documentation
+[ ] Submit technology documentation with application
+[ ] Be prepared for TDLR platform review/inspection
+
+STEP 5: ADDITIONAL REQUIREMENTS
+--------------------------------------------------------------
+[ ] Designate a Course Director/Instructor
+    • May need to pass background check
+    • TDLR may require instructor license separately
+    • Contact TDLR for current requirements
+[ ] Prepare student completion reporting procedures
+    • TX requires reporting to TDLR/DPS
+    • Understand electronic reporting format
+[ ] General liability insurance
+
+STEP 6: SUBMISSION & COVER LETTER
+--------------------------------------------------------------
+[ ] Cover letter prepared (DONE ✓)
+    • File: Assets/applications/texas-cover-letter.txt
+
+[ ] Compile complete application package:
+    - TDLR application form
+    - $500 fee payment
+    - TEA curriculum approval letter
+    - $10,000 surety bond
+    - TX business registration
+    - Background check authorization
+    - Technology compliance docs
+    - Cover letter
+
+[ ] Submit to:
+    Texas Department of Licensing and Regulation
+    P.O. Box 12157
+    Austin, TX 78711-2157
+    
+    Physical (if hand-delivering):
+    920 Colorado Street, Suite 102
+    Austin, TX 78701
+
+[ ] Note confirmation/tracking: ________________
+[ ] Date submitted: ________________
+
+STEP 7: FOLLOW-UP
+--------------------------------------------------------------
+[ ] Follow up 3-4 weeks after submission
+[ ] Respond to any deficiency notices within 30 days
+[ ] Complete any required inspection/review
+[ ] Upon approval:
+    [ ] Receive TDLR license number
+    [ ] Set up completion reporting to DPS
+    [ ] Update website with TX credentials
+    [ ] Begin accepting TX students
+[ ] Date approved: ________________
+[ ] TDLR License #: ________________
+
+
+============================================================
+ CHECKLIST 3: CALIFORNIA — Traffic Violator School Owner
+============================================================
+Regulatory Body: California DMV, Occupational Licensing Section
+Reference: California Vehicle Code §11200-11222
+           Title 13 CCR, Division 1, Chapter 1, Article 5
+Timeline: 8-16 weeks (CA is typically slower)
+Estimated Total Cost: ~$800-1,200+
+
+STEP 1: PREPARATION
+--------------------------------------------------------------
+[ ] Obtain EIN (see Priority #0 above)
+[ ] Register with California Secretary of State
+    • Foreign business registration
+    • Website: https://www.sos.ca.gov
+    • Fee: ~$70 for Statement of Information
+    • May need Certificate of Qualification for out-of-state business
+[ ] Designate a California Registered Agent
+    • Required for out-of-state businesses
+    • Services like Northwest Registered Agent, LegalZoom, etc.
+    • Cost: ~$125-300/year
+[ ] Obtain $10,000 Surety Bond
+    • Must be from a California-admitted surety company
+    • Use Form OL 601 (Surety Bond form from DMV)
+    • Annual premium: typically $100-300
+    • Required per CVC §11200.5
+
+STEP 2: LIVE SCAN FINGERPRINTING
+--------------------------------------------------------------
+[ ] Complete Live Scan fingerprinting
+    • MUST be done at a CA DOJ-authorized Live Scan location
+    • You CAN do this from out of state in some cases — 
+      contact DMV OL for instructions on out-of-state applicants
+    • Alternative: May need to travel to California
+    • Cost: ~$50-80 (rolling fee + DOJ/FBI processing)
+    • Agency ORI: [Will be on application form]
+    • Keep receipt as proof of completion
+    • Processing time: 3-7 business days typically
+    • NOTE: This is often the longest lead-time item
+
+STEP 3: APPLICATION (FORM OL 613)
+--------------------------------------------------------------
+[ ] Obtain Form OL 613 from DMV
+    • DMV Occupational Licensing
+    • Phone: (916) 229-3126 (Occupational Licensing)
+    • Fax: (916) 229-3145
+    • Website: https://www.dmv.ca.gov/portal/occupational-licensing/
+    • Request:
+      - Form OL 613 (TVS Owner Application)
+      - Form OL 601 (Surety Bond)
+      - Current fee schedule
+      - Online TVS curriculum requirements
+      - Technology platform requirements
+
+[ ] Complete Form OL 613
+    • Full legal name: Jordan Lovelace
+    • Business name: Quick Pass Traffic School
+    • Business address: NW rd Way, Parkland, FL 33067
+    • CA agent address: [Insert when designated]
+    • Phone: (714) 312-9994
+    • EIN: [Insert when received]
+    • Course delivery: Online
+    • School location: Online (primary address in FL, 
+      CA agent address provided)
+
+[ ] Pay Application Fee
+    • Amount: $250
+    • Payment method: Check or money order payable to DMV
+    • NOTE: Non-refundable
+
+STEP 4: CURRICULUM SUBMISSION
+--------------------------------------------------------------
+[ ] Format curriculum per DMV requirements
+    • 8-hour course, 7 modules
+    • Must cover all topics required by CCR Title 13 §345.56
+    • Include:
+      - Complete module content/outlines
+      - All quiz questions with correct answers marked
+      - Final exam question bank with answers
+      - Time allocation per module
+      - Learning objectives per module
+
+[ ] Key California content to highlight in submission:
+    [ ] NOTS point system (4/6/8 points thresholds)
+    [ ] California DUI laws (CVC §23152, §23153)
+    [ ] BAC limits (0.08%, 0.04% commercial, 0.01% under 21)
+    [ ] Hands-Free Law (CVC §23123)
+    [ ] Three Feet for Safety Act (CVC §21760)
+    [ ] Lane splitting legality (unique to CA)
+    [ ] Tule fog awareness
+    [ ] Move Over/Slow Down Law (CVC §21809)
+    [ ] Chain installation requirements
+    [ ] CCPA compliance mention
+
+[ ] Submit curriculum for DMV review
+[ ] Be prepared for revision requests (common in CA)
+[ ] DMV Curriculum Approval: ________________
+[ ] Date approved: ________________
+
+STEP 5: TECHNOLOGY REVIEW
+--------------------------------------------------------------
+[ ] Prepare platform for DMV technical review:
+    [ ] Student identity verification (photo ID upload)
+    [ ] Periodic identity re-verification during course
+    [ ] Server-side 8-hour minimum time enforcement
+    [ ] Idle timeout (pause after 5 min inactivity)
+    [ ] Question randomization from large question bank
+    [ ] Answer option randomization
+    [ ] Anti-cheating measures (no copy/paste during exams)
+    [ ] Certificate generation with unique certificate numbers
+    [ ] SSL/TLS encryption
+    [ ] CCPA-compliant privacy policy
+    [ ] Student record retention (per DMV requirements)
+    [ ] Accessibility (WCAG 2.1 AA)
+
+[ ] Provide DMV with test/demo account access
+[ ] Complete any required technology audit
+
+STEP 6: SUBMISSION
+--------------------------------------------------------------
+[ ] Cover letter prepared (DONE ✓)
+    • File: Assets/applications/california-cover-letter.txt
+
+[ ] Compile complete application package:
+    - Form OL 613 (completed, signed)
+    - $250 application fee (check/money order)
+    - Form OL 601 with $10,000 surety bond attached
+    - Live Scan fingerprint receipt
+    - Full curriculum document
+    - Technology platform documentation
+    - CA registered agent designation letter
+    - Business registration (CA SOS)
+    - Cover letter
+    - CCPA compliance documentation
+
+[ ] Submit to:
+    Department of Motor Vehicles
+    Occupational Licensing Section
+    P.O. Box 932342
+    Sacramento, CA 94232-3420
+
+[ ] Note tracking info: ________________
+[ ] Date submitted: ________________
+
+STEP 7: FOLLOW-UP
+--------------------------------------------------------------
+[ ] Follow up 4-6 weeks after submission
+    • Phone: (916) 229-3126
+[ ] Respond to any deficiency notices promptly
+[ ] Submit any requested curriculum revisions
+[ ] Complete any required inspections
+[ ] Upon approval:
+    [ ] Receive TVS Owner License number
+    [ ] Set up completion reporting to DMV
+    [ ] Update website with CA DMV credentials
+    [ ] Begin accepting CA students
+[ ] Date approved: ________________
+[ ] TVS License #: ________________
+
+
+============================================================
+ PRIORITIZED ACTION PLAN — RECOMMENDED ORDER
+============================================================
+
+WEEK 1 (DO IMMEDIATELY):
+--------------------------------------------------------------
+ 1. [ ] GET YOUR EIN — IRS.gov, free, instant online
+ 2. [ ] Order surety bonds for TX ($10K) and CA ($10K)
+        - Get quotes from 3+ companies
+        - Can sometimes get both from same surety
+ 3. [ ] Research CA Live Scan options for out-of-state applicants
+        - Call DMV OL: (916) 229-3126
+ 4. [ ] Contact AZ MVD for current TSS application forms
+        - (602) 255-0072
+
+WEEK 2:
+--------------------------------------------------------------
+ 5. [ ] Register as foreign entity with TX Secretary of State
+ 6. [ ] Designate CA registered agent
+ 7. [ ] Register as foreign entity with CA Secretary of State
+ 8. [ ] Register as foreign entity with AZ Corporation Commission
+ 9. [ ] Submit AZ application (simplest of the three)
+
+WEEK 3-4:
+--------------------------------------------------------------
+10. [ ] Complete Live Scan fingerprinting (CA)
+11. [ ] Submit curriculum to TEA for review (TX)
+12. [ ] Receive surety bonds
+13. [ ] Submit CA application (DMV OL 613)
+
+WEEK 5-6:
+--------------------------------------------------------------
+14. [ ] Follow up on AZ application
+15. [ ] Receive TEA curriculum approval (TX)
+16. [ ] Submit TDLR application with TEA approval (TX)
+
+WEEK 6-12:
+--------------------------------------------------------------
+17. [ ] Follow up on CA application
+18. [ ] Follow up on TX application
+19. [ ] Respond to any state deficiency notices
+20. [ ] Begin accepting students as each state approves
+
+ONGOING:
+--------------------------------------------------------------
+[ ] Check application statuses bi-weekly
+[ ] Maintain surety bonds (annual renewal)
+[ ] Update student completion reporting per each state
+[ ] Monitor regulatory changes in each state
+[ ] Consider additional states after initial 3 approved
+
+
+============================================================
+ COST SUMMARY ESTIMATE
+============================================================
+
+ITEM                              AZ      TX       CA
+--------------------------------------------------------------
+EIN (IRS)                         Free    Free     Free
+State business registration       $150    $750     $70
+Registered agent (annual)         $150    $150     $150
+Application fee                   ~$100   $500     $250
+Surety bond (annual premium)      N/A     $200     $200
+Background check/fingerprints     ~$50    Included ~$70
+--------------------------------------------------------------
+Estimated per-state total:        ~$450   ~$1,600  ~$740
+--------------------------------------------------------------
+GRAND TOTAL (ALL 3 STATES):      ~$2,790
+
+Notes:
+- TX is the most expensive due to SOS registration and $500 fee
+- Surety bond premiums vary based on credit score
+- Some fees may have changed — verify with each agency
+- Florida application costs are separate (already pending)
+- Budget an additional $500 for unexpected costs/revisions
+
+
+============================================================
+ KEY CONTACTS
+============================================================
+
+ARIZONA:
+  ADOT Motor Vehicle Division
+  (602) 255-0072
+  MVDCustomerServiceCenter@azdot.gov
+  1801 W. Jefferson St., Phoenix, AZ 85007
+
+TEXAS:
+  TDLR — Driving Safety
+  (512) 463-6599
+  https://www.tdlr.texas.gov
+  920 Colorado St., Suite 102, Austin, TX 78701
+
+  TEA — Education Agency
+  (512) 463-9734
+  https://tea.texas.gov
+  1701 N. Congress Ave., Austin, TX 78701
+
+CALIFORNIA:
+  DMV Occupational Licensing
+  (916) 229-3126
+  Fax: (916) 229-3145
+  P.O. Box 932342, Sacramento, CA 94232-3420
+  https://www.dmv.ca.gov/portal/occupational-licensing/
+
+IRS (EIN):
+  https://www.irs.gov/businesses/small-businesses-self-employed/apply-for-an-employer-identification-number-ein-online
+  Mon-Fri 7am-10pm ET
+
+
+============================================================
+ DOCUMENT TRACKER
+============================================================
+
+ File                                          Status
+--------------------------------------------------------------
+ Assets/applications/arizona-cover-letter.txt   ✓ Complete
+ Assets/applications/texas-cover-letter.txt     ✓ Complete
+ Assets/applications/california-cover-letter.txt ✓ Complete
+ Assets/applications/checklists.txt             ✓ Complete

@@ -1,16 +1,112 @@
 import 'dotenv/config';
 import { db } from './index.js';
-import { states, courses, courseModules, quizQuestions } from './schema.js';
+import { states, courses, courseModules, quizQuestions, enrollments, moduleProgress, quizAttempts, payments, certificates } from './schema.js';
 import { v4 as uuidv4 } from 'uuid';
 // Use EXPANDED curriculum with comprehensive content
 import { floridaCourseDataExpanded as floridaCourseData } from './curriculum-expanded.js';
+// Import all state curricula
+import { georgiaCourseData } from './curriculum-georgia.js';
+import { indianaCourseData } from './curriculum-indiana.js';
+import { ohioCourseData } from './curriculum-ohio.js';
+import { texasCourseData } from './curriculum-texas.js';
+import { californiaCourseData } from './curriculum-california.js';
+import { arizonaCourseData } from './curriculum-arizona.js';
 
 // ===========================
-// Seed Florida State and Courses with Full Curriculum
+// Seed All States and Courses with Full Curriculum
 // ===========================
+
+// Helper function to seed a state's course
+async function seedStateCourse(stateId, courseData, stateName) {
+  const courseId = uuidv4();
+
+  await db.insert(courses).values({
+    id: courseId,
+    stateId: stateId,
+    name: courseData.name,
+    slug: courseData.slug,
+    description: courseData.description,
+    durationHours: courseData.durationHours,
+    price: courseData.price,
+    passingScoreQuiz: 70,
+    passingScoreFinal: 80,
+    finalExamQuestions: courseData.finalExamQuestions.length,
+    isActive: true,
+  }).onConflictDoNothing();
+
+  // Seed modules and quiz questions
+  for (let i = 0; i < courseData.modules.length; i++) {
+    const module = courseData.modules[i];
+    const moduleId = uuidv4();
+
+    await db.insert(courseModules).values({
+      id: moduleId,
+      courseId: courseId,
+      title: module.title,
+      description: module.description,
+      orderIndex: i + 1,
+      content: module.content,
+      estimatedMinutes: module.estimatedMinutes,
+      isActive: true,
+    }).onConflictDoNothing();
+
+    // Add module quiz questions
+    if (module.quizQuestions && module.quizQuestions.length > 0) {
+      for (let j = 0; j < module.quizQuestions.length; j++) {
+        const q = module.quizQuestions[j];
+        await db.insert(quizQuestions).values({
+          id: uuidv4(),
+          moduleId: moduleId,
+          courseId: courseId,
+          isFinalExam: false,
+          questionText: q.questionText,
+          questionType: q.questionType || 'multiple_choice',
+          options: JSON.stringify(q.options),
+          correctAnswer: q.correctAnswer,
+          explanation: q.explanation,
+          orderIndex: j + 1,
+          isActive: true,
+        }).onConflictDoNothing();
+      }
+    }
+  }
+
+  // Add final exam questions
+  for (let i = 0; i < courseData.finalExamQuestions.length; i++) {
+    const q = courseData.finalExamQuestions[i];
+    await db.insert(quizQuestions).values({
+      id: uuidv4(),
+      moduleId: null,
+      courseId: courseId,
+      isFinalExam: true,
+      questionText: q.questionText,
+      questionType: q.questionType || 'multiple_choice',
+      options: JSON.stringify(q.options),
+      correctAnswer: q.correctAnswer,
+      explanation: q.explanation,
+      orderIndex: i + 1,
+      isActive: true,
+    }).onConflictDoNothing();
+  }
+
+  console.log(`  ✅ ${stateName}: ${courseData.modules.length} modules, ${courseData.finalExamQuestions.length} final exam questions`);
+  return courseId;
+}
 
 async function seedDatabase() {
   console.log('🌱 Starting database seed...');
+
+  // Clear existing seed data (in FK dependency order)
+  await db.delete(certificates);
+  await db.delete(quizAttempts);
+  await db.delete(moduleProgress);
+  await db.delete(payments);
+  await db.delete(enrollments);
+  await db.delete(quizQuestions);
+  await db.delete(courseModules);
+  await db.delete(courses);
+  await db.delete(states);
+  console.log('🧹 Cleared existing seed data');
 
   // Create Florida state
   const floridaId = uuidv4();
@@ -48,7 +144,7 @@ async function seedDatabase() {
     price: course4hr.price,
     passingScoreQuiz: 70,
     passingScoreFinal: 80,
-    finalExamQuestions: course4hr.finalExamQuestions.length,
+    finalExamQuestions: (course4hr.finalExamQuestions || []).length,
     isActive: true,
   }).onConflictDoNothing();
 
@@ -68,7 +164,7 @@ async function seedDatabase() {
     price: course8hr.price,
     passingScoreQuiz: 70,
     passingScoreFinal: 80,
-    finalExamQuestions: course8hr.finalExamQuestions.length,
+    finalExamQuestions: (course8hr.finalExamQuestions || []).length,
     isActive: true,
   }).onConflictDoNothing();
 
@@ -88,7 +184,7 @@ async function seedDatabase() {
     price: course12hr.price,
     passingScoreQuiz: 70,
     passingScoreFinal: 80,
-    finalExamQuestions: course12hr.finalExamQuestions.length,
+    finalExamQuestions: (course12hr.finalExamQuestions || []).length,
     isActive: true,
   }).onConflictDoNothing();
 
@@ -135,7 +231,7 @@ async function seedDatabase() {
   }
 
   // Add 4-Hour final exam questions
-  for (let i = 0; i < course4hr.finalExamQuestions.length; i++) {
+  for (let i = 0; i < (course4hr.finalExamQuestions || []).length; i++) {
     const q = course4hr.finalExamQuestions[i];
     await db.insert(quizQuestions).values({
       id: uuidv4(),
@@ -195,7 +291,7 @@ async function seedDatabase() {
   }
 
   // Add 8-Hour final exam questions
-  for (let i = 0; i < course8hr.finalExamQuestions.length; i++) {
+  for (let i = 0; i < (course8hr.finalExamQuestions || []).length; i++) {
     const q = course8hr.finalExamQuestions[i];
     await db.insert(quizQuestions).values({
       id: uuidv4(),
@@ -255,7 +351,7 @@ async function seedDatabase() {
   }
 
   // Add 12-Hour final exam questions
-  for (let i = 0; i < course12hr.finalExamQuestions.length; i++) {
+  for (let i = 0; i < (course12hr.finalExamQuestions || []).length; i++) {
     const q = course12hr.finalExamQuestions[i];
     await db.insert(quizQuestions).values({
       id: uuidv4(),
@@ -274,14 +370,158 @@ async function seedDatabase() {
 
   console.log('✅ 12-Hour course modules and quizzes seeded');
 
+  // ===========================
+  // Seed Georgia State and Course
+  // ===========================
+  const georgiaId = uuidv4();
+  await db.insert(states).values({
+    id: georgiaId,
+    code: 'GA',
+    name: 'Georgia',
+    isActive: true,
+    requirements: JSON.stringify({
+      quizPassingScore: 70,
+      finalExamPassingScore: 80,
+      finalExamMinQuestions: 20,
+      requiresIdVerification: true,
+      requiresProctoring: false,
+      certificateValidity: '5 years',
+      courseAccess: '30 days',
+      regulatoryBody: 'DDS',
+    }),
+  }).onConflictDoNothing();
+  console.log('✅ Georgia state created');
+  await seedStateCourse(georgiaId, georgiaCourseData.course6Hour, 'Georgia 6-Hour');
+
+  // ===========================
+  // Seed Indiana State and Course
+  // ===========================
+  const indianaId = uuidv4();
+  await db.insert(states).values({
+    id: indianaId,
+    code: 'IN',
+    name: 'Indiana',
+    isActive: true,
+    requirements: JSON.stringify({
+      quizPassingScore: 70,
+      finalExamPassingScore: 80,
+      finalExamMinQuestions: 15,
+      requiresIdVerification: true,
+      requiresProctoring: false,
+      certificateValidity: 'permanent',
+      courseAccess: '30 days',
+      regulatoryBody: 'BMV',
+    }),
+  }).onConflictDoNothing();
+  console.log('✅ Indiana state created');
+  await seedStateCourse(indianaId, indianaCourseData.course4Hour, 'Indiana 4-Hour');
+
+  // ===========================
+  // Seed Ohio State and Course
+  // ===========================
+  const ohioId = uuidv4();
+  await db.insert(states).values({
+    id: ohioId,
+    code: 'OH',
+    name: 'Ohio',
+    isActive: true,
+    requirements: JSON.stringify({
+      quizPassingScore: 70,
+      finalExamPassingScore: 80,
+      finalExamMinQuestions: 15,
+      requiresIdVerification: true,
+      requiresProctoring: false,
+      certificateValidity: 'permanent',
+      courseAccess: '30 days',
+      regulatoryBody: 'BMV',
+      pointReduction: 2,
+    }),
+  }).onConflictDoNothing();
+  console.log('✅ Ohio state created');
+  await seedStateCourse(ohioId, ohioCourseData.course4Hour, 'Ohio 4-Hour');
+
+  // ===========================
+  // Seed Texas State and Course
+  // ===========================
+  const texasId = uuidv4();
+  await db.insert(states).values({
+    id: texasId,
+    code: 'TX',
+    name: 'Texas',
+    isActive: true,
+    requirements: JSON.stringify({
+      quizPassingScore: 70,
+      finalExamPassingScore: 80,
+      finalExamMinQuestions: 20,
+      requiresIdVerification: true,
+      requiresProctoring: false,
+      certificateValidity: 'permanent',
+      courseAccess: '90 days',
+      regulatoryBody: 'TEA/TDLR',
+      ticketDismissalDeadline: '20 days from ticket',
+    }),
+  }).onConflictDoNothing();
+  console.log('✅ Texas state created');
+  await seedStateCourse(texasId, texasCourseData.course6Hour, 'Texas 6-Hour');
+
+  // ===========================
+  // Seed California State and Course  
+  // ===========================
+  const californiaId = uuidv4();
+  await db.insert(states).values({
+    id: californiaId,
+    code: 'CA',
+    name: 'California',
+    isActive: true,
+    requirements: JSON.stringify({
+      quizPassingScore: 70,
+      finalExamPassingScore: 80,
+      finalExamMinQuestions: 20,
+      requiresIdVerification: true,
+      requiresProctoring: false,
+      certificateValidity: '18 months',
+      courseAccess: '30 days',
+      regulatoryBody: 'DMV',
+      trafficSchoolLimit: '18 months between'
+    }),
+  }).onConflictDoNothing();
+  console.log('✅ California state created');
+  await seedStateCourse(californiaId, californiaCourseData.course8Hour, 'California 8-Hour');
+
+  // ===========================
+  // Seed Arizona State and Course
+  // ===========================
+  const arizonaId = uuidv4();
+  await db.insert(states).values({
+    id: arizonaId,
+    code: 'AZ',
+    name: 'Arizona',
+    isActive: true,
+    requirements: JSON.stringify({
+      quizPassingScore: 70,
+      finalExamPassingScore: 80,
+      finalExamMinQuestions: 15,
+      requiresIdVerification: true,
+      requiresProctoring: false,
+      certificateValidity: '12 months',
+      courseAccess: '30 days',
+      regulatoryBody: 'ADOT/MVD',
+    }),
+  }).onConflictDoNothing();
+  console.log('✅ Arizona state created');
+  await seedStateCourse(arizonaId, arizonaCourseData.course4Hour, 'Arizona 4-Hour');
+
   console.log('');
   console.log('🎉 Database seeding complete!');
   console.log('');
   console.log('Summary:');
-  console.log('  - Florida state created');
-  console.log(`  - 4-Hour BDI: ${course4hr.modules.length} modules, ${course4hr.finalExamQuestions.length} final exam questions`);
-  console.log(`  - 8-Hour IDI: ${course8hr.modules.length} modules, ${course8hr.finalExamQuestions.length} final exam questions`);
-  console.log(`  - 12-Hour ADI: ${course12hr.modules.length} modules, ${course12hr.finalExamQuestions.length} final exam questions`);
+  console.log('  - Florida: 4-Hour, 8-Hour, 12-Hour courses');
+  console.log('  - Georgia: 6-Hour defensive driving course');
+  console.log('  - Indiana: 4-Hour defensive driving course');
+  console.log('  - Ohio: 4-Hour remedial driving course');
+  console.log('  - Texas: 6-Hour driving safety course');
+  console.log('  - California: 8-Hour traffic violator school');
+  console.log('  - Arizona: 4-Hour traffic survival school');
 }
 
 // Run the seed

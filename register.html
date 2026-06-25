@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Register for Quick Pass Traffic School - Florida's approved online driver improvement courses. Quick, easy, and affordable.">
-    <meta name="keywords" content="Florida traffic school registration, online ADI course, driver improvement, state approved, quick pass">
-    <title>Register - Quick Pass Traffic School | Florida Driver Improvement Course</title>
+    <meta name="description" content="Register for Quick Pass Traffic School - State-approved online defensive driving & traffic school courses. Quick, easy, and affordable.">
+    <meta name="keywords" content="traffic school registration, defensive driving course, driver improvement, state approved, quick pass">
+    <title>Register - Quick Pass Traffic School | State-Approved Driving Courses</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/register.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,8 +42,8 @@
     <!-- Page Title -->
     <section class="page-title">
         <div class="container">
-            <h1>Register for Florida Traffic School</h1>
-            <p>Complete your registration to get started with your course</p>
+            <h1 id="pageTitle">Register for Traffic School</h1>
+            <p id="pageSubtitle">Complete your registration to get started with your course</p>
         </div>
     </section>
 
@@ -204,7 +204,7 @@
                         </div>
                     </div>
 
-                    <!-- Ticket/Citation Information -->
+                    <!-- Course Selection -->
                     <div class="form-section">
                         <h2 class="section-title">
                             <svg class="section-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -215,188 +215,246 @@
 
                         <div class="form-row">
                             <div class="form-group form-group-full">
-                                <label for="courseSelect">Select Your Course <span class="required">*</span></label>
-                                <select id="courseSelect" name="CourseSelection" required>
-                                    <option value="">-- Select a Course --</option>
-                                    <option value="4-hour">4-Hour Basic Driver Improvement (BDI) - $18.50</option>
-                                    <option value="8-hour">8-Hour Intermediate Driver Improvement (IDI) - $55.00</option>
-                                    <option value="12-hour">12-Hour Advanced Driver Improvement (ADI) - $60.00</option>
+                                <label for="courseStateSelect">Select Your State <span class="required">*</span></label>
+                                <select id="courseStateSelect" name="CourseState" required>
+                                    <option value="">-- Select Your State --</option>
+                                    <option value="FL">Florida</option>
+                                    <option value="AZ">Arizona</option>
+                                    <option value="CA">California</option>
+                                    <option value="GA">Georgia</option>
+                                    <option value="IN">Indiana</option>
+                                    <option value="OH">Ohio</option>
+                                    <option value="TX">Texas</option>
                                 </select>
                             </div>
                         </div>
 
-                        <!-- 4-Hour Course Options -->
-                        <div id="courseOptions4Hour" class="course-options" style="display: none;">
-                            <div class="form-row">
-                                <div class="form-group form-group-full">
-                                    <label>Select 4-Hour Course Type <span class="required">*</span></label>
-                                    <div class="radio-group">
-                                        <label class="radio-label">
-                                            <input type="radio" name="FL_CourseType" value="B1">
-                                            <span>4-Hour BDI – To Reduce Fines or Points</span>
-                                        </label>
-                                        <label class="radio-label">
-                                            <input type="radio" name="FL_CourseType" value="B3">
-                                            <span>4-Hour BDI – Court Mandated</span>
-                                        </label>
-                                        <label class="radio-label">
-                                            <input type="radio" name="FL_CourseType" value="B2">
-                                            <span>4-Hour TCAC – DHSMV Mandated</span>
-                                        </label>
+                        <div class="form-row">
+                            <div class="form-group form-group-full">
+                                <label for="courseSelect">Select Your Course <span class="required">*</span></label>
+                                <select id="courseSelect" name="CourseSelection" required>
+                                    <option value="">-- Select a State First --</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Florida Course Type Options -->
+                        <div id="flCourseTypeSection" class="state-specific-section" style="display: none;">
+                            <!-- 4-Hour Course Options -->
+                            <div id="courseOptions4Hour" class="course-options" style="display: none;">
+                                <div class="form-row">
+                                    <div class="form-group form-group-full">
+                                        <label>Select 4-Hour Course Type <span class="required">*</span></label>
+                                        <div class="radio-group">
+                                            <label class="radio-label">
+                                                <input type="radio" name="FL_CourseType" value="B1">
+                                                <span>4-Hour BDI – To Reduce Fines or Points</span>
+                                            </label>
+                                            <label class="radio-label">
+                                                <input type="radio" name="FL_CourseType" value="B3">
+                                                <span>4-Hour BDI – Court Mandated</span>
+                                            </label>
+                                            <label class="radio-label">
+                                                <input type="radio" name="FL_CourseType" value="B2">
+                                                <span>4-Hour TCAC – DHSMV Mandated</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 8-Hour Course Options -->
+                            <div id="courseOptions8Hour" class="course-options" style="display: none;">
+                                <div class="form-row">
+                                    <div class="form-group form-group-full">
+                                        <label>Select 8-Hour Course Type <span class="required">*</span></label>
+                                        <div class="radio-group">
+                                            <label class="radio-label">
+                                                <input type="radio" name="FL_CourseType" value="I1">
+                                                <span>8-Hour IDI – Court Ordered</span>
+                                            </label>
+                                            <label class="radio-label">
+                                                <input type="radio" name="FL_CourseType" value="I2">
+                                                <span>8-Hour IDI – Point Reduction</span>
+                                            </label>
+                                            <label class="radio-label">
+                                                <input type="radio" name="FL_CourseType" value="I3">
+                                                <span>8-Hour IDI – Insurance Discount</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 12-Hour Course Options -->
+                            <div id="courseOptions12Hour" class="course-options" style="display: none;">
+                                <div class="form-row">
+                                    <div class="form-group form-group-full">
+                                        <label>Select 12-Hour Course Type <span class="required">*</span></label>
+                                        <div class="radio-group">
+                                            <label class="radio-label">
+                                                <input type="radio" name="FL_CourseType" value="A1">
+                                                <span>12-Hour ADI – Court Ordered</span>
+                                            </label>
+                                            <label class="radio-label">
+                                                <input type="radio" name="FL_CourseType" value="A2">
+                                                <span>12-Hour ADI – Habitual Traffic Offender</span>
+                                            </label>
+                                            <label class="radio-label">
+                                                <input type="radio" name="FL_CourseType" value="A3">
+                                                <span>12-Hour ADI – License Suspension</span>
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 8-Hour Course Options -->
-                        <div id="courseOptions8Hour" class="course-options" style="display: none;">
+                        <!-- Course Reason (non-FL states) -->
+                        <div id="courseReasonSection" class="state-specific-section" style="display: none;">
                             <div class="form-row">
                                 <div class="form-group form-group-full">
-                                    <label>Select 8-Hour Course Type <span class="required">*</span></label>
-                                    <div class="radio-group">
-                                        <label class="radio-label">
-                                            <input type="radio" name="FL_CourseType" value="I1">
-                                            <span>8-Hour IDI – Court Ordered</span>
-                                        </label>
-                                        <label class="radio-label">
-                                            <input type="radio" name="FL_CourseType" value="I2">
-                                            <span>8-Hour IDI – Point Reduction</span>
-                                        </label>
-                                        <label class="radio-label">
-                                            <input type="radio" name="FL_CourseType" value="I3">
-                                            <span>8-Hour IDI – Insurance Discount</span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 12-Hour Course Options -->
-                        <div id="courseOptions12Hour" class="course-options" style="display: none;">
-                            <div class="form-row">
-                                <div class="form-group form-group-full">
-                                    <label>Select 12-Hour Course Type <span class="required">*</span></label>
-                                    <div class="radio-group">
-                                        <label class="radio-label">
-                                            <input type="radio" name="FL_CourseType" value="A1">
-                                            <span>12-Hour ADI – Court Ordered</span>
-                                        </label>
-                                        <label class="radio-label">
-                                            <input type="radio" name="FL_CourseType" value="A2">
-                                            <span>12-Hour ADI – Habitual Traffic Offender</span>
-                                        </label>
-                                        <label class="radio-label">
-                                            <input type="radio" name="FL_CourseType" value="A3">
-                                            <span>12-Hour ADI – License Suspension</span>
-                                        </label>
-                                    </div>
+                                    <label for="courseReason">Reason for Taking This Course <span class="required">*</span></label>
+                                    <select id="courseReason" name="CourseReason">
+                                        <option value="">-- Select Reason --</option>
+                                        <option value="ticket_dismissal">Ticket Dismissal</option>
+                                        <option value="point_reduction">Point Reduction</option>
+                                        <option value="court_ordered">Court Ordered</option>
+                                        <option value="insurance_discount">Insurance Discount</option>
+                                        <option value="voluntary">Voluntary / Personal Improvement</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Ticket/Citation Information -->
-                    <div class="form-section">
+                    <!-- Ticket/Citation Information (Dynamic per state) -->
+                    <div class="form-section" id="ticketInfoSection">
                         <h2 class="section-title">
                             <svg class="section-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                             </svg>
-                            Ticket / Citation Information
+                            <span id="ticketSectionTitle">Ticket / Citation Information</span>
                         </h2>
 
-                        <div class="form-row">
-                            <div class="form-group form-group-large">
-                                <label for="citationNumber">Citation Number <span class="required">*</span></label>
-                                <input type="text" id="citationNumber" name="CaseNo" maxlength="7" required>
-                                <div class="info-box">
-                                    <ul>
-                                        <li>Citation numbers ONLY have 7 characters and usually start with the letter A</li>
-                                        <li>If you are taking the TCAC course, enter TCAC</li>
-                                        <li>Do not include dashes or spaces</li>
-                                    </ul>
+                        <!-- Florida-specific ticket fields -->
+                        <div id="flTicketFields" class="state-ticket-fields" style="display: none;">
+                            <div class="form-row">
+                                <div class="form-group form-group-large">
+                                    <label for="citationNumber">Citation Number <span class="required">*</span></label>
+                                    <input type="text" id="citationNumber" name="CaseNo" maxlength="7">
+                                    <div class="info-box">
+                                        <ul>
+                                            <li>Citation numbers ONLY have 7 characters and usually start with the letter A</li>
+                                            <li>If you are taking the TCAC course, enter TCAC</li>
+                                            <li>Do not include dashes or spaces</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="county">County Ticketed In <span class="required">*</span></label>
+                                    <select id="county" name="FL_County">
+                                        <option value="">Select County</option>
+                                        <option value="ALACHUA">Alachua</option>
+                                        <option value="BAKER">Baker</option>
+                                        <option value="BAY">Bay</option>
+                                        <option value="BRADFORD">Bradford</option>
+                                        <option value="BREVARD">Brevard</option>
+                                        <option value="BROWARD">Broward</option>
+                                        <option value="CALHOUN">Calhoun</option>
+                                        <option value="CHARLOTTE">Charlotte</option>
+                                        <option value="CITRUS">Citrus</option>
+                                        <option value="CLAY">Clay</option>
+                                        <option value="COLLIER">Collier</option>
+                                        <option value="COLUMBIA">Columbia</option>
+                                        <option value="DADE">Dade</option>
+                                        <option value="DESOTO">DeSoto</option>
+                                        <option value="DIXIE">Dixie</option>
+                                        <option value="DUVAL">Duval</option>
+                                        <option value="ESCAMBIA">Escambia</option>
+                                        <option value="FLAGLER">Flagler</option>
+                                        <option value="FRANKLIN">Franklin</option>
+                                        <option value="GADSDEN">Gadsden</option>
+                                        <option value="GILCHRIST">Gilchrist</option>
+                                        <option value="GLADES">Glades</option>
+                                        <option value="GULF">Gulf</option>
+                                        <option value="HAMILTON">Hamilton</option>
+                                        <option value="HARDEE">Hardee</option>
+                                        <option value="HENDRY">Hendry</option>
+                                        <option value="HERNANDO">Hernando</option>
+                                        <option value="HIGHLANDS">Highlands</option>
+                                        <option value="HILLSBOROUGH">Hillsborough</option>
+                                        <option value="HOLMES">Holmes</option>
+                                        <option value="INDIAN RIVER">Indian River</option>
+                                        <option value="JACKSON">Jackson</option>
+                                        <option value="JEFFERSON">Jefferson</option>
+                                        <option value="LAFAYETTE">Lafayette</option>
+                                        <option value="LAKE">Lake</option>
+                                        <option value="LEE">Lee</option>
+                                        <option value="LEON">Leon</option>
+                                        <option value="LEVY">Levy</option>
+                                        <option value="LIBERTY">Liberty</option>
+                                        <option value="MADISON">Madison</option>
+                                        <option value="MANATEE">Manatee</option>
+                                        <option value="MARION">Marion</option>
+                                        <option value="MARTIN">Martin</option>
+                                        <option value="MONROE">Monroe</option>
+                                        <option value="NASSAU">Nassau</option>
+                                        <option value="OKALOOSA">Okaloosa</option>
+                                        <option value="OKEECHOBEE">Okeechobee</option>
+                                        <option value="ORANGE">Orange</option>
+                                        <option value="OSCEOLA">Osceola</option>
+                                        <option value="PALM BEACH">Palm Beach</option>
+                                        <option value="PASCO">Pasco</option>
+                                        <option value="PINELLAS">Pinellas</option>
+                                        <option value="POLK">Polk</option>
+                                        <option value="PUTNAM">Putnam</option>
+                                        <option value="SANTA ROSA">Santa Rosa</option>
+                                        <option value="SARASOTA">Sarasota</option>
+                                        <option value="SEMINOLE">Seminole</option>
+                                        <option value="ST JOHNS">St. Johns</option>
+                                        <option value="ST LUCIE">St. Lucie</option>
+                                        <option value="SUMTER">Sumter</option>
+                                        <option value="SUWANNEE">Suwannee</option>
+                                        <option value="TAYLOR">Taylor</option>
+                                        <option value="UNION">Union</option>
+                                        <option value="VOLUSIA">Volusia</option>
+                                        <option value="WAKULLA">Wakulla</option>
+                                        <option value="WALTON">Walton</option>
+                                        <option value="WASHINGTON">Washington</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="county">County Ticketed In <span class="required">*</span></label>
-                                <select id="county" name="FL_County" required>
-                                    <option value="">Select County</option>
-                                    <option value="ALACHUA">Alachua</option>
-                                    <option value="BAKER">Baker</option>
-                                    <option value="BAY">Bay</option>
-                                    <option value="BRADFORD">Bradford</option>
-                                    <option value="BREVARD">Brevard</option>
-                                    <option value="BROWARD">Broward</option>
-                                    <option value="CALHOUN">Calhoun</option>
-                                    <option value="CHARLOTTE">Charlotte</option>
-                                    <option value="CITRUS">Citrus</option>
-                                    <option value="CLAY">Clay</option>
-                                    <option value="COLLIER">Collier</option>
-                                    <option value="COLUMBIA">Columbia</option>
-                                    <option value="DADE">Dade</option>
-                                    <option value="DESOTO">DeSoto</option>
-                                    <option value="DIXIE">Dixie</option>
-                                    <option value="DUVAL">Duval</option>
-                                    <option value="ESCAMBIA">Escambia</option>
-                                    <option value="FLAGLER">Flagler</option>
-                                    <option value="FRANKLIN">Franklin</option>
-                                    <option value="GADSDEN">Gadsden</option>
-                                    <option value="GILCHRIST">Gilchrist</option>
-                                    <option value="GLADES">Glades</option>
-                                    <option value="GULF">Gulf</option>
-                                    <option value="HAMILTON">Hamilton</option>
-                                    <option value="HARDEE">Hardee</option>
-                                    <option value="HENDRY">Hendry</option>
-                                    <option value="HERNANDO">Hernando</option>
-                                    <option value="HIGHLANDS">Highlands</option>
-                                    <option value="HILLSBOROUGH">Hillsborough</option>
-                                    <option value="HOLMES">Holmes</option>
-                                    <option value="INDIAN RIVER">Indian River</option>
-                                    <option value="JACKSON">Jackson</option>
-                                    <option value="JEFFERSON">Jefferson</option>
-                                    <option value="LAFAYETTE">Lafayette</option>
-                                    <option value="LAKE">Lake</option>
-                                    <option value="LEE">Lee</option>
-                                    <option value="LEON">Leon</option>
-                                    <option value="LEVY">Levy</option>
-                                    <option value="LIBERTY">Liberty</option>
-                                    <option value="MADISON">Madison</option>
-                                    <option value="MANATEE">Manatee</option>
-                                    <option value="MARION">Marion</option>
-                                    <option value="MARTIN">Martin</option>
-                                    <option value="MONROE">Monroe</option>
-                                    <option value="NASSAU">Nassau</option>
-                                    <option value="OKALOOSA">Okaloosa</option>
-                                    <option value="OKEECHOBEE">Okeechobee</option>
-                                    <option value="ORANGE">Orange</option>
-                                    <option value="OSCEOLA">Osceola</option>
-                                    <option value="PALM BEACH">Palm Beach</option>
-                                    <option value="PASCO">Pasco</option>
-                                    <option value="PINELLAS">Pinellas</option>
-                                    <option value="POLK">Polk</option>
-                                    <option value="PUTNAM">Putnam</option>
-                                    <option value="SANTA ROSA">Santa Rosa</option>
-                                    <option value="SARASOTA">Sarasota</option>
-                                    <option value="SEMINOLE">Seminole</option>
-                                    <option value="ST JOHNS">St. Johns</option>
-                                    <option value="ST LUCIE">St. Lucie</option>
-                                    <option value="SUMTER">Sumter</option>
-                                    <option value="SUWANNEE">Suwannee</option>
-                                    <option value="TAYLOR">Taylor</option>
-                                    <option value="UNION">Union</option>
-                                    <option value="VOLUSIA">Volusia</option>
-                                    <option value="WAKULLA">Wakulla</option>
-                                    <option value="WALTON">Walton</option>
-                                    <option value="WASHINGTON">Washington</option>
-                                </select>
+                        <!-- Generic ticket fields (non-FL states) -->
+                        <div id="genericTicketFields" class="state-ticket-fields" style="display: none;">
+                            <div class="form-row">
+                                <div class="form-group form-group-large">
+                                    <label for="ticketNumber">Ticket/Citation Number <span class="optional">(optional)</span></label>
+                                    <input type="text" id="ticketNumber" name="TicketNumber" maxlength="30">
+                                    <small class="form-note">If you have a ticket number, enter it here for your records</small>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="courtName">Court Name <span class="optional">(optional)</span></label>
+                                    <input type="text" id="courtName" name="CourtName" maxlength="50">
+                                </div>
+                                <div class="form-group">
+                                    <label for="courtCounty">County <span class="optional">(optional)</span></label>
+                                    <input type="text" id="courtCounty" name="CourtCounty" maxlength="30">
+                                </div>
                             </div>
                         </div>
 
+                        <!-- Due date (all states) -->
                         <div class="form-row">
                             <div class="form-group form-group-large">
-                                <label>Due Date <span class="required">*</span></label>
+                                <label>Course Completion Deadline <span class="optional">(if applicable)</span></label>
                                 <div class="date-select-group">
                                     <select name="CompletionMonth" required>
                                         <option value="">Month</option>
@@ -539,11 +597,11 @@
                             </div>
                         </div>
 
-                        <div class="form-row">
+                        <div class="form-row" id="ssn4Row">
                             <div class="form-group">
                                 <label for="ssn4">Last 4 Digits of SSN <span class="required">*</span></label>
-                                <input type="text" id="ssn4" name="FL_SSN4" maxlength="4" pattern="[0-9]{4}" required>
-                                <small class="form-note">Numbers only</small>
+                                <input type="text" id="ssn4" name="FL_SSN4" maxlength="4" pattern="[0-9]{4}">
+                                <small class="form-note">Numbers only (required for Florida reports)</small>
                             </div>
                         </div>
 
@@ -767,8 +825,8 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Quick Pass Traffic School</h3>
-                    <p>Florida DMV Licensed #E0000</p>
-                    <p>Making traffic school quick, easy, and affordable since 2010.</p>
+                    <p>State-Approved Traffic School</p>
+                    <p>Courses available in FL, CA, TX, AZ, GA, IN, OH</p>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
@@ -799,7 +857,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Quick Pass Traffic School. All rights reserved. Florida DMV Licensed.</p>
+                <p>&copy; 2025 Quick Pass Traffic School. All rights reserved. State-Approved Courses Nationwide.</p>
             </div>
         </div>
     </footer>
@@ -813,8 +871,80 @@
             window.location.href = 'dashboard/index.html';
         }
 
+        // ===========================
+        // Multi-State Course Configuration
+        // ===========================
+        const stateCourses = {
+            FL: {
+                name: 'Florida',
+                title: 'Register for Florida Traffic School',
+                courses: [
+                    { value: 'florida-4-hour-bdi', label: '4-Hour Basic Driver Improvement (BDI) - $18.50', hours: '4-hour' },
+                    { value: 'florida-8-hour-idi', label: '8-Hour Intermediate Driver Improvement (IDI) - $55.00', hours: '8-hour' },
+                    { value: 'florida-12-hour-adi', label: '12-Hour Advanced Driver Improvement (ADI) - $60.00', hours: '12-hour' }
+                ],
+                requiresCitation: true,
+                requiresSSN4: true,
+                requiresCounty: true,
+                hasCourseTypes: true
+            },
+            AZ: {
+                name: 'Arizona',
+                title: 'Register for Arizona Traffic Survival School',
+                courses: [
+                    { value: 'arizona-traffic-survival-school', label: '4-Hour Traffic Survival School - $24.95' }
+                ],
+                requiresCitation: false,
+                requiresSSN4: false
+            },
+            CA: {
+                name: 'California',
+                title: 'Register for California Traffic Violator School',
+                courses: [
+                    { value: 'california-traffic-violator-school', label: '8-Hour Traffic Violator School - $29.95' }
+                ],
+                requiresCitation: false,
+                requiresSSN4: false
+            },
+            GA: {
+                name: 'Georgia',
+                title: 'Register for Georgia Defensive Driving Course',
+                courses: [
+                    { value: 'georgia-defensive-driving', label: '6-Hour Defensive Driving Course - $24.95' }
+                ],
+                requiresCitation: false,
+                requiresSSN4: false
+            },
+            IN: {
+                name: 'Indiana',
+                title: 'Register for Indiana Defensive Driving Course',
+                courses: [
+                    { value: 'indiana-defensive-driving', label: '4-Hour Defensive Driving Course - $24.95' }
+                ],
+                requiresCitation: false,
+                requiresSSN4: false
+            },
+            OH: {
+                name: 'Ohio',
+                title: 'Register for Ohio Remedial Driving Course',
+                courses: [
+                    { value: 'ohio-remedial-driving', label: '4-Hour Remedial Driving Course (2-Point Credit) - $24.95' }
+                ],
+                requiresCitation: false,
+                requiresSSN4: false
+            },
+            TX: {
+                name: 'Texas',
+                title: 'Register for Texas Driving Safety Course',
+                courses: [
+                    { value: 'texas-driving-safety', label: '6-Hour Driving Safety Course - $25.00' }
+                ],
+                requiresCitation: false,
+                requiresSSN4: false
+            }
+        };
+
         function validateForm() {
-            // Email validation
             const email = document.getElementById('email').value;
             const confirmEmail = document.getElementById('confirmEmail').value;
             
@@ -823,14 +953,18 @@
                 return false;
             }
 
-            // Citation number validation
-            const selectedCourseType = document.querySelector('input[name="FL_CourseType"]:checked');
-            const citationNumber = document.getElementById('citationNumber').value.trim();
+            const selectedState = document.getElementById('courseStateSelect').value;
+            
+            // FL-specific citation validation
+            if (selectedState === 'FL') {
+                const selectedCourseType = document.querySelector('input[name="FL_CourseType"]:checked');
+                const citationNumber = document.getElementById('citationNumber').value.trim();
 
-            if (selectedCourseType && selectedCourseType.value !== 'B2') {
-                if (citationNumber.length > 0 && citationNumber.charAt(0).toUpperCase() !== 'A') {
-                    if (!confirm("The citation number you entered doesn't start with the letter 'A'. Most Florida citation numbers begin with 'A', so please double-check your entry.\n\nEntering the wrong citation number could delay or prevent your certificate from being processed correctly. Are you sure you want to continue?")) {
-                        return false;
+                if (selectedCourseType && selectedCourseType.value !== 'B2') {
+                    if (citationNumber.length > 0 && citationNumber.charAt(0).toUpperCase() !== 'A') {
+                        if (!confirm("The citation number you entered doesn't start with the letter 'A'. Most Florida citation numbers begin with 'A'.\n\nAre you sure you want to continue?")) {
+                            return false;
+                        }
                     }
                 }
             }
@@ -838,60 +972,150 @@
             return true;
         }
 
-        // Add form field validation and submission
         document.addEventListener('DOMContentLoaded', function() {
             const form = document.querySelector('form[name="registrationForm"]');
             const submitBtn = form.querySelector('button[type="submit"]');
-            
-            // Course selection handling
+            const courseStateSelect = document.getElementById('courseStateSelect');
             const courseSelect = document.getElementById('courseSelect');
-            const courseOptions4Hour = document.getElementById('courseOptions4Hour');
-            const courseOptions8Hour = document.getElementById('courseOptions8Hour');
-            const courseOptions12Hour = document.getElementById('courseOptions12Hour');
             
-            function showCourseOptions(courseType) {
-                // Hide all course options
+            // URL params for pre-selection
+            const urlParams = new URLSearchParams(window.location.search);
+            const courseParam = urlParams.get('course');
+            
+            // ===========================
+            // State Change Handler
+            // ===========================
+            courseStateSelect.addEventListener('change', function() {
+                const stateCode = this.value;
+                updateFormForState(stateCode);
+            });
+            
+            function updateFormForState(stateCode) {
+                const config = stateCourses[stateCode];
+                if (!config) {
+                    courseSelect.innerHTML = '<option value="">-- Select a State First --</option>';
+                    return;
+                }
+                
+                // Update page title
+                document.getElementById('pageTitle').textContent = config.title;
+                
+                // Update course dropdown
+                courseSelect.innerHTML = '<option value="">-- Select a Course --</option>';
+                config.courses.forEach(c => {
+                    const opt = document.createElement('option');
+                    opt.value = c.value;
+                    opt.textContent = c.label;
+                    courseSelect.appendChild(opt);
+                });
+                
+                // Auto-select if only one course
+                if (config.courses.length === 1) {
+                    courseSelect.value = config.courses[0].value;
+                }
+                
+                // Show/hide FL-specific sections
+                const flCourseTypeSection = document.getElementById('flCourseTypeSection');
+                const courseReasonSection = document.getElementById('courseReasonSection');
+                const flTicketFields = document.getElementById('flTicketFields');
+                const genericTicketFields = document.getElementById('genericTicketFields');
+                const ssn4Row = document.getElementById('ssn4Row');
+                
+                if (stateCode === 'FL') {
+                    flCourseTypeSection.style.display = 'block';
+                    courseReasonSection.style.display = 'none';
+                    flTicketFields.style.display = 'block';
+                    genericTicketFields.style.display = 'none';
+                    ssn4Row.style.display = 'flex';
+                    document.getElementById('ticketSectionTitle').textContent = 'Ticket / Citation Information';
+                    
+                    // Make FL fields required
+                    document.getElementById('citationNumber').required = true;
+                    document.getElementById('county').required = true;
+                    document.getElementById('ssn4').required = true;
+                    document.getElementById('courseReason').required = false;
+                } else {
+                    flCourseTypeSection.style.display = 'none';
+                    courseReasonSection.style.display = 'block';
+                    flTicketFields.style.display = 'none';
+                    genericTicketFields.style.display = 'block';
+                    ssn4Row.style.display = 'none';
+                    document.getElementById('ticketSectionTitle').textContent = 'Ticket Information (Optional)';
+                    
+                    // Remove FL field requirements
+                    document.getElementById('citationNumber').required = false;
+                    document.getElementById('county').required = false;
+                    document.getElementById('ssn4').required = false;
+                    document.getElementById('courseReason').required = true;
+                    
+                    // Clear FL radio selections
+                    document.querySelectorAll('input[name="FL_CourseType"]').forEach(r => {
+                        r.checked = false;
+                        r.required = false;
+                    });
+                }
+                
+                // Update address state default
+                document.getElementById('state').value = stateCode;
+                document.getElementById('licenseState').value = stateCode;
+            }
+            
+            // ===========================
+            // FL Course Type Handling
+            // ===========================
+            courseSelect.addEventListener('change', function() {
+                const selectedState = courseStateSelect.value;
+                if (selectedState !== 'FL') return;
+                
+                const courseOptions4Hour = document.getElementById('courseOptions4Hour');
+                const courseOptions8Hour = document.getElementById('courseOptions8Hour');
+                const courseOptions12Hour = document.getElementById('courseOptions12Hour');
+                
                 courseOptions4Hour.style.display = 'none';
                 courseOptions8Hour.style.display = 'none';
                 courseOptions12Hour.style.display = 'none';
                 
-                // Clear all radio selections
-                document.querySelectorAll('input[name="FL_CourseType"]').forEach(radio => {
-                    radio.checked = false;
-                    radio.required = false;
+                document.querySelectorAll('input[name="FL_CourseType"]').forEach(r => {
+                    r.checked = false;
+                    r.required = false;
                 });
                 
-                // Show appropriate options and make required
-                if (courseType === '4-hour') {
+                const val = this.value;
+                if (val && val.includes('4-hour')) {
                     courseOptions4Hour.style.display = 'block';
-                    courseOptions4Hour.querySelectorAll('input[name="FL_CourseType"]')[0].required = true;
-                } else if (courseType === '8-hour') {
+                    courseOptions4Hour.querySelector('input[name="FL_CourseType"]').required = true;
+                } else if (val && val.includes('8-hour')) {
                     courseOptions8Hour.style.display = 'block';
-                    courseOptions8Hour.querySelectorAll('input[name="FL_CourseType"]')[0].required = true;
-                } else if (courseType === '12-hour') {
+                    courseOptions8Hour.querySelector('input[name="FL_CourseType"]').required = true;
+                } else if (val && val.includes('12-hour')) {
                     courseOptions12Hour.style.display = 'block';
-                    courseOptions12Hour.querySelectorAll('input[name="FL_CourseType"]')[0].required = true;
+                    courseOptions12Hour.querySelector('input[name="FL_CourseType"]').required = true;
                 }
-            }
-            
-            courseSelect.addEventListener('change', function() {
-                showCourseOptions(this.value);
             });
             
-            // Pre-select course from URL parameter
-            const urlParams = new URLSearchParams(window.location.search);
-            const courseParam = urlParams.get('course');
-            
+            // ===========================
+            // Pre-select from URL
+            // ===========================
             if (courseParam) {
-                if (courseParam.includes('4-hour')) {
-                    courseSelect.value = '4-hour';
-                    showCourseOptions('4-hour');
-                } else if (courseParam.includes('8-hour')) {
-                    courseSelect.value = '8-hour';
-                    showCourseOptions('8-hour');
-                } else if (courseParam.includes('12-hour')) {
-                    courseSelect.value = '12-hour';
-                    showCourseOptions('12-hour');
+                // Detect state from course slug
+                let detectedState = '';
+                if (courseParam.startsWith('florida')) detectedState = 'FL';
+                else if (courseParam.startsWith('arizona')) detectedState = 'AZ';
+                else if (courseParam.startsWith('california')) detectedState = 'CA';
+                else if (courseParam.startsWith('georgia')) detectedState = 'GA';
+                else if (courseParam.startsWith('indiana')) detectedState = 'IN';
+                else if (courseParam.startsWith('ohio')) detectedState = 'OH';
+                else if (courseParam.startsWith('texas')) detectedState = 'TX';
+                
+                if (detectedState) {
+                    courseStateSelect.value = detectedState;
+                    updateFormForState(detectedState);
+                    
+                    // Try to select the specific course
+                    setTimeout(() => {
+                        courseSelect.value = courseParam;
+                        courseSelect.dispatchEvent(new Event('change'));
+                    }, 100);
                 }
             }
             
@@ -912,14 +1136,23 @@
             `;
             emailConfirmGroup.insertAdjacentHTML('afterend', passwordHtml);
             
+            // ===========================
+            // Form Submission
+            // ===========================
             form.addEventListener('submit', async function(e) {
                 e.preventDefault();
                 
-                // Check course selection first
-                const courseSelection = document.getElementById('courseSelect').value;
+                const selectedState = courseStateSelect.value;
+                if (!selectedState) {
+                    alert('Please select your state before continuing.');
+                    courseStateSelect.focus();
+                    return false;
+                }
+                
+                const courseSelection = courseSelect.value;
                 if (!courseSelection) {
                     alert('Please select a course before continuing.');
-                    document.getElementById('courseSelect').focus();
+                    courseSelect.focus();
                     return false;
                 }
                 
@@ -936,13 +1169,20 @@
                     }
                 });
                 
-                // Check radio groups
-                const courseTypeSelected = document.querySelector('input[name="FL_CourseType"]:checked');
-                const genderSelected = document.querySelector('input[name="Gender"]:checked');
+                // FL-specific radio validation
+                if (selectedState === 'FL') {
+                    const courseTypeSelected = document.querySelector('input[name="FL_CourseType"]:checked');
+                    if (!courseTypeSelected) {
+                        isValid = false;
+                        alert('Please select your course type.');
+                        return false;
+                    }
+                }
                 
-                if (!courseTypeSelected || !genderSelected) {
+                const genderSelected = document.querySelector('input[name="Gender"]:checked');
+                if (!genderSelected) {
                     isValid = false;
-                    alert('Please select all required options (Course Type and Gender)');
+                    alert('Please select your gender.');
                     return false;
                 }
                 
@@ -965,28 +1205,22 @@
                     return false;
                 }
                 
-                // Custom validation
-                if (!validateForm()) {
-                    return false;
-                }
+                if (!validateForm()) return false;
                 
-                // Show loading state
                 submitBtn.disabled = true;
                 submitBtn.innerHTML = '<span class="spinner"></span> Processing...';
                 
-                // Gather form data
                 const birthDate = `${form.BirthYear.value}-${form.BirthMonth.value}-${form.BirthDay.value}`;
-                const dueDate = `${form.CompletionYear.value}-${form.CompletionMonth.value}-${form.CompletionDay.value}`;
                 
                 const registrationData = {
-                    // Account info
                     email: document.getElementById('email').value,
                     password: password,
                     firstName: document.getElementById('firstName').value,
                     lastName: document.getElementById('lastName').value,
                     phone: document.getElementById('dayPhone').value,
+                    courseState: selectedState,
+                    courseSlug: courseSelection,
                     
-                    // Address
                     address: {
                         street: document.getElementById('address1').value,
                         apt: document.getElementById('address2').value || '',
@@ -995,39 +1229,44 @@
                         zip: document.getElementById('zip').value
                     },
                     
-                    // Driver license info
                     driversLicense: {
                         number: document.getElementById('licenseNumber').value,
-                        state: document.getElementById('licenseState').value,
-                        ssn4: document.getElementById('ssn4').value
+                        state: document.getElementById('licenseState').value
                     },
                     
-                    // Personal info
                     gender: genderSelected.value,
                     birthDate: birthDate,
                     middleInitial: document.getElementById('middleInitial').value || '',
-                    
-                    // Florida-specific info
-                    florida: {
-                        courseSelection: document.getElementById('courseSelect').value,
-                        courseType: courseTypeSelected.value,
-                        citationNumber: document.getElementById('citationNumber').value,
-                        county: document.getElementById('county').value,
-                        dueDate: dueDate
-                    },
-                    
-                    // Optional fields
                     referredBy: document.getElementById('referredBy').value,
                     promoCode: document.getElementById('promoCode').value || '',
                     optIn: document.querySelector('input[name="OptIn"]').checked
                 };
                 
+                // Add state-specific fields
+                if (selectedState === 'FL') {
+                    const courseTypeSelected = document.querySelector('input[name="FL_CourseType"]:checked');
+                    const dueDate = `${form.CompletionYear.value}-${form.CompletionMonth.value}-${form.CompletionDay.value}`;
+                    registrationData.florida = {
+                        courseType: courseTypeSelected ? courseTypeSelected.value : '',
+                        citationNumber: document.getElementById('citationNumber').value,
+                        county: document.getElementById('county').value,
+                        dueDate: dueDate,
+                        ssn4: document.getElementById('ssn4').value
+                    };
+                    registrationData.driversLicense.ssn4 = document.getElementById('ssn4').value;
+                } else {
+                    registrationData.ticketInfo = {
+                        ticketNumber: document.getElementById('ticketNumber').value || '',
+                        courtName: document.getElementById('courtName').value || '',
+                        courtCounty: document.getElementById('courtCounty').value || '',
+                        courseReason: document.getElementById('courseReason').value
+                    };
+                }
+                
                 try {
                     const response = await fetch('/api/auth/register', {
                         method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
+                        headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify(registrationData)
                     });
                     
@@ -1037,24 +1276,11 @@
                         throw new Error(data.error || 'Registration failed');
                     }
                     
-                    // Store auth token and user info
                     localStorage.setItem('auth_token', data.token);
                     localStorage.setItem('user', JSON.stringify(data.user));
                     
-                    // Get course slug based on selected course
-                    const selectedCourse = document.getElementById('courseSelect').value;
-                    let courseSlug = 'florida-4-hour-bdi'; // default
-                    
-                    if (selectedCourse === '4-hour') {
-                        courseSlug = 'florida-4-hour-bdi';
-                    } else if (selectedCourse === '8-hour') {
-                        courseSlug = 'florida-8-hour-idi';
-                    } else if (selectedCourse === '12-hour') {
-                        courseSlug = 'florida-12-hour-adi';
-                    }
-                    
-                    // Redirect to checkout
-                    window.location.href = `checkout.html?course=${courseSlug}`;
+                    // Redirect to checkout with selected course
+                    window.location.href = `checkout.html?course=${courseSelection}`;
                     
                 } catch (error) {
                     alert(error.message || 'Registration failed. Please try again.');

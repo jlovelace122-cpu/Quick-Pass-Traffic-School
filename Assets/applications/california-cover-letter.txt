@@ -1,0 +1,273 @@
+============================================================
+CALIFORNIA TRAFFIC VIOLATOR SCHOOL APPLICATION
+COVER LETTER & OL 613 SUPPORTING DOCUMENTATION
+============================================================
+
+Date: April 12, 2026
+
+California Department of Motor Vehicles
+Occupational Licensing Section
+Traffic Violator School Unit
+P.O. Box 932342
+Sacramento, CA 94232-3420
+
+RE: Application for Traffic Violator School (TVS) Owner License
+    Form OL 613 — Online Course Provider
+    California Vehicle Code §11200-11222
+
+Dear Occupational Licensing Review Committee,
+
+I am writing to submit an application for a Traffic Violator School 
+Owner License with the California Department of Motor Vehicles, 
+pursuant to California Vehicle Code Division 5, Chapter 1.5 
+(Sections 11200-11222) and Title 13 of the California Code of 
+Regulations, Division 1, Chapter 1, Article 5.
+
+This application seeks authorization to operate as a DMV-licensed 
+online Traffic Violator School offering an 8-hour course for 
+eligible California drivers.
+
+APPLICANT INFORMATION:
+--------------------------------------------------------------
+Business Name:        Quick Pass Traffic School
+Applicant/Owner:      Jordan Lovelace
+Business Address:     NW rd Way, Parkland, FL 33067
+California Agent:     [TO BE DESIGNATED — see note below]
+Phone:                (714) 312-9994
+Email:                support@quickpasstrafficschool.com
+Website:              www.quickpasstrafficschool.com
+Entity Type:          Sole Proprietorship
+EIN:                  [PENDING — Form SS-4 faxed to IRS; awaiting assignment]
+Social Security #:    [To be provided on OL 613 form]
+
+NOTE ON CALIFORNIA PRESENCE:
+--------------------------------------------------------------
+As an out-of-state applicant, Quick Pass Traffic School will 
+designate a California-based registered agent for service of 
+process and regulatory communications, as required by CVC §11202. 
+Agent information will be provided with the formal application.
+
+Alternatively, we are prepared to establish a California business 
+presence if required by the DMV for TVS licensure.
+
+COURSE OVERVIEW:
+--------------------------------------------------------------
+Course Title:     California Traffic Violator School
+Duration:         8 Hours (minimum time enforced by platform)
+Delivery Method:  100% Online (asynchronous, self-paced)
+Platform:         Proprietary web-based Learning Management System
+Passing Score:    Module quizzes: 70% | Final Exam: 80%
+Price:            $29.95
+Target Students:  Eligible California drivers who wish to mask a 
+                  traffic violation point (once every 18 months, 
+                  per CVC §41501)
+
+CURRICULUM CONTENT (Per Title 13 CCR §345.56):
+--------------------------------------------------------------
+Our 8-hour curriculum has been developed in compliance with DMV 
+curriculum requirements and covers all mandated topics:
+
+Module 1: Introduction & California Vehicle Code (70 minutes)
+  - California traffic law fundamentals
+  - NOTS point system (4 pts/12 mo, 6 pts/24 mo, 8 pts/36 mo)
+  - Traffic Violator School eligibility requirements
+  - Speed laws (Basic Speed Law, Maximum Speed Law, 65/70 mph)
+  - Right-of-way rules
+  - Hands-Free Law (CVC §23123, §23123.5)
+  - Move Over/Slow Down Law (CVC §21809)
+  - Financial responsibility requirements
+
+Module 2: Defensive Driving Techniques (70 minutes)
+  - 3-second following distance rule
+  - SIPDE scanning process
+  - Space cushion management
+  - Mirror usage and blind spot elimination
+  - Intersection navigation and left-turn hazards
+  - Freeway driving (merging, lane changes, California highways)
+  - Speed management and stopping distance physics
+
+Module 3: Impaired Driving & California DUI Laws (70 minutes)
+  - California DUI laws (CVC §23152, §23153)
+  - BAC limits: 0.08% (standard), 0.04% (commercial), 
+    0.01% (under 21)
+  - Implied Consent Law (CVC §23612)
+  - Administrative Per Se (APS) process
+  - DUI penalties and enhancements
+  - Drug-impaired driving (including marijuana — legal but 
+    not while driving)
+  - Zero Tolerance for under-21 drivers
+
+Module 4: Distracted Driving (60 minutes)
+  - California Hands-Free Law enforcement
+  - Three types of distraction
+  - CVC §23123 (handheld phone prohibition)
+  - CVC §23123.5 (texting prohibition)
+  - Under-18 complete wireless device ban
+  - Work zone and school zone considerations
+  - Cognitive distraction research
+
+Module 5: Sharing California Roads (60 minutes)
+  - "Three Feet for Safety Act" (CVC §21760) — cyclists
+  - Lane splitting: legal in California (AB 51)
+  - Motorcycle awareness
+  - Pedestrian right-of-way rules
+  - Large truck "No-Zones" (blind spots)
+  - School bus laws
+  - Emergency vehicle response (CVC §21806)
+  - Railroad crossings
+
+Module 6: California Weather & Road Conditions (60 minutes)
+  - Rain driving and hydroplaning
+  - Tule fog (Central Valley visibility hazard)
+  - Mountain driving (grades, curves, chain requirements)
+  - Chain installation requirements (R1, R2, R3 levels)
+  - Earthquake safety while driving
+  - Wildfire smoke and air quality driving
+  - Night driving techniques
+  - Construction zone safety
+
+Module 7: Fatigue, Emotions & Course Review (60 minutes)
+  - Drowsy driving recognition and prevention
+  - Road rage and aggressive driving
+  - Emotional fitness to drive
+  - Stress management techniques
+  - Comprehensive course review
+  - Final exam preparation strategies
+  - California-specific law review summary
+
+Assessment Structure:
+  - 4 quiz questions per module (28 total, 70% passing)
+  - 20-question final exam (multiple choice, 80% passing)
+  - Questions drawn from 50+ question bank, randomized
+  - Unlimited retakes at no additional charge
+
+TECHNOLOGY SPECIFICATIONS (Per CCR Title 13):
+--------------------------------------------------------------
+Our platform meets all DMV requirements for online TVS delivery:
+
+  IDENTITY VERIFICATION:
+  • Government-issued photo ID upload at enrollment
+  • Identity verification at course start and periodically 
+    throughout the course
+  • Audit trail of all verification events
+
+  TIME ENFORCEMENT:
+  • Server-side minimum time timers per module
+  • Students cannot advance without meeting minimum time
+  • Total course time cannot be completed in under 8 hours
+  • Idle timeout detection (pauses timer after 5 min inactivity)
+
+  ASSESSMENT SECURITY:
+  • Questions randomly selected from expanded question bank
+  • Answer options randomized per attempt
+  • Each student receives a unique exam configuration
+  • Copy/paste disabled during examinations
+
+  DATA SECURITY & PRIVACY:
+  • SSL/TLS encryption for all data transmission
+  • BCrypt password hashing
+  • Encrypted data storage (AES-256)
+  • Compliant with California Consumer Privacy Act (CCPA)
+  • Student records retained per DMV requirements
+
+  ACCESSIBILITY:
+  • WCAG 2.1 Level AA compliant
+  • Mobile-responsive (phone, tablet, desktop)
+  • Screen reader compatible
+  • Keyboard navigation support
+  • Minimum font sizes and contrast ratios
+
+  CERTIFICATE GENERATION:
+  • Electronic completion certificate
+  • Same-day delivery upon course completion
+  • Contains all DMV-required information
+  • Unique certificate number for verification
+
+SURETY BOND:
+--------------------------------------------------------------
+A $10,000 surety bond will be obtained from a California-admitted 
+surety company and submitted with Form OL 601, as required by 
+CVC §11200.5. Bond documentation will accompany the formal 
+application package.
+
+BACKGROUND CHECK:
+--------------------------------------------------------------
+I am prepared to complete Live Scan fingerprinting at an 
+authorized California Live Scan location and authorize a full 
+background investigation as required for TVS Owner licensure 
+per CVC §11202.
+
+BUSINESS QUALIFICATIONS:
+--------------------------------------------------------------
+Quick Pass Traffic School brings the following qualifications 
+to the California market:
+
+  • Established traffic school business with multi-state operations
+  • Comprehensive, engaging curriculum developed by traffic safety 
+    education professionals
+  • State-of-the-art online learning platform
+  • 24/7 student support via AI-powered chat and email
+  • Competitive pricing ($29.95) — below industry average
+  • 100% money-back satisfaction guarantee
+  • Track record of student success across multiple states
+
+We currently operate or are seeking approval in Florida, Arizona, 
+Texas, Georgia, Indiana, and Ohio — demonstrating our commitment 
+to national traffic safety education.
+
+MARKET OPPORTUNITY:
+--------------------------------------------------------------
+California represents an enormous opportunity to serve the driving 
+public. With over 27 million licensed drivers and hundreds of 
+thousands of traffic citations issued annually, there is strong 
+demand for affordable, accessible, and high-quality online traffic 
+school options.
+
+Quick Pass Traffic School's $29.95 price point and mobile-friendly 
+platform make defensive driving education accessible to all 
+California communities, including underserved rural areas where 
+in-person traffic school options are limited.
+
+REQUESTED ACTION:
+--------------------------------------------------------------
+I respectfully request that the DMV Occupational Licensing Section 
+review this application for Traffic Violator School Owner licensure. 
+I am prepared to:
+
+  1. Submit Form OL 613 with all required attachments
+  2. Pay the $250 application fee
+  3. Obtain the $10,000 surety bond (Form OL 601)
+  4. Complete Live Scan fingerprinting for background check
+  5. Designate a California registered agent
+  6. Provide full course access for DMV curriculum review
+  7. Make any curriculum modifications required by the DMV
+  8. Attend any required hearings or meetings
+  9. Comply with all ongoing reporting requirements
+
+California's roads serve millions of drivers daily, and I believe 
+Quick Pass Traffic School can make a meaningful contribution to 
+traffic safety education in the state. Thank you for your time 
+and consideration.
+
+Respectfully submitted,
+
+
+_________________________________
+Jordan Lovelace
+Owner, Quick Pass Traffic School
+(714) 312-9994
+support@quickpasstrafficschool.com
+www.quickpasstrafficschool.com
+
+
+ENCLOSURES:
+  1. Form OL 613 — Application for TVS Owner License
+  2. Detailed course curriculum (8-hour, 7 modules)
+  3. Sample course content and platform screenshots 
+  4. Technology platform specification document
+  5. Live Scan request form (to be completed in person)
+  6. Business registration documents
+  7. [Surety Bond — OL 601 — to be submitted upon procurement]
+  8. [California Registered Agent designation letter]
+  9. [EIN documentation — to be included upon receipt]
+  10. [CCPA compliance documentation]

@@ -8,40 +8,113 @@
 }
 
 .chatbot-toggle {
-    width: 60px;
-    height: 60px;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
     background: linear-gradient(135deg, #155dfc 0%, #0d4fd1 100%);
     border: none;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(21, 93, 252, 0.4);
+    box-shadow: 0 4px 20px rgba(21, 93, 252, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
     transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
 }
 
 .chatbot-toggle:hover {
     transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(21, 93, 252, 0.5);
+    box-shadow: 0 6px 25px rgba(21, 93, 252, 0.6);
 }
 
-.chatbot-toggle svg {
+/* Steering wheel icon */
+.chatbot-toggle .steering-icon {
+    width: 36px;
+    height: 36px;
+    animation: spinWheel 6s linear infinite;
+}
+
+.chatbot-toggle:hover .steering-icon {
+    animation-duration: 2s;
+}
+
+@keyframes spinWheel {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.chatbot-toggle .close-icon {
+    display: none;
     width: 28px;
     height: 28px;
     fill: white;
 }
 
-.chatbot-toggle .close-icon {
-    display: none;
-}
-
-.chatbot-widget.open .chatbot-toggle .chat-icon {
+.chatbot-widget.open .chatbot-toggle .steering-icon {
     display: none;
 }
 
 .chatbot-widget.open .chatbot-toggle .close-icon {
     display: block;
+}
+
+/* Welcome bubble */
+.chatbot-welcome-bubble {
+    position: absolute;
+    bottom: 78px;
+    right: 0;
+    background: white;
+    color: #1e293b;
+    padding: 14px 18px;
+    border-radius: 16px 16px 4px 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    max-width: 280px;
+    white-space: normal;
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none;
+}
+
+.chatbot-welcome-bubble.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+.chatbot-welcome-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    right: 22px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid white;
+}
+
+.chatbot-welcome-bubble .welcome-close {
+    position: absolute;
+    top: 4px;
+    right: 8px;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    color: #94a3b8;
+    cursor: pointer;
+    padding: 2px 4px;
+    line-height: 1;
+}
+
+.chatbot-welcome-bubble .welcome-close:hover {
+    color: #475569;
+}
+
+.chatbot-welcome-bubble .welcome-emoji {
+    font-size: 1.2rem;
 }
 
 .chatbot-window {

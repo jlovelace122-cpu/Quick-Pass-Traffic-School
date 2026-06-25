@@ -27,7 +27,7 @@ class ChatbotWidget {
         setTimeout(() => {
             if (this.messages.length === 0) {
                 this.addBotMessage(
-                    "Hello! I'm your Quick Pass Assistant. I can help you with:\n\n• **Course selection** - Find the right course for your situation\n• **Registration** - Get started with your course\n• **Technical support** - Troubleshoot any issues\n• **Certificates & DMV** - Completion and reporting info\n• **State requirements** - Florida and upcoming states\n\nWhat can I help you with today?"
+                    "Hello! I'm your Quick Pass Assistant. I can help you with:\n\n• **Course selection** - Find the right course for your state\n• **Registration** - Get started with your course\n• **Technical support** - Troubleshoot any issues\n• **Certificates** - Completion and reporting info\n• **State info** - FL, CA, TX, AZ, GA, IN, OH\n\nWhat can I help you with today?"
                 );
                 this.showQuickReplies();
             }
@@ -40,15 +40,20 @@ class ChatbotWidget {
         widget.id = 'chatbotWidget';
         
         widget.innerHTML = `
+            <div class="chatbot-welcome-bubble" id="chatWelcomeBubble">
+                <button class="welcome-close" id="welcomeClose">&times;</button>
+                <span class="welcome-emoji">👋</span> Hi there! If you need any help navigating the website, I'm here!
+            </div>
             <button class="chatbot-toggle" id="chatbotToggle" aria-label="Open chat">
-                <svg class="chat-icon" viewBox="0 0 24 24">
-                    <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
-                    <circle cx="8" cy="10" r="1.5"/>
-                    <circle cx="12" cy="10" r="1.5"/>
-                    <circle cx="16" cy="10" r="1.5"/>
+                <svg class="steering-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="44" stroke="white" stroke-width="5" fill="none"/>
+                    <circle cx="50" cy="50" r="12" stroke="white" stroke-width="4" fill="none"/>
+                    <line x1="50" y1="6" x2="50" y2="38" stroke="white" stroke-width="5" stroke-linecap="round"/>
+                    <line x1="11.6" y1="72" x2="39.5" y2="56" stroke="white" stroke-width="5" stroke-linecap="round"/>
+                    <line x1="88.4" y1="72" x2="60.5" y2="56" stroke="white" stroke-width="5" stroke-linecap="round"/>
                 </svg>
                 <svg class="close-icon" viewBox="0 0 24 24">
-                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                    <path fill="white" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
                 </svg>
                 <span class="chatbot-badge" id="chatBadge">1</span>
             </button>
@@ -96,6 +101,8 @@ class ChatbotWidget {
         this.sendBtn = document.getElementById('chatSendBtn');
         this.quickRepliesContainer = document.getElementById('quickReplies');
         this.badge = document.getElementById('chatBadge');
+        this.welcomeBubble = document.getElementById('chatWelcomeBubble');
+        this.welcomeClose = document.getElementById('welcomeClose');
     }
     
     bindEvents() {
@@ -117,6 +124,33 @@ class ChatbotWidget {
         this.input.addEventListener('input', () => {
             this.sendBtn.disabled = !this.input.value.trim();
         });
+        
+        // Welcome bubble close button
+        if (this.welcomeClose) {
+            this.welcomeClose.addEventListener('click', (e) => {
+                e.stopPropagation();
+                this.hideWelcomeBubble();
+            });
+        }
+        
+        // Show welcome bubble after 2 seconds (only if not previously dismissed)
+        if (!sessionStorage.getItem('chatbot_welcome_dismissed')) {
+            setTimeout(() => {
+                if (!this.isOpen && this.welcomeBubble) {
+                    this.welcomeBubble.classList.add('show');
+                    // Auto-hide after 10 seconds
+                    this._welcomeTimer = setTimeout(() => this.hideWelcomeBubble(), 10000);
+                }
+            }, 2000);
+        }
+    }
+    
+    hideWelcomeBubble() {
+        if (this.welcomeBubble) {
+            this.welcomeBubble.classList.remove('show');
+            sessionStorage.setItem('chatbot_welcome_dismissed', '1');
+            if (this._welcomeTimer) clearTimeout(this._welcomeTimer);
+        }
     }
     
     toggleChat() {
@@ -125,6 +159,7 @@ class ChatbotWidget {
         
         if (this.isOpen) {
             this.badge.classList.remove('show');
+            this.hideWelcomeBubble();
             this.input.focus();
             this.scrollToBottom();
         }

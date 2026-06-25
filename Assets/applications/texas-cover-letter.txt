@@ -1,0 +1,210 @@
+============================================================
+TEXAS DRIVING SAFETY COURSE PROVIDER APPLICATION
+COVER LETTER
+============================================================
+
+Date: April 12, 2026
+
+Texas Department of Licensing and Regulation (TDLR)
+Driving Safety Division
+P.O. Box 12157
+Austin, TX 78711-2157
+
+RE: Application for Driving Safety Course Provider License
+    TEA Course Approval - Online Delivery
+
+Dear TDLR Driving Safety Division,
+
+I am writing to submit an application for licensure as a Driving 
+Safety Course Provider with the Texas Department of Licensing and 
+Regulation (TDLR), and to seek Texas Education Agency (TEA) approval 
+for our 6-hour online driving safety course, pursuant to Texas 
+Transportation Code Chapter 1001 and Texas Education Code §1001.101.
+
+APPLICANT INFORMATION:
+--------------------------------------------------------------
+Business Name:    Quick Pass Traffic School
+Owner/Principal:  Jordan Lovelace
+Business Address: NW rd Way, Parkland, FL 33067
+Phone:            (714) 312-9994
+Email:            support@quickpasstrafficschool.com
+Website:          www.quickpasstrafficschool.com
+Entity Type:      Sole Proprietorship
+EIN:              [PENDING — Form SS-4 faxed to IRS; awaiting assignment]
+
+COURSE OVERVIEW:
+--------------------------------------------------------------
+Quick Pass Traffic School seeks licensure to offer a TEA-approved 
+6-Hour Driving Safety Course delivered entirely online. Our course 
+has been designed in strict compliance with the minimum curriculum 
+standards established by the Texas Education Agency and TDLR 
+administrative rules (16 TAC Chapter 84).
+
+Course Title:     Texas Driving Safety Course
+Duration:         6 Hours (minimum time enforced by platform timer)
+Delivery Method:  100% Online (asynchronous, self-paced)
+Platform:         Proprietary web-based Learning Management System
+Passing Score:    Module quizzes: 70% | Final Exam: 80%
+Price:            $25.00
+
+COURSE PURPOSE:
+--------------------------------------------------------------
+This course serves Texas drivers who need to:
+
+  • Dismiss an eligible traffic citation (request within 20 days 
+    of conviction or deferred disposition)
+  • Obtain a court-ordered driving safety certificate
+  • Earn an auto insurance premium discount
+  • Voluntarily improve their driving knowledge and safety
+
+CURRICULUM CONTENT:
+--------------------------------------------------------------
+Our 6-hour curriculum covers all TEA-required topics with 
+Texas-specific content throughout:
+
+Module 1: Introduction & Texas Traffic Laws (55 minutes)
+  - Texas Transportation Code overview
+  - Texas point system and license suspension thresholds
+  - 20-day ticket dismissal request requirement
+  - Speed limits (including 85 mph — highest in the U.S.)
+  - Texas Hands-Free Law and penalties
+  - Move Over/Slow Down Law
+  - Right-of-way rules and intersection safety
+
+Module 2: Defensive Driving Techniques (55 minutes)
+  - IPDE defensive driving process
+    (Identify, Predict, Decide, Execute)
+  - Following distance management (3-4 second rule)
+  - Speed and stopping distance physics
+  - Lane change and passing safety
+  - Texas-specific hazards (highway driving, rural roads)
+
+Module 3: Impaired Driving & Texas DWI Laws (55 minutes)
+  - Texas DWI laws (not DUI — important distinction)
+  - BAC limits: 0.08% (21+), 0.04% (commercial), 
+    Zero Tolerance (under 21)
+  - Enhanced penalties for BAC 0.15%+
+  - Open container law
+  - Implied consent and ALR process
+  - Drug-impaired driving
+  - Consequences: jail, fines, license suspension, surcharges
+
+Module 4: Distracted & Drowsy Driving (55 minutes)
+  - Texas Hands-Free Law (2023 effective statewide)
+  - Types of distraction (visual, manual, cognitive)
+  - School zone and active work zone cell phone bans
+  - Drowsy driving risks and prevention
+  - In-vehicle technology distractions
+
+Module 5: Sharing Texas Roads (55 minutes)
+  - Pedestrian safety and crosswalk laws
+  - Bicycle safety (3-foot passing rule)
+  - Commercial vehicle awareness (blind spots, stopping distance)
+  - Motorcycle awareness
+  - School bus laws (stop when lights flash)
+  - Emergency vehicle response
+  - Railroad crossing safety
+
+Module 6: Texas Weather & Special Conditions (55 minutes)
+  - Rain and hydroplaning (first rain on Texas roads)
+  - Flooding: "Turn Around, Don't Drown"  
+  - Fog driving techniques
+  - Ice and winter driving (rare but deadly in Texas)
+  - Night driving
+  - Construction zone safety (doubled fines)
+  - Road rage recognition and avoidance
+  - Comprehensive course review and exam preparation
+
+Assessment Structure:
+  - 4 quiz questions per module (24 total, 70% passing)
+  - 20-question final exam (multiple choice, 80% passing)
+  - Unlimited retakes at no additional cost
+
+TECHNOLOGY COMPLIANCE (16 TAC §84.501):
+--------------------------------------------------------------
+Our online platform meets all TDLR technology requirements:
+
+  • Timer-Based Progression: Minimum time enforcement per module 
+    prevents students from advancing prematurely. Students cannot 
+    complete the course in fewer than 6 hours.
+  
+  • Identity Verification: Photo ID upload and verification at 
+    enrollment. Periodic identity confirmation during the course.
+  
+  • Progress Tracking: Detailed audit logs recording time spent, 
+    quiz attempts, login/logout times, and IP addresses.
+  
+  • Secure Assessment: Questions are randomized from a larger 
+    question bank. Each student receives a unique exam sequence.
+  
+  • Accessibility: WCAG 2.1 compliant. Mobile-responsive design 
+    works on smartphones, tablets, and desktop computers.
+  
+  • Data Security: SSL encryption, encrypted data storage, 
+    secure authentication (JWT tokens, bcrypt password hashing).
+  
+  • Certificate Delivery: Electronic certificate generated 
+    upon successful course completion, delivered same day.
+  
+  • Record Retention: Student records maintained for minimum 
+    3 years per TDLR requirements.
+
+BUSINESS QUALIFICATIONS:
+--------------------------------------------------------------
+Quick Pass Traffic School is committed to becoming one of Texas's 
+premier online driving safety course providers. We offer:
+
+  • 24/7 student access and AI-powered customer support
+  • Mobile-friendly course completion from any device
+  • Affordable pricing ($25.00, no hidden fees)
+  • 100% money-back guarantee
+  • Same-day electronic certificate delivery
+  • Comprehensive, engaging course content written to 
+    TEA curriculum standards
+
+We are currently pursuing multi-state approval and have developed 
+state-specific curricula for Arizona, California, Florida, Georgia, 
+Indiana, and Ohio in addition to Texas.
+
+SURETY BOND:
+--------------------------------------------------------------
+A $10,000 surety bond will be obtained and submitted as required 
+by TDLR prior to licensure. Bond documentation will be provided 
+upon approval of this application.
+
+REQUESTED ACTION:
+--------------------------------------------------------------
+I respectfully request that TDLR review this application for 
+Driving Safety Course Provider licensure. I am prepared to:
+
+  1. Submit the full online application via the TDLR portal
+  2. Pay the $500 application fee
+  3. Obtain the required $10,000 surety bond
+  4. Complete any required background checks
+  5. Provide course access credentials for TEA curriculum review
+  6. Make any curriculum modifications required by TEA
+  7. Submit to a platform technology demonstration if requested
+
+Thank you for your consideration. I look forward to providing 
+Texas drivers with a high-quality, accessible driving safety 
+education option.
+
+Respectfully submitted,
+
+
+_________________________________
+Jordan Lovelace
+Owner, Quick Pass Traffic School
+(714) 312-9994
+support@quickpasstrafficschool.com
+www.quickpasstrafficschool.com
+
+
+ENCLOSURES:
+  1. Detailed course curriculum outline
+  2. Sample course content and platform screenshots
+  3. Technology platform specification document
+  4. Background check authorization
+  5. Business registration documents
+  6. [Surety bond — to be submitted upon application approval]
+  7. [EIN documentation — to be included upon receipt]

@@ -1,0 +1,461 @@
+============================================================
+TEXAS — DRIVING SAFETY COURSE (DSC) PROVIDER APPLICATION
+PRE-FILLED FOR TDLR & TEA SUBMISSION
+============================================================
+Regulatory Bodies:
+  1. Texas Department of Licensing and Regulation (TDLR)
+     P.O. Box 12157, Austin, TX 78711-2157
+     Physical: 920 Colorado St., Suite 102, Austin, TX 78701
+     Phone: (512) 463-6599
+     Website: https://www.tdlr.texas.gov
+
+  2. Texas Education Agency (TEA)
+     1701 North Congress Avenue, Austin, TX 78701
+     Phone: (512) 463-9734
+     Website: https://tea.texas.gov
+
+Reference: Texas Transportation Code Chapter 1001
+           Texas Education Code §1001.101
+           16 Texas Administrative Code (TAC) Chapter 84
+
+============================================================
+NOTE: Texas has a two-step process:
+  STEP 1 → TEA must approve the course curriculum
+  STEP 2 → TDLR must approve the course provider license
+  You need the TEA approval BEFORE submitting to TDLR.
+============================================================
+
+
+╔══════════════════════════════════════════════════════════╗
+║  PART 1: TEA CURRICULUM APPROVAL APPLICATION            ║
+╚══════════════════════════════════════════════════════════╝
+
+--------------------------------------------------------------
+A. APPLICANT INFORMATION
+--------------------------------------------------------------
+
+Applicant Name:           Jordan Lovelace
+Business Name:            Quick Pass Traffic School
+Business Address:         NW rd Way
+City:                     Parkland
+State:                    FL
+ZIP:                      33067
+Phone:                    (714) 312-9994
+Email:                    support@quickpasstrafficschool.com
+Website:                  www.quickpasstrafficschool.com
+
+Entity Type:              Sole Proprietorship
+Federal EIN:              [PENDING — SS-4 faxed to IRS]
+
+Texas Registered Agent:   [TO BE DESIGNATED]
+  Name:                   [____________________]
+  Address:                [____________________]
+  City/State/ZIP:         [__________, TX _____]
+  Phone:                  [____________________]
+
+--------------------------------------------------------------
+B. COURSE DETAILS FOR TEA REVIEW
+--------------------------------------------------------------
+
+Course Title:             Texas Driving Safety Course
+Course Type:              Driving Safety Course (DSC)
+                          Per Texas Transportation Code §1001.101
+Course Length:            6 Hours (minimum, timer-enforced)
+Delivery Method:          Online — 100% web-based, self-paced
+Price:                    $29.95
+
+Course Purpose:           Ticket dismissal for eligible Texas 
+                          traffic citations and/or insurance 
+                          discount (10% for 3 years)
+
+Student Eligibility:      Texas drivers who:
+                          - Hold a valid TX driver license
+                          - Have not completed DSC in past 12 months
+                          - Have court approval for ticket dismissal
+                          - OR seek voluntary insurance discount
+
+--------------------------------------------------------------
+C. CURRICULUM OUTLINE (6 Hours, 6 Modules)
+--------------------------------------------------------------
+Per 16 TAC §84.400 — Course Content Requirements
+
+Module 1: Texas Traffic Laws & Driver Responsibilities
+(60 minutes)
+  - Texas Transportation Code fundamentals
+  - Speed limits (including 85 mph on SH 130)
+  - Right-of-way laws
+  - Traffic control devices and signals
+  - Driver licensing requirements
+  - Financial responsibility (insurance)
+  - Move Over/Slow Down Law (TRC §545.157)
+  - Hands-Free Law (effective 2017)
+  - Consequences of traffic violations
+  - Texas point system overview
+
+Module 2: Defensive Driving Principles
+(60 minutes)
+  - IPDE process (Identify, Predict, Decide, Execute)
+  - Smith System of driving
+  - 3-second following distance
+  - Space cushion management
+  - Mirror usage and blind spot coverage
+  - Intersection navigation
+  - Highway/freeway driving
+  - Lane change safety
+  - Speed management and stopping distance
+
+Module 3: Impaired Driving — Texas DWI Laws
+(60 minutes)
+  - Texas DWI laws (NOT "DUI" — Texas uses "DWI")
+  - Texas Penal Code §49.04-49.09
+  - BAC limits: 0.08% (standard), 0.04% (commercial),
+    0.00% (under 21)
+  - Zero Tolerance for minors
+  - Implied Consent (TRC §724)
+  - DWI penalties (1st, 2nd, 3rd+ offense)
+  - Intoxication Assault and Intoxication Manslaughter
+  - Drug-impaired driving
+  - Open container laws (TRC §49.031)
+  - ALR (Administrative License Revocation) process
+  - Surcharge/Driver Responsibility Program (historical context)
+
+Module 4: Distracted Driving in Texas
+(60 minutes)
+  - Texas Hands-Free Law (TRC §545.4251)
+  - Three types of distraction (visual, manual, cognitive)
+  - Cell phone ban in school zones
+  - Under-18 complete wireless ban
+  - Texting while driving prohibition
+  - Consequences of distracted driving crashes
+  - Technology and driving
+  - Work zone distraction dangers
+
+Module 5: Texas Road Hazards & Weather
+(60 minutes)
+  - "Turn Around, Don't Drown" (flash flooding)
+  - Hurricane evacuation driving
+  - Ice storm and black ice (North TX/Panhandle)
+  - Dust storms (West Texas)
+  - Construction zone safety ("Fines Double" zones)
+  - Night driving techniques
+  - Rural highway driving considerations
+  - Wildlife crossings (deer, livestock)
+  - Railroad crossing safety
+
+Module 6: Sharing the Road & Course Review
+(60 minutes)
+  - Pedestrian safety and right-of-way
+  - Bicycle safety (3-foot passing law)
+  - Motorcycle awareness
+  - Large truck "No-Zones"
+  - School bus laws (TRC §545.066)
+  - Emergency vehicle response
+  - Road rage and aggressive driving prevention
+  - Fatigue and drowsy driving
+  - Comprehensive course review
+  - Final exam preparation
+
+--------------------------------------------------------------
+D. ASSESSMENT STRUCTURE
+--------------------------------------------------------------
+
+Module Quizzes:
+  - One quiz per module (6 total)
+  - 4 questions each (24 total quiz questions)
+  - 70% passing score required
+  - Must pass quiz to advance to next module
+
+Final Examination:
+  - 20 questions, multiple choice
+  - 80% passing score required (16/20 correct)
+  - Questions randomly selected from 50+ question bank
+  - Answer options randomized per attempt
+  - Each student receives unique exam configuration
+  - Unlimited retakes at no additional charge
+
+--------------------------------------------------------------
+E. TECHNOLOGY COMPLIANCE (16 TAC §84.501)
+--------------------------------------------------------------
+
+ REQUIREMENT                          HOW WE COMPLY
+--------------------------------------------------------------
+ Student identity verification        Government photo ID upload
+                                      at enrollment; verified
+                                      before course access begins
+
+ Minimum time enforcement             Server-side timers enforce
+                                      minimum 60 min per module;
+                                      6-hour total minimum enforced
+
+ Idle detection                       Timer pauses after 5 min
+                                      of inactivity; resumes 
+                                      only on student interaction
+
+ Assessment security                  Questions randomly selected
+                                      from expanded bank; answer
+                                      options randomized; copy/paste
+                                      disabled during exams
+
+ Student records                      All records stored securely
+                                      in encrypted PostgreSQL DB;
+                                      retained for 3+ years
+
+ Certificate generation               Electronic certificate with
+                                      unique ID; contains student
+                                      name, course info, completion
+                                      date, certificate number
+
+ ADA/Accessibility                    WCAG 2.1 Level AA compliant;
+                                      mobile responsive; keyboard
+                                      navigation; screen reader ready
+
+ Data security                        SSL/TLS encryption (HTTPS);
+                                      BCrypt password hashing;
+                                      AES-256 data encryption
+
+--------------------------------------------------------------
+F. TEA SUBMISSION CHECKLIST
+--------------------------------------------------------------
+
+[ ] Full curriculum document (all 6 modules with detailed content)
+[ ] Quiz question bank (all module quizzes with answer keys)
+[ ] Final exam question bank (50+ questions with answer keys)
+[ ] Technology compliance documentation
+[ ] Platform demo access for TEA reviewers:
+    URL: www.quickpasstrafficschool.com
+    Login: [to be created for TEA reviewer]
+    Password: [to be created for TEA reviewer]
+[ ] Application fee (confirm current amount with TEA)
+
+Submit to:
+  Texas Education Agency
+  1701 North Congress Avenue
+  Austin, TX 78701
+  Phone: (512) 463-9734
+
+TEA Tracking #: ________________
+Date Submitted: ________________
+Date Approved:  ________________
+TEA Approval #: ________________ (need this for TDLR app)
+
+
+╔══════════════════════════════════════════════════════════╗
+║  PART 2: TDLR PROVIDER LICENSE APPLICATION              ║
+║  >>> Submit AFTER receiving TEA course approval <<<     ║
+╚══════════════════════════════════════════════════════════╝
+
+--------------------------------------------------------------
+A. APPLICANT INFORMATION
+--------------------------------------------------------------
+
+Application Type:         [ ] New  [X] New — first time applicant
+License Type:             Driving Safety Course Provider
+Application Method:       [X] Online via TDLR portal
+                          [ ] Paper application
+
+Full Legal Name:          Jordan Lovelace
+Date of Birth:            [____/____/____] <<<< FILL IN
+Social Security #:        [___-__-____]    <<<< FILL IN
+Driver License #:         [______________] <<<< FILL IN
+DL State:                 Florida
+
+Business Name:            Quick Pass Traffic School
+Business DBA:             N/A
+Entity Type:              Sole Proprietorship
+Federal EIN:              [PENDING — SS-4 faxed to IRS]
+
+Business Address:         NW rd Way
+City:                     Parkland
+State:                    FL
+ZIP:                      33067
+County:                   Broward
+
+Business Phone:           (714) 312-9994
+Business Fax:             [____________________]
+Business Email:           support@quickpasstrafficschool.com
+Website:                  www.quickpasstrafficschool.com
+
+Texas Registered Agent:   [TO BE DESIGNATED — same as TEA app]
+  Name:                   [____________________]
+  Address:                [____________________]  
+  City/State/ZIP:         [__________, TX _____]
+  Phone:                  [____________________]
+
+--------------------------------------------------------------
+B. TEA COURSE APPROVAL
+--------------------------------------------------------------
+
+TEA Approval Number:      [________________] <<<< FROM PART 1
+TEA Approval Date:        [____/____/____]
+Course Title (as approved): Texas Driving Safety Course
+Course Duration:          6 hours
+Delivery Method:          Online
+
+--------------------------------------------------------------
+C. SURETY BOND INFORMATION
+--------------------------------------------------------------
+
+Bond Amount:              $10,000 (per TTC §1001.204)
+Surety Company:           [____________________] <<<< FROM BOND APP
+Bond Number:              [____________________]
+Bond Effective Date:      [____/____/____]
+Bond Expiration Date:     [____/____/____]
+
+NOTE: Bond must be from a Texas-admitted surety company.
+Form to use: TDLR Surety Bond form (obtain from TDLR).
+Surety company must be listed with TX Dept of Insurance.
+
+--------------------------------------------------------------
+D. BACKGROUND CHECK AUTHORIZATION
+--------------------------------------------------------------
+
+I, Jordan Lovelace, authorize the Texas Department of 
+Licensing and Regulation to conduct a complete background 
+investigation, including criminal history, for the purpose 
+of evaluating this application for a Driving Safety Course 
+Provider license.
+
+Full Legal Name:     Jordan Lovelace
+Date of Birth:       [____/____/____]
+Social Security #:   [___-__-____]
+Driver License #:    [______________]
+DL State:            Florida
+
+Have you ever been convicted of, or placed on 
+deferred adjudication for, a felony?           [ ] Yes  [X] No
+
+Have you ever been convicted of, or placed on 
+deferred adjudication for, a misdemeanor 
+(other than minor traffic)?                    [ ] Yes  [X] No
+
+Have you ever had a professional or occupational 
+license revoked, suspended, or denied in any 
+state?                                         [ ] Yes  [X] No
+
+Have you ever been a party to a civil lawsuit 
+related to a business you owned or operated?   [ ] Yes  [X] No
+
+  (If Yes to any, provide detailed explanation on 
+   separate sheet including dates, jurisdiction, 
+   and outcome)
+
+Prior Addresses (last 5 years):
+  1. [____________________________________________]
+  2. [____________________________________________]
+  3. [____________________________________________]
+
+--------------------------------------------------------------
+E. COURSE DIRECTOR / INSTRUCTOR
+--------------------------------------------------------------
+
+NOTE: Texas may require a designated Course Director. 
+Contact TDLR to confirm if a separate instructor license 
+is required for online-only providers (16 TAC §84.300).
+
+Course Director:          Jordan Lovelace
+Education Level:          [____________________] <<<< FILL IN
+                          (e.g., Bachelor's Degree, etc.)
+Relevant Experience:      Traffic safety education provider;
+                          multi-state approved defensive 
+                          driving course developer
+
+--------------------------------------------------------------
+F. APPLICATION FEE
+--------------------------------------------------------------
+
+Fee Amount:               $500.00
+Payment Method:           [X] Credit Card (via TDLR online portal)
+                          [ ] Check payable to TDLR
+                          [ ] Money Order
+
+NOTE: This is the PROVIDER license fee.
+Additional fees may apply for instructor license if required.
+
+--------------------------------------------------------------
+G. CERTIFICATION & SIGNATURE
+--------------------------------------------------------------
+
+I certify under penalty of perjury that all statements 
+made in this application are true, complete, and correct. 
+I understand that any false or misleading statements may 
+result in denial of this application, or revocation of 
+any license granted, and may subject me to criminal 
+prosecution.
+
+I agree to comply with all provisions of Texas Transportation 
+Code Chapter 1001, Texas Education Code, and 16 Texas 
+Administrative Code Chapter 84.
+
+I understand that TDLR may inspect my place of business, 
+records, and course delivery platform at any time.
+
+I agree to maintain the $10,000 surety bond for the 
+duration of my license.
+
+I agree to report student completions to the Texas 
+Department of Public Safety (DPS) as required.
+
+
+Signature: ________________________________
+
+Printed Name: Jordan Lovelace
+
+Title: Owner / Course Director
+
+Date: ____/____/2026
+
+
+--------------------------------------------------------------
+H. TDLR SUBMISSION CHECKLIST
+--------------------------------------------------------------
+
+[ ] TDLR Online Account created (www.tdlr.texas.gov)
+[ ] Application completed (online or paper)
+[ ] $500 application fee paid
+[ ] TEA course approval letter attached
+[ ] $10,000 surety bond (original executed bond)
+[ ] Background check authorization signed
+[ ] Texas Secretary of State foreign registration
+[ ] Texas Registered Agent designation
+[ ] EIN documentation
+[ ] Course curriculum (TEA-approved version)
+[ ] Technology compliance documentation
+[ ] Proof of business insurance
+[ ] Cover letter (Assets/applications/texas-cover-letter.txt)
+
+Submit to:
+  Online: www.tdlr.texas.gov (preferred)
+  -OR-
+  Mail: Texas Department of Licensing and Regulation
+        P.O. Box 12157
+        Austin, TX 78711-2157
+
+TDLR Tracking #:    ________________
+Date Submitted:     ________________
+Date Approved:      ________________
+TDLR License #:     ________________
+
+
+============================================================
+ACTIONS REQUIRED BEFORE SUBMISSION
+============================================================
+
+FOR TEA (do first):
+  1. [ ] Call TEA (512) 463-9734 to request official 
+         curriculum submission requirements
+  2. [ ] Format full curriculum for TEA review
+  3. [ ] Create TEA reviewer demo account on platform
+  4. [ ] Submit curriculum to TEA
+  5. [ ] Wait for TEA approval (est. 4-8 weeks)
+
+FOR TDLR (do after TEA approval):
+  6. [ ] Register as Foreign Entity with TX Secretary of State
+         Website: https://www.sos.state.tx.us
+         Fee: ~$750
+  7. [ ] Designate Texas Registered Agent
+  8. [ ] Obtain $10,000 surety bond (see bond application doc)
+  9. [ ] Create TDLR online account
+  10. [ ] Fill in all [____] blank fields above
+  11. [ ] Receive EIN from IRS
+  12. [ ] Submit TDLR application with all attachments
+  13. [ ] Pay $500 fee

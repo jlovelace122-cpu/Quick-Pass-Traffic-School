@@ -19,6 +19,11 @@ export default async function handler(req) {
       return await listCourses(req);
     }
 
+    // Get user's enrollments
+    if (courseSlug === 'my-enrollments') {
+      return await getUserEnrollments(req);
+    }
+
     // Get specific course
     if (!action) {
       return await getCourse(req, courseSlug);
@@ -247,4 +252,78 @@ async function enrollInCourse(req, courseSlug) {
     error: 'Please use the payment flow to enroll',
     redirectTo: `/checkout?course=${courseSlug}`,
   }, 400);
+}
+
+async function getUserEnrollments(req) {
+  if (req.method !== 'GET') {
+    return jsonResponse({ error: 'Method not allowed' }, 405);
+  }
+
+  // Require authentication
+  const { user, error: authError } = authenticate(req);
+  if (authError) {
+    return jsonResponse({ error: authError }, 401);
+  }
+
+  // Get all enrollments for this user
+  const userEnrollments = await db
+    .select({
+      enrollmentId: enrollments.id,
+      status: enrollments.status,
+      startedAt: enrollments.startedAt,
+      completedAt: enrollments.completedAt,
+      expiresAt: enrollments.expiresAt,
+      courseId: courses.id,
+      courseName: courses.name,
+      courseSlug: courses.slug,
+      durationHours: courses.durationHours,
+      description: courses.description,
+    })
+    .from(enrollments)
+    .innerJoin(courses, eq(enrollments.courseId, courses.id))
+    .where(eq(enrollments.userId, user.userId));
+
+  // For each enrollment, calculate progress
+  const enrollmentsWithProgress = await Promise.all(
+    userEnrollments.map(async (enrollment) => {
+      // Get all modules for this course
+      const modules = await db
+        .select({ id: courseModules.id })
+        .from(courseModules)
+        .where(and(eq(courseModules.courseId, enrollment.courseId), eq(courseModules.isActive, true)));
+
+      // Get completed modules
+      const completedModules = await db
+        .select({ id: moduleProgress.id })
+        .from(moduleProgress)
+        .where(and(
+          eq(moduleProgress.enrollmentId, enrollment.enrollmentId),
+          eq(moduleProgress.status, 'completed')
+        ));
+
+      const totalModules = modules.length;
+      const completedCount = completedModules.length;
+      const progressPercent = totalModules > 0 ? Math.round((completedCount / totalModules) * 100) : 0;
+
+      return {
+        id: enrollment.enrollmentId,
+        courseId: enrollment.courseId,
+        courseName: enrollment.courseName,
+        courseSlug: enrollment.courseSlug,
+        durationHours: enrollment.durationHours,
+        description: enrollment.description,
+        status: enrollment.status,
+        startedAt: enrollment.startedAt,
+        completedAt: enrollment.completedAt,
+        expiresAt: enrollment.expiresAt,
+        progress: {
+          completedModules: completedCount,
+          totalModules: totalModules,
+          percent: progressPercent,
+        },
+      };
+    })
+  );
+
+  return jsonResponse({ enrollments: enrollmentsWithProgress });
 }

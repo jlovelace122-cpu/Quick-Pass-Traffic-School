@@ -1,0 +1,261 @@
+============================================================
+ARIZONA — TRAFFIC SURVIVAL SCHOOL (TSS) PROVIDER APPLICATION
+PRE-FILLED FOR SUBMISSION TO ADOT/MVD
+============================================================
+Regulatory Body: Arizona Department of Transportation
+                 Motor Vehicle Division (MVD)
+                 Traffic Survival School Unit
+
+Mailing Address:
+  ADOT Motor Vehicle Division
+  Customer Records Services
+  1801 W. Jefferson Street
+  Phoenix, AZ 85007
+
+Phone: (602) 255-0072
+Email: MVDCustomerServiceCenter@azdot.gov
+
+============================================================
+IMPORTANT: Arizona does not publish a standardized 
+application form online. You must contact MVD directly to 
+request the current TSS provider application package.
+
+Call (602) 255-0072 and request:
+  "Traffic Survival School Provider Application Package 
+   for an online course provider"
+
+Below is all your information pre-organized to fill in 
+whatever form they provide, plus supporting documents.
+============================================================
+
+
+SECTION A: APPLICANT / BUSINESS INFORMATION
+============================================================
+
+Full Legal Name:          Jordan Lovelace
+Date of Birth:            [____/____/____] <<<< FILL IN
+Social Security #:        [___-__-____]    <<<< FILL IN
+Driver License #:         [______________] <<<< FILL IN
+DL State:                 Florida
+
+Business Name:            Quick Pass Traffic School
+Business DBA (if any):    N/A — same as business name
+Entity Type:              Sole Proprietorship
+Federal EIN:              [PENDING — SS-4 faxed to IRS]
+
+Business Address:         NW rd Way
+City:                     Parkland
+State:                    FL
+ZIP:                      33067
+County:                   Broward
+
+Business Phone:           (714) 312-9994
+Business Email:           support@quickpasstrafficschool.com
+Business Website:         www.quickpasstrafficschool.com
+
+Arizona Statutory Agent:  [TO BE DESIGNATED]
+  Name:                   [____________________]
+  Address:                [____________________]
+  City/State/ZIP:         [__________, AZ _____]
+  Phone:                  [____________________]
+
+  NOTE: You'll need an AZ statutory agent before submitting.
+  Options: Northwest Registered Agent ($125/yr), 
+  LegalZoom ($299/yr), Incfile ($119/yr), or a trusted 
+  Arizona-based contact.
+
+
+SECTION B: COURSE INFORMATION
+============================================================
+
+Course Title:             Arizona Traffic Survival School
+Course Format:            Online (100% web-based, asynchronous)
+Course Duration:          4 Hours (minimum time enforced)
+Course Price:             $49.95
+
+Delivery Platform:        Proprietary Learning Management System
+                          hosted at www.quickpasstrafficschool.com
+Platform Technology:      Node.js, PostgreSQL, SSL/TLS encrypted
+Mobile Compatible:        Yes — responsive design (phone/tablet/desktop)
+
+Course Target:            Drivers ordered by MVD to complete TSS 
+                          as a condition of maintaining driving 
+                          privileges (per ARS §28-3306)
+
+Assessment Structure:
+  Module Quizzes:         4 quizzes (one per module)
+                          4 questions each, 70% passing
+  Final Examination:      15 questions, multiple choice
+                          80% passing score required
+                          Questions randomized from 50+ bank
+  Retakes:                Unlimited at no additional charge
+
+Identity Verification:    Government-issued photo ID upload at 
+                          enrollment, verified before course access
+
+Time Enforcement:         Server-side minimum time timers per module
+                          Cannot advance without meeting time minimum
+                          Idle timeout after 5 minutes of inactivity
+
+Certificate:              Electronic completion certificate generated 
+                          upon passing final exam
+                          Contains student name, date, course info, 
+                          unique certificate number
+
+
+SECTION C: CURRICULUM OUTLINE
+============================================================
+
+Module 1: Arizona Traffic Laws & Driving Responsibilities
+(60 minutes)
+  - Arizona Vehicle Code fundamentals
+  - Speed limits and speed law violations
+  - Right-of-way rules
+  - Traffic signals and signage
+  - Points system overview
+  - Financial responsibility (insurance requirements)
+  - Hands-Free Law
+  - Move Over Law (ARS §28-775)
+  - Consequences of traffic violations
+
+Module 2: Defensive Driving & Hazard Recognition
+(60 minutes)
+  - SIPDE scanning method
+  - 3-second following distance rule
+  - Space cushion management
+  - Mirror usage and blind spots
+  - Intersection safety
+  - Freeway driving techniques
+  - Speed management and braking distance
+  - Night driving considerations
+
+Module 3: Impaired & Distracted Driving
+(60 minutes)
+  - Arizona DUI laws (ARS §28-1381 through §28-1383)
+  - BAC limits: 0.08% standard, 0.04% commercial, 
+    0.00% under 21
+  - Three-tier DUI enforcement:
+    • Regular DUI (0.08%+) — 10 days jail minimum
+    • Extreme DUI (0.15%+) — 30 days jail minimum
+    • Super Extreme DUI (0.20%+) — 45 days jail minimum
+  - Implied Consent Law
+  - Drug-impaired driving
+  - Three types of distraction
+  - Cell phone and texting laws
+  - Hands-Free Law compliance
+
+Module 4: Arizona-Specific Hazards & Sharing the Road
+(60 minutes)
+  - Stupid Motorist Law (ARS §28-910) — flooded roadways
+  - Pull Aside Stay Alive — dust storms/haboobs
+  - Extreme heat driving precautions
+  - Desert highway driving
+  - Wildlife crossings
+  - Sharing roads with pedestrians and cyclists
+  - School zone safety
+  - Emergency vehicle response
+  - Construction zone safety
+  - Road rage and aggressive driving prevention
+  - Course review and exam preparation
+
+
+SECTION D: BACKGROUND CHECK AUTHORIZATION
+============================================================
+
+I, Jordan Lovelace, hereby authorize the Arizona Department 
+of Transportation, Motor Vehicle Division, to conduct a 
+background investigation including but not limited to 
+criminal history records, driving records, and any other 
+checks required for Traffic Survival School provider 
+approval.
+
+Full Legal Name:     Jordan Lovelace
+Date of Birth:       [____/____/____]
+Social Security #:   [___-__-____]
+Driver License #:    [______________]
+DL State:            Florida
+Current Address:     NW rd Way, Parkland, FL 33067
+
+Prior Addresses (last 5 years):
+  1. [____________________________________________]
+  2. [____________________________________________]
+  3. [____________________________________________]
+
+Have you ever been convicted of a felony?     [ ] Yes  [X] No
+Have you ever been convicted of a misdemeanor 
+involving moral turpitude?                    [ ] Yes  [X] No
+  (If Yes to either, provide details on separate sheet)
+
+Have you ever had a professional license 
+revoked, suspended, or denied?               [ ] Yes  [X] No
+
+Signature: ________________________________
+Date: ____/____/2026
+
+
+SECTION E: CERTIFICATION & SIGNATURE
+============================================================
+
+I certify that all information provided in this application 
+is true, complete, and correct to the best of my knowledge. 
+I understand that any false or misleading statements may 
+result in denial of this application or revocation of any 
+license/approval granted.
+
+I agree to comply with all applicable Arizona Revised 
+Statutes, administrative rules, and MVD policies governing 
+Traffic Survival School providers.
+
+I understand that approval is contingent upon MVD review 
+of my application, background check results, curriculum 
+content, and technology platform.
+
+
+Signature: ________________________________
+
+Printed Name: Jordan Lovelace
+
+Title: Owner
+
+Date: ____/____/2026
+
+
+SECTION F: ENCLOSURES CHECKLIST
+============================================================
+
+[X] Cover Letter (Assets/applications/arizona-cover-letter.txt)
+[X] Curriculum Outline (included above + full curriculum 
+    in db/curriculum-arizona.js)
+[ ] Application Fee (amount TBD — confirm with MVD)
+    Payment method: [ ] Check  [ ] Money Order  [ ] Other
+    Check payable to: Arizona Department of Transportation
+[ ] EIN Documentation (pending — faxed SS-4 to IRS)
+[ ] Arizona Corporation Commission foreign entity registration
+[ ] Statutory Agent designation letter
+[ ] Proof of business insurance (General Liability)
+[ ] Platform screenshots / demo access credentials:
+    URL: www.quickpasstrafficschool.com
+    Demo login: [to be created for MVD reviewer]
+    Demo password: [to be created for MVD reviewer]
+[ ] Copy of Florida driver license (front and back)
+[ ] Proof of business address
+
+
+============================================================
+ACTIONS REQUIRED BEFORE SUBMISSION
+============================================================
+
+1. [ ] Call MVD (602) 255-0072 to request official application 
+       form and confirm all requirements
+2. [ ] Fill in all [____] blank fields above (DOB, SSN, DL#, 
+       prior addresses)
+3. [ ] Register with AZ Corporation Commission (~$150)
+4. [ ] Designate Arizona Statutory Agent
+5. [ ] Receive EIN from IRS
+6. [ ] Obtain General Liability insurance (if not already held)
+7. [ ] Create demo account on platform for MVD reviewer
+8. [ ] Print, sign, and compile full application package
+9. [ ] Submit via certified mail to:
+       ADOT Motor Vehicle Division
+       1801 W. Jefferson Street
+       Phoenix, AZ 85007
