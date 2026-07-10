@@ -14,17 +14,28 @@
             margin: 0 auto;
             padding: 2rem;
         }
+        body {
+            background:
+                radial-gradient(900px 380px at 96% -10%, #dbeafe 0%, transparent 62%),
+                radial-gradient(760px 320px at -8% 4%, #ecfeff 0%, transparent 56%),
+                var(--gray-50);
+        }
         .dashboard-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--gray-200);
+            padding: 1.15rem 1.35rem;
+            border: 1px solid rgba(203, 213, 225, 0.7);
+            border-radius: 1.1rem;
+            background: rgba(255,255,255,0.9);
+            box-shadow: var(--shadow-md);
+            backdrop-filter: blur(6px);
         }
         .welcome-text h1 {
             font-size: 1.75rem;
             margin-bottom: 0.25rem;
+            letter-spacing: -0.02em;
         }
         .welcome-text p {
             color: var(--gray-500);
@@ -43,8 +54,9 @@
         .card {
             background: white;
             border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-lg);
             padding: 1.5rem;
+            border: 1px solid rgba(203, 213, 225, 0.65);
         }
         .card-header {
             display: flex;
@@ -57,10 +69,11 @@
             margin: 0;
         }
         .enrollment-card {
-            border: 1px solid var(--gray-200);
+            border: 1px solid #dbeafe;
             border-radius: var(--radius);
             padding: 1rem;
             margin-bottom: 1rem;
+            background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
         }
         .enrollment-card:last-child {
             margin-bottom: 0;
@@ -95,14 +108,14 @@
         }
         .progress-bar {
             height: 8px;
-            background: var(--gray-200);
+            background: #e2e8f0;
             border-radius: var(--radius-full);
             overflow: hidden;
             margin: 0.75rem 0;
         }
         .progress-fill {
             height: 100%;
-            background: var(--primary-color);
+            background: linear-gradient(90deg, var(--primary-color), #60a5fa);
             border-radius: var(--radius-full);
             transition: width 0.3s ease;
         }
@@ -125,7 +138,7 @@
         .profile-avatar {
             width: 80px;
             height: 80px;
-            background: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color), #3b82f6);
             color: white;
             border-radius: 50%;
             display: flex;
@@ -134,6 +147,7 @@
             font-size: 2rem;
             font-weight: bold;
             margin: 0 auto 1rem;
+            box-shadow: 0 14px 26px rgb(37 99 235 / 0.28);
         }
         .profile-name {
             font-weight: 600;
@@ -162,17 +176,18 @@
             transition: all 0.2s;
         }
         .quick-links a:hover {
-            background: var(--gray-100);
+            background: #f8fafc;
             color: var(--primary-color);
         }
         .certificate-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0.75rem;
-            border: 1px solid var(--gray-200);
+            padding: 0.85rem;
+            border: 1px solid #dbeafe;
             border-radius: var(--radius);
             margin-bottom: 0.5rem;
+            background: #ffffff;
         }
         .certificate-info h4 {
             margin: 0 0 0.25rem 0;
@@ -205,14 +220,27 @@
         .id-verified {
             background: #dcfce7;
             color: #166534;
+            border: 1px solid #86efac;
         }
         .id-pending {
             background: #fef3c7;
             color: #92400e;
+            border: 1px solid #fcd34d;
         }
         .id-required {
             background: #fee2e2;
             color: #991b1b;
+            border: 1px solid #fca5a5;
+        }
+        .btn {
+            border-radius: 999px;
+            font-weight: 700;
+        }
+        .btn-primary {
+            box-shadow: 0 10px 24px rgb(37 99 235 / 0.26);
+        }
+        .btn-primary:hover {
+            box-shadow: 0 14px 30px rgb(37 99 235 / 0.35);
         }
         .loading {
             display: flex;
@@ -413,7 +441,7 @@
                                             ${enrollment.progress.percent > 0 ? 'Continue Course' : 'Start Course'}
                                         </a>` : 
                                         enrollment.status === 'completed' ? 
-                                        `<a href="/api/certificate/generate?enrollmentId=${enrollment.id}" target="_blank" class="btn btn-secondary">Download Certificate</a>` :
+                                        `<button class="btn btn-secondary" onclick="openCertificateByEnrollment('${enrollment.id}')">Download Certificate</button>` :
                                         `<span class="text-gray-500">Course expired</span>`
                                     }
                                 </div>
@@ -463,7 +491,7 @@
                                     <h4>${cert.courseName}</h4>
                                     <p>Issued: ${new Date(cert.issuedAt).toLocaleDateString()}</p>
                                 </div>
-                                <a href="/api/certificate/generate?id=${cert.id}" target="_blank" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Download</a>
+                                <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;" onclick="openCertificateById('${cert.id}')">Download</button>
                             </div>
                         `).join('');
                     } else {
@@ -474,6 +502,38 @@
                 }
             } catch (error) {
                 console.error('Error loading certificates:', error);
+            }
+        }
+
+        async function getSignedCertificateUrl(params) {
+            const query = new URLSearchParams(params).toString();
+            const response = await fetch(`/api/certificate/signed-url?${query}`, {
+                headers: { 'Authorization': `Bearer ${token}` }
+            });
+
+            const data = await response.json();
+            if (!response.ok) {
+                throw new Error(data.error || 'Failed to create certificate link');
+            }
+
+            return data.url;
+        }
+
+        async function openCertificateByEnrollment(enrollmentId) {
+            try {
+                const signedUrl = await getSignedCertificateUrl({ enrollmentId });
+                window.open(signedUrl, '_blank', 'noopener');
+            } catch (error) {
+                alert(error.message || 'Unable to open certificate');
+            }
+        }
+
+        async function openCertificateById(id) {
+            try {
+                const signedUrl = await getSignedCertificateUrl({ id });
+                window.open(signedUrl, '_blank', 'noopener');
+            } catch (error) {
+                alert(error.message || 'Unable to open certificate');
             }
         }
 

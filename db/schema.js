@@ -215,6 +215,25 @@ export const certificates = sqliteTable('certificates', {
 });
 
 // ===========================
+// Certificate Reporting Queue Table (e.g., FLHSMV)
+// ===========================
+export const certificateReports = sqliteTable('certificate_reports', {
+  id: text('id').primaryKey(),
+  certificateId: text('certificate_id').notNull().references(() => certificates.id),
+  stateCode: text('state_code').notNull(), // 'FL', etc.
+  provider: text('provider').notNull().default('flhsmv'),
+  status: text('status').notNull().default('pending'), // 'pending','sent','failed','retrying','skipped'
+  payload: text('payload').notNull(), // JSON payload sent or queued
+  externalReferenceId: text('external_reference_id'), // remote transaction/report id
+  attemptCount: integer('attempt_count').default(0),
+  lastAttemptAt: text('last_attempt_at'),
+  sentAt: text('sent_at'),
+  errorMessage: text('error_message'),
+  createdAt: text('created_at').default(sql`CURRENT_TIMESTAMP`),
+  updatedAt: text('updated_at').default(sql`CURRENT_TIMESTAMP`),
+});
+
+// ===========================
 // Chat Sessions Table (AI Chatbot)
 // ===========================
 export const chatSessions = sqliteTable('chat_sessions', {

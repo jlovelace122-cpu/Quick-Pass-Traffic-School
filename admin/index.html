@@ -27,16 +27,20 @@
         .admin-main {
             flex: 1;
             margin-left: 250px;
-            background: var(--gray-50);
+            background:
+                radial-gradient(900px 400px at 95% -20%, #dbeafe 0%, transparent 64%),
+                radial-gradient(760px 320px at -8% 0%, #ecfeff 0%, transparent 56%),
+                var(--gray-50);
             min-height: 100vh;
         }
         .admin-header {
-            background: white;
+            background: rgba(255, 255, 255, 0.88);
             padding: 1rem 2rem;
-            border-bottom: 1px solid var(--gray-200);
+            border-bottom: 1px solid rgba(203, 213, 225, 0.6);
             display: flex;
             justify-content: space-between;
             align-items: center;
+            backdrop-filter: blur(8px);
         }
         .admin-content {
             padding: 2rem;
@@ -78,7 +82,8 @@
             background: white;
             padding: 1.5rem;
             border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(203, 213, 225, 0.65);
         }
         .stat-card h3 {
             font-size: 0.875rem;
@@ -97,8 +102,8 @@
         .stat-change.negative { color: var(--error); }
         .data-table-container {
             background: white;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
+            border-radius: var(--radilg);
+            border: 1px solid rgba(203, 213, 225, 0.65);
             overflow: hidden;
         }
         .table-header {
@@ -106,6 +111,8 @@
             justify-content: space-between;
             align-items: center;
             padding: 1rem 1.5rem;
+            border-bottom: 1px solid #dbeafe;
+            background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%
             border-bottom: 1px solid var(--gray-200);
         }
         .table-header h2 {
@@ -123,13 +130,13 @@
             padding: 1rem 1.5rem;
             text-align: left;
             border-bottom: 1px solid var(--gray-200);
-        }
-        .data-table th {
-            background: var(--gray-50);
+        }linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
             font-weight: 600;
             font-size: 0.875rem;
-            color: var(--gray-600);
+            color: var(--gray-700);
         }
+        .data-table tr:hover {
+            background: #f8fafc
         .data-table tr:hover {
             background: var(--gray-50);
         }
@@ -144,6 +151,10 @@
         .status-badge.active { background: #dbeafe; color: #1e40af; }
         .status-badge.pending { background: #fef3c7; color: #92400e; }
         .status-badge.refunded { background: #fee2e2; color: #991b1b; }
+        .status-badge.sent { background: #dcfce7; color: #166534; }
+        .status-badge.failed { background: #fee2e2; color: #991b1b; }
+        .status-badge.retrying { background: #e0e7ff; color: #3730a3; }
+        .status-badge.skipped { background: #f3f4f6; color: #374151; }
         .tab-nav {
             display: flex;
             gap: 0.5rem;
@@ -153,18 +164,22 @@
             padding: 0.75rem 1.5rem;
             border: none;
             background: white;
-            border-radius: var(--radius);
+            border-radius: 999px;
             cursor: pointer;
-            font-weight: 500;
+            font-weight: 600;
             color: var(--gray-600);
-            transition: all 0.2s;
+            transition: all 220ms cubic-bezier(0.22, 1, 0.36, 1);
+            border: 1px solid #cbd5e1;
         }
         .tab-btn:hover {
-            background: var(--gray-100);
+            background: #f8fafc;
+            border-color: #bfdbfe;
         }
         .tab-btn.active {
-            background: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color), #3b82f6);
             color: white;
+            box-shadow: 0 10px 24px rgb(37 99 235 / 0.26);
+            border-color: transparent;
         }
         .tab-content {
             display: none;
@@ -195,18 +210,20 @@
             z-index: 1000;
         }
         .modal-overlay.active {
-            display: flex;
-        }
-        .modal-content {
-            background: white;
-            border-radius: var(--radius-lg);
+            display: flex;xl);
             max-width: 600px;
             width: 90%;
             max-height: 90vh;
             overflow-y: auto;
+            box-shadow: var(--shadow-xl);
+            border: 1px solid rgba(203, 213, 225, 0.65);
         }
         .modal-header {
             display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            border-bottom: 1px solid #dbeafe
             justify-content: space-between;
             align-items: center;
             padding: 1.5rem;
@@ -487,6 +504,62 @@
 
                 <!-- Reports Tab -->
                 <div class="tab-content" id="reports">
+                    <div class="stats-grid" style="margin-bottom: 1rem;">
+                        <div class="stat-card">
+                            <h3>FLHSMV Queue Total</h3>
+                            <div class="stat-value" id="flhsmvTotal">-</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Pending</h3>
+                            <div class="stat-value" id="flhsmvPending">-</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Sent</h3>
+                            <div class="stat-value" id="flhsmvSent">-</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Failed</h3>
+                            <div class="stat-value" id="flhsmvFailed">-</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Success Rate</h3>
+                            <div class="stat-value" id="flhsmvSuccessRate">-</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Sent (24h)</h3>
+                            <div class="stat-value" id="flhsmvSent24h">-</div>
+                        </div>
+                    </div>
+
+                    <div class="data-table-container" style="margin-bottom: 1rem;">
+                        <div class="table-header">
+                            <h2>FLHSMV Operations</h2>
+                            <div class="table-actions">
+                                <button class="btn btn-secondary" onclick="backfillFlhsmvReports()">Backfill Reports</button>
+                                <button class="btn btn-primary" onclick="processPendingFlhsmvReports()">Process Pending</button>
+                                <button class="btn btn-secondary" onclick="loadFlhsmvReports()">Refresh</button>
+                            </div>
+                        </div>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Created</th>
+                                    <th>State</th>
+                                    <th>Student</th>
+                                    <th>Course</th>
+                                    <th>Status</th>
+                                    <th>Attempts</th>
+                                    <th>Last Attempt</th>
+                                    <th>Error</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="flhsmvReportsTable">
+                                <tr><td colspan="9" style="text-align:center;">Loading...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
                     <div class="stats-grid">
                         <div class="stat-card">
                             <h3>Report Type</h3>
@@ -604,6 +677,131 @@
                 case 'payments': loadPayments(); break;
                 case 'id-verification': loadIdVerifications(); break;
                 case 'certificates': loadCertificates(); break;
+                case 'reports': loadReportsDashboard(); break;
+            }
+        }
+
+        async function loadReportsDashboard() {
+            await Promise.all([loadFlhsmvMetrics(), loadFlhsmvReports()]);
+        }
+
+        async function loadFlhsmvMetrics() {
+            try {
+                const response = await fetch('/api/admin/flhsmv/metrics', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                const data = await response.json();
+                if (!response.ok) throw new Error(data.error || 'Failed to load FLHSMV metrics');
+
+                document.getElementById('flhsmvTotal').textContent = data.totals?.total ?? 0;
+                document.getElementById('flhsmvPending').textContent = data.totals?.pending ?? 0;
+                document.getElementById('flhsmvSent').textContent = data.totals?.sent ?? 0;
+                document.getElementById('flhsmvFailed').textContent = data.totals?.failed ?? 0;
+                document.getElementById('flhsmvSuccessRate').textContent = `${data.successRate ?? 0}%`;
+                document.getElementById('flhsmvSent24h').textContent = data.sentLast24h ?? 0;
+            } catch (error) {
+                console.error('Error loading FLHSMV metrics:', error);
+            }
+        }
+
+        async function loadFlhsmvReports() {
+            try {
+                const response = await fetch('/api/admin/flhsmv/reports', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                const data = await response.json();
+                if (!response.ok) throw new Error(data.error || 'Failed to load FLHSMV reports');
+
+                document.getElementById('flhsmvReportsTable').innerHTML = data.reports?.map(r => {
+                    const state = r.report?.stateCode || '-';
+                    const status = r.report?.status || '-';
+                    const attempts = r.report?.attemptCount ?? 0;
+                    const studentName = r.user ? `${r.user.firstName || ''} ${r.user.lastName || ''}`.trim() : '-';
+                    const courseName = r.course?.name || '-';
+                    const createdAt = r.report?.createdAt ? new Date(r.report.createdAt).toLocaleString() : '-';
+                    const lastAttempt = r.report?.lastAttemptAt ? new Date(r.report.lastAttemptAt).toLocaleString() : '-';
+                    const err = r.report?.errorMessage || '-';
+                    const canRetry = status === 'failed' || status === 'pending';
+
+                    return `
+                        <tr>
+                            <td>${createdAt}</td>
+                            <td>${state}</td>
+                            <td>${studentName || '-'}</td>
+                            <td>${courseName}</td>
+                            <td><span class="status-badge ${status}">${status}</span></td>
+                            <td>${attempts}</td>
+                            <td>${lastAttempt}</td>
+                            <td style="max-width: 300px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${err}</td>
+                            <td>
+                                ${canRetry ? `<button class="btn btn-secondary btn-small" onclick="retryFlhsmvReport('${r.report.id}')">Retry</button>` : '-'}
+                            </td>
+                        </tr>
+                    `;
+                }).join('') || '<tr><td colspan="9" style="text-align:center;">No FLHSMV reports found</td></tr>';
+            } catch (error) {
+                console.error('Error loading FLHSMV reports:', error);
+                document.getElementById('flhsmvReportsTable').innerHTML = '<tr><td colspan="9" style="text-align:center;">Failed to load reports</td></tr>';
+            }
+        }
+
+        async function backfillFlhsmvReports() {
+            try {
+                const response = await fetch('/api/admin/flhsmv/reports/backfill', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json',
+                    },
+                });
+                const data = await response.json();
+                if (!response.ok) throw new Error(data.error || 'Backfill failed');
+
+                alert(`Backfill complete. Added ${data.queuedReportsCreated || 0} queued reports.`);
+                loadReportsDashboard();
+            } catch (error) {
+                console.error('Backfill error:', error);
+                alert(error.message || 'Failed to backfill reports');
+            }
+        }
+
+        async function processPendingFlhsmvReports() {
+            try {
+                const response = await fetch('/api/admin/flhsmv/reports/process-pending?limit=25', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json',
+                    },
+                });
+                const data = await response.json();
+                if (!response.ok) throw new Error(data.error || 'Processing pending reports failed');
+
+                alert(`Processed ${data.processed || 0} pending report(s).`);
+                loadReportsDashboard();
+            } catch (error) {
+                console.error('Process pending error:', error);
+                alert(error.message || 'Failed to process pending reports');
+            }
+        }
+
+        async function retryFlhsmvReport(reportId) {
+            try {
+                const response = await fetch(`/api/admin/flhsmv/reports/${reportId}/retry`, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json',
+                    },
+                });
+                const data = await response.json();
+                if (!response.ok) throw new Error(data.error || 'Retry failed');
+
+                alert('Retry completed successfully.');
+                loadReportsDashboard();
+            } catch (error) {
+                console.error('Retry report error:', error);
+                alert(error.message || 'Failed to retry report');
             }
         }
 

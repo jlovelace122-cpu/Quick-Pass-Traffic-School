@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import { db } from './index.js';
-import { states, courses, courseModules, quizQuestions, enrollments, moduleProgress, quizAttempts, payments, certificates } from './schema.js';
+import { states, courses, courseModules, quizQuestions, enrollments, moduleProgress, quizAttempts, payments, certificates, certificateReports } from './schema.js';
 import { v4 as uuidv4 } from 'uuid';
 // Use EXPANDED curriculum with comprehensive content
 import { floridaCourseDataExpanded as floridaCourseData } from './curriculum-expanded.js';
@@ -16,9 +16,20 @@ import { arizonaCourseData } from './curriculum-arizona.js';
 // Seed All States and Courses with Full Curriculum
 // ===========================
 
+function getFinalExamQuestions(courseData) {
+  const explicitFinals = courseData.finalExamQuestions || [];
+  if (explicitFinals.length > 0) return explicitFinals;
+
+  // Fallback: derive a final exam pool from module quizzes when explicit final is missing
+  return (courseData.modules || [])
+    .flatMap((m) => m.quizQuestions || [])
+    .slice(0, 30);
+}
+
 // Helper function to seed a state's course
 async function seedStateCourse(stateId, courseData, stateName) {
   const courseId = uuidv4();
+  const finalExamQuestions = getFinalExamQuestions(courseData);
 
   await db.insert(courses).values({
     id: courseId,
@@ -30,7 +41,7 @@ async function seedStateCourse(stateId, courseData, stateName) {
     price: courseData.price,
     passingScoreQuiz: 70,
     passingScoreFinal: 80,
-    finalExamQuestions: courseData.finalExamQuestions.length,
+    finalExamQuestions: finalExamQuestions.length,
     isActive: true,
   }).onConflictDoNothing();
 
@@ -72,8 +83,8 @@ async function seedStateCourse(stateId, courseData, stateName) {
   }
 
   // Add final exam questions
-  for (let i = 0; i < courseData.finalExamQuestions.length; i++) {
-    const q = courseData.finalExamQuestions[i];
+  for (let i = 0; i < finalExamQuestions.length; i++) {
+    const q = finalExamQuestions[i];
     await db.insert(quizQuestions).values({
       id: uuidv4(),
       moduleId: null,
@@ -97,6 +108,7 @@ async function seedDatabase() {
   console.log('🌱 Starting database seed...');
 
   // Clear existing seed data (in FK dependency order)
+  await db.delete(certificateReports);
   await db.delete(certificates);
   await db.delete(quizAttempts);
   await db.delete(moduleProgress);
@@ -132,6 +144,7 @@ async function seedDatabase() {
   // Seed 4-Hour Course
   // ===========================
   const course4hr = floridaCourseData.course4Hour;
+  const course4hrFinals = getFinalExamQuestions(course4hr);
   const course4hrId = uuidv4();
   
   await db.insert(courses).values({
@@ -144,7 +157,7 @@ async function seedDatabase() {
     price: course4hr.price,
     passingScoreQuiz: 70,
     passingScoreFinal: 80,
-    finalExamQuestions: (course4hr.finalExamQuestions || []).length,
+    finalExamQuestions: course4hrFinals.length,
     isActive: true,
   }).onConflictDoNothing();
 
@@ -152,6 +165,7 @@ async function seedDatabase() {
   // Seed 8-Hour Course
   // ===========================
   const course8hr = floridaCourseData.course8Hour;
+  const course8hrFinals = getFinalExamQuestions(course8hr);
   const course8hrId = uuidv4();
   
   await db.insert(courses).values({
@@ -164,7 +178,7 @@ async function seedDatabase() {
     price: course8hr.price,
     passingScoreQuiz: 70,
     passingScoreFinal: 80,
-    finalExamQuestions: (course8hr.finalExamQuestions || []).length,
+    finalExamQuestions: course8hrFinals.length,
     isActive: true,
   }).onConflictDoNothing();
 
@@ -172,6 +186,7 @@ async function seedDatabase() {
   // Seed 12-Hour Course
   // ===========================
   const course12hr = floridaCourseData.course12Hour;
+  const course12hrFinals = getFinalExamQuestions(course12hr);
   const course12hrId = uuidv4();
   
   await db.insert(courses).values({
@@ -184,7 +199,7 @@ async function seedDatabase() {
     price: course12hr.price,
     passingScoreQuiz: 70,
     passingScoreFinal: 80,
-    finalExamQuestions: (course12hr.finalExamQuestions || []).length,
+    finalExamQuestions: course12hrFinals.length,
     isActive: true,
   }).onConflictDoNothing();
 
@@ -231,8 +246,8 @@ async function seedDatabase() {
   }
 
   // Add 4-Hour final exam questions
-  for (let i = 0; i < (course4hr.finalExamQuestions || []).length; i++) {
-    const q = course4hr.finalExamQuestions[i];
+  for (let i = 0; i < course4hrFinals.length; i++) {
+    const q = course4hrFinals[i];
     await db.insert(quizQuestions).values({
       id: uuidv4(),
       moduleId: null,
@@ -291,8 +306,8 @@ async function seedDatabase() {
   }
 
   // Add 8-Hour final exam questions
-  for (let i = 0; i < (course8hr.finalExamQuestions || []).length; i++) {
-    const q = course8hr.finalExamQuestions[i];
+  for (let i = 0; i < course8hrFinals.length; i++) {
+    const q = course8hrFinals[i];
     await db.insert(quizQuestions).values({
       id: uuidv4(),
       moduleId: null,
@@ -351,8 +366,8 @@ async function seedDatabase() {
   }
 
   // Add 12-Hour final exam questions
-  for (let i = 0; i < (course12hr.finalExamQuestions || []).length; i++) {
-    const q = course12hr.finalExamQuestions[i];
+  for (let i = 0; i < course12hrFinals.length; i++) {
+    const q = course12hrFinals[i];
     await db.insert(quizQuestions).values({
       id: uuidv4(),
       moduleId: null,
@@ -438,7 +453,7 @@ async function seedDatabase() {
     }),
   }).onConflictDoNothing();
   console.log('✅ Ohio state created');
-  await seedStateCourse(ohioId, ohioCourseData.course4Hour, 'Ohio 4-Hour');
+  await seedStateCourse(ohioId, ohioCourseData.course2Point, 'Ohio 2-Point');
 
   // ===========================
   // Seed Texas State and Course

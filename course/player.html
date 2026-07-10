@@ -357,7 +357,7 @@
         // Get course and enrollment from URL
         const urlParams = new URLSearchParams(window.location.search);
         const courseSlug = urlParams.get('course');
-        const enrollmentId = urlParams.get('enrollment');
+        let enrollmentId = urlParams.get('enrollment');
 
         if (!courseSlug) {
             window.location.href = '../dashboard/index.html';
@@ -376,7 +376,8 @@
                 });
 
                 if (!courseResponse.ok) throw new Error('Failed to load course');
-                courseData = await courseResponse.json();
+                const coursePayload = await courseResponse.json();
+                courseData = coursePayload.course || coursePayload;
 
                 // Get modules with progress
                 const modulesResponse = await fetch(`/api/courses/${courseSlug}/modules`, {
@@ -386,9 +387,10 @@
                 if (!modulesResponse.ok) throw new Error('Not enrolled in course');
                 const modulesData = await modulesResponse.json();
                 modules = modulesData.modules;
+                enrollmentId = modulesData.enrollmentId || enrollmentId;
 
                 // Update UI
-                document.getElementById('courseTitle').textContent = courseData.name;
+                document.getElementById('courseTitle').textContent = courseData?.name || 'My Course';
                 renderModuleList();
                 updateProgress();
 

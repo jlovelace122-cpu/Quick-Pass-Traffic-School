@@ -12,7 +12,10 @@
     <style>
         .checkout-page {
             min-height: 100vh;
-            background: var(--gray-50);
+            background:
+                radial-gradient(900px 380px at 92% -15%, #dbeafe 0%, transparent 62%),
+                radial-gradient(760px 320px at -12% 2%, #ecfeff 0%, transparent 56%),
+                var(--gray-50);
         }
         .checkout-container {
             max-width: 1000px;
@@ -32,18 +35,24 @@
         .checkout-card {
             background: white;
             border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(203, 213, 225, 0.65);
+            box-shadow: var(--shadow-lg);
             padding: 1.5rem;
         }
         .checkout-header {
+            background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, #f8fafc 100%);
+            border: 1px solid rgba(203, 213, 225, 0.7);
+            border-radius: var(--radius-xl);
+            padding: 1.5rem;
             margin-bottom: 2rem;
         }
         .checkout-header h1 {
             font-size: 1.75rem;
             margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
         }
         .course-summary {
-            border-bottom: 1px solid var(--gray-200);
+            border-bottom: 1.5px solid #dbeafe;
             padding-bottom: 1.5rem;
             margin-bottom: 1.5rem;
         }
@@ -59,7 +68,7 @@
         .course-icon {
             width: 60px;
             height: 60px;
-            background: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color), #3b82f6);
             border-radius: var(--radius);
             display: flex;
             align-items: center;
@@ -67,6 +76,7 @@
             color: white;
             font-size: 1.5rem;
             font-weight: bold;
+            box-shadow: 0 10px 20px rgb(37 99 235 / 0.24);
         }
         .course-info h3 {
             margin: 0 0 0.25rem 0;
@@ -87,9 +97,10 @@
         }
         .price-row.total {
             font-weight: 700;
-            font-size: 1.25rem;
-            border-top: 2px solid var(--gray-200);
+            font-size: 1.25rem;#dbeafe;
             padding-top: 1rem;
+            margin-top: 1rem;
+            color: var(--primary-color)m;
             margin-top: 1rem;
         }
         .secure-badge {
@@ -97,8 +108,9 @@
             align-items: center;
             gap: 0.5rem;
             padding: 0.75rem;
-            background: var(--gray-50);
+            background: linear-gradient(135deg, #eff6ff 0%, #f8fafc 100%);
             border-radius: var(--radius);
+            border: 1px solid #dbeafe;
             font-size: 0.875rem;
             color: var(--gray-600);
             margin-top: 1.5rem;
@@ -163,13 +175,15 @@
             flex-shrink: 0;
         }
         .money-back {
-            background: #dcfce7;
+            background: linear-gradient(135deg, #dcfce7 0%, #f0fdf4 100%);
             color: #166534;
+            border: 1px solid #86efac;
             padding: 1rem;
             border-radius: var(--radius);
             text-align: center;
             font-size: 0.875rem;
             margin-top: 1rem;
+            font-weight: 600;
         }
     </style>
 </head>

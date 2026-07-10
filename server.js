@@ -5,8 +5,9 @@ import { fileURLToPath } from 'url';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import OpenAI from 'openai';
+import { sendCompletionReport } from './lib/flhsmv-client.js';
 import { db } from './db/index.js';
-import { users, states, courses, courseModules, quizQuestions, enrollments, moduleProgress, quizAttempts, certificates, chatSessions, chatMessages } from './db/schema.js';
+import { users, states, courses, courseModules, quizQuestions, enrollments, moduleProgress, quizAttempts, certificates, certificateReports, chatSessions, chatMessages } from './db/schema.js';
 import { eq, and, desc } from 'drizzle-orm';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -117,6 +118,119 @@ function requireAdmin(req, res, next) {
     return res.status(403).json({ error: 'Admin access required' });
   }
   next();
+}
+
+async function buildCertificateReportPayload(certificateId) {
+  const cert = await db.select().from(certificates).where(eq(certificates.id, certificateId)).limit(1);
+  if (!cert[0]) throw new Error('Certificate not found for report payload');
+
+  const enrollment = await db.select().from(enrollments).where(eq(enrollments.id, cert[0].enrollmentId)).limit(1);
+  if (!enrollment[0]) throw new Error('Enrollment not found for report payload');
+
+  const course = await db.select().from(courses).where(eq(courses.id, cert[0].courseId)).limit(1);
+  if (!course[0]) throw new Error('Course not found for report payload');
+
+  const state = await db.select().from(states).where(eq(states.id, course[0].stateId)).limit(1);
+  if (!state[0]) throw new Error('State not found for report payload');
+
+  const user = await db.select().from(users).where(eq(users.id, cert[0].userId)).limit(1);
+  if (!user[0]) throw new Error('User not found for report payload');
+
+  return {
+    certificateId: cert[0].id,
+    certificateNumber: cert[0].certificateNumber,
+    provider: 'Quick Pass Traffic School',
+    stateCode: state[0].code,
+    issuedAt: cert[0].issuedAt,
+    finalExamScore: cert[0].finalExamScore,
+    student: {
+      firstName: user[0].firstName,
+      lastName: user[0].lastName,
+      email: user[0].email,
+      dateOfBirth: user[0].dateOfBirth,
+      licenseNumber: user[0].licenseNumber,
+      licenseState: user[0].licenseState,
+      ssn4: user[0].ssn4,
+    },
+    course: {
+      id: course[0].id,
+      slug: course[0].slug,
+      name: course[0].name,
+      durationHours: course[0].durationHours,
+    },
+    enrollment: {
+      id: enrollment[0].id,
+      citationNumber: enrollment[0].citationNumber,
+      completedAt: enrollment[0].completedAt,
+    },
+  };
+}
+
+async function queueCertificateReport(certificateId, stateCode) {
+  const payload = await buildCertificateReportPayload(certificateId);
+  const reportId = uuidv4();
+  await db.insert(certificateReports).values({
+    id: reportId,
+    certificateId,
+    stateCode,
+    provider: 'flhsmv',
+    status: stateCode === 'FL' ? 'pending' : 'skipped',
+    payload: JSON.stringify(payload),
+    errorMessage: stateCode === 'FL' ? null : `State ${stateCode} does not use FLHSMV reporting`,
+  });
+
+  return reportId;
+}
+
+async function processCertificateReport(reportId) {
+  const report = await db.select().from(certificateReports).where(eq(certificateReports.id, reportId)).limit(1);
+  if (!report[0]) throw new Error('Report not found');
+
+  if (report[0].status === 'sent') {
+    return { ok: true, alreadySent: true, message: 'Report already sent' };
+  }
+
+  if (report[0].stateCode !== 'FL') {
+    return { ok: true, skipped: true, message: `State ${report[0].stateCode} not routed to FLHSMV` };
+  }
+
+  const payload = JSON.parse(report[0].payload || '{}');
+  const attemptCount = (report[0].attemptCount || 0) + 1;
+  const nowIso = new Date().toISOString();
+
+  await db.update(certificateReports)
+    .set({
+      status: 'retrying',
+      attemptCount,
+      lastAttemptAt: nowIso,
+      updatedAt: nowIso,
+    })
+    .where(eq(certificateReports.id, reportId));
+
+  const sendResult = await sendCompletionReport(payload);
+
+  if (sendResult.ok) {
+    await db.update(certificateReports)
+      .set({
+        status: 'sent',
+        sentAt: new Date().toISOString(),
+        externalReferenceId: sendResult.externalReferenceId || null,
+        errorMessage: null,
+        updatedAt: new Date().toISOString(),
+      })
+      .where(eq(certificateReports.id, reportId));
+    return { ok: true, sent: true, externalReferenceId: sendResult.externalReferenceId || null };
+  }
+
+  await db.update(certificateReports)
+    .set({
+      status: 'failed',
+      errorMessage: sendResult.message || 'Unknown FLHSMV send failure',
+      updatedAt: new Date().toISOString(),
+    })
+    .where(eq(certificateReports.id, reportId));
+
+  return { ok: false, sent: false, message: sendResult.message || 'Unknown FLHSMV send failure' };
 }
 
 // ===========================
@@ -517,13 +631,21 @@ app.post('/api/quiz/submit', authenticateToken, async (req, res) => {
     const passed = score >= passingScore;
     
     // Record the attempt
+    const attemptStartedAt = new Date().toISOString();
+    const attemptCompletedAt = new Date().toISOString();
+
     await db.insert(quizAttempts).values({
       id: uuidv4(),
       enrollmentId,
       moduleId,
+      isFinalExam: false,
       score,
+      totalQuestions,
+      correctAnswers: correctCount,
       passed,
       answers: JSON.stringify(answers),
+      startedAt: attemptStartedAt,
+      completedAt: attemptCompletedAt,
     });
     
     // If passed, update module progress
@@ -674,13 +796,21 @@ app.post('/api/quiz/submit-final', authenticateToken, async (req, res) => {
     const passed = score >= passingScore;
     
     // Record attempt
+    const finalAttemptStartedAt = new Date().toISOString();
+    const finalAttemptCompletedAt = new Date().toISOString();
+
     await db.insert(quizAttempts).values({
       id: uuidv4(),
       enrollmentId,
+      moduleId: null,
       isFinalExam: true,
       score,
+      totalQuestions,
+      correctAnswers: correctCount,
       passed,
       answers: JSON.stringify(answers),
+      startedAt: finalAttemptStartedAt,
+      completedAt: finalAttemptCompletedAt,
     });
     
     // If passed, generate certificate
@@ -692,9 +822,25 @@ app.post('/api/quiz/submit-final', authenticateToken, async (req, res) => {
       await db.insert(certificates).values({
         id: certificateId,
         enrollmentId,
+        userId: req.user.id,
+        courseId: enrollment[0].courseId,
         certificateNumber: certNumber,
         issuedAt: new Date().toISOString(),
+        finalExamScore: score,
       });
+
+      // Queue FLHSMV/state reporting on certificate issuance
+      try {
+        const courseState = await db.select().from(states).where(eq(states.id, course[0].stateId)).limit(1);
+        const stateCode = courseState[0]?.code || 'UNKNOWN';
+        const queuedReportId = await queueCertificateReport(certificateId, stateCode);
+
+        if ((process.env.FLHSMV_AUTO_SEND || 'false').toLowerCase() === 'true' && stateCode === 'FL') {
+          await processCertificateReport(queuedReportId);
+        }
+      } catch (reportErr) {
+        console.error('Certificate report queue error:', reportErr);
+      }
       
       // Update enrollment to completed
       await db.update(enrollments)
@@ -720,24 +866,134 @@ app.post('/api/quiz/submit-final', authenticateToken, async (req, res) => {
 // ===========================
 // Certificate Routes
 // ===========================
-app.get('/api/certificate/generate', authenticateToken, async (req, res) => {
+
+// Create short-lived signed URL for certificate download/printing
+app.get('/api/certificate/signed-url', authenticateToken, async (req, res) => {
   try {
     const { id, enrollmentId } = req.query;
+
+    if (!id && !enrollmentId) {
+      return res.status(400).json({ error: 'Certificate id or enrollmentId is required' });
+    }
+
+    let certificate;
+    if (id) {
+      certificate = await db.select().from(certificates).where(eq(certificates.id, id)).limit(1);
+    } else {
+      certificate = await db.select().from(certificates).where(eq(certificates.enrollmentId, enrollmentId)).limit(1);
+    }
+
+    if (!certificate[0]) {
+      return res.status(404).json({ error: 'Certificate not found' });
+    }
+
+    // Ensure this certificate belongs to the authenticated user
+    const ownerEnrollment = await db.select()
+      .from(enrollments)
+      .where(and(
+        eq(enrollments.id, certificate[0].enrollmentId),
+        eq(enrollments.userId, req.user.id)
+      ))
+      .limit(1);
+
+    if (!ownerEnrollment[0]) {
+      return res.status(403).json({ error: 'Access denied' });
+    }
+
+    const signedToken = jwt.sign(
+      {
+        purpose: 'certificate_download',
+        userId: req.user.id,
+        certificateId: certificate[0].id,
+        enrollmentId: certificate[0].enrollmentId,
+      },
+      JWT_SECRET,
+      { expiresIn: '10m' }
+    );
+
+    return res.json({
+      url: `/api/certificate/generate?token=${encodeURIComponent(signedToken)}`,
+      expiresInSeconds: 600,
+    });
+  } catch (error) {
+    console.error('Certificate signed URL error:', error);
+    return res.status(500).json({ error: 'Failed to create signed certificate URL' });
+  }
+});
+
+app.get('/api/certificate/generate', async (req, res) => {
+  try {
+    const { id, enrollmentId, token: signedToken } = req.query;
+
+    let resolvedUserId = null;
+    let resolvedCertificateId = id || null;
+    let resolvedEnrollmentId = enrollmentId || null;
+
+    // Auth mode 1: short-lived signed certificate token
+    if (signedToken) {
+      let decoded;
+      try {
+        decoded = jwt.verify(signedToken, JWT_SECRET);
+      } catch (err) {
+        return res.status(401).json({ error: 'Invalid or expired certificate link' });
+      }
+
+      if (decoded?.purpose !== 'certificate_download' || !decoded?.userId) {
+        return res.status(401).json({ error: 'Invalid certificate link' });
+      }
+
+      resolvedUserId = decoded.userId;
+      resolvedCertificateId = decoded.certificateId || resolvedCertificateId;
+      resolvedEnrollmentId = decoded.enrollmentId || resolvedEnrollmentId;
+    } else {
+      // Auth mode 2: bearer token (existing behavior)
+      const authHeader = req.headers['authorization'];
+      const bearer = authHeader && authHeader.split(' ')[1];
+      if (!bearer) {
+        return res.status(401).json({ error: 'Access token required' });
+      }
+
+      let authUser;
+      try {
+        authUser = jwt.verify(bearer, JWT_SECRET);
+      } catch (err) {
+        return res.status(403).json({ error: 'Invalid or expired token' });
+      }
+
+      resolvedUserId = authUser.id;
+    }
+
+    if (!resolvedCertificateId && !resolvedEnrollmentId) {
+      return res.status(400).json({ error: 'Certificate id or enrollmentId is required' });
+    }
     
     // Get certificate by ID or enrollment ID
     let certificate;
-    if (id) {
+    if (resolvedCertificateId) {
       certificate = await db.select()
         .from(certificates)
-        .where(eq(certificates.id, id))
+        .where(eq(certificates.id, resolvedCertificateId))
         .limit(1);
-    } else if (enrollmentId) {
+    } else if (resolvedEnrollmentId) {
       certificate = await db.select()
         .from(certificates)
-        .where(eq(certificates.enrollmentId, enrollmentId))
+        .where(eq(certificates.enrollmentId, resolvedEnrollmentId))
         .limit(1);
     }
     certificate = certificate || [];
+        // Ensure certificate belongs to the resolved user
+        const ownership = await db.select()
+          .from(enrollments)
+          .where(and(
+            eq(enrollments.id, certificate[0].enrollmentId),
+            eq(enrollments.userId, resolvedUserId)
+          ))
+          .limit(1);
+
+        if (!ownership[0]) {
+          return res.status(403).json({ error: 'Access denied' });
+        }
+
     
     if (!certificate[0]) {
       return res.status(404).json({ error: 'Certificate not found' });
@@ -758,7 +1014,7 @@ app.get('/api/certificate/generate', authenticateToken, async (req, res) => {
     // Get user info
     const user = await db.select()
       .from(users)
-      .where(eq(users.id, req.user.id))
+      .where(eq(users.id, resolvedUserId))
       .limit(1);
     
     // Generate HTML certificate
@@ -1187,6 +1443,155 @@ app.get('/api/admin/certificates', authenticateToken, requireAdmin, async (req, 
   } catch (error) {
     console.error('Certificates error:', error);
     res.status(500).json({ error: 'Failed to fetch certificates' });
+  }
+});
+
+app.get('/api/admin/flhsmv/reports', authenticateToken, requireAdmin, async (req, res) => {
+  try {
+    const reports = await db.select({
+      report: certificateReports,
+      certificate: certificates,
+      user: users,
+      course: courses,
+    })
+    .from(certificateReports)
+    .leftJoin(certificates, eq(certificateReports.certificateId, certificates.id))
+    .leftJoin(users, eq(certificates.userId, users.id))
+    .leftJoin(courses, eq(certificates.courseId, courses.id))
+    .orderBy(desc(certificateReports.createdAt));
+
+    res.json({ reports });
+  } catch (error) {
+    console.error('FLHSMV reports list error:', error);
+    res.status(500).json({ error: 'Failed to fetch FLHSMV reports' });
+  }
+});
+
+app.get('/api/admin/flhsmv/metrics', authenticateToken, requireAdmin, async (req, res) => {
+  try {
+    const reports = await db.select().from(certificateReports);
+    const now = new Date();
+    const oneDayAgo = new Date(now.getTime() - 24 * 60 * 60 * 1000);
+
+    const totals = {
+      total: reports.length,
+      pending: 0,
+      sent: 0,
+      failed: 0,
+      retrying: 0,
+      skipped: 0,
+    };
+
+    let sentLast24h = 0;
+    let lastSentAt = null;
+    let totalAttempts = 0;
+
+    for (const r of reports) {
+      if (Object.prototype.hasOwnProperty.call(totals, r.status)) {
+        totals[r.status] += 1;
+      }
+
+      totalAttempts += r.attemptCount || 0;
+
+      if (r.sentAt) {
+        const sentDate = new Date(r.sentAt);
+        if (sentDate >= oneDayAgo) sentLast24h += 1;
+        if (!lastSentAt || sentDate > new Date(lastSentAt)) {
+          lastSentAt = r.sentAt;
+        }
+      }
+    }
+
+    const successRate = totals.total > 0
+      ? Math.round((totals.sent / totals.total) * 100)
+      : 0;
+
+    const averageAttempts = totals.total > 0
+      ? Number((totalAttempts / totals.total).toFixed(2))
+      : 0;
+
+    res.json({
+      totals,
+      successRate,
+      sentLast24h,
+      averageAttempts,
+      lastSentAt,
+      generatedAt: now.toISOString(),
+    });
+  } catch (error) {
+    console.error('FLHSMV metrics error:', error);
+    res.status(500).json({ error: 'Failed to fetch FLHSMV metrics' });
+  }
+});
+
+app.post('/api/admin/flhsmv/reports/:id/retry', authenticateToken, requireAdmin, async (req, res) => {
+  try {
+    const { id } = req.params;
+    const result = await processCertificateReport(id);
+
+    if (!result.ok) {
+      return res.status(502).json({ error: result.message || 'Report retry failed' });
+    }
+
+    res.json({ success: true, result });
+  } catch (error) {
+    console.error('FLHSMV report retry error:', error);
+    res.status(500).json({ error: 'Failed to retry FLHSMV report' });
+  }
+});
+
+app.post('/api/admin/flhsmv/reports/process-pending', authenticateToken, requireAdmin, async (req, res) => {
+  try {
+    const limit = Math.min(parseInt(req.query.limit || '25', 10), 100);
+    const pending = await db.select()
+      .from(certificateReports)
+      .where(and(eq(certificateReports.status, 'pending'), eq(certificateReports.stateCode, 'FL')))
+      .limit(limit);
+
+    const results = [];
+    for (const report of pending) {
+      const result = await processCertificateReport(report.id);
+      results.push({ reportId: report.id, ...result });
+    }
+
+    res.json({
+      processed: results.length,
+      results,
+    });
+  } catch (error) {
+    console.error('FLHSMV process pending error:', error);
+    res.status(500).json({ error: 'Failed to process pending FLHSMV reports' });
+  }
+});
+
+app.post('/api/admin/flhsmv/reports/backfill', authenticateToken, requireAdmin, async (req, res) => {
+  try {
+    const certRows = await db.select({
+      certificateId: certificates.id,
+      stateCode: states.code,
+    })
+    .from(certificates)
+    .leftJoin(courses, eq(certificates.courseId, courses.id))
+    .leftJoin(states, eq(courses.stateId, states.id));
+
+    let created = 0;
+    for (const row of certRows) {
+      if (!row?.certificateId) continue;
+
+      const existing = await db.select().from(certificateReports)
+        .where(eq(certificateReports.certificateId, row.certificateId))
+        .limit(1);
+      if (existing[0]) continue;
+
+      const stateCode = row.stateCode || 'UNKNOWN';
+      await queueCertificateReport(row.certificateId, stateCode);
+      created++;
+    }
+
+    res.json({ success: true, queuedReportsCreated: created });
+  } catch (error) {
+    console.error('FLHSMV backfill error:', error);
+    res.status(500).json({ error: 'Failed to backfill FLHSMV reports' });
   }
 });
 
