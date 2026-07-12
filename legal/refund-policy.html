@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refund Policy - Quick Pass Traffic School</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .legal-hero {
+            background:
+                radial-gradient(900px 380px at 85% -20%, rgba(96,165,250,0.4), transparent 62%),
+                radial-gradient(700px 300px at 8% -10%, rgba(20,184,166,0.2), transparent 55%),
+                linear-gradient(138deg, #0f172a 0%, #1e3a8a 52%, #0f766e 100%);
+            padding: 3.5rem 0 3rem;
+            text-align: center;
+            color: white;
+        }
+        .legal-hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 0.5rem; }
+        .legal-hero p { opacity: 0.88; font-size: 1.05rem; margin: 0; }
+        .legal-body {
+            background:
+                radial-gradient(900px 380px at 94% -10%, #dbeafe 0%, transparent 62%),
+                radial-gradient(760px 320px at -8% 2%, #ecfeff 0%, transparent 56%),
+                var(--gray-50);
+            padding: 3rem 0 4rem;
+        }
+        .legal-container { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
+        .legal-card {
+            background: white;
+            border: 1px solid rgba(203,213,225,0.65);
+            border-radius: 1.15rem;
+            box-shadow: 0 18px 45px rgb(15 23 42 / 0.12);
+            padding: 2.5rem 3rem;
+        }
+        .effective-date {
+            display: inline-block;
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            color: #1e40af;
+            border-radius: 999px;
+            padding: 0.35rem 1rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+        .legal-card h2 {
+            font-size: 1.25rem;
+            color: var(--gray-900);
+            margin-top: 2rem;
+            margin-bottom: 0.65rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid #dbeafe;
+        }
+        .legal-card h2:first-of-type { margin-top: 0; }
+        .legal-card p, .legal-card li { color: var(--gray-700); line-height: 1.75; }
+        .legal-card ul, .legal-card ol { padding-left: 1.4rem; margin-bottom: 1rem; }
+        .legal-card li { margin-bottom: 0.45rem; }
+        .legal-card a { color: #2563eb; }
+        .guarantee-banner {
+            background: linear-gradient(135deg, #dcfce7 0%, #f0fdf4 100%);
+            border: 1px solid #86efac;
+            border-radius: 1rem;
+            padding: 1.5rem 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .guarantee-banner .money-icon { font-size: 2.5rem; display: block; margin-bottom: 0.5rem; }
+        .guarantee-banner h3 { color: #166534; font-size: 1.35rem; margin-bottom: 0.4rem; }
+        .guarantee-banner p { color: #15803d; margin: 0; font-size: 0.95rem; }
+        .highlight-box {
+            background: linear-gradient(135deg, #eff6ff 0%, #f8fafc 100%);
+            border-left: 3px solid #3b82f6;
+            border-radius: 0 0.75rem 0.75rem 0;
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+        }
+        .warning-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fffbeb 100%);
+            border-left: 3px solid #f59e0b;
+            border-radius: 0 0.75rem 0.75rem 0;
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            color: #92400e;
+        }
+        .steps-list { counter-reset: steps; list-style: none; padding: 0; }
+        .steps-list li {
+            counter-increment: steps;
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            align-items: flex-start;
+        }
+        .steps-list li::before {
+            content: counter(steps);
+            min-width: 2rem;
+            height: 2rem;
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.875rem;
+            flex-shrink: 0;
+        }
+        .contact-box {
+            background: linear-gradient(135deg, #f0fdf4 0%, #f8fafc 100%);
+            border: 1px solid #86efac;
+            border-radius: 0.85rem;
+            padding: 1.25rem 1.5rem;
+            margin-top: 2rem;
+        }
+        @media (max-width: 640px) { .legal-card { padding: 1.5rem 1.25rem; } }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="logo">
+                        <a href="../index.html">
+                            <img src="../Assets/quick pass traffic school logo.png" alt="Quick Pass Traffic School Logo">
+                        </a>
+                    </div>
+                    <ul class="nav-menu">
+                        <li><a href="../index.html" class="nav-link">Home</a></li>
+                        <li><a href="../index.html#course-overview" class="nav-link">Courses</a></li>
+                        <li><a href="../login.html" class="nav-link">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="legal-hero">
+        <div class="container">
+            <h1>Refund Policy</h1>
+            <p>Our commitment to your satisfaction — 100% money-back guarantee</p>
+        </div>
+    </div>
+
+    <div class="legal-body">
+        <div class="legal-container">
+            <div class="legal-card">
+                <span class="effective-date">Effective Date: July 1, 2026 &nbsp;·&nbsp; Last Updated: July 12, 2026</span>
+
+                <div class="guarantee-banner">
+                    <span class="money-icon">💰</span>
+                    <h3>30-Day Money-Back Guarantee</h3>
+                    <p>We stand behind the quality of our courses. If you're not satisfied for any reason, request a full refund within 30 days — no questions asked.</p>
+                </div>
+
+                <h2>1. Our Refund Commitment</h2>
+                <p>Quick Pass Traffic School offers a <strong>30-day, no-questions-asked refund</strong> for all course purchases. We believe in our product and want you to feel confident enrolling with us. If you're unhappy for any reason, we'll make it right.</p>
+
+                <h2>2. Eligibility for a Full Refund</h2>
+                <p>You are eligible for a full refund if <strong>all</strong> of the following conditions are met:</p>
+                <ul>
+                    <li>Your refund request is submitted within <strong>30 days</strong> of your original purchase date</li>
+                    <li>You have <strong>not yet received a completion certificate</strong> for the course</li>
+                    <li>Your completion has <strong>not been submitted</strong> to a state DMV or court on your behalf</li>
+                </ul>
+                <div class="warning-box">
+                    <strong>Important:</strong> Once a completion certificate has been issued and your course record has been reported to the state DMV or court, a refund cannot be processed. This is because we have already fulfilled our service obligation and the state reporting cannot be reversed.
+                </div>
+
+                <h2>3. Partial Completion</h2>
+                <p>We do not offer partial refunds based on how much of the course you have completed. As long as you meet the eligibility criteria in Section 2, you are entitled to a full refund regardless of your course progress percentage.</p>
+
+                <h2>4. How to Request a Refund</h2>
+                <ol class="steps-list">
+                    <li><strong>Contact us</strong> by email at <a href="mailto:refunds@quickpasstrafficschool.com">refunds@quickpasstrafficschool.com</a> or via our <a href="../index.html#contact-us">contact form</a>.</li>
+                    <li><strong>Include your information:</strong> Your full name, email address used at registration, course name, and order/confirmation number.</li>
+                    <li><strong>Brief reason (optional):</strong> While not required, feedback helps us improve our courses.</li>
+                    <li><strong>We will respond</strong> within 1–2 business days to confirm your eligibility and initiate the refund.</li>
+                </ol>
+
+                <h2>5. Refund Processing Time</h2>
+                <ul>
+                    <li>Approved refunds are processed within <strong>3–5 business days</strong> of confirmation.</li>
+                    <li>Refunds are returned to the original payment method (credit/debit card).</li>
+                    <li>Depending on your bank or card issuer, the credit may take an additional <strong>5–10 business days</strong> to appear on your statement.</li>
+                    <li>We do not issue refunds in the form of cash, check, or alternative payment methods.</li>
+                </ul>
+
+                <h2>6. Non-Refundable Circumstances</h2>
+                <p>A refund will <strong>not</strong> be issued in the following situations:</p>
+                <ul>
+                    <li>A completion certificate has been issued for the course</li>
+                    <li>Your completion record has been reported to the state DMV or court</li>
+                    <li>More than 30 days have passed since your purchase date</li>
+                    <li>Your account has been terminated for fraud, cheating, or violation of our <a href="terms-of-service.html">Terms of Service</a></li>
+                    <li>You enrolled using a coupon or promotional discount that explicitly stated "non-refundable" at the time of purchase</li>
+                </ul>
+
+                <h2>7. Technical Issues &amp; Special Circumstances</h2>
+                <p>If you experienced a technical problem that prevented you from completing or accessing the course, please contact us immediately. We will work to resolve technical issues, and if we are unable to do so within a reasonable timeframe, we will provide a full refund regardless of the 30-day window.</p>
+
+                <div class="highlight-box">
+                    <strong>Tip:</strong> If your issue is technical (course won't load, quiz not submitting, etc.), contact our support team first — we can often resolve these quickly and get you back on track.
+                </div>
+
+                <h2>8. Chargebacks &amp; Payment Disputes</h2>
+                <p>We ask that you contact us before initiating a chargeback with your bank or credit card company. Unauthorized chargebacks may result in account suspension. We are committed to resolving all legitimate disputes quickly and fairly through our refund process.</p>
+
+                <h2>9. Changes to This Policy</h2>
+                <p>We reserve the right to update this Refund Policy. Changes will be posted on this page with an updated effective date. The policy in effect at the time of your purchase governs your refund eligibility.</p>
+
+                <h2>10. Contact Us</h2>
+                <div class="contact-box">
+                    <strong>Refund Requests</strong><br>
+                    Email: <a href="mailto:refunds@quickpasstrafficschool.com">refunds@quickpasstrafficschool.com</a><br>
+                    General Support: <a href="mailto:support@quickpasstrafficschool.com">support@quickpasstrafficschool.com</a><br>
+                    We respond within 1–2 business days.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Quick Pass Traffic School. All rights reserved. &nbsp;|&nbsp;
+                    <a href="privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp;
+                    <a href="terms-of-service.html">Terms of Service</a> &nbsp;|&nbsp;
+                    <a href="refund-policy.html">Refund Policy</a> &nbsp;|&nbsp;
+                    <a href="accessibility.html">Accessibility</a> &nbsp;|&nbsp;
+                    <a href="cookie-policy.html">Cookie Policy</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
