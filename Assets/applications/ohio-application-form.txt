@@ -1,0 +1,255 @@
+============================================================
+OHIO — DRIVER IMPROVEMENT PROGRAM (DIP) PROVIDER APPLICATION
+PRE-FILLED FOR SUBMISSION TO OHIO BMV / OHIO DPS
+============================================================
+Regulatory Body:
+  Ohio Bureau of Motor Vehicles (BMV)
+  Ohio Department of Public Safety
+  1970 West Broad Street
+  Columbus, OH 43223
+
+Mailing Address:
+  Ohio BMV
+  P.O. Box 16520
+  Columbus, OH 43216-6520
+
+Phone: (614) 752-7600
+Website: https://bmv.ohio.gov
+Email: bmv@dps.ohio.gov
+
+Reference: Ohio Revised Code (ORC) § 4507.071 (Driver Improvement)
+           ORC § 4507.11 (Driving school licensure)
+           ORC § 4507.14 (Driver training requirements)
+           Ohio Administrative Code (OAC) Chapter 4501:1-3
+
+============================================================
+NOTE: Ohio BMV requires direct contact to obtain the current
+provider application packet for Driver Improvement Program
+or online Remedial Driving Course approval.
+
+Call (614) 752-7600 and ask for the Driver Education division.
+Request: "Application to become an approved Driver Improvement
+Program (DIP) course provider for online internet delivery."
+
+Also confirm whether Ohio requires a separate in-state
+physical address / registered location for online providers.
+============================================================
+
+
+╔══════════════════════════════════════════════════════════╗
+║  PART 1: APPLICANT / BUSINESS INFORMATION               ║
+╚══════════════════════════════════════════════════════════╝
+
+--------------------------------------------------------------
+A. OWNER / PRINCIPAL INFORMATION
+--------------------------------------------------------------
+
+Full Legal Name:          Jordan Lovelace
+Date of Birth:            [____/____/____]   <<<< FILL IN
+Social Security #:        [___-__-____]      <<<< FILL IN
+Driver License #:         [______________]   <<<< FILL IN
+DL State of Issue:        Florida
+DL Expiration:            [____/____/____]   <<<< FILL IN
+
+Home Address:             6213 Northwest 63rd Way
+City:                     Parkland
+State:                    FL
+ZIP:                      33067
+County:                   Broward
+
+Home Phone:               (714) 312-9994
+Email (Personal):         admin@quickpasstrafficschool.com
+
+Criminal Background:      No disqualifying criminal history
+                          (confirm fingerprinting/BCII requirements
+                          with Ohio BMV — may require Ohio BCI & I
+                          background check for owners)
+
+--------------------------------------------------------------
+B. BUSINESS INFORMATION
+--------------------------------------------------------------
+
+Business Name:            Quick Pass Traffic School
+Trade Name / DBA:         N/A
+Entity Type:              Sole Proprietorship
+Federal EIN:              [INSERT WHEN RECEIVED — SS-4 pending]
+Date Business Established:[____/____/____]   <<<< FILL IN
+
+Business Address:         6213 Northwest 63rd Way
+City:                     Parkland
+State:                    FL
+ZIP:                      33067
+
+Business Phone:           (714) 312-9994
+Business Email:           support@quickpasstrafficschool.com
+Business Website:         www.quickpasstrafficschool.com
+
+Ohio Statutory Agent:     [TO BE DESIGNATED]
+  Name:                   [____________________]   <<<< FILL IN
+  Address:                [____________________]
+  City/State/ZIP:         [__________, OH _____]
+  Phone:                  [____________________]
+
+Ohio Office (if required): [____________________]
+                            [Confirm with BMV whether out-of-state
+                            providers need an Ohio address]
+
+Delivery Method:          [X] Online (Internet-Based)
+                          [ ] Classroom
+                          [ ] Both
+
+
+╔══════════════════════════════════════════════════════════╗
+║  PART 2: COURSE INFORMATION                             ║
+╚══════════════════════════════════════════════════════════╝
+
+--------------------------------------------------------------
+A. COURSE TYPE
+--------------------------------------------------------------
+
+[X] Driver Improvement Program (DIP)
+    — Court-ordered or voluntary 4-hour course
+    — ORC § 4507.071 — reduces 2 points on license
+    — For drivers with 2–5 points (voluntary) or court-ordered
+
+[ ] Remedial Driving Course
+    — For higher point accumulation (confirm requirements)
+
+Course Title:             Ohio Driver Improvement Program
+Course Duration:          4 hours (240 minutes)
+                          [Confirm — Ohio DIP is typically 4 hours;
+                          some remedial courses are 8 hours]
+Delivery Format:          Online / Internet (self-paced)
+Language:                 English
+Maximum Enrollment:       Unlimited (online, concurrent)
+
+--------------------------------------------------------------
+B. COURSE MODULE BREAKDOWN (4-Hour Version)
+--------------------------------------------------------------
+
+  Module 1: Ohio Traffic Laws & Rules of the Road (45 min)
+  Module 2: Traffic Crash Problem — Stats & Causation (35 min)
+  Module 3: Crash Prevention & Defensive Driving (40 min)
+  Module 4: OVI Laws & Impaired Driving (ORC § 4511.19) (35 min)
+  Module 5: Distracted Driving — Ohio HB 95 / Texting Ban (30 min)
+  Module 6: Aggressive Driving, Speed & Road Rage (25 min)
+  Module 7: Vulnerable Road Users & Pedestrian Safety (20 min)
+  Module 8: Ohio Point System & Insurance (10 min)
+  Final Exam (40 questions, 80% passing score): Separate
+
+  Total Instructional Time: 240 minutes (4 hours)
+
+--------------------------------------------------------------
+C. OHIO-SPECIFIC CONTENT COVERED
+--------------------------------------------------------------
+
+  [X] Ohio traffic laws — ORC Title 45 (Motor Vehicles)
+  [X] Ohio point system (ORC § 4510.036)
+  [X] OVI laws (ORC § 4511.19 — Operating a Vehicle Impaired)
+  [X] Ohio Move Over law (ORC § 4511.213)
+  [X] Distracted driving — Ohio's texting ban (HB 95 / ORC § 4511.204)
+  [X] Speed limits and freeway safety
+  [X] School bus safety (ORC § 4511.75)
+  [X] Seat belt laws (ORC § 4513.263)
+  [X] Pedestrian and bicycle right-of-way laws
+  [X] Railroad grade crossing (ORC § 4511.62)
+  [X] Following distance and safe following rules
+  [X] Turning, lane changes, and signaling
+  [X] Winter driving and adverse weather conditions
+  [X] Ohio implied consent law (ORC § 4511.191)
+  [X] Insurance requirements (Ohio FR law)
+
+--------------------------------------------------------------
+D. STUDENT VALIDATION / ANTI-CHEATING
+--------------------------------------------------------------
+
+Identity Verification:
+  - Government-issued photo ID required at enrollment
+  - ID reviewed prior to certificate issuance
+  - Name on ID must match enrollment record exactly
+
+Participation Validation:
+  - Time-gated modules (minimum instructional time enforced)
+  - Course pauses automatically when student leaves browser tab
+  - All session timestamps and module completion events logged
+  - Module quiz required before advancing to next module
+  - Final exam: 40 questions, randomized from 500+ question bank
+  - 80% passing score required; unlimited retakes permitted
+
+Student Support:
+  - Email: support@quickpasstrafficschool.com
+  - Live chat (business hours)
+  - Response within 1 business day
+
+--------------------------------------------------------------
+E. TECHNOLOGY PLATFORM
+--------------------------------------------------------------
+
+Platform:                 Custom web application
+Backend:                  Node.js / Express (Vercel cloud hosting)
+Database:                 Turso (LibSQL/SQLite) — encrypted at rest
+SSL/HTTPS:                Enforced on all connections (256-bit TLS)
+Availability:             24/7 uptime via Vercel edge network
+Backups:                  Daily automated database backups
+Hosting Provider:         Vercel, Inc. — SOC 2 compliant
+Certificates:             Issued electronically same day as completion
+Reporting:                Automated completion reporting infrastructure
+Data Retention:           Student records retained minimum 3 years
+
+
+╔══════════════════════════════════════════════════════════╗
+║  PART 3: REQUIRED DOCUMENTS / ATTACHMENTS               ║
+╚══════════════════════════════════════════════════════════╝
+
+[ ] Completed Ohio BMV provider application form (request from BMV)
+[ ] Federal EIN assignment letter
+[ ] Surety bond documentation
+    — Confirm required amount with BMV (typically $10,000–$25,000)
+    Bond Company:           [____________________]
+    Bond Number:            [____________________]
+    Effective Date:         [____/____/____]
+[ ] Ohio BCI & I background check (if required by BMV)
+[ ] Ohio statutory agent designation
+[ ] Ohio entity registration (confirm if required for out-of-state)
+[ ] Complete course curriculum with module time breakdown
+[ ] Sample quiz questions and final exam bank excerpt (50 questions)
+[ ] Platform/technology description (see Part 2E)
+[ ] Identity verification and anti-cheating procedures description
+[ ] Sample student completion certificate
+[ ] Application fee — confirm current amount with BMV
+    Payable to: Treasurer, State of Ohio
+[ ] Copy of owner's driver's license
+[ ] Proof of business EIN (IRS assignment letter)
+[ ] Any additional materials specified in BMV application packet
+
+
+╔══════════════════════════════════════════════════════════╗
+║  PART 4: CERTIFICATIONS / SIGNATURE BLOCK               ║
+╚══════════════════════════════════════════════════════════╝
+
+I certify that all information provided is true, accurate,
+and complete to the best of my knowledge. I understand that
+misrepresentation may result in denial or revocation, and
+that the school will operate in compliance with all Ohio BMV
+and Ohio DPS requirements.
+
+Name:         Jordan Lovelace
+Title:        Owner / Sole Proprietor
+Business:     Quick Pass Traffic School
+Date:         [____/____/____]
+Signature:    _________________________
+
+
+============================================================
+CONTACT LOG
+============================================================
+
+Date:         [____/____/____]
+Contact:      [Name at Ohio BMV]
+Method:       Phone / Email
+Notes:        [Application request, requirements, fees, etc.]
+
+Date:         [____/____/____]
+Contact:      [____________________]
+Notes:        [____________________]
+============================================================

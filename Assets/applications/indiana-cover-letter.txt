@@ -1,0 +1,104 @@
+============================================================
+INDIANA BMV — DRIVING SAFETY COURSE PROVIDER
+COVER LETTER FOR APPLICATION SUBMISSION
+============================================================
+
+[DATE]
+
+Indiana Bureau of Motor Vehicles
+Driver Safety Program
+100 North Senate Avenue, Room N415
+Indianapolis, IN 46204
+Attn: DSC Provider Applications
+
+Re: Application for Approval as a Driving Safety Course (DSC) Provider
+    Online Delivery / Internet-Based Course
+    Applicant: Jordan Lovelace / Quick Pass Traffic School
+
+Dear Indiana BMV Driver Safety Team,
+
+My name is Jordan Lovelace and I am the owner of Quick Pass Traffic School
+(www.quickpasstrafficschool.com), an online defensive driving school
+headquartered in Parkland, Florida. I am writing to respectfully submit
+this application for approval as an authorized Driving Safety Course (DSC)
+provider in the State of Indiana, pursuant to Indiana Code IC 9-30-9 and
+applicable BMV provider regulations.
+
+ABOUT OUR SCHOOL
+
+Quick Pass Traffic School is a professionally developed, technology-driven
+online traffic school offering state-specific curriculum approved for driver
+improvement. Our platform is purpose-built to satisfy rigorous state DMV
+requirements, with robust identity verification, time-enforcement, and
+anti-cheating mechanisms.
+
+Key platform features:
+  • Time-gated modules — students cannot advance faster than minimum
+    required instructional time per module
+  • Government-issued photo ID verification at enrollment
+  • Anti-tab-switch detection: course pauses if student leaves the window
+  • Full session audit trail: all login/logout and progress timestamps
+  • Randomized final exam (500+ question bank, 40-question exam, 80% pass)
+  • Same-day electronic certificate upon successful completion
+  • Student support: live chat and email within 1 business day
+  • SOC 2-compliant cloud infrastructure (Vercel), encrypted database
+
+INDIANA COURSE
+
+Our Indiana Driving Safety Course is designed to meet Indiana's IC 9-30-9
+requirements and covers all topics mandated for DSC providers, including:
+
+  — Indiana traffic laws (IC Title 9) and rules of the road
+  — OWI/OVWI laws and impaired driving prevention (IC 9-30-5)
+  — Indiana Move Over law (IC 9-21-8-35)
+  — Distracted driving and Indiana's hands-free law (HEA 1236)
+  — Crash causation, dynamics, and prevention
+  — Agricultural vehicle and rural road safety
+  — School bus safety, school zones, and pedestrian protection
+  — Indiana point system and insurance implications
+  — Railroad grade crossing safety
+
+The course is delivered fully online, is self-paced with time enforcement,
+and is accessible 24/7 from any device.
+
+COMPLIANCE COMMITMENT
+
+We commit to full compliance with all BMV provider rules, including
+record-keeping for a minimum of 3 years (or as required), prompt
+completion reporting, cooperation with BMV audits, and notification of
+any material changes to course content or delivery.
+
+ENCLOSED DOCUMENTS
+
+Enclosed please find:
+  1. Completed Indiana BMV provider application form
+  2. Federal EIN assignment letter
+  3. Surety bond documentation
+  4. Background check documentation (per BMV requirements)
+  5. Indiana registered agent designation
+  6. Complete course curriculum with module time breakdown
+  7. Sample quiz and final exam questions
+  8. Technology and platform description
+  9. Identity verification and anti-cheating description
+  10. Sample student completion certificate
+  11. Application fee
+
+I welcome the opportunity to provide a live platform demonstration or any
+additional information. Please contact me directly:
+
+  Jordan Lovelace
+  Owner, Quick Pass Traffic School
+  6213 Northwest 63rd Way, Parkland, FL 33067
+  Phone: (714) 312-9994
+  Email: admin@quickpasstrafficschool.com
+
+Thank you for your consideration. I look forward to serving Indiana drivers
+with a state-approved, high-quality online driving safety course.
+
+Respectfully submitted,
+
+
+Jordan Lovelace
+Owner / Sole Proprietor
+Quick Pass Traffic School
+Date: ____________________

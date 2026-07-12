@@ -1,0 +1,243 @@
+============================================================
+INDIANA — DRIVING SAFETY COURSE (DSC) PROVIDER APPLICATION
+PRE-FILLED FOR SUBMISSION TO INDIANA BMV / IDOE
+============================================================
+Regulatory Bodies:
+  1. Indiana Bureau of Motor Vehicles (BMV)
+     Indiana Government Center North
+     100 North Senate Avenue, Room N415
+     Indianapolis, IN 46204
+     Phone: (317) 232-2798 or (888) 692-6841
+     Website: https://www.in.gov/bmv/
+
+  2. Indiana Department of Education (IDOE)
+     (May need to coordinate for online course approval)
+     Website: https://www.in.gov/doe/
+
+Reference: Indiana Code IC 9-30-9 (Driver Safety Program)
+           IC 9-30-9-2 (Defensive Driving Course definition)
+           Indiana BMV Administrative Rules — 140 IAC 7
+
+============================================================
+NOTE: Indiana BMV requires direct contact to obtain the
+current provider application forms and requirements for
+online Driving Safety Course providers.
+
+Call (888) 692-6841 and ask for the Driver Safety division,
+requesting: "Application to become an approved Driving Safety
+Course (DSC) provider for online course delivery."
+
+Also confirm whether IDOE separate curriculum approval is
+required for internet-based DSC courses.
+============================================================
+
+
+╔══════════════════════════════════════════════════════════╗
+║  PART 1: APPLICANT / BUSINESS INFORMATION               ║
+╚══════════════════════════════════════════════════════════╝
+
+--------------------------------------------------------------
+A. OWNER / PRINCIPAL INFORMATION
+--------------------------------------------------------------
+
+Full Legal Name:          Jordan Lovelace
+Date of Birth:            [____/____/____]   <<<< FILL IN
+Social Security #:        [___-__-____]      <<<< FILL IN
+Driver License #:         [______________]   <<<< FILL IN
+DL State of Issue:        Florida
+DL Expiration:            [____/____/____]   <<<< FILL IN
+
+Home Address:             6213 Northwest 63rd Way
+City:                     Parkland
+State:                    FL
+ZIP:                      33067
+County:                   Broward
+
+Home Phone:               (714) 312-9994
+Email (Personal):         admin@quickpasstrafficschool.com
+
+Criminal History:         No felony or misdemeanor convictions
+                          related to fraud, dishonesty, or
+                          driver licensing (confirm via background
+                          check — Indiana may require fingerprinting
+                          or background authorization)
+
+--------------------------------------------------------------
+B. BUSINESS INFORMATION
+--------------------------------------------------------------
+
+Business Name:            Quick Pass Traffic School
+Trade Name / DBA:         N/A
+Entity Type:              Sole Proprietorship
+Federal EIN:              [INSERT WHEN RECEIVED — SS-4 pending]
+Date Business Established:[____/____/____]   <<<< FILL IN
+
+Business Address:         6213 Northwest 63rd Way
+City:                     Parkland
+State:                    FL
+ZIP:                      33067
+
+Business Phone:           (714) 312-9994
+Business Email:           support@quickpasstrafficschool.com
+Business Website:         www.quickpasstrafficschool.com
+
+Indiana Registered Agent: [TO BE DESIGNATED]
+  Name:                   [____________________]   <<<< FILL IN
+  Address:                [____________________]
+  City/State/ZIP:         [__________, IN _____]
+  Phone:                  [____________________]
+
+Delivery Method:          [X] Online (Internet-Based)
+                          [ ] Classroom
+                          [ ] Both
+
+
+╔══════════════════════════════════════════════════════════╗
+║  PART 2: COURSE INFORMATION                             ║
+╚══════════════════════════════════════════════════════════╝
+
+--------------------------------------------------------------
+A. COURSE TYPE
+--------------------------------------------------------------
+
+[X] Indiana Driving Safety Course (DSC)
+    — For traffic violation dismissal / point reduction
+    — IC 9-30-9 (Driver Safety Program)
+
+Course Title:             Indiana Driving Safety Course
+Course Duration:          4–8 hours
+                          [Confirm required hours with BMV —
+                          Indiana allows 4hr for some violations,
+                          8hr for others — confirm current rules]
+Delivery Format:          Online / Internet (self-paced)
+Language:                 English
+Maximum Enrollment:       Unlimited (online, concurrent)
+
+--------------------------------------------------------------
+B. COURSE MODULE BREAKDOWN (8-Hour Version)
+--------------------------------------------------------------
+
+  Module 1: Traffic Crash Problem — Stats & Factors (60 min)
+  Module 2: Indiana Traffic Laws & Rules of the Road (70 min)
+  Module 3: Crash Prevention & Defensive Driving (70 min)
+  Module 4: DUI, Impaired Driving & Substance Awareness (60 min)
+  Module 5: Distracted Driving & Mobile Device Laws (50 min)
+  Module 6: Aggressive Driving, Speeding & Road Rage (50 min)
+  Module 7: Vulnerable Road Users (40 min)
+  Module 8: Rural Roads, Farm Equipment & Weather Safety (40 min)
+  Module 9: Seat Belts, Occupant Protection & Airbags (30 min)
+  Module 10: Indiana Point System & Insurance Impact (30 min)
+  Final Exam (40 questions, 80% passing score): Separate
+
+  Total Instructional Time: 500 minutes (~8.3 hours)
+
+--------------------------------------------------------------
+C. INDIANA-SPECIFIC CONTENT COVERED
+--------------------------------------------------------------
+
+  [X] Indiana traffic laws — IC Title 9 (Motor Vehicles)
+  [X] Indiana point system (IC 9-14-3-3)
+  [X] OWI / OVWI laws (IC 9-30-5) — Operating While Intoxicated
+  [X] Indiana Move Over law (IC 9-21-8-35)
+  [X] Distracted driving — Indiana HEA 1236 (2019 hands-free law)
+  [X] School bus safety and school zones
+  [X] Seat belt law (IC 9-19-10)
+  [X] Agricultural vehicle / farm equipment safety
+  [X] Railroad grade crossing procedures
+  [X] Speed limits and work zone laws
+  [X] Pedestrian and bicycle safety
+  [X] Weather and environmental driving hazards
+  [X] Crash reporting requirements (IC 9-26)
+
+--------------------------------------------------------------
+D. STUDENT VALIDATION / ANTI-CHEATING
+--------------------------------------------------------------
+
+Identity Verification:
+  - Government-issued photo ID required at enrollment
+  - ID cross-checked with enrollment name before certificate
+  - Name mismatch triggers manual review
+
+Participation Validation:
+  - Time-gated modules (minimum time enforced per module)
+  - Anti-tab-switch detection: course pauses if tab loses focus
+  - All login/logout timestamps, module completion times logged
+  - Quiz with randomized questions required between each module
+  - Final exam: 40 questions from bank of 500+, randomized per student
+  - 80% passing score required; unlimited retakes permitted
+
+Student Support:
+  - Email: support@quickpasstrafficschool.com
+  - Live chat (business hours)
+  - Response within 1 business day
+
+--------------------------------------------------------------
+E. TECHNOLOGY PLATFORM
+--------------------------------------------------------------
+
+Platform:                 Custom web application
+Backend:                  Node.js / Express (Vercel cloud hosting)
+Database:                 Turso (LibSQL/SQLite) — encrypted at rest
+SSL/HTTPS:                Enforced on all connections (256-bit TLS)
+Availability:             24/7 uptime via Vercel edge network
+Backups:                  Daily automated database backups
+Hosting Provider:         Vercel, Inc. (vercel.com) — SOC 2 compliant
+Certificates:             Issued electronically same day as completion
+Reporting:                Automated completion reporting infrastructure
+
+
+╔══════════════════════════════════════════════════════════╗
+║  PART 3: REQUIRED DOCUMENTS / ATTACHMENTS               ║
+╚══════════════════════════════════════════════════════════╝
+
+[ ] Completed Indiana BMV provider application form (from BMV)
+[ ] Federal EIN assignment letter
+[ ] Surety bond documentation
+    — Confirm required amount with BMV (typically $10,000–$25,000)
+    Bond Company:           [____________________]
+    Bond Number:            [____________________]
+    Effective Date:         [____/____/____]
+[ ] Background check / fingerprinting (as required by BMV)
+[ ] Indiana registered agent designation
+[ ] Complete course curriculum with module time breakdown
+[ ] Sample quiz questions and final exam bank excerpt (50 questions)
+[ ] Platform/technology description (see Part 2E)
+[ ] Identity verification and anti-cheating description
+[ ] Sample student completion certificate
+[ ] Application fee — confirm current amount with BMV
+    Payable to: Indiana Bureau of Motor Vehicles
+[ ] Copy of owner's driver's license
+[ ] Proof of business registration / EIN letter
+[ ] If IDOE review required: IDOE curriculum submission materials
+
+
+╔══════════════════════════════════════════════════════════╗
+║  PART 4: CERTIFICATIONS / SIGNATURE BLOCK               ║
+╚══════════════════════════════════════════════════════════╝
+
+I certify that all information provided is true, accurate,
+and complete. I understand that false information may result
+in denial or revocation of approval, and that the school
+will operate in full compliance with IC 9-30-9 and all
+applicable Indiana BMV rules.
+
+Name:         Jordan Lovelace
+Title:        Owner / Sole Proprietor
+Business:     Quick Pass Traffic School
+Date:         [____/____/____]
+Signature:    _________________________
+
+
+============================================================
+CONTACT LOG
+============================================================
+
+Date:         [____/____/____]
+Contact:      [Name at BMV]
+Method:       Phone / Email
+Notes:        [Application request, requirements, fees, etc.]
+
+Date:         [____/____/____]
+Contact:      [____________________]
+Notes:        [____________________]
+============================================================

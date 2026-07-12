@@ -555,9 +555,304 @@ IRS (EIN):
  DOCUMENT TRACKER
 ============================================================
 
- File                                          Status
+ File                                              Status
 --------------------------------------------------------------
- Assets/applications/arizona-cover-letter.txt   ✓ Complete
- Assets/applications/texas-cover-letter.txt     ✓ Complete
- Assets/applications/california-cover-letter.txt ✓ Complete
- Assets/applications/checklists.txt             ✓ Complete
+ Assets/applications/arizona-application-form.txt  ✓ Complete
+ Assets/applications/arizona-cover-letter.txt      ✓ Complete
+ Assets/applications/texas-application-form.txt    ✓ Complete
+ Assets/applications/texas-cover-letter.txt        ✓ Complete
+ Assets/applications/california-application-ol613.txt ✓ Complete
+ Assets/applications/california-cover-letter.txt   ✓ Complete
+ Assets/applications/georgia-application-form.txt  ✓ Complete (NEW)
+ Assets/applications/georgia-cover-letter.txt      ✓ Complete (NEW)
+ Assets/applications/indiana-application-form.txt  ✓ Complete (NEW)
+ Assets/applications/indiana-cover-letter.txt      ✓ Complete (NEW)
+ Assets/applications/ohio-application-form.txt     ✓ Complete (NEW)
+ Assets/applications/ohio-cover-letter.txt         ✓ Complete (NEW)
+ Assets/applications/surety-bond-application.txt   ✓ Complete
+ Assets/applications/checklists.txt                ✓ Complete
+
+
+============================================================
+ CHECKLIST 4: GEORGIA — Defensive Driving Course Provider
+============================================================
+Regulatory Body: Georgia Department of Driver Services (DDS)
+Reference: O.C.G.A. § 40-5-80, § 40-5-83
+           Georgia DDS Provider Rules — Chapter 375-3-4
+Timeline: 6-10 weeks
+Estimated Total Cost: ~$500-800
+
+STEP 1: PREPARATION
+--------------------------------------------------------------
+[ ] Obtain EIN (see Priority #0 above)
+[ ] Contact Georgia DDS to request provider application packet
+    • Phone: (678) 413-8400 — ask for Driver Improvement Program
+    • Email: dds.ddp@dds.ga.gov
+    • Request: "Defensive Driving Course provider application
+      for online internet course delivery"
+    • Confirm: required fee amount, surety bond amount,
+      background check requirements, online approval rules
+[ ] Register business with Georgia Secretary of State
+    • Foreign entity registration
+    • Website: https://sos.ga.gov/corporations-division
+    • Fee: ~$225
+[ ] Designate a Georgia Registered Agent
+[ ] Obtain surety bond (confirm amount with DDS)
+
+STEP 2: APPLICATION PACKAGE
+--------------------------------------------------------------
+[ ] Complete DDS provider application form (from DDS)
+[ ] Compile supporting documents:
+    [ ] Federal EIN letter
+    [ ] Surety bond
+    [ ] Background check (per DDS requirements)
+    [ ] Georgia registered agent designation
+    [ ] GA business registration
+    [ ] Course curriculum (6-hour DDC, 8 modules)
+    [ ] Sample quiz and final exam questions (50+)
+    [ ] Platform/technology description
+    [ ] Identity verification procedures
+    [ ] Sample completion certificate
+    [ ] Application fee (confirm amount)
+[ ] Cover letter prepared ✓
+    • File: Assets/applications/georgia-cover-letter.txt
+[ ] Application form prepared ✓
+    • File: Assets/applications/georgia-application-form.txt
+
+GEORGIA-SPECIFIC COURSE CONTENT TO HIGHLIGHT:
+    [ ] O.C.G.A. § 40-6-241 (hands-free law — 2018 HB 673)
+    [ ] O.C.G.A. § 40-6-391 (DUI provisions)
+    [ ] O.C.G.A. § 40-6-16 (Move Over law)
+    [ ] O.C.G.A. § 40-6-391.1 (Super Speeder law — >75 mph)
+    [ ] O.C.G.A. § 40-6-180 (basic speed rule)
+    [ ] Georgia Implied Consent Notice
+    [ ] Georgia's teenage DUI standard (0.02% BAC)
+    [ ] Hit-and-run duty to stop (§ 40-6-270)
+
+STEP 3: SUBMISSION
+--------------------------------------------------------------
+[ ] Mail to:
+    Georgia Department of Driver Services
+    P.O. Box 80447, Conyers, GA 30013
+    Attn: Driver Improvement Program
+
+[ ] Date submitted: ________________
+[ ] Tracking #: ________________
+
+STEP 4: FOLLOW-UP
+--------------------------------------------------------------
+[ ] Follow up 3 weeks after submission
+[ ] Respond to deficiency notices promptly
+[ ] Upon approval:
+    [ ] Receive DDS approval letter/provider #
+    [ ] Set up completion reporting to DDS
+    [ ] Update website with GA credentials
+    [ ] Begin accepting GA students
+[ ] Date approved: ________________
+[ ] Provider #: ________________
+
+
+============================================================
+ CHECKLIST 5: INDIANA — Driving Safety Course Provider
+============================================================
+Regulatory Body: Indiana Bureau of Motor Vehicles (BMV)
+Reference: Indiana Code IC 9-30-9
+           140 IAC 7
+Timeline: 6-10 weeks
+Estimated Total Cost: ~$400-700
+
+STEP 1: PREPARATION
+--------------------------------------------------------------
+[ ] Obtain EIN (see Priority #0 above)
+[ ] Contact Indiana BMV to request provider application packet
+    • Phone: (888) 692-6841 or (317) 232-2798
+    • Ask for: Driver Safety Program division
+    • Request: "Application to become an approved Driving Safety
+      Course provider for online internet delivery"
+    • Confirm: fee amount, surety bond requirement, background
+      check/fingerprinting requirements
+    • Ask: whether IDOE curriculum review is also required
+[ ] Register as a foreign entity with Indiana Secretary of State
+    • Website: https://inbiz.in.gov
+    • Fee: ~$90-120
+[ ] Designate an Indiana Registered Agent
+[ ] Obtain surety bond (confirm amount with BMV)
+
+STEP 2: APPLICATION PACKAGE
+--------------------------------------------------------------
+[ ] Complete BMV provider application form (from BMV)
+[ ] Compile supporting documents:
+    [ ] Federal EIN letter
+    [ ] Surety bond
+    [ ] Background check / fingerprinting (per BMV)
+    [ ] Indiana registered agent designation
+    [ ] IN business registration
+    [ ] Course curriculum (8-hour DSC, 10 modules)
+    [ ] Sample quiz and final exam questions (50+)
+    [ ] Platform/technology description
+    [ ] Identity verification procedures
+    [ ] Sample completion certificate
+    [ ] Application fee
+[ ] Cover letter prepared ✓
+    • File: Assets/applications/indiana-cover-letter.txt
+[ ] Application form prepared ✓
+    • File: Assets/applications/indiana-application-form.txt
+
+INDIANA-SPECIFIC COURSE CONTENT TO HIGHLIGHT:
+    [ ] IC 9-30-5 (OWI / OVWI laws — "Operating While Intoxicated")
+    [ ] IC 9-21-8-35 (Move Over law)
+    [ ] Indiana hands-free / HEA 1236 (2019)
+    [ ] IC 9-19-10 (seat belt requirements)
+    [ ] IC 9-26 (accident reporting duties)
+    [ ] IC 9-14-3-3 (Indiana point schedule)
+    [ ] Farm equipment on roadways (rural driving)
+    [ ] Indiana GDL provisions (for young driver context)
+
+STEP 3: SUBMISSION
+--------------------------------------------------------------
+[ ] Mail to:
+    Indiana Bureau of Motor Vehicles
+    100 North Senate Avenue, Room N415
+    Indianapolis, IN 46204
+
+[ ] Date submitted: ________________
+[ ] Tracking #: ________________
+
+STEP 4: FOLLOW-UP
+--------------------------------------------------------------
+[ ] Follow up 3 weeks after submission
+[ ] Respond to deficiency notices promptly
+[ ] Upon approval:
+    [ ] Receive BMV approval/provider #
+    [ ] Set up completion reporting to BMV
+    [ ] Update website with IN credentials
+    [ ] Begin accepting IN students
+[ ] Date approved: ________________
+[ ] Provider #: ________________
+
+
+============================================================
+ CHECKLIST 6: OHIO — Driver Improvement Program Provider
+============================================================
+Regulatory Body: Ohio Bureau of Motor Vehicles (BMV)
+                  Ohio Department of Public Safety
+Reference: ORC § 4507.071, § 4507.11, § 4507.14
+           OAC Chapter 4501:1-3
+Timeline: 6-12 weeks
+Estimated Total Cost: ~$500-900
+
+STEP 1: PREPARATION
+--------------------------------------------------------------
+[ ] Obtain EIN (see Priority #0 above)
+[ ] Contact Ohio BMV to request provider application packet
+    • Phone: (614) 752-7600
+    • Email: bmv@dps.ohio.gov
+    • Ask for: Driver Education section
+    • Request: "Application to become an approved Driver
+      Improvement Program course provider for online delivery"
+    • Confirm: fee, surety bond amount, background check/BCII
+      requirements, Ohio address requirements for online providers
+[ ] Register as foreign entity with Ohio Secretary of State
+    • Website: https://www.ohiosos.gov
+    • Fee: ~$99
+[ ] Designate an Ohio Statutory Agent
+[ ] Obtain surety bond (confirm amount with BMV)
+[ ] Ohio BCI background check (if required)
+    • Bureau of Criminal Investigation & Investigation (BCI&I)
+    • May require fingerprint-based Ohio BCI check
+    • Out-of-state: may need to use Webcheck or mail-in option
+
+STEP 2: APPLICATION PACKAGE
+--------------------------------------------------------------
+[ ] Complete Ohio BMV provider application form (from BMV)
+[ ] Compile supporting documents:
+    [ ] Federal EIN letter
+    [ ] Surety bond
+    [ ] Ohio BCI&I background check (if required)
+    [ ] Ohio statutory agent designation
+    [ ] OH business registration
+    [ ] Course curriculum (4-hour DIP, 8 modules)
+    [ ] Sample quiz and final exam questions (50+)
+    [ ] Platform/technology description
+    [ ] Identity verification procedures
+    [ ] Sample completion certificate
+    [ ] Application fee (check payable to Treasurer, State of Ohio)
+[ ] Cover letter prepared ✓
+    • File: Assets/applications/ohio-cover-letter.txt
+[ ] Application form prepared ✓
+    • File: Assets/applications/ohio-application-form.txt
+
+OHIO-SPECIFIC COURSE CONTENT TO HIGHLIGHT:
+    [ ] ORC § 4511.19 (OVI — Operating Vehicle Impaired)
+    [ ] ORC § 4511.191 (implied consent)
+    [ ] ORC § 4511.213 (Move Over law)
+    [ ] ORC § 4511.204 (distracted driving / texting ban, HB 95)
+    [ ] ORC § 4510.036 (point system)
+    [ ] ORC § 4513.263 (seat belt law)
+    [ ] ORC § 4511.75 (school bus stop requirements)
+    [ ] ORC § 4511.62 (railroad grade crossings)
+    [ ] Ohio implied consent / administrative license suspension
+    [ ] Winter driving / adverse weather (Ohio geography)
+
+STEP 3: SUBMISSION
+--------------------------------------------------------------
+[ ] Mail to:
+    Ohio Bureau of Motor Vehicles
+    P.O. Box 16520
+    Columbus, OH 43216-6520
+    Attn: Driver Education Section
+
+[ ] Date submitted: ________________
+[ ] Tracking #: ________________
+
+STEP 4: FOLLOW-UP
+--------------------------------------------------------------
+[ ] Follow up 3 weeks after submission
+[ ] Respond to deficiency notices promptly
+[ ] Upon approval:
+    [ ] Receive Ohio BMV approval/provider #
+    [ ] Set up completion reporting to BMV
+    [ ] Update website with OH credentials
+    [ ] Begin accepting OH students
+[ ] Date approved: ________________
+[ ] Provider #: ________________
+
+
+============================================================
+ UPDATED PRIORITIZED ACTION PLAN (ALL 7 STATES)
+============================================================
+
+STATUS SUMMARY:
+  Florida  — 3 courses: BDI + ADI resubmitted May 2026, PENDING
+  Arizona  — Application docs ready, needs MVD contact call
+  Texas    — Application docs ready, needs TEA/TDLR submission
+  California — Application docs ready, needs Live Scan + submission
+  Georgia  — Application docs ready (NEW), needs DDS contact
+  Indiana  — Application docs ready (NEW), needs BMV contact
+  Ohio     — Application docs ready (NEW), needs BMV contact
+
+IMMEDIATE NEXT STEPS (GA/IN/OH):
+  1. [ ] Call Georgia DDS: (678) 413-8400 — request packet
+  2. [ ] Call Indiana BMV: (888) 692-6841 — request packet
+  3. [ ] Call Ohio BMV: (614) 752-7600 — request packet
+  4. [ ] Confirm: surety bond amounts, fees, online-specific rules
+  5. [ ] Register foreign entities in GA, IN, OH (can do all 3 same week)
+  6. [ ] Designate registered agents in GA, IN, OH
+  7. [ ] Obtain surety bonds (get quotes, often same surety covers multiple states)
+
+COST ESTIMATE (GA + IN + OH):
+--------------------------------------------------------------
+  Georgia:  State reg ~$225 + agent ~$150 + bond ~$150 + fees ~$300  = ~$825
+  Indiana:  State reg ~$100 + agent ~$125 + bond ~$150 + fees ~$200  = ~$575
+  Ohio:     State reg ~$99  + agent ~$125 + bond ~$200 + fees ~$300  = ~$724
+  -----------------------------------------------------------------------
+  Subtotal GA+IN+OH:                                                  ~$2,124
+  Previously estimated AZ+TX+CA:                                      ~$2,790
+  -----------------------------------------------------------------------
+  GRAND TOTAL ALL 7 STATES (excluding FL already in process):        ~$4,914
+
+Notes:
+  - Surety bond premiums vary by credit score
+  - One surety company can often cover all states (saves cost/time)
+  - Get quotes from: SuretyBonds.com, JW Surety, BondExchange.com
+  - Verify all fees directly with each agency before submitting

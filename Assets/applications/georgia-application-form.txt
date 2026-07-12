@@ -1,0 +1,235 @@
+============================================================
+GEORGIA — DEFENSIVE DRIVING COURSE (DDC) PROVIDER APPLICATION
+PRE-FILLED FOR SUBMISSION TO GEORGIA DEPARTMENT OF DRIVER SERVICES
+============================================================
+Regulatory Body:
+  Georgia Department of Driver Services (DDS)
+  Driver Improvement Program
+  P.O. Box 80447
+  Conyers, GA 30013
+
+Physical Address:
+  Georgia Department of Driver Services
+  2206 Eastview Pkwy, Suite 700
+  Conyers, GA 30013
+
+Phone: (678) 413-8400
+Website: https://dds.georgia.gov
+Email: dds.ddp@dds.ga.gov  (Driver Improvement Program)
+
+Reference: O.C.G.A. § 40-5-80 (Driver Improvement Program)
+           Georgia Code § 40-5-83 (Defensive Driving Course)
+           Georgia DDS Provider Rules — Chapter 375-3-4
+
+============================================================
+NOTE: Georgia DDS requires contact with their Driver
+Improvement Program office to request the current provider
+application packet. The information below is pre-organized
+to complete whatever forms they send.
+
+Call (678) 413-8400, press option for Driver Improvement,
+and request: "Defensive Driving Course (DDC) provider
+application for an online course delivery method."
+============================================================
+
+
+╔══════════════════════════════════════════════════════════╗
+║  PART 1: APPLICANT / BUSINESS INFORMATION               ║
+╚══════════════════════════════════════════════════════════╝
+
+--------------------------------------------------------------
+A. OWNER / PRINCIPAL INFORMATION
+--------------------------------------------------------------
+
+Full Legal Name:          Jordan Lovelace
+Date of Birth:            [____/____/____]   <<<< FILL IN
+Social Security #:        [___-__-____]      <<<< FILL IN
+Driver License #:         [______________]   <<<< FILL IN
+DL State of Issue:        Florida
+DL Expiration:            [______________]   <<<< FILL IN
+
+Home Address:             6213 Northwest 63rd Way
+City:                     Parkland
+State:                    FL
+ZIP:                      33067
+County:                   Broward
+
+Home Phone:               (714) 312-9994
+Email (Personal):         admin@quickpasstrafficschool.com
+
+--------------------------------------------------------------
+B. BUSINESS INFORMATION
+--------------------------------------------------------------
+
+Business Name:            Quick Pass Traffic School
+Trade Name / DBA:         N/A
+Entity Type:              Sole Proprietorship
+Federal EIN:              [INSERT WHEN RECEIVED — SS-4 pending]
+Date Business Established:[____/____/____]   <<<< FILL IN
+
+Business Mailing Address: 6213 Northwest 63rd Way
+City:                     Parkland
+State:                    FL
+ZIP:                      33067
+
+Business Phone:           (714) 312-9994
+Business Email:           support@quickpasstrafficschool.com
+Business Website:         www.quickpasstrafficschool.com
+
+Delivery Method:          [X] Online (Internet-Based)
+                          [ ] Classroom
+                          [ ] Both
+
+Georgia Registered Agent: [TO BE DESIGNATED]
+  Name:                   [____________________]   <<<< FILL IN
+  Address:                [____________________]
+  City/State/ZIP:         [__________, GA _____]
+  Phone:                  [____________________]
+
+
+╔══════════════════════════════════════════════════════════╗
+║  PART 2: COURSE INFORMATION                             ║
+╚══════════════════════════════════════════════════════════╝
+
+--------------------------------------------------------------
+A. COURSE TYPE APPLYING FOR
+--------------------------------------------------------------
+
+[X] Defensive Driving Course (DDC)
+    — 6-hour course for voluntary point reduction
+    — O.C.G.A. § 40-5-83
+
+[ ] Risk Reduction Program (RRP)
+    — Required for certain DUI/license reinstatement
+    — (applying separately if/when eligible)
+
+--------------------------------------------------------------
+B. COURSE DETAILS
+--------------------------------------------------------------
+
+Course Title:             Georgia Defensive Driving Course
+Course Duration:          6 hours (360 minutes)
+Delivery Format:          Online / Internet (self-paced)
+Language:                 English
+Maximum Enrollment:       Unlimited (online, concurrent)
+
+Course Module Breakdown:
+  Module 1: Traffic Crash Problem — Magnitude & Factors (50 min)
+  Module 2: Crash Dynamics & Physics of a Crash (40 min)
+  Module 3: Crash Prevention & Defensive Driving (60 min)
+  Module 4: Georgia Traffic Laws & Rules of the Road (60 min)
+  Module 5: DUI, Impaired Driving & Drug Awareness (50 min)
+  Module 6: Distracted Driving & Modern Hazards (40 min)
+  Module 7: Vulnerable Road Users (30 min)
+  Module 8: Psychological Factors & Road Rage (30 min)
+  Final Exam (40 questions, 80% passing score): N/A (separate)
+
+  Total: 360 minutes (6 hours)
+
+Course Content Covers Required Georgia Topics:
+  [X] Traffic crash problem — statistics, causes, factors
+  [X] Georgia traffic laws (O.C.G.A. Title 40)
+  [X] Defensive driving techniques
+  [X] Impaired driving / DUI prevention (O.C.G.A. § 40-6-391)
+  [X] Distracted driving laws (O.C.G.A. § 40-6-241)
+  [X] Aggressive driving / road rage
+  [X] Seat belts and occupant protection
+  [X] Speed limits and speed management
+  [X] Intersection safety
+  [X] Pedestrian, cyclist, and motorcycle safety
+  [X] Railroad crossings
+  [X] School zones and school bus safety
+  [X] Insurance requirements
+  [X] Georgia Move Over law (O.C.G.A. § 40-6-16)
+
+--------------------------------------------------------------
+C. STUDENT VALIDATION / ANTI-CHEATING MEASURES
+--------------------------------------------------------------
+
+Identity Verification:
+  - Student must upload government-issued photo ID at enrollment
+  - ID reviewed by staff prior to certificate issuance
+  - Name on ID must match enrollment name
+
+Participation Validation:
+  - Time-gated modules: students cannot advance faster than 
+    minimum required time per module
+  - Session tracking: login/logout times logged per student
+  - Module completion timestamps recorded
+  - Quiz must be passed before advancing to next module
+  - Final exam: 40 questions, randomized from bank of 500+
+    questions, 80% passing score required
+  - Anti-tab-switch detection (course pauses when tab loses focus)
+
+Student Support:
+  - Live chat support available
+  - Email: support@quickpasstrafficschool.com
+  - Response within 1 business day
+
+--------------------------------------------------------------
+D. TECHNOLOGY PLATFORM
+--------------------------------------------------------------
+
+Platform:                 Custom web application
+Backend:                  Node.js / Express (Vercel cloud hosting)
+Database:                 Turso (LibSQL/SQLite) — encrypted at rest
+SSL/HTTPS:                Enforced on all connections (256-bit TLS)
+Availability:             24/7 uptime via Vercel edge network
+Backups:                  Daily automated database backups
+Hosting Provider:         Vercel, Inc. (vercel.com) — SOC 2 compliant
+
+
+╔══════════════════════════════════════════════════════════╗
+║  PART 3: REQUIRED DOCUMENTS / ATTACHMENTS               ║
+╚══════════════════════════════════════════════════════════╝
+
+[ ] Completed DDS provider application form (from DDS)
+[ ] Copy of Federal EIN assignment letter (IRS Form SS-4 response)
+[ ] Proof of surety bond — $[CONFIRM AMOUNT WITH DDS]
+    Surety Bond Company: [____________________]
+    Bond Number:         [____________________]
+    Effective Date:      [____/____/____]
+[ ] Background check authorization form(s) per DDS requirements
+[ ] Georgia registered agent designation
+[ ] Complete course curriculum / course outline
+[ ] Sample quiz questions and final exam bank excerpt
+[ ] Platform/technology description (see Part 2D above)
+[ ] Identity verification process description
+[ ] Anti-cheating / participation validation description
+[ ] Certificate sample (for DDS approval)
+[ ] Application fee check — payable to "Georgia DDS"
+    Confirm current fee with DDS: (678) 413-8400
+[ ] Copy of driver's license (owner)
+[ ] Proof of business registration / EIN
+
+
+╔══════════════════════════════════════════════════════════╗
+║  PART 4: CERTIFICATIONS / SIGNATURE BLOCK               ║
+╚══════════════════════════════════════════════════════════╝
+
+I certify that all information provided in this application
+is true, accurate, and complete to the best of my knowledge.
+I understand that providing false information may result in
+denial or revocation of approval.
+
+Name:         Jordan Lovelace
+Title:        Owner / Sole Proprietor
+Business:     Quick Pass Traffic School
+Date:         [____/____/____]
+Signature:    _________________________
+
+
+============================================================
+CONTACT LOG (track your communications with DDS)
+============================================================
+
+Date:         [____/____/____]
+Contact:      [Name at DDS]
+Method:       Phone / Email
+Notes:        [What was discussed, documents requested, etc.]
+
+Date:         [____/____/____]
+Contact:      [____________________]
+Method:       Phone / Email / Mail
+Notes:        [____________________]
+============================================================
