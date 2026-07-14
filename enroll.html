@@ -330,6 +330,13 @@
                     <div id="arizonaSection" class="arizona-section">
                         <h3>⚖️ Arizona Court & Fee Selection</h3>
                         <p><strong>Important:</strong> Court fees vary by your specific court. They are paid directly to your court — separate from the Quick Pass school fee. The fee breakdown will update in the banner above once you select your court.</p>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="citationDate">Date of Citation <span class="required">*</span></label>
+                                <input type="date" id="citationDate" name="CitationDate" required>
+                            </div>
+                        </div>
                         
                         <div class="form-row">
                             <div class="form-group">
@@ -687,6 +694,7 @@
             document.getElementById('arizonaSection').classList.add('active');
             document.getElementById('arizonaCounty').required = true;
             document.getElementById('arizonaCourt').required = true;
+            document.getElementById('citationDate').required = true;
         }
 
         const AZ_STATE_TREASURER_FEE = 45; // State Surcharge (paid to State Treasurer)
