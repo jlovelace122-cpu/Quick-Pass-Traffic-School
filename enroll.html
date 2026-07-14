@@ -67,19 +67,30 @@
             margin-top: 0.5rem;
             padding-top: 0.5rem;
             border-top: 1px solid rgba(37, 99, 235, 0.3);
-            font-size: 0.875rem;
+            font-size: 0.8rem;
+            min-width: 220px;
         }
         .arizona-fees .fee-row {
             display: flex;
             justify-content: space-between;
             color: var(--gray-700);
-            margin: 0.25rem 0;
+            margin: 0.2rem 0;
+            gap: 0.5rem;
+        }
+        .arizona-fees .fee-row.fee-divider {
+            margin-top: 0.4rem;
+            padding-top: 0.4rem;
+            border-top: 1px dashed rgba(37, 99, 235, 0.25);
         }
         .arizona-fees .fee-row.total {
-            font-weight: 600;
+            font-weight: 700;
             color: var(--primary-color);
-            margin-top: 0.5rem;
+            margin-top: 0.4rem;
+            padding-top: 0.4rem;
+            border-top: 1px solid rgba(37, 99, 235, 0.3);
         }
+        .arizona-fees .fee-label { white-space: nowrap; }
+        .arizona-fees .fee-value { font-weight: 500; white-space: nowrap; }
         .arizona-section {
             display: none;
             background: #fef3c7;
@@ -146,16 +157,24 @@
                     <div class="price-amount" id="priceAmount">$0.00</div>
                     <div id="arizonaFeesDisplay" class="arizona-fees" style="display: none;">
                         <div class="fee-row">
-                            <span>Course Fee:</span>
-                            <span id="courseFeeAmount">$0.00</span>
+                            <span class="fee-label">Quick Pass School Fee:</span>
+                            <span class="fee-value" id="courseFeeAmount">$24.95</span>
+                        </div>
+                        <div class="fee-row fee-divider">
+                            <span class="fee-label">Court Diversion Fee:</span>
+                            <span class="fee-value" id="courtDiversionFee">—</span>
                         </div>
                         <div class="fee-row">
-                            <span>Court/State Fees:</span>
-                            <span id="courtFeeAmount">$0.00</span>
+                            <span class="fee-label">State Fee:</span>
+                            <span class="fee-value" id="stateFeeAmount">$24.00</span>
+                        </div>
+                        <div class="fee-row">
+                            <span class="fee-label">State Surcharge (2019):</span>
+                            <span class="fee-value" id="stateSurchargeAmount">$45.00</span>
                         </div>
                         <div class="fee-row total">
-                            <span>Total:</span>
-                            <span id="totalAmount">$0.00</span>
+                            <span class="fee-label">Grand Total:</span>
+                            <span class="fee-value" id="totalAmount">—</span>
                         </div>
                     </div>
                 </div>
@@ -305,46 +324,35 @@
 
                     <!-- Arizona-Specific Court & County Section -->
                     <div id="arizonaSection" class="arizona-section">
-                        <h3>⚖️ Arizona Court & County Selection</h3>
-                        <p><strong>Important:</strong> Additional court and state fees apply. These are paid directly to the court, not to us.</p>
+                        <h3>⚖️ Arizona Court & Fee Selection</h3>
+                        <p><strong>Important:</strong> Court fees vary by your specific court. They are paid directly to your court — separate from the Quick Pass school fee. The fee breakdown will update in the banner above once you select your court.</p>
                         
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="arizonaCourt">Relevant Court <span class="required">*</span></label>
-                                <select id="arizonaCourt" name="ArizonaCourt">
-                                    <option value="">Select Your Court</option>
-                                    <option value="maricopa">Maricopa County Superior Court</option>
-                                    <option value="pima">Pima County Superior Court</option>
-                                    <option value="yuma">Yuma County Superior Court</option>
-                                    <option value="santa_cruz">Santa Cruz County Superior Court</option>
-                                    <option value="pinal">Pinal County Superior Court</option>
-                                    <option value="apache">Apache County Superior Court</option>
-                                    <option value="cochise">Cochise County Superior Court</option>
-                                    <option value="gila">Gila County Superior Court</option>
-                                    <option value="graham">Graham County Superior Court</option>
-                                    <option value="greenlee">Greenlee County Superior Court</option>
-                                    <option value="la_paz">La Paz County Superior Court</option>
-                                    <option value="mohave">Mohave County Superior Court</option>
-                                    <option value="navajo">Navajo County Superior Court</option>
+                                <label for="arizonaCounty">Your County <span class="required">*</span></label>
+                                <select id="arizonaCounty" name="ArizonaCounty" onchange="updateArizonaCourts(this.value)">
+                                    <option value="">-- Select Your County --</option>
+                                    <option value="apache">Apache</option>
+                                    <option value="cochise">Cochise</option>
+                                    <option value="coconino">Coconino</option>
+                                    <option value="gila">Gila</option>
+                                    <option value="graham">Graham</option>
+                                    <option value="greenlee">Greenlee</option>
+                                    <option value="la_paz">La Paz</option>
+                                    <option value="maricopa">Maricopa</option>
+                                    <option value="mohave">Mohave</option>
+                                    <option value="navajo">Navajo</option>
+                                    <option value="pima">Pima</option>
+                                    <option value="pinal">Pinal</option>
+                                    <option value="santa_cruz">Santa Cruz</option>
+                                    <option value="yavapai">Yavapai</option>
+                                    <option value="yuma">Yuma</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="arizonaCounty">County (for fee calculation) <span class="required">*</span></label>
-                                <select id="arizonaCounty" name="ArizonaCounty" onchange="updateArizonaPricing()">
-                                    <option value="">Select Your County</option>
-                                    <option value="maricopa" data-fee="179">Maricopa - $179</option>
-                                    <option value="pima" data-fee="189">Pima - $189</option>
-                                    <option value="yuma" data-fee="244">Yuma - $244</option>
-                                    <option value="santa_cruz" data-fee="200">Santa Cruz - $200</option>
-                                    <option value="pinal" data-fee="195">Pinal - $195</option>
-                                    <option value="apache" data-fee="185">Apache - $185</option>
-                                    <option value="cochise" data-fee="190">Cochise - $190</option>
-                                    <option value="gila" data-fee="188">Gila - $188</option>
-                                    <option value="graham" data-fee="183">Graham - $183</option>
-                                    <option value="greenlee" data-fee="181">Greenlee - $181</option>
-                                    <option value="la_paz" data-fee="179">La Paz - $179</option>
-                                    <option value="mohave" data-fee="192">Mohave - $192</option>
-                                    <option value="navajo" data-fee="198">Navajo - $198</option>
+                                <label for="arizonaCourt">Your Specific Court <span class="required">*</span></label>
+                                <select id="arizonaCourt" name="ArizonaCourt" onchange="updateArizonaPricing()">
+                                    <option value="">-- Select County First --</option>
                                 </select>
                             </div>
                         </div>
@@ -673,25 +681,178 @@
 
         function showArizonaSection() {
             document.getElementById('arizonaSection').classList.add('active');
-            document.getElementById('arizonaCourt').required = true;
             document.getElementById('arizonaCounty').required = true;
+            document.getElementById('arizonaCourt').required = true;
+        }
+
+        const AZ_STATE_FEE = 24;
+        const AZ_STATE_SURCHARGE = 45;
+
+        // All AZ courts by county: [courtId, courtName, courtDiversionFee]
+        // Source: AZ Supreme Court, effective April 1 2026
+        const arizonaCourts = {
+          apache: [
+            ['100','Apache Co. Sup/Juvenile',85],['101','Round Valley Justice',110],
+            ['102','St. Johns Justice',125],['103','North Star Justice',200],
+            ['104','Chinle Justice Court',150],['141','Springerville Municipal',125],
+            ['142','St. Johns Municipal',125],['145','Eager Municipal',125],
+          ],
+          cochise: [
+            ['201','Bisbee Justice',120],['202','Douglas Justice #2',150],
+            ['203','Benson Justice',125],['204','Willcox Justice',120],
+            ['205','Sierra Vista Justice',140],['206','Bowie Justice',150],
+            ['242','Douglas Municipal',100],['243','Benson Municipal',125],
+            ['245','Sierra Vista Municipal',130],['247','Tombstone Municipal',150],
+            ['248','Huachuca City Municipal',150],
+          ],
+          coconino: [
+            ['301','Flagstaff Justice',125],['302','Williams Justice',125],
+            ['303','Fredonia Justice',125],['305','Page Justice',125],
+            ['341','Flagstaff Municipal',125],['342','Williams Municipal',125],
+            ['343','Fredonia Municipal',125],['345','Page Municipal',125],
+            ['346','Sedona Municipal',125],
+          ],
+          gila: [
+            ['403','Globe Regional Justice',140],['404','Payson Justice',100],
+            ['441','Miami Municipal',140],['442','Hayden Municipal',150],
+            ['443','Globe Municipal',140],['444','Payson Municipal',100],
+            ['446','Winkleman Municipal',100],['447','Star Valley Municipal',100],
+          ],
+          graham: [
+            ['501','Safford Justice',70],['502','Pima Justice',70],
+            ['541','Safford Municipal',75],['542','Pima Municipal',75],
+            ['546','Thatcher Municipal',75],
+          ],
+          greenlee: [
+            ['601','Clifton/Morenci JP',75],['602','Duncan Justice',75],
+            ['641','Clifton Municipal',50],
+          ],
+          la_paz: [
+            ['1506','La Paz Justice',250],['1541','Quartzsite Municipal',200],
+            ['1546','Parker Municipal',150],
+          ],
+          maricopa: [
+            ['701','Downtown Justice',110],['702','Arcadia/Biltmore Justice',110],
+            ['703','White Tank Justice',110],['704','San Marcos Justice',110],
+            ['705','East Mesa Justice',110],['706','Ironwood Justice',110],
+            ['707','Manistee Justice',110],['708','Dreamy Draw Justice',110],
+            ['709','Moon Valley Justice',110],['710','Arrowhead Justice',110],
+            ['711','McDowell Mountain Justice',110],['712','South Mountain Justice',110],
+            ['713','University Lakes Justice',110],['714','Agua Fria Justice',110],
+            ['715','West Mesa Justice',110],['716','West McDowell Justice',110],
+            ['717','Hassayampa Justice',110],['718','Encanto Justice',110],
+            ['719','Maryvale Justice',110],['720','San Tan Justice',110],
+            ['721','North Mesa Justice',110],['723','Kyrene Justice',110],
+            ['724','North Valley Justice',110],['725','Desert Ridge Justice',110],
+            ['726','Highland Justice',110],['727','Country Meadows JP',110],
+            ['740','Maricopa Juvenile',50],
+            ['741','Phoenix Municipal',145],['742','Fountain Hills Municipal',150],
+            ['743','Buckeye Municipal',140],['745','Mesa Municipal',150],
+            ['746','Gila Bend Municipal',100],['747','Glendale Municipal',145],
+            ['748','Chandler Municipal',150],['750','Peoria Municipal',162],
+            ['751','Scottsdale Municipal',154],['753','Tempe Municipal',145],
+            ['754','Tolleson Municipal',125],['757','Wickenburg Municipal',135],
+            ['759','El Mirage Municipal',140],['760','Avondale City',135],
+            ['761','Surprise Municipal',155],['762','Goodyear Municipal',145],
+            ['763','Youngtown Municipal',100],['764','Guadalupe Municipal',70],
+            ['765','Paradise Valley Municipal',130],['766','Gilbert Municipal',150],
+            ['767','Carefree/Cave Creek Consolidated',135],['769','Litchfield Park Municipal',150],
+          ],
+          mohave: [
+            ['801','Kingman/Cerbat Justice',175],['802','Bullhead City Justice',175],
+            ['803','North Canyon Justice',165],['804','Lake Havasu Justice',175],
+            ['841','Kingman Municipal',175],['842','Bullhead City Municipal',175],
+            ['844','Lake Havasu City Municipal',175],['845','Colorado City Municipal',165],
+          ],
+          navajo: [
+            ['901','Holbrook Justice',100],['902','Winslow Justice',110],
+            ['903','Snowflake Justice',100],['905','Show Low Justice',133],
+            ['907','Pinetop Justice',150],['908','Kayenta Justice',150],
+            ['941','Holbrook Municipal',100],['942','Winslow Municipal',110],
+            ['945','Show Low Municipal',133],['949','Pinetop/Lakeside Municipal',150],
+          ],
+          pima: [
+            ['1001','Pima County Consolidated Justice (North)',150],
+            ['1002','Pima County Consolidated Justice (East)',150],
+            ['1003','Ajo Justice',150],
+            ['1004','Pima County Consolidated Justice (South)',150],
+            ['1006','Pima County Consolidated Justice (West)',150],
+            ['1007','Green Valley Justice',130],
+            ['1008','Pima County Consolidated Justice (Southeast)',150],
+            ['1009','Pima County Consolidated Justice (Central)',150],
+            ['1010','Pima County Consolidated Justice (Northwest)',150],
+            ['1041','Tucson City Municipal',150],['1042','South Tucson Municipal',150],
+            ['1044','Marana Municipal',150],['1045','Oro Valley Municipal',130],
+            ['1046','Sahuarita Municipal',150],
+          ],
+          pinal: [
+            ['1101','Florence Justice',150],['1102','Casa Grande Justice',150],
+            ['1103','Central Pinal Justice Court',150],['1104','Mammoth Justice',100],
+            ['1105','Copper Corridor Justice',150],['1106','Superior/Kearny Justice',100],
+            ['1107','Apache Junction Justice',150],['1108','Western Pinal Justice',150],
+            ['1109','Pioneer Justice',150],['1140','Superior Municipal',150],
+            ['1141','Florence Municipal',200],['1142','Casa Grande Municipal',100],
+            ['1143','Eloy Municipal',100],['1144','Maricopa Municipal',120],
+            ['1145','Mammoth Municipal',100],['1147','Kearny Municipal',100],
+            ['1148','Coolidge Municipal',110],['1149','Apache Junction Municipal',120],
+          ],
+          santa_cruz: [
+            ['1201','Santa Cruz County Justice',80],
+            ['1202','East Santa Cruz County Justice',150],
+            ['1241','Nogales Municipal',150],['1242','Patagonia Municipal',100],
+          ],
+          yavapai: [
+            ['1301','Mayer Justice',135],['1302','Verde Valley Justice',135],
+            ['1303','Prescott Justice',135],['1304','Seligman Justice',135],
+            ['1307','Bagdad-Yarnell Justice',135],
+            ['1342','Cottonwood Municipal',110],['1343','Prescott Municipal',180],
+            ['1347','Prescott Valley Magistrate',135],['1348','Clarkdale Municipal',110],
+            ['1349','Jerome Municipal',135],['1353','Chino Valley Municipal',135],
+            ['1354','Camp Verde Municipal',120],['1355','Dewey-Humboldt Municipal',135],
+          ],
+          yuma: [
+            ['1401','Yuma Justice',160],['1402','South County Justice',120],
+            ['1403','Wellton Justice',160],['1441','Yuma Municipal',175],
+            ['1442','Somerton Municipal',175],['1443','Wellton Municipal',160],
+            ['1447','San Luis Municipal',200],
+          ],
+        };
+
+        function updateArizonaCourts(county) {
+            const courtSelect = document.getElementById('arizonaCourt');
+            courtSelect.innerHTML = '<option value="">-- Select Your Court --</option>';
+            if (!county || !arizonaCourts[county]) return;
+            arizonaCourts[county].forEach(([id, name, fee]) => {
+                const opt = document.createElement('option');
+                opt.value = id;
+                opt.setAttribute('data-courtfee', fee);
+                const subtotal = fee + AZ_STATE_FEE + AZ_STATE_SURCHARGE;
+                opt.textContent = `${name}  —  Court fees: $${subtotal}`;
+                courtSelect.appendChild(opt);
+            });
+            // Reset pricing if county changed
+            document.getElementById('courtDiversionFee').textContent = '—';
+            document.getElementById('totalAmount').textContent = '—';
+            document.getElementById('priceAmount').textContent = '$0.00';
         }
 
         function updateArizonaPricing() {
-            const select = document.getElementById('arizonaCounty');
-            const option = select.options[select.selectedIndex];
-            const fee = option.getAttribute('data-fee');
-            
-            if (fee && currentCourse) {
-                const courtFee = parseInt(fee);
-                const courseFee = currentCourse.price;
-                const total = courseFee + courtFee;
-                
+            const courtSelect = document.getElementById('arizonaCourt');
+            const option = courtSelect.options[courtSelect.selectedIndex];
+            const courtFee = parseInt(option?.getAttribute('data-courtfee') || '0');
+
+            if (courtFee > 0 && currentCourse) {
+                const schoolFee = currentCourse.price;
+                const courtSubTotal = courtFee + AZ_STATE_FEE + AZ_STATE_SURCHARGE;
+                const grandTotal = schoolFee + courtSubTotal;
+
                 document.getElementById('arizonaFeesDisplay').style.display = 'block';
-                document.getElementById('courseFeeAmount').textContent = `$${courseFee.toFixed(2)}`;
-                document.getElementById('courtFeeAmount').textContent = `$${courtFee}`;
-                document.getElementById('totalAmount').textContent = `$${total.toFixed(2)}`;
-                document.getElementById('priceAmount').textContent = `$${total.toFixed(2)}`;
+                document.getElementById('courseFeeAmount').textContent = `$${schoolFee.toFixed(2)}`;
+                document.getElementById('courtDiversionFee').textContent = `$${courtFee}.00`;
+                document.getElementById('stateFeeAmount').textContent = `$${AZ_STATE_FEE}.00`;
+                document.getElementById('stateSurchargeAmount').textContent = `$${AZ_STATE_SURCHARGE}.00`;
+                document.getElementById('totalAmount').textContent = `$${grandTotal.toFixed(2)}`;
+                document.getElementById('priceAmount').textContent = `$${grandTotal.toFixed(2)}`;
             }
         }
 
@@ -712,12 +873,12 @@
 
             // Validate Arizona fields
             if (currentCourse.isArizona) {
-                if (!document.getElementById('arizonaCourt').value) {
-                    alert('Please select a court');
+                if (!document.getElementById('arizonaCounty').value) {
+                    alert('Please select your county');
                     return false;
                 }
-                if (!document.getElementById('arizonaCounty').value) {
-                    alert('Please select a county');
+                if (!document.getElementById('arizonaCourt').value) {
+                    alert('Please select your specific court');
                     return false;
                 }
             }
@@ -725,18 +886,22 @@
             // Collect all form data
             const formData = new FormData(document.getElementById('enrollmentForm'));
             const enrollmentData = Object.fromEntries(formData);
-            
+
             // Add course info
             enrollmentData.courseSlug = courseSlug;
             enrollmentData.courseName = currentCourse.name;
             enrollmentData.coursePrice = currentCourse.price;
 
-            // Calculate Arizona total
+            // Arizona fee breakdown (court fees are paid directly to court, not to us)
             if (currentCourse.isArizona) {
-                const select = document.getElementById('arizonaCounty');
-                const fee = select.options[select.selectedIndex].getAttribute('data-fee');
-                enrollmentData.arizonaCourtFees = parseInt(fee);
-                enrollmentData.totalPrice = currentCourse.price + parseInt(fee);
+                const courtOpts = document.getElementById('arizonaCourt').options;
+                const selOpt = courtOpts[courtOpts.selectedIndex];
+                const courtDiversionFee = parseInt(selOpt.getAttribute('data-courtfee') || '0');
+                enrollmentData.arizonaCourtDiversionFee = courtDiversionFee;
+                enrollmentData.arizonaStateFee = AZ_STATE_FEE;
+                enrollmentData.arizonaStateSurcharge = AZ_STATE_SURCHARGE;
+                enrollmentData.arizonaCourtSubTotal = courtDiversionFee + AZ_STATE_FEE + AZ_STATE_SURCHARGE;
+                enrollmentData.totalPrice = currentCourse.price; // Stripe payment = school fee only
             } else {
                 enrollmentData.totalPrice = currentCourse.price;
             }
