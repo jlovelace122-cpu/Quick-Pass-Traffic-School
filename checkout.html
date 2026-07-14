@@ -326,10 +326,18 @@
         let stripe;
         let elements;
         let courseId;
+        let totalAmount = 0;
+        let enrollmentData = null;
 
         // Initialize
         async function initialize() {
             try {
+                // Check for enrollment data from enroll.html
+                const enrollmentDataStr = sessionStorage.getItem('enrollmentData');
+                if (enrollmentDataStr) {
+                    enrollmentData = JSON.parse(enrollmentDataStr);
+                }
+
                 // Get Stripe config
                 const configResponse = await fetch('/api/payments/config');
                 const { publishableKey } = await configResponse.json();
@@ -347,17 +355,47 @@
                 document.getElementById('courseName').textContent = course.name;
                 document.getElementById('courseHours').textContent = course.durationHours;
                 document.getElementById('courseDescription').textContent = course.description ? course.description.substring(0, 80) + '...' : 'State-Approved Traffic School Course';
-                document.getElementById('priceSubtotal').textContent = `$${course.price.toFixed(2)}`;
-                document.getElementById('priceTotal').textContent = `$${course.price.toFixed(2)}`;
+                
+                // Calculate total amount
+                if (enrollmentData && enrollmentData.totalPrice) {
+                    // Use enrollment data total (includes Arizona court fees if applicable)
+                    totalAmount = enrollmentData.totalPrice;
+                    document.getElementById('priceSubtotal').textContent = `$${course.price.toFixed(2)}`;
+                    
+                    // Show Arizona fee breakdown if applicable
+                    if (enrollmentData.arizonaCourtFees) {
+                        const priceTotal = document.getElementById('priceTotal');
+                        priceTotal.innerHTML = `$${totalAmount.toFixed(2)}`;
+                        
+                        // Add fee breakdown after the total
+                        const breakdown = document.createElement('div');
+                        breakdown.style.fontSize = '0.875rem';
+                        breakdown.style.color = 'var(--gray-600)';
+                        breakdown.style.marginTop = '0.5rem';
+                        breakdown.innerHTML = `<div style="margin-bottom: 0.25rem;">Arizona Court Fees: $${enrollmentData.arizonaCourtFees}</div>
+                                              <div style="font-weight: 600; color: var(--primary-color);">Total: $${totalAmount.toFixed(2)}</div>`;
+                        priceTotal.parentElement.appendChild(breakdown);
+                    } else {
+                        document.getElementById('priceTotal').textContent = `$${totalAmount.toFixed(2)}`;
+                    }
+                } else {
+                    // Use course price only
+                    totalAmount = course.price;
+                    document.getElementById('priceSubtotal').textContent = `$${course.price.toFixed(2)}`;
+                    document.getElementById('priceTotal').textContent = `$${course.price.toFixed(2)}`;
+                }
 
-                // Create payment intent
+                // Create payment intent with correct amount
                 const paymentResponse = await fetch('/api/payments/create-intent', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                         'Authorization': `Bearer ${token}`,
                     },
-                    body: JSON.stringify({ courseId: course.id }),
+                    body: JSON.stringify({ 
+                        courseId: course.id,
+                        totalAmount: totalAmount  // Pass correct amount to backend
+                    }),
                 });
 
                 if (!paymentResponse.ok) {
