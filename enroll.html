@@ -10,6 +10,32 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        .language-selector {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        .language-selector button {
+            padding: 0.4rem 0.8rem;
+            border: 1px solid #d1d5db;
+            background: #f9fafb;
+            color: var(--gray-700);
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        .language-selector button:hover {
+            border-color: var(--primary-color);
+            background: #eff6ff;
+            color: var(--primary-color);
+        }
+        .language-selector button.active {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
         .course-price-banner {
             background: linear-gradient(135deg, #dbeafe 0%, #f0f9ff 100%);
             border: 1px solid #bfdbfe;
@@ -170,6 +196,11 @@
                         <li><a href="index.html#course-overview" class="nav-link">Course Overview</a></li>
                         <li><a href="index.html#testimonials" class="nav-link">Testimonials</a></li>
                         <li><a href="index.html#contact-us" class="btn btn-primary">Contact Us</a></li>
+                        <li class="language-selector">
+                            <button data-lang="en" class="active">EN</button>
+                            <button data-lang="es">ES</button>
+                            <button data-lang="pt">PT</button>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -601,6 +632,7 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script src="js/i18n.js"></script>
     <script>
         // Course data mapping
         const courseData = {
