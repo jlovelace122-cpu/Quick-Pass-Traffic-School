@@ -822,7 +822,8 @@
             const courtSelect = document.getElementById('arizonaCourt');
             courtSelect.innerHTML = '<option value="">-- Select Your Court --</option>';
             if (!county || !arizonaCourts[county]) return;
-            arizonaCourts[county].forEach(([id, name, fee]) => {
+            const sorted = [...arizonaCourts[county]].sort((a, b) => a[1].localeCompare(b[1]));
+            sorted.forEach(([id, name, fee]) => {
                 const opt = document.createElement('option');
                 opt.value = id;
                 opt.setAttribute('data-courtfee', fee);
