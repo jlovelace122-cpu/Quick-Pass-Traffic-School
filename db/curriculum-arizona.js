@@ -4,11 +4,11 @@
 // ===========================
 
 export const arizonaCourseData = {
-  // Arizona Traffic Survival School (4-hour course)
+  // Arizona 4-Hour Defensive Driving Course (online)
   course4Hour: {
-    name: 'Arizona Traffic Survival School',
-    slug: 'arizona-traffic-survival-school',
-    description: 'Arizona ADOT-approved defensive driving course for ticket dismissal and point reduction. Covers Arizona traffic laws, defensive driving techniques, and safe driving practices in desert conditions.',
+    name: 'Arizona 4-Hour Defensive Driving Course',
+    slug: 'arizona-4-hour-defensive-driving',
+    description: 'Arizona ADOT-approved 4-hour defensive driving course for ticket dismissal and point reduction. Covers Arizona traffic laws, defensive driving techniques, and safe driving practices in desert conditions. Additional court/state fees apply and vary by county.',
     durationHours: 4,
     price: 24.95,
     modules: [
@@ -18,9 +18,9 @@ export const arizonaCourseData = {
         description: 'Course overview, Arizona driving statistics, and state-specific traffic regulations',
         estimatedMinutes: 55,
         content: `
-          <h2>Welcome to Arizona Traffic Survival School</h2>
+          <h2>Welcome to Arizona 4-Hour Defensive Driving Course</h2>
           
-          <p>Welcome to Quick Pass Traffic School's Arizona Department of Transportation (ADOT) and Motor Vehicle Division (MVD) approved Traffic Survival School course. This course is designed to help you become a safer driver on Arizona's unique roadways.</p>
+          <p>Welcome to Quick Pass Traffic School's Arizona Department of Transportation (ADOT) and Motor Vehicle Division (MVD) approved defensive driving course. This online course is designed to help you dismiss a traffic citation and become a safer driver on Arizona's unique roadways.</p>
 
           <div class="highlight-box">
             <h4>🎯 Course Objectives</h4>

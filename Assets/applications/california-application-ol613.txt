@@ -48,27 +48,27 @@ SECTION 2: APPLICANT INFORMATION
 
 Full Legal Name:
   First:                  Jordan
-  Middle:                 [____]  <<<< FILL IN (or N/A)
+  Middle:                 Ernest
   Last:                   Lovelace
-  Suffix:                 [____]
+  Suffix:                 N/A
 
-Date of Birth:            [____/____/____] <<<< FILL IN
-Place of Birth:           [____, ____]     <<<< City, State
+Date of Birth:            07/17/1977
+Place of Birth:           Rochester, NY
 
-Social Security #:        [___-__-____]    <<<< FILL IN
+Social Security #:        [FILL IN PRIVATELY — do not share via email/chat]
 
 California Driver License: [ ] Yes  [X] No
   If Yes, DL #:           [______________]
   If No, Other State DL:  Florida
-  Other State DL #:       [______________] <<<< FILL IN
+  Other State DL #:       L632-951-56-500-0
 
-Gender:                   [____]           <<<< FILL IN
-Height:                   [____]           <<<< FILL IN
-Weight:                   [____]           <<<< FILL IN
-Hair Color:               [____]           <<<< FILL IN
-Eye Color:                [____]           <<<< FILL IN
+Gender:                   Male
+Height:                   6'2"
+Weight:                   250 lbs
+Hair Color:               Black
+Eye Color:                Brown
 
-Home Address:             NW rd Way
+Home Address:             6213 NW 63rd Way
 City:                     Parkland
 State:                    FL
 ZIP:                      33067
@@ -82,7 +82,7 @@ SECTION 3: BUSINESS INFORMATION
 Business/School Name:     Quick Pass Traffic School
 DBA (if different):       N/A
 
-Business Address:         NW rd Way
+Business Address:         6213 NW 63rd Way
 City:                     Parkland
 State:                    FL
 ZIP:                      33067
@@ -99,13 +99,13 @@ Entity Type:              [X] Sole Proprietorship
                           [ ] Partnership
                           [ ] Other: ____
 
-Federal EIN:              [PENDING — SS-4 faxed to IRS]
+Federal EIN:              [PENDING — SS-4 faxed to IRS — fill in when received]
 
 State of Formation:       Florida (Sole Proprietorship)
-Date Business Established: [____/____/____] <<<< FILL IN
+Date Business Established: 07/17/2025
 
 California Registered Agent (REQUIRED for out-of-state):
-  Agent Name:             [____________________] <<<< DESIGNATE
+  Agent Name:             [NOT YET CHOSEN — select service below]
   Agent Address:          [____________________]
   City/State/ZIP:         [__________, CA _____]
   Agent Phone:            [____________________]
@@ -368,18 +368,18 @@ SECTION 12: PRIOR ADDRESSES (LAST 5 YEARS)
 --------------------------------------------------------------
 
 Address 1:
-  Street:                 [____________________] <<<< FILL IN
-  City:                   [____________________]
-  State:                  [____]
-  ZIP:                    [________]
-  Dates:                  [____/____] to [____/____]
+  Street:                 6213 NW 63rd Way
+  City:                   Parkland
+  State:                  FL
+  ZIP:                    33067
+  Dates:                  2024 to Present
 
 Address 2:
-  Street:                 [____________________]
-  City:                   [____________________]
-  State:                  [____]
-  ZIP:                    [________]
-  Dates:                  [____/____] to [____/____]
+  Street:                 2558 Bulrush Circle
+  City:                   Corona
+  State:                  CA
+  ZIP:                    92882
+  Dates:                  2014 to 2024
 
 Address 3 (if applicable):
   Street:                 [____________________]
@@ -393,24 +393,24 @@ SECTION 13: REFERENCES (typically 3 required)
 --------------------------------------------------------------
 
 Reference 1:
-  Name:                   [____________________] <<<< FILL IN
-  Relationship:           [____________________]
-  Phone:                  [____________________]
-  Address:                [____________________]
+  Name:                   Kevin Lee
+  Relationship:           Friend
+  Phone:                  (310) 903-2222
+  Address:                [____________________] <<<< ADD IF KNOWN
   City/State/ZIP:         [____________________]
 
 Reference 2:
-  Name:                   [____________________]
-  Relationship:           [____________________]
-  Phone:                  [____________________]
-  Address:                [____________________]
+  Name:                   Scott Robbins
+  Relationship:           Business Associate / Friend
+  Phone:                  (310) 384-9376
+  Address:                [____________________] <<<< ADD IF KNOWN
   City/State/ZIP:         [____________________]
 
 Reference 3:
-  Name:                   [____________________]
-  Relationship:           [____________________]
-  Phone:                  [____________________]
-  Address:                [____________________]
+  Name:                   Jon Dugas
+  Relationship:           Friend
+  Phone:                  (310) 989-3531
+  Address:                [____________________] <<<< ADD IF KNOWN
   City/State/ZIP:         [____________________]
 
 --------------------------------------------------------------

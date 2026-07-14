@@ -1,5 +1,5 @@
 ============================================================
-ARIZONA — TRAFFIC SURVIVAL SCHOOL (TSS) PROVIDER APPLICATION
+ARIZONA — 4-HOUR DEFENSIVE DRIVING COURSE PROVIDER APPLICATION
 PRE-FILLED FOR SUBMISSION TO ADOT/MVD
 ============================================================
 Regulatory Body: Arizona Department of Transportation
@@ -18,10 +18,10 @@ Email: MVDCustomerServiceCenter@azdot.gov
 ============================================================
 IMPORTANT: Arizona does not publish a standardized 
 application form online. You must contact MVD directly to 
-request the current TSS provider application package.
+request the current Defensive Driving Course provider application package.
 
 Call (602) 255-0072 and request:
-  "Traffic Survival School Provider Application Package 
+  "Defensive Driving Course Provider Application Package 
    for an online course provider"
 
 Below is all your information pre-organized to fill in 
@@ -32,18 +32,18 @@ whatever form they provide, plus supporting documents.
 SECTION A: APPLICANT / BUSINESS INFORMATION
 ============================================================
 
-Full Legal Name:          Jordan Lovelace
-Date of Birth:            [____/____/____] <<<< FILL IN
-Social Security #:        [___-__-____]    <<<< FILL IN
-Driver License #:         [______________] <<<< FILL IN
+Full Legal Name:          Jordan Ernest Lovelace
+Date of Birth:            07/17/1977
+Social Security #:        [FILL IN PRIVATELY — do not share]
+Driver License #:         L632-951-56-500-0
 DL State:                 Florida
 
-Business Name:            Quick Pass Traffic School
-Business DBA (if any):    N/A — same as business name
-Entity Type:              Sole Proprietorship
-Federal EIN:              [PENDING — SS-4 faxed to IRS]
+Business Name:            Quick Pass Traffic School LLC
+Business DBA (if any):    None
+Entity Type:              Limited Liability Company (LLC)
+Federal EIN:              [TO BE OBTAINED after FL registration]
 
-Business Address:         NW rd Way
+Business Address:         6213 NW 63rd Way
 City:                     Parkland
 State:                    FL
 ZIP:                      33067
@@ -52,6 +52,7 @@ County:                   Broward
 Business Phone:           (714) 312-9994
 Business Email:           support@quickpasstrafficschool.com
 Business Website:         www.quickpasstrafficschool.com
+Business Established:     07/17/2025
 
 Arizona Statutory Agent:  [TO BE DESIGNATED]
   Name:                   [____________________]
@@ -60,34 +61,43 @@ Arizona Statutory Agent:  [TO BE DESIGNATED]
   Phone:                  [____________________]
 
   NOTE: You'll need an AZ statutory agent before submitting.
-  Options: Northwest Registered Agent ($125/yr), 
-  LegalZoom ($299/yr), Incfile ($119/yr), or a trusted 
-  Arizona-based contact.
+  (Filing as LLC in Florida; will designate agent upon approval.)
 
 
 SECTION B: COURSE INFORMATION
 ============================================================
 
-Course Title:             Arizona Traffic Survival School
+Course Title:             Arizona 4-Hour Defensive Driving Course
 Course Format:            Online (100% web-based, asynchronous)
 Course Duration:          4 Hours (minimum time enforced)
-Course Price:             $49.95
+Course Price:             $24.95
+
+ADDITIONAL FEES (paid directly to Arizona courts - NOT to provider):
+  - State Administrative Fee: $24.00
+  - State Surcharge: $45.00
+  - Court Diversion Fee: $110–$175 (varies by county)
+  - TOTAL ADDITIONAL FEES TO STUDENT: $179–$244
+  - CUSTOMER'S TOTAL COST: $203.95–$268.95
+
+NOTE: These court/state fees are mandatory and set by Arizona
+courts, not by the course provider. Student sees full total cost
+before checkout based on their county of residence.
 
 Delivery Platform:        Proprietary Learning Management System
                           hosted at www.quickpasstrafficschool.com
 Platform Technology:      Node.js, PostgreSQL, SSL/TLS encrypted
 Mobile Compatible:        Yes — responsive design (phone/tablet/desktop)
 
-Course Target:            Drivers ordered by MVD to complete TSS 
-                          as a condition of maintaining driving 
-                          privileges (per ARS §28-3306)
+Course Target:            Drivers ordered by Arizona courts to complete
+                          a defensive driving course as a condition of
+                          ticket dismissal or point reduction (per ARS §28-3306)
 
 Assessment Structure:
   Module Quizzes:         4 quizzes (one per module)
-                          4 questions each, 70% passing
+                          4 questions each, 70% passing score
   Final Examination:      15 questions, multiple choice
-                          80% passing score required
-                          Questions randomized from 50+ bank
+                          80% passing score required (12/15 correct)
+                          Questions randomized from 50+ question bank
   Retakes:                Unlimited at no additional charge
 
 Identity Verification:    Government-issued photo ID upload at 
