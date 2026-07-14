@@ -106,6 +106,47 @@
             color: #92400e;
             margin-top: 0;
         }
+        .az-eligibility {
+            background: #fff7ed;
+            border: 1px solid #fdba74;
+            border-radius: var(--radius);
+            padding: 1rem 1rem 0.5rem;
+            margin-top: 1rem;
+        }
+        .az-eligibility h4 {
+            color: #9a3412;
+            margin: 0 0 0.75rem 0;
+            font-size: 1rem;
+        }
+        .az-eligibility .eligibility-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            margin-bottom: 0.6rem;
+            font-size: 0.9rem;
+            color: #44403c;
+        }
+        .az-eligibility .eligibility-item input[type=checkbox] {
+            margin-top: 2px;
+            flex-shrink: 0;
+            width: 16px;
+            height: 16px;
+            accent-color: #b45309;
+            cursor: pointer;
+        }
+        .az-eligibility .eligibility-item label {
+            cursor: pointer;
+            line-height: 1.4;
+        }
+        .court-date-note {
+            font-size: 0.8rem;
+            color: #92400e;
+            background: #fef3c7;
+            border-left: 3px solid #f59e0b;
+            padding: 0.4rem 0.6rem;
+            margin-top: 0.35rem;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+        }
     </style>
 </head>
 <body>
@@ -336,6 +377,11 @@
                                 <label for="citationDate">Date of Citation <span class="required">*</span></label>
                                 <input type="date" id="citationDate" name="CitationDate" required>
                             </div>
+                            <div class="form-group">
+                                <label for="courtDate">Court Date <span class="required">*</span></label>
+                                <input type="date" id="courtDate" name="CourtDate" required>
+                                <div class="court-date-note">&#9888;&#65039; If your original court date has already passed, enter the <strong>extension date</strong> granted by your court. You must complete the course <strong>at least 7 days before</strong> your court date.</div>
+                            </div>
                         </div>
                         
                         <div class="form-row">
@@ -367,9 +413,36 @@
                                 </select>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Driver Information -->
+                        <!-- Eligibility Affirmation -->
+                        <div class="az-eligibility">
+                            <h4>&#9989; Affirmation of Eligibility &mdash; Please confirm all of the following:</h4>
+                            <div class="eligibility-item">
+                                <input type="checkbox" id="elig1" name="Elig1" required>
+                                <label for="elig1">I have <strong>NOT</strong> attended an Arizona Defensive Driving course within the past 12 months. (12 months must pass between the citation dates of dismissed violations.)</label>
+                            </div>
+                            <div class="eligibility-item">
+                                <input type="checkbox" id="elig2" name="Elig2" required>
+                                <label for="elig2">My violation is <strong>eligible for diversion</strong> &mdash; it appears on the Arizona Supreme Court&rsquo;s list of eligible violations and is not a DUI, criminal speeding, or criminal traffic offense.</label>
+                            </div>
+                            <div class="eligibility-item">
+                                <input type="checkbox" id="elig3" name="Elig3" required>
+                                <label for="elig3">I am enrolling to dismiss <strong>only one (1) traffic violation</strong> with this course.</label>
+                            </div>
+                            <div class="eligibility-item">
+                                <input type="checkbox" id="elig4" name="Elig4" required>
+                                <label for="elig4">If I hold a <strong>Commercial Driver&rsquo;s License (CDL)</strong>, the vehicle I was driving at the time of the violation was <strong>NOT a commercial vehicle</strong>.</label>
+                            </div>
+                            <div class="eligibility-item">
+                                <input type="checkbox" id="elig5" name="Elig5" required>
+                                <label for="elig5">I will complete this course <strong>at least 7 days before</strong> my court date (or court-approved extension date).</label>
+                            </div>
+                            <div class="eligibility-item">
+                                <input type="checkbox" id="elig6" name="Elig6" required>
+                                <label for="elig6">I have <strong>NOT</strong> already paid the citation fine to the court for the violation I wish to dismiss.</label>
+                            </div>
+                        </div>
+                    </div>
                     <div class="form-section">
                         <h2 class="section-title">
                             <svg class="section-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -695,6 +768,7 @@
             document.getElementById('arizonaCounty').required = true;
             document.getElementById('arizonaCourt').required = true;
             document.getElementById('citationDate').required = true;
+            document.getElementById('courtDate').required = true;
         }
 
         const AZ_STATE_TREASURER_FEE = 45; // State Surcharge (paid to State Treasurer)
