@@ -157,20 +157,24 @@
                     <div class="price-amount" id="priceAmount">$0.00</div>
                     <div id="arizonaFeesDisplay" class="arizona-fees" style="display: none;">
                         <div class="fee-row">
-                            <span class="fee-label">Quick Pass School Fee:</span>
-                            <span class="fee-value" id="courseFeeAmount">$24.95</span>
-                        </div>
-                        <div class="fee-row fee-divider">
-                            <span class="fee-label">Court Diversion Fee:</span>
+                            <span class="fee-label">City Court Diversion Fee:</span>
                             <span class="fee-value" id="courtDiversionFee">—</span>
                         </div>
                         <div class="fee-row">
-                            <span class="fee-label">State Fee:</span>
-                            <span class="fee-value" id="stateFeeAmount">$24.00</span>
+                            <span class="fee-label">State Treasurer Fee:</span>
+                            <span class="fee-value" id="stateTreasurerFee">$45.00</span>
                         </div>
                         <div class="fee-row">
-                            <span class="fee-label">State Surcharge (2019):</span>
-                            <span class="fee-value" id="stateSurchargeAmount">$45.00</span>
+                            <span class="fee-label">State Court Fee:</span>
+                            <span class="fee-value" id="stateCourtFeeAmount">$20.00</span>
+                        </div>
+                        <div class="fee-row">
+                            <span class="fee-label">Additional State Fee (2019):</span>
+                            <span class="fee-value" id="additionalStateFee">$4.00</span>
+                        </div>
+                        <div class="fee-row fee-divider">
+                            <span class="fee-label">Quick Pass School Fee:</span>
+                            <span class="fee-value" id="courseFeeAmount">$24.95</span>
                         </div>
                         <div class="fee-row total">
                             <span class="fee-label">Grand Total:</span>
@@ -685,8 +689,10 @@
             document.getElementById('arizonaCourt').required = true;
         }
 
-        const AZ_STATE_FEE = 24;
-        const AZ_STATE_SURCHARGE = 45;
+        const AZ_STATE_TREASURER_FEE = 45; // State Surcharge (paid to State Treasurer)
+        const AZ_STATE_COURT_FEE = 20;      // Base State Court Fee
+        const AZ_ADDITIONAL_STATE_FEE = 4;  // Additional State Fee added 2019
+        const AZ_FIXED_FEES = AZ_STATE_TREASURER_FEE + AZ_STATE_COURT_FEE + AZ_ADDITIONAL_STATE_FEE; // 69
 
         // All AZ courts by county: [courtId, courtName, courtDiversionFee]
         // Source: AZ Supreme Court, effective April 1 2026
@@ -827,7 +833,7 @@
                 const opt = document.createElement('option');
                 opt.value = id;
                 opt.setAttribute('data-courtfee', fee);
-                const subtotal = fee + AZ_STATE_FEE + AZ_STATE_SURCHARGE;
+                const subtotal = fee + AZ_FIXED_FEES;
                 opt.textContent = `${name}  —  Court fees: $${subtotal}`;
                 courtSelect.appendChild(opt);
             });
@@ -835,6 +841,7 @@
             document.getElementById('courtDiversionFee').textContent = '—';
             document.getElementById('totalAmount').textContent = '—';
             document.getElementById('priceAmount').textContent = '$0.00';
+            document.getElementById('arizonaFeesDisplay').style.display = 'none';
         }
 
         function updateArizonaPricing() {
@@ -844,14 +851,15 @@
 
             if (courtFee > 0 && currentCourse) {
                 const schoolFee = currentCourse.price;
-                const courtSubTotal = courtFee + AZ_STATE_FEE + AZ_STATE_SURCHARGE;
+                const courtSubTotal = courtFee + AZ_FIXED_FEES;
                 const grandTotal = schoolFee + courtSubTotal;
 
                 document.getElementById('arizonaFeesDisplay').style.display = 'block';
-                document.getElementById('courseFeeAmount').textContent = `$${schoolFee.toFixed(2)}`;
                 document.getElementById('courtDiversionFee').textContent = `$${courtFee}.00`;
-                document.getElementById('stateFeeAmount').textContent = `$${AZ_STATE_FEE}.00`;
-                document.getElementById('stateSurchargeAmount').textContent = `$${AZ_STATE_SURCHARGE}.00`;
+                document.getElementById('stateTreasurerFee').textContent = `$${AZ_STATE_TREASURER_FEE}.00`;
+                document.getElementById('stateCourtFeeAmount').textContent = `$${AZ_STATE_COURT_FEE}.00`;
+                document.getElementById('additionalStateFee').textContent = `$${AZ_ADDITIONAL_STATE_FEE}.00`;
+                document.getElementById('courseFeeAmount').textContent = `$${schoolFee.toFixed(2)}`;
                 document.getElementById('totalAmount').textContent = `$${grandTotal.toFixed(2)}`;
                 document.getElementById('priceAmount').textContent = `$${grandTotal.toFixed(2)}`;
             }
@@ -899,9 +907,10 @@
                 const selOpt = courtOpts[courtOpts.selectedIndex];
                 const courtDiversionFee = parseInt(selOpt.getAttribute('data-courtfee') || '0');
                 enrollmentData.arizonaCourtDiversionFee = courtDiversionFee;
-                enrollmentData.arizonaStateFee = AZ_STATE_FEE;
-                enrollmentData.arizonaStateSurcharge = AZ_STATE_SURCHARGE;
-                enrollmentData.arizonaCourtSubTotal = courtDiversionFee + AZ_STATE_FEE + AZ_STATE_SURCHARGE;
+                enrollmentData.arizonaStateTreasurerFee = AZ_STATE_TREASURER_FEE;
+                enrollmentData.arizonaStateCourtFee = AZ_STATE_COURT_FEE;
+                enrollmentData.arizonaAdditionalStateFee = AZ_ADDITIONAL_STATE_FEE;
+                enrollmentData.arizonaCourtSubTotal = courtDiversionFee + AZ_FIXED_FEES;
                 enrollmentData.totalPrice = currentCourse.price; // Stripe payment = school fee only
             } else {
                 enrollmentData.totalPrice = currentCourse.price;
